@@ -13,8 +13,5 @@
 -Q /Users/danghica/cjr/cjr-collections/example/quadtree cjr.quadtree
 -Q /Users/danghica/cjr/cjr-collections/extraction cjr.collections
 -Q /Users/danghica/cjr/cjr-collections/audit cjr.audit
-rocq/_prog.v
-rocq/_upd.v
-rocq/_wf.v
 rocq/hash_map.v
 rocq/hm_tactics.v

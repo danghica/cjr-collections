@@ -3,6 +3,7 @@
 import pathlib, subprocess, re, os, sys
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 sys.path.insert(0,os.environ.get('CJR_CORE_DIR',str(ROOT.parents[2]/'cjr-core')))
+os.environ.setdefault('CJR_PROJECT_ROOT', str(ROOT.parents[1]))
 from tools.project_tools.examples import coq_flags
 from tools.project_tools.support import hashes,write_json
 COQC = os.environ.get('COQC', '/Users/danghica/.opam/default/bin/coqc')

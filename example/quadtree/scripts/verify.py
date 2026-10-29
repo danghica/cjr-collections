@@ -2,8 +2,10 @@
 """Kernel-check all local modules and audit every local lemma/theorem."""
 import subprocess,os,re,sys
 from pathlib import Path
+from datetime import datetime,timezone
 ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,os.environ.get('CJR_CORE_DIR',str(ROOT.parents[2]/'cjr-core')))
+os.environ.setdefault('CJR_PROJECT_ROOT', str(ROOT.parents[1]))
 from tools.project_tools.examples import coq_flags
 from tools.project_tools.support import write_json,hashes
 coqc=os.environ.get('COQC',str(__import__('pathlib').Path.home()/'.opam/default/bin/coqc'))
@@ -28,5 +30,5 @@ r=subprocess.run([coqc,*flags,str(auditfile)],text=True,capture_output=True)
 if r.returncode or 'Axioms:' in r.stdout+r.stderr:print(r.stdout+r.stderr);sys.exit(1)
 count=sum(line.startswith('Print Assumptions') for line in audit)
 if r.stdout.count('Closed under the global context')!=count:raise RuntimeError('Incomplete assumption audit')
-write_json(results/'verification.json',{'status':'passed','coqchk':'passed','assumptions':'closed under the global context','audited_declarations':count,'sources':hashes(ROOT),'contract_coverage':'Iris contracts cover make, insertion, membership and range; rejected/duplicate insertions and all queries preserve the original structural witness. Concrete composition theorems establish insertion commutativity/idempotence, repeated queries and range distribution over specification-level union.'})
+write_json(results/'verification.json',{'date_utc':datetime.now(timezone.utc).isoformat(),'status':'passed','coqchk':'passed','assumptions':'closed under the global context','audited_declarations':count,'sources':hashes(ROOT),'contract_coverage':'Iris contracts cover make, insertion, membership and range; rejected/duplicate insertions and all queries preserve the original structural witness. Concrete composition theorems establish insertion commutativity/idempotence, repeated queries and range distribution over specification-level union.'})
 print(f'coqchk passed; {count} declarations closed under the global context')

@@ -17,9 +17,6 @@
 -arg +admitted-proof
 example/array/rocq/array.v
 example/array_list/rocq/array_list.v
-example/hash_map/rocq/_prog.v
-example/hash_map/rocq/_upd.v
-example/hash_map/rocq/_wf.v
 example/hash_map/rocq/hash_map.v
 example/hash_map/rocq/hm_tactics.v
 example/list/rocq/list.v
