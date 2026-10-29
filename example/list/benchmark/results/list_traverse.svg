@@ -6,18 +6,18 @@
 <circle cx="250" cy="44" r="5" fill="#176f76"/><text x="260" y="48">CJR</text>
 <circle cx="400" cy="44" r="5" fill="#de8b37"/><text x="410" y="48">Std</text>
 <path d="M 230.0 65 V 293" class="grid"/><text x="230.0" y="311" text-anchor="middle">0.00</text>
-<path d="M 392.5 65 V 293" class="grid"/><text x="392.5" y="311" text-anchor="middle">0.57</text>
-<path d="M 555.0 65 V 293" class="grid"/><text x="555.0" y="311" text-anchor="middle">1.14</text>
-<path d="M 717.5 65 V 293" class="grid"/><text x="717.5" y="311" text-anchor="middle">1.72</text>
-<path d="M 880.0 65 V 293" class="grid"/><text x="880.0" y="311" text-anchor="middle">2.29</text>
+<path d="M 392.5 65 V 293" class="grid"/><text x="392.5" y="311" text-anchor="middle">0.58</text>
+<path d="M 555.0 65 V 293" class="grid"/><text x="555.0" y="311" text-anchor="middle">1.16</text>
+<path d="M 717.5 65 V 293" class="grid"/><text x="717.5" y="311" text-anchor="middle">1.74</text>
+<path d="M 880.0 65 V 293" class="grid"/><text x="880.0" y="311" text-anchor="middle">2.31</text>
 <text x="555" y="329" text-anchor="middle">Time (ns per operation; lower is faster)</text>
 <text x="18" y="80">list_traverse · n=256</text>
-<g><title>CJR: median 1.8571, Q1 1.8291, Q3 1.8709 ns/op</title><path d="M 749.6 90 H 761.5" stroke="#176f76" stroke-width="2"/><circle cx="757.6" cy="90" r="4" fill="#176f76"/><text x="900" y="94">CJR 1.86 ns/op</text></g>
-<g><title>Std: median 2.2685, Q1 2.2290, Q3 2.2789 ns/op</title><path d="M 863.2 110 H 877.4" stroke="#de8b37" stroke-width="2"/><circle cx="874.4" cy="110" r="4" fill="#de8b37"/><text x="900" y="114">Std 2.27 ns/op</text></g>
+<g><title>CJR: median 1.7291, Q1 1.7188, Q3 1.7392 ns/op</title><path d="M 712.7 90 H 718.4" stroke="#176f76" stroke-width="2"/><circle cx="715.6" cy="90" r="4" fill="#176f76"/><text x="900" y="94">CJR 1.73 ns/op</text></g>
+<g><title>Std: median 2.1733, Q1 2.1631, Q3 2.1872 ns/op</title><path d="M 837.5 110 H 844.2" stroke="#de8b37" stroke-width="2"/><circle cx="840.3" cy="110" r="4" fill="#de8b37"/><text x="900" y="114">Std 2.17 ns/op</text></g>
 <text x="18" y="156">list_traverse · n=4,096</text>
-<g><title>CJR: median 1.8981, Q1 1.8656, Q3 1.9307 ns/op</title><path d="M 760.0 166 H 778.5" stroke="#176f76" stroke-width="2"/><circle cx="769.2" cy="166" r="4" fill="#176f76"/><text x="900" y="170">CJR 1.90 ns/op</text></g>
-<g><title>Std: median 2.2777, Q1 2.2231, Q3 2.2881 ns/op</title><path d="M 861.5 186 H 880.0" stroke="#de8b37" stroke-width="2"/><circle cx="877.1" cy="186" r="4" fill="#de8b37"/><text x="900" y="190">Std 2.28 ns/op</text></g>
+<g><title>CJR: median 1.7755, Q1 1.7629, Q3 2.0363 ns/op</title><path d="M 725.1 166 H 801.8" stroke="#176f76" stroke-width="2"/><circle cx="728.6" cy="166" r="4" fill="#176f76"/><text x="900" y="170">CJR 1.78 ns/op</text></g>
+<g><title>Std: median 2.2590, Q1 2.2389, Q3 2.3146 ns/op</title><path d="M 858.8 186 H 880.0" stroke="#de8b37" stroke-width="2"/><circle cx="864.4" cy="186" r="4" fill="#de8b37"/><text x="900" y="190">Std 2.26 ns/op</text></g>
 <text x="18" y="232">list_traverse · n=16,384</text>
-<g><title>CJR: median 1.8889, Q1 1.8525, Q3 1.9467 ns/op</title><path d="M 756.2 242 H 783.0" stroke="#176f76" stroke-width="2"/><circle cx="766.6" cy="242" r="4" fill="#176f76"/><text x="900" y="246">CJR 1.89 ns/op</text></g>
-<g><title>Std: median 2.2566, Q1 2.2331, Q3 2.2712 ns/op</title><path d="M 864.4 262 H 875.2" stroke="#de8b37" stroke-width="2"/><circle cx="871.0" cy="262" r="4" fill="#de8b37"/><text x="900" y="266">Std 2.26 ns/op</text></g>
+<g><title>CJR: median 1.7958, Q1 1.7492, Q3 1.8207 ns/op</title><path d="M 721.2 242 H 741.3" stroke="#176f76" stroke-width="2"/><circle cx="734.3" cy="242" r="4" fill="#176f76"/><text x="900" y="246">CJR 1.80 ns/op</text></g>
+<g><title>Std: median 2.1245, Q1 2.0736, Q3 2.2179 ns/op</title><path d="M 812.3 262 H 852.9" stroke="#de8b37" stroke-width="2"/><circle cx="826.6" cy="262" r="4" fill="#de8b37"/><text x="900" y="266">Std 2.12 ns/op</text></g>
 </svg>

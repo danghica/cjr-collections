@@ -6,18 +6,18 @@
 <circle cx="250" cy="44" r="5" fill="#176f76"/><text x="260" y="48">Mono</text>
 <circle cx="400" cy="44" r="5" fill="#de8b37"/><text x="410" y="48">Poly</text>
 <path d="M 230.0 65 V 293" class="grid"/><text x="230.0" y="311" text-anchor="middle">0.00</text>
-<path d="M 392.5 65 V 293" class="grid"/><text x="392.5" y="311" text-anchor="middle">0.27</text>
-<path d="M 555.0 65 V 293" class="grid"/><text x="555.0" y="311" text-anchor="middle">0.53</text>
-<path d="M 717.5 65 V 293" class="grid"/><text x="717.5" y="311" text-anchor="middle">0.80</text>
-<path d="M 880.0 65 V 293" class="grid"/><text x="880.0" y="311" text-anchor="middle">1.06</text>
+<path d="M 392.5 65 V 293" class="grid"/><text x="392.5" y="311" text-anchor="middle">0.23</text>
+<path d="M 555.0 65 V 293" class="grid"/><text x="555.0" y="311" text-anchor="middle">0.47</text>
+<path d="M 717.5 65 V 293" class="grid"/><text x="717.5" y="311" text-anchor="middle">0.70</text>
+<path d="M 880.0 65 V 293" class="grid"/><text x="880.0" y="311" text-anchor="middle">0.94</text>
 <text x="555" y="329" text-anchor="middle">Time (ns per operation; lower is faster)</text>
 <text x="18" y="80">array_write_read · n=256</text>
-<g><title>Mono: median 0.7893, Q1 0.7830, Q3 0.8861 ns/op</title><path d="M 707.9 90 H 770.8" stroke="#176f76" stroke-width="2"/><circle cx="711.7" cy="90" r="4" fill="#176f76"/><text x="900" y="94">Mono 0.79 ns/op</text></g>
-<g><title>Poly: median 0.5511, Q1 0.5479, Q3 0.5537 ns/op</title><path d="M 564.4 110 H 568.0" stroke="#de8b37" stroke-width="2"/><circle cx="566.4" cy="110" r="4" fill="#de8b37"/><text x="900" y="114">Poly 0.55 ns/op</text></g>
+<g><title>Mono: median 0.8524, Q1 0.7632, Q3 0.8639 ns/op</title><path d="M 760.1 90 H 830.1" stroke="#176f76" stroke-width="2"/><circle cx="822.1" cy="90" r="4" fill="#176f76"/><text x="900" y="94">Mono 0.85 ns/op</text></g>
+<g><title>Poly: median 0.5310, Q1 0.5290, Q3 0.5321 ns/op</title><path d="M 597.4 110 H 599.6" stroke="#de8b37" stroke-width="2"/><circle cx="598.9" cy="110" r="4" fill="#de8b37"/><text x="900" y="114">Poly 0.53 ns/op</text></g>
 <text x="18" y="156">array_write_read · n=4,096</text>
-<g><title>Mono: median 0.8708, Q1 0.8616, Q3 0.8733 ns/op</title><path d="M 755.9 166 H 763.0" stroke="#176f76" stroke-width="2"/><circle cx="761.5" cy="166" r="4" fill="#176f76"/><text x="900" y="170">Mono 0.87 ns/op</text></g>
-<g><title>Poly: median 0.5312, Q1 0.5295, Q3 0.5344 ns/op</title><path d="M 553.2 186 H 556.2" stroke="#de8b37" stroke-width="2"/><circle cx="554.2" cy="186" r="4" fill="#de8b37"/><text x="900" y="190">Poly 0.53 ns/op</text></g>
+<g><title>Mono: median 0.7460, Q1 0.7413, Q3 0.8454 ns/op</title><path d="M 744.9 166 H 817.2" stroke="#176f76" stroke-width="2"/><circle cx="748.2" cy="166" r="4" fill="#176f76"/><text x="900" y="170">Mono 0.75 ns/op</text></g>
+<g><title>Poly: median 0.5116, Q1 0.5096, Q3 0.5155 ns/op</title><path d="M 584.0 186 H 588.1" stroke="#de8b37" stroke-width="2"/><circle cx="585.4" cy="186" r="4" fill="#de8b37"/><text x="900" y="190">Poly 0.51 ns/op</text></g>
 <text x="18" y="232">array_write_read · n=65,536</text>
-<g><title>Mono: median 0.9700, Q1 0.9596, Q3 1.0650 ns/op</title><path d="M 815.7 242 H 880.0" stroke="#176f76" stroke-width="2"/><circle cx="822.1" cy="242" r="4" fill="#176f76"/><text x="900" y="246">Mono 0.97 ns/op</text></g>
-<g><title>Poly: median 0.5825, Q1 0.5742, Q3 0.5901 ns/op</title><path d="M 580.5 262 H 590.1" stroke="#de8b37" stroke-width="2"/><circle cx="585.5" cy="262" r="4" fill="#de8b37"/><text x="900" y="266">Poly 0.58 ns/op</text></g>
+<g><title>Mono: median 0.9332, Q1 0.9308, Q3 0.9358 ns/op</title><path d="M 876.6 242 H 880.0" stroke="#176f76" stroke-width="2"/><circle cx="878.2" cy="242" r="4" fill="#176f76"/><text x="900" y="246">Mono 0.93 ns/op</text></g>
+<g><title>Poly: median 0.5668, Q1 0.5558, Q3 0.5718 ns/op</title><path d="M 616.0 262 H 627.2" stroke="#de8b37" stroke-width="2"/><circle cx="623.7" cy="262" r="4" fill="#de8b37"/><text x="900" y="266">Poly 0.57 ns/op</text></g>
 </svg>

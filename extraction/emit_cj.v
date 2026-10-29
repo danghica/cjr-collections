@@ -5,6 +5,7 @@ Import ListNotations.
 Local Open Scope string_scope.
 From cjr.examples Require list list_rev array array_list hash_map qsort most_frequent.
 From cjr.examples Require Import poly_array.
+From cjr.collections Require Import copy_lowering.
 Definition int (n : Z) : expr := Val (LitV (LitInt n)).
 Definition unit_e : expr := Val (LitV LitUnit).
 
@@ -228,4 +229,4 @@ Definition p_most_frequent :=
 Definition cj_files : list (string * prog) :=
 [("list",p_list); ("list_rev",p_list_rev); ("array",p_array); ("array_list",p_array_list);
  ("hash_map",p_hash_map); ("qsort_array",p_qsort_array); ("qsort_array_list",p_qsort_array_list); ("most_frequent",p_most_frequent)].
-Definition cj_bundle : string := cat_all (map (fun '(n,p) => "@@FILE " ++ n ++ nl ++ print_prog p) cj_files) ++ "@@FILE poly_array" ++ nl ++ generic_source poly_program.
+Definition cj_bundle : string := cat_all (map (fun '(n,p) => "@@FILE " ++ n ++ nl ++ print_prog_with collection_copy_rules p) cj_files) ++ "@@FILE poly_array" ++ nl ++ generic_source poly_program.

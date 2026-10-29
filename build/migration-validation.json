@@ -1,0 +1,8 @@
+{
+  "proofs_revalidated": false,
+  "runtime_cases": 74,
+  "historical_benchmark_test": "passed",
+  "html_links": "passed",
+  "pdf": "compiled twice; representative pages visually inspected",
+  "benchmarks": "6552 normalized checksum-validated samples across eight suites"
+}

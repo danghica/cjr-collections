@@ -119,3 +119,9 @@ Print Assumptions poly_array_tests.poly_static_unknown_rejected.
 Print Assumptions poly_array_tests.poly_factory_argument_arity_rejected.
 Print Assumptions poly_array_tests.poly_factory_call_erasure_uniform.
 Print Assumptions poly_array_tests.poly_factory_call_substitution.
+
+From cjr.collections Require Import copy_lowering.
+Print Assumptions copy_lowering.bulk_copy_grow_enabled.
+Print Assumptions copy_lowering.bulk_copy_remove_enabled.
+Print Assumptions copy_lowering.bulk_copy_arbitrary_loop_disabled.
+Print Assumptions copy_lowering.bulk_copy_get_disabled.

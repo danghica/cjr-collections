@@ -6,18 +6,18 @@
 <circle cx="250" cy="44" r="5" fill="#176f76"/><text x="260" y="48">CJR</text>
 <circle cx="400" cy="44" r="5" fill="#de8b37"/><text x="410" y="48">Std</text>
 <path d="M 230.0 65 V 293" class="grid"/><text x="230.0" y="311" text-anchor="middle">0.00</text>
-<path d="M 392.5 65 V 293" class="grid"/><text x="392.5" y="311" text-anchor="middle">1.61</text>
-<path d="M 555.0 65 V 293" class="grid"/><text x="555.0" y="311" text-anchor="middle">3.22</text>
-<path d="M 717.5 65 V 293" class="grid"/><text x="717.5" y="311" text-anchor="middle">4.83</text>
-<path d="M 880.0 65 V 293" class="grid"/><text x="880.0" y="311" text-anchor="middle">6.44</text>
+<path d="M 392.5 65 V 293" class="grid"/><text x="392.5" y="311" text-anchor="middle">1.53</text>
+<path d="M 555.0 65 V 293" class="grid"/><text x="555.0" y="311" text-anchor="middle">3.06</text>
+<path d="M 717.5 65 V 293" class="grid"/><text x="717.5" y="311" text-anchor="middle">4.60</text>
+<path d="M 880.0 65 V 293" class="grid"/><text x="880.0" y="311" text-anchor="middle">6.13</text>
 <text x="555" y="329" text-anchor="middle">Time (ns per operation; lower is faster)</text>
 <text x="18" y="80">hashmap_miss · n=256</text>
-<g><title>CJR: median 4.8144, Q1 4.7406, Q3 4.9386 ns/op</title><path d="M 708.7 90 H 728.7" stroke="#176f76" stroke-width="2"/><circle cx="716.1" cy="90" r="4" fill="#176f76"/><text x="900" y="94">CJR 4.81 ns/op</text></g>
-<g><title>Std: median 1.6988, Q1 1.6876, Q3 1.7089 ns/op</title><path d="M 400.4 110 H 402.6" stroke="#de8b37" stroke-width="2"/><circle cx="401.5" cy="110" r="4" fill="#de8b37"/><text x="900" y="114">Std 1.70 ns/op</text></g>
+<g><title>CJR: median 4.8630, Q1 4.7493, Q3 5.0156 ns/op</title><path d="M 733.8 90 H 762.0" stroke="#176f76" stroke-width="2"/><circle cx="745.8" cy="90" r="4" fill="#176f76"/><text x="900" y="94">CJR 4.86 ns/op</text></g>
+<g><title>Std: median 1.6643, Q1 1.6544, Q3 1.6797 ns/op</title><path d="M 405.5 110 H 408.2" stroke="#de8b37" stroke-width="2"/><circle cx="406.5" cy="110" r="4" fill="#de8b37"/><text x="900" y="114">Std 1.66 ns/op</text></g>
 <text x="18" y="156">hashmap_miss · n=4,096</text>
-<g><title>CJR: median 6.2528, Q1 6.1283, Q3 6.3789 ns/op</title><path d="M 848.8 166 H 874.1" stroke="#176f76" stroke-width="2"/><circle cx="861.4" cy="166" r="4" fill="#176f76"/><text x="900" y="170">CJR 6.25 ns/op</text></g>
-<g><title>Std: median 1.6735, Q1 1.6614, Q3 1.6854 ns/op</title><path d="M 397.8 186 H 400.2" stroke="#de8b37" stroke-width="2"/><circle cx="399.0" cy="186" r="4" fill="#de8b37"/><text x="900" y="190">Std 1.67 ns/op</text></g>
+<g><title>CJR: median 5.7912, Q1 5.2423, Q3 6.0706 ns/op</title><path d="M 786.1 166 H 873.9" stroke="#176f76" stroke-width="2"/><circle cx="844.3" cy="166" r="4" fill="#176f76"/><text x="900" y="170">CJR 5.79 ns/op</text></g>
+<g><title>Std: median 1.6456, Q1 1.6345, Q3 1.6620 ns/op</title><path d="M 403.4 186 H 406.3" stroke="#de8b37" stroke-width="2"/><circle cx="404.6" cy="186" r="4" fill="#de8b37"/><text x="900" y="190">Std 1.65 ns/op</text></g>
 <text x="18" y="232">hashmap_miss · n=16,384</text>
-<g><title>CJR: median 6.3286, Q1 6.2625, Q3 6.4373 ns/op</title><path d="M 862.4 242 H 880.0" stroke="#176f76" stroke-width="2"/><circle cx="869.0" cy="242" r="4" fill="#176f76"/><text x="900" y="246">CJR 6.33 ns/op</text></g>
-<g><title>Std: median 1.6696, Q1 1.6613, Q3 1.6766 ns/op</title><path d="M 397.7 262 H 399.3" stroke="#de8b37" stroke-width="2"/><circle cx="398.6" cy="262" r="4" fill="#de8b37"/><text x="900" y="266">Std 1.67 ns/op</text></g>
+<g><title>CJR: median 6.0441, Q1 5.7912, Q3 6.1278 ns/op</title><path d="M 844.3 242 H 880.0" stroke="#176f76" stroke-width="2"/><circle cx="871.1" cy="242" r="4" fill="#176f76"/><text x="900" y="246">CJR 6.04 ns/op</text></g>
+<g><title>Std: median 1.6313, Q1 1.6267, Q3 1.6475 ns/op</title><path d="M 402.6 262 H 404.8" stroke="#de8b37" stroke-width="2"/><circle cx="403.0" cy="262" r="4" fill="#de8b37"/><text x="900" y="266">Std 1.63 ns/op</text></g>
 </svg>

@@ -2554,6 +2554,18 @@ result does not establish a universal complexity or performance advantage.
 \input{paper/benchmark.tex}
 \input{example/most_frequent/docs/most-frequent.tex}
 
+\section{Limitations and target-code risks}
+\label{sec:limitations}
+CJR integers are unbounded mathematical integers, while generated Int64 values
+have machine bounds. Callers must satisfy the stated arithmetic and memory
+bounds. The logic specifies a sequential fragment and does not prove a full
+Cangjie type-soundness theorem, native compiler correctness, or the behavior
+of operating-system and frontend code. Generic specifications quantify over
+resource representations; they are not a universal relational-parametricity
+result. Checked kernels and conditional refinement contracts must be read
+with their hypotheses and documented coverage. Proofs were not rerun during
+this migration, and runtime tests supply separate empirical evidence.
+
 \section{Migration and current runtime evidence}
 Proofs were not revalidated during this repository split. Historical proof reports retain their original dates and provenance. Runtime timings measure generated native programs and do not establish cryptographic security or compiler correctness.
 \input{paper/current-benchmarks.tex}

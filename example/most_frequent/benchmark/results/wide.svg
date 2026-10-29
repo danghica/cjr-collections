@@ -7,21 +7,21 @@
 <circle cx="400" cy="44" r="5" fill="#de8b37"/><text x="410" y="48">StdHash</text>
 <circle cx="550" cy="44" r="5" fill="#8562a0"/><text x="560" y="48">StdSort</text>
 <path d="M 230.0 65 V 335" class="grid"/><text x="230.0" y="353" text-anchor="middle">0.00</text>
-<path d="M 392.5 65 V 335" class="grid"/><text x="392.5" y="353" text-anchor="middle">1656500.00</text>
-<path d="M 555.0 65 V 335" class="grid"/><text x="555.0" y="353" text-anchor="middle">3313000.00</text>
-<path d="M 717.5 65 V 335" class="grid"/><text x="717.5" y="353" text-anchor="middle">4969500.00</text>
-<path d="M 880.0 65 V 335" class="grid"/><text x="880.0" y="353" text-anchor="middle">6626000.00</text>
+<path d="M 392.5 65 V 335" class="grid"/><text x="392.5" y="353" text-anchor="middle">1599906.25</text>
+<path d="M 555.0 65 V 335" class="grid"/><text x="555.0" y="353" text-anchor="middle">3199812.50</text>
+<path d="M 717.5 65 V 335" class="grid"/><text x="717.5" y="353" text-anchor="middle">4799718.75</text>
+<path d="M 880.0 65 V 335" class="grid"/><text x="880.0" y="353" text-anchor="middle">6399625.00</text>
 <text x="555" y="371" text-anchor="middle">Time (ns per operation; lower is faster)</text>
 <text x="18" y="80">wide · n=256</text>
-<g><title>CJR: median 12164.0625, Q1 12004.8828, Q3 12250.9766 ns/op</title><path d="M 231.2 90 H 231.2" stroke="#176f76" stroke-width="2"/><circle cx="231.2" cy="90" r="4" fill="#176f76"/><text x="900" y="94">CJR 12164.06 ns/op</text></g>
-<g><title>StdHash: median 4223.6328, Q1 4139.6484, Q3 4353.5156 ns/op</title><path d="M 230.4 110 H 230.4" stroke="#de8b37" stroke-width="2"/><circle cx="230.4" cy="110" r="4" fill="#de8b37"/><text x="900" y="114">StdHash 4223.63 ns/op</text></g>
-<g><title>StdSort: median 58508.7891, Q1 57377.9297, Q3 60071.2891 ns/op</title><path d="M 235.6 130 H 235.9" stroke="#8562a0" stroke-width="2"/><circle cx="235.7" cy="130" r="4" fill="#8562a0"/><text x="900" y="134">StdSort 58508.79 ns/op</text></g>
+<g><title>CJR: median 11602.5391, Q1 11500.0000, Q3 11702.1484 ns/op</title><path d="M 231.2 90 H 231.2" stroke="#176f76" stroke-width="2"/><circle cx="231.2" cy="90" r="4" fill="#176f76"/><text x="900" y="94">CJR 11602.54 ns/op</text></g>
+<g><title>StdHash: median 4000.9766, Q1 3938.4766, Q3 4053.7109 ns/op</title><path d="M 230.4 110 H 230.4" stroke="#de8b37" stroke-width="2"/><circle cx="230.4" cy="110" r="4" fill="#de8b37"/><text x="900" y="114">StdHash 4000.98 ns/op</text></g>
+<g><title>StdSort: median 54859.3750, Q1 54440.4297, Q3 55652.3438 ns/op</title><path d="M 235.5 130 H 235.7" stroke="#8562a0" stroke-width="2"/><circle cx="235.6" cy="130" r="4" fill="#8562a0"/><text x="900" y="134">StdSort 54859.38 ns/op</text></g>
 <text x="18" y="170">wide · n=4,096</text>
-<g><title>CJR: median 292828.1250, Q1 291390.6250, Q3 302390.6250 ns/op</title><path d="M 258.6 180 H 259.7" stroke="#176f76" stroke-width="2"/><circle cx="258.7" cy="180" r="4" fill="#176f76"/><text x="900" y="184">CJR 292828.12 ns/op</text></g>
-<g><title>StdHash: median 69843.7500, Q1 68281.2500, Q3 74546.8750 ns/op</title><path d="M 236.7 200 H 237.3" stroke="#de8b37" stroke-width="2"/><circle cx="236.9" cy="200" r="4" fill="#de8b37"/><text x="900" y="204">StdHash 69843.75 ns/op</text></g>
-<g><title>StdSort: median 1316500.0000, Q1 1303296.8750, Q3 1416078.1250 ns/op</title><path d="M 357.9 220 H 368.9" stroke="#8562a0" stroke-width="2"/><circle cx="359.1" cy="220" r="4" fill="#8562a0"/><text x="900" y="224">StdSort 1316500.00 ns/op</text></g>
+<g><title>CJR: median 282656.2500, Q1 282078.1250, Q3 284718.7500 ns/op</title><path d="M 258.7 180 H 258.9" stroke="#176f76" stroke-width="2"/><circle cx="258.7" cy="180" r="4" fill="#176f76"/><text x="900" y="184">CJR 282656.25 ns/op</text></g>
+<g><title>StdHash: median 65890.6250, Q1 65546.8750, Q3 66328.1250 ns/op</title><path d="M 236.7 200 H 236.7" stroke="#de8b37" stroke-width="2"/><circle cx="236.7" cy="200" r="4" fill="#de8b37"/><text x="900" y="204">StdHash 65890.62 ns/op</text></g>
+<g><title>StdSort: median 1265796.8750, Q1 1253375.0000, Q3 1279765.6250 ns/op</title><path d="M 357.3 220 H 360.0" stroke="#8562a0" stroke-width="2"/><circle cx="358.6" cy="220" r="4" fill="#8562a0"/><text x="900" y="224">StdSort 1265796.88 ns/op</text></g>
 <text x="18" y="260">wide · n=16,384</text>
-<g><title>CJR: median 1507437.5000, Q1 1477437.5000, Q3 1517437.5000 ns/op</title><path d="M 374.9 270 H 378.9" stroke="#176f76" stroke-width="2"/><circle cx="377.9" cy="270" r="4" fill="#176f76"/><text x="900" y="274">CJR 1507437.50 ns/op</text></g>
-<g><title>StdHash: median 305562.5000, Q1 298812.5000, Q3 322500.0000 ns/op</title><path d="M 259.3 290 H 261.6" stroke="#de8b37" stroke-width="2"/><circle cx="260.0" cy="290" r="4" fill="#de8b37"/><text x="900" y="294">StdHash 305562.50 ns/op</text></g>
-<g><title>StdSort: median 6526937.5000, Q1 6075875.0000, Q3 6626000.0000 ns/op</title><path d="M 826.0 310 H 880.0" stroke="#8562a0" stroke-width="2"/><circle cx="870.3" cy="310" r="4" fill="#8562a0"/><text x="900" y="314">StdSort 6526937.50 ns/op</text></g>
+<g><title>CJR: median 1444875.0000, Q1 1432437.5000, Q3 1479625.0000 ns/op</title><path d="M 375.5 270 H 380.3" stroke="#176f76" stroke-width="2"/><circle cx="376.8" cy="270" r="4" fill="#176f76"/><text x="900" y="274">CJR 1444875.00 ns/op</text></g>
+<g><title>StdHash: median 287812.5000, Q1 284000.0000, Q3 292437.5000 ns/op</title><path d="M 258.8 290 H 259.7" stroke="#de8b37" stroke-width="2"/><circle cx="259.2" cy="290" r="4" fill="#de8b37"/><text x="900" y="294">StdHash 287812.50 ns/op</text></g>
+<g><title>StdSort: median 5949375.0000, Q1 5810750.0000, Q3 6399625.0000 ns/op</title><path d="M 820.2 310 H 880.0" stroke="#8562a0" stroke-width="2"/><circle cx="834.3" cy="310" r="4" fill="#8562a0"/><text x="900" y="314">StdSort 5949375.00 ns/op</text></g>
 </svg>

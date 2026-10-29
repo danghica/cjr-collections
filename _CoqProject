@@ -1,0 +1,46 @@
+-R /Users/danghica/cjr/cjr-core/theories cjr
+-Q /Users/danghica/cjr/cjr-core/tools/extraction/rocq cjr.examples
+-Q /Users/danghica/cjr/cjr-core/example/generics/rocq cjr.examples
+-Q /Users/danghica/cjr/cjr-core/example/misc/rocq cjr.examples
+-Q /Users/danghica/cjr/cjr-collections/example/array/rocq cjr.examples
+-Q /Users/danghica/cjr/cjr-collections/example/array_list/rocq cjr.examples
+-Q /Users/danghica/cjr/cjr-collections/example/hash_map/rocq cjr.examples
+-Q /Users/danghica/cjr/cjr-collections/example/list/rocq cjr.examples
+-Q /Users/danghica/cjr/cjr-collections/example/list_rev/rocq cjr.examples
+-Q /Users/danghica/cjr/cjr-collections/example/most_frequent/rocq cjr.examples
+-Q /Users/danghica/cjr/cjr-collections/example/poly_array/rocq cjr.examples
+-Q /Users/danghica/cjr/cjr-collections/example/qsort/rocq cjr.examples
+-Q /Users/danghica/cjr/cjr-collections/example/quadtree cjr.quadtree
+-Q /Users/danghica/cjr/cjr-collections/extraction cjr.collections
+-Q /Users/danghica/cjr/cjr-collections/audit cjr.audit
+-arg -w
+-arg +admitted-proof
+example/array/rocq/array.v
+example/array_list/rocq/array_list.v
+example/hash_map/rocq/_prog.v
+example/hash_map/rocq/_upd.v
+example/hash_map/rocq/_wf.v
+example/hash_map/rocq/hash_map.v
+example/hash_map/rocq/hm_tactics.v
+example/list/rocq/list.v
+example/list_rev/rocq/list_rev.v
+example/most_frequent/rocq/mf_memory.v
+example/most_frequent/rocq/most_frequent.v
+example/poly_array/rocq/poly_array.v
+example/poly_array/rocq/poly_array_tests.v
+example/qsort/rocq/qsort.v
+example/quadtree/algorithm/extract.v
+example/quadtree/algorithm/program.v
+example/quadtree/proof/algebra.v
+example/quadtree/proof/audit.v
+example/quadtree/proof/correctness.v
+example/quadtree/proof/helpers.v
+example/quadtree/proof/insertion.v
+example/quadtree/proof/insertion_helpers.v
+example/quadtree/proof/insertion_model.v
+example/quadtree/proof/ownership.v
+example/quadtree/proof/routing.v
+example/quadtree/spec/bounds.v
+example/quadtree/spec/model.v
+extraction/copy_lowering.v
+extraction/emit_cj.v

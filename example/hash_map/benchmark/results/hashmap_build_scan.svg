@@ -6,18 +6,18 @@
 <circle cx="250" cy="44" r="5" fill="#176f76"/><text x="260" y="48">CJR</text>
 <circle cx="400" cy="44" r="5" fill="#de8b37"/><text x="410" y="48">Std</text>
 <path d="M 230.0 65 V 293" class="grid"/><text x="230.0" y="311" text-anchor="middle">0.00</text>
-<path d="M 392.5 65 V 293" class="grid"/><text x="392.5" y="311" text-anchor="middle">9.56</text>
-<path d="M 555.0 65 V 293" class="grid"/><text x="555.0" y="311" text-anchor="middle">19.12</text>
-<path d="M 717.5 65 V 293" class="grid"/><text x="717.5" y="311" text-anchor="middle">28.68</text>
-<path d="M 880.0 65 V 293" class="grid"/><text x="880.0" y="311" text-anchor="middle">38.23</text>
+<path d="M 392.5 65 V 293" class="grid"/><text x="392.5" y="311" text-anchor="middle">9.49</text>
+<path d="M 555.0 65 V 293" class="grid"/><text x="555.0" y="311" text-anchor="middle">18.98</text>
+<path d="M 717.5 65 V 293" class="grid"/><text x="717.5" y="311" text-anchor="middle">28.47</text>
+<path d="M 880.0 65 V 293" class="grid"/><text x="880.0" y="311" text-anchor="middle">37.96</text>
 <text x="555" y="329" text-anchor="middle">Time (ns per operation; lower is faster)</text>
 <text x="18" y="80">hashmap_build_scan · n=256</text>
-<g><title>CJR: median 32.9285, Q1 32.5508, Q3 33.2642 ns/op</title><path d="M 783.4 90 H 795.5" stroke="#176f76" stroke-width="2"/><circle cx="789.8" cy="90" r="4" fill="#176f76"/><text x="900" y="94">CJR 32.93 ns/op</text></g>
-<g><title>Std: median 16.3307, Q1 16.0789, Q3 16.7465 ns/op</title><path d="M 503.3 110 H 514.7" stroke="#de8b37" stroke-width="2"/><circle cx="507.6" cy="110" r="4" fill="#de8b37"/><text x="900" y="114">Std 16.33 ns/op</text></g>
+<g><title>CJR: median 32.3715, Q1 32.1770, Q3 32.9666 ns/op</title><path d="M 781.0 90 H 794.6" stroke="#176f76" stroke-width="2"/><circle cx="784.4" cy="90" r="4" fill="#176f76"/><text x="900" y="94">CJR 32.37 ns/op</text></g>
+<g><title>Std: median 16.8457, Q1 16.6206, Q3 17.0822 ns/op</title><path d="M 514.6 110 H 522.5" stroke="#de8b37" stroke-width="2"/><circle cx="518.5" cy="110" r="4" fill="#de8b37"/><text x="900" y="114">Std 16.85 ns/op</text></g>
 <text x="18" y="156">hashmap_build_scan · n=4,096</text>
-<g><title>CJR: median 37.9486, Q1 37.7655, Q3 38.2347 ns/op</title><path d="M 872.0 166 H 880.0" stroke="#176f76" stroke-width="2"/><circle cx="875.1" cy="166" r="4" fill="#176f76"/><text x="900" y="170">CJR 37.95 ns/op</text></g>
-<g><title>Std: median 17.2462, Q1 17.0517, Q3 17.4904 ns/op</title><path d="M 519.9 186 H 527.3" stroke="#de8b37" stroke-width="2"/><circle cx="523.2" cy="186" r="4" fill="#de8b37"/><text x="900" y="190">Std 17.25 ns/op</text></g>
+<g><title>CJR: median 37.7312, Q1 37.4222, Q3 37.9562 ns/op</title><path d="M 870.9 166 H 880.0" stroke="#176f76" stroke-width="2"/><circle cx="876.1" cy="166" r="4" fill="#176f76"/><text x="900" y="170">CJR 37.73 ns/op</text></g>
+<g><title>Std: median 17.2462, Q1 17.1280, Q3 17.9329 ns/op</title><path d="M 523.3 186 H 537.1" stroke="#de8b37" stroke-width="2"/><circle cx="525.3" cy="186" r="4" fill="#de8b37"/><text x="900" y="190">Std 17.25 ns/op</text></g>
 <text x="18" y="232">hashmap_build_scan · n=16,384</text>
-<g><title>CJR: median 35.0380, Q1 34.7710, Q3 35.5644 ns/op</title><path d="M 821.1 242 H 834.6" stroke="#176f76" stroke-width="2"/><circle cx="825.7" cy="242" r="4" fill="#176f76"/><text x="900" y="246">CJR 35.04 ns/op</text></g>
-<g><title>Std: median 18.4135, Q1 18.0664, Q3 18.6729 ns/op</title><path d="M 537.1 262 H 547.4" stroke="#de8b37" stroke-width="2"/><circle cx="543.0" cy="262" r="4" fill="#de8b37"/><text x="900" y="266">Std 18.41 ns/op</text></g>
+<g><title>CJR: median 35.7323, Q1 35.1448, Q3 36.0413 ns/op</title><path d="M 831.9 242 H 847.2" stroke="#176f76" stroke-width="2"/><circle cx="841.9" cy="242" r="4" fill="#176f76"/><text x="900" y="246">CJR 35.73 ns/op</text></g>
+<g><title>Std: median 19.0163, Q1 18.6462, Q3 20.7176 ns/op</title><path d="M 549.3 262 H 584.8" stroke="#de8b37" stroke-width="2"/><circle cx="555.7" cy="262" r="4" fill="#de8b37"/><text x="900" y="266">Std 19.02 ns/op</text></g>
 </svg>

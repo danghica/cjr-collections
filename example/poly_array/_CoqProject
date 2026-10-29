@@ -1,7 +1,17 @@
--R ../../theories cjr
--Q ../../tools/extraction/rocq cjr.examples
--Q ../array/rocq cjr.examples
--Q ../array_list/rocq cjr.examples
--Q rocq cjr.examples
+-R /Users/danghica/cjr/cjr-core/theories cjr
+-Q /Users/danghica/cjr/cjr-core/tools/extraction/rocq cjr.examples
+-Q /Users/danghica/cjr/cjr-core/example/generics/rocq cjr.examples
+-Q /Users/danghica/cjr/cjr-core/example/misc/rocq cjr.examples
+-Q /Users/danghica/cjr/cjr-collections/example/array/rocq cjr.examples
+-Q /Users/danghica/cjr/cjr-collections/example/array_list/rocq cjr.examples
+-Q /Users/danghica/cjr/cjr-collections/example/hash_map/rocq cjr.examples
+-Q /Users/danghica/cjr/cjr-collections/example/list/rocq cjr.examples
+-Q /Users/danghica/cjr/cjr-collections/example/list_rev/rocq cjr.examples
+-Q /Users/danghica/cjr/cjr-collections/example/most_frequent/rocq cjr.examples
+-Q /Users/danghica/cjr/cjr-collections/example/poly_array/rocq cjr.examples
+-Q /Users/danghica/cjr/cjr-collections/example/qsort/rocq cjr.examples
+-Q /Users/danghica/cjr/cjr-collections/example/quadtree cjr.quadtree
+-Q /Users/danghica/cjr/cjr-collections/extraction cjr.collections
+-Q /Users/danghica/cjr/cjr-collections/audit cjr.audit
 rocq/poly_array.v
 rocq/poly_array_tests.v
