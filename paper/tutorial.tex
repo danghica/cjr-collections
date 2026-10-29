@@ -1,0 +1,2661 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{listings}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{longtable}
+\usepackage{tikz}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{linktoc=all}
+\setcounter{tocdepth}{2}
+\makeatletter
+\renewcommand{\l@subsection}{\@dottedtocline{2}{1.5em}{3.4em}}
+\makeatother
+\usetikzlibrary{arrows.meta,calc,positioning}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}[theorem]{Definition}
+
+\title{CJR Collections: Verified Data Structures and Algorithms}
+\author{Dan R. Ghica}
+\date{\today}
+
+\lstdefinestyle{coq}{
+  basicstyle=\ttfamily\small,
+  columns=fullflexible,
+  keepspaces=true,
+  showstringspaces=false,
+  breaklines=true,
+  frame=single,
+  framerule=0.3pt,
+  xleftmargin=0.4em,
+  xrightmargin=0.4em,
+  aboveskip=0.8em,
+  belowskip=0.8em,
+  literate={Σ}{{$\Sigma$}}1
+           {↦ₛ}{{$\mapsto_s$}}2
+           {↦ₒ}{{$\mapsto_o$}}2
+           {λ}{{$\lambda$}}1
+           {↦ₒ}{{$\mapsto_o$}}2
+           {→}{{$\rightarrow$}}1
+           {∀}{{$\forall$}}1
+           {∃}{{$\exists$}}1
+           {∗}{{$*$}}1
+           {⌜}{{$\ulcorner$}}1
+           {⌝}{{$\urcorner$}}1
+           {≤}{{$\leq$}}1
+           {∧}{{$\land$}}1
+           {∨}{{$\lor$}}1
+           {∈}{{$\in$}}1
+           {⊢}{{$\vdash$}}1
+           {≠}{{$\neq$}}1
+           {∉}{{$\notin$}}1
+           {∅}{{$\emptyset$}}1
+}
+\lstset{style=coq}
+
+\newcommand{\cjr}{CJR}
+\newcommand{\sem}[1]{[\![#1]\!]}
+\newcommand{\step}{\longrightarrow}
+\newcommand{\steps}{\longrightarrow^{*}}
+\newcommand{\Stuck}{\mathsf{stuck}}
+\newcommand{\WF}{\mathsf{wf}}
+\newcommand{\dom}{\operatorname{dom}}
+\newcommand{\lookup}[2]{#1(#2)}
+\newcommand{\None}{\mathsf{None}}
+\newcommand{\Some}{\mathsf{Some}}
+\newcommand{\Unit}{\mathsf{()}}
+\newcommand{\True}{\mathsf{true}}
+\newcommand{\False}{\mathsf{false}}
+\newcommand{\NULL}{\mathsf{null}}
+\newcommand{\pts}{\mathrel{\mapsto}}
+\newcommand{\ptss}{\mathrel{\mapsto_{s}}}
+\newcommand{\ptsr}{\mathrel{\mapsto_{r}}}
+\newcommand{\ptsb}{\mathrel{\mapsto_{b}}}
+\newcommand{\ptso}{\mathrel{\mapsto_{o}}}
+\newcommand{\sep}{\mathbin{*}}
+\newcommand{\bigsep}{\mathop{\scalebox{1.4}{$\ast$}}}
+\newcommand{\wand}{\mathbin{-\!\!*}}
+\newcommand{\later}{\mathop{\triangleright}}
+\newcommand{\Wpre}{\mathsf{wp}}
+\newcommand{\GWpre}{\mathsf{gwp}}
+\newcommand{\pure}[1]{\ulcorner #1 \urcorner}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\clearpage
+\section{Setup and proof boundary}
+This repository uses CJR Core and the Coq 8.20.1, stdpp 1.12.0, Iris 4.4.0 toolchain. Read the local README for pinned dependency paths. The CJR logic reasons about its operational model; printing, native compilation, machine integer overflow, and external adapters require separate care. Proofs were not revalidated during this migration.
+\section{A linked list}
+
+The file \texttt{example/list/rocq/list.v} is a self-contained implementation of a singly linked list, together with the equations that say the implementation really is a list.
+It is larger than the earlier examples because the specification is not a single pure result: it is a predicate on the object heap, and the programs are functions that allocate and read nodes.
+This existing list stores integers. The generic \texttt{Pair} and
+\texttt{Box} examples do not automatically make it a \texttt{List<T>}:
+that would require a parameterised node declaration and a list
+representation predicate carrying an element predicate at every node.
+
+\subsection{Why a node is an object with a boolean tag}
+
+A textbook list cell is a pair of a head and a pointer to the rest, and the empty list is the null pointer.
+\cjr{} has null, and loading through null is stuck, which is the right machine behaviour.
+What it does not have is an equality test on pointers or on object references.
+\texttt{EqOp} compares integers only.
+A program therefore cannot branch on ``is this pointer null?''.
+
+The sticking point is resolved by using a non-\texttt{open} class with three fields, and a boolean the language can already branch on.
+
+\begin{lstlisting}
+Definition nil_body : expr :=
+  Let (Some "n")
+    (New [LitV (LitBool false); LitV (LitInt 0); LitV LitUnit] [])
+    (Seq (FieldStore (Var "n") 2 (Var "n")) (Var "n")).
+
+Definition cons_body : expr :=
+  Let (Some "x") (StructLoad (Var "a") 0)
+    (Let (Some "xs") (StructLoad (Var "a") 1)
+      (New [] [Val (LitV (LitBool true)); Var "x"; Var "xs"])).
+\end{lstlisting}
+
+Field \(0\) is the tag: \(\False\) means empty, \(\True\) means cons.
+Field \(1\) is the head integer, which is \(0\) and unused when the tag is false.
+Field \(2\) is the tail.
+On an empty node it is that same node; on a cons node it is the value that represents the rest of the list, itself either an empty node or another cons node.
+The allocation writes unit into the field and then stores the new object there before \texttt{nil} returns.
+The points-to fact owns the field.
+The value in the field is a pointer to the object, so the fact does not own the object a second time, and the predicate does not unfold.
+Objects are not freed, so a cons cell stays in the heap after its tail has been read.
+That matches the language: there is a \texttt{new} rule and no rule that deletes an object.
+
+In Cangjie the operations are ordinary functions.
+Core application takes one argument, so \texttt{cons(x, xs)} lowers to a call on the struct of those two arguments.
+The other functions take the node.
+
+\lstinputlisting{example/list/extracted/list.cj}
+
+A Cangjie constructor cannot receive the object it is building, so the printed class takes an optional tail and stores it in a raw field.
+Unit, the placeholder written by the allocation, is printed as \texttt{None}.
+The property \texttt{next} reads that raw field back as a \texttt{Node}: the stored node when it is present, and the node itself when it is empty.
+After \texttt{nil} returns, the raw tail has been set to the node.
+\texttt{empty} does not read \texttt{next}.
+The functions above are the Cangjie surface; \texttt{cons} of two arguments lowers to the unary core call on the struct \(\langle x, xs\rangle\).
+
+\texttt{empty} returns the negation of the tag.
+An empty node is empty; a cons node is not.
+The conditional is the only test.
+It does not inspect the tail pointer.
+
+\subsection{The representation predicate}
+
+On paper, a mathematical list \(xs\) is related to a value \(p\) by \(\mathsf{isList}(xs, p)\).
+
+\begin{definition}[List representation]
+\(\mathsf{isList}([], p)\) holds when \(p = \mathsf{obj}(o)\) and
+\[
+o \ptso[0] \False
+\sep
+o \ptso[1] 0
+\sep
+o \ptso[2] \mathsf{obj}(o).
+\]
+\(\mathsf{isList}(x :: xs, p)\) holds when \(p = \mathsf{obj}(o)\) and there is a tail value \(q\) with
+\[
+o \ptso[0] \True
+\sep
+o \ptso[1] x
+\sep
+o \ptso[2] q
+\sep
+\mathsf{isList}(xs, q).
+\]
+\end{definition}
+
+The Coq predicate is the same recursion, as a separation-logic assertion.
+
+\begin{lstlisting}
+Fixpoint is_list (xs : list Z) (p : val) : iProp S :=
+  match xs with
+  | [] => exists o, pure (p = LitV (LitObj o)) *
+      ObjId o |->o[0] LitV (LitBool false) *
+      ObjId o |->o[1] LitV (LitInt 0) *
+      ObjId o |->o[2] LitV (LitObj o)
+  | x :: xs' => exists o nxt, pure (p = LitV (LitObj o)) *
+      ObjId o |->o[0] LitV (LitBool true) *
+      ObjId o |->o[1] LitV (LitInt x) *
+      ObjId o |->o[2] nxt *
+      is_list xs' nxt
+  end.
+\end{lstlisting}
+
+\textit{What the separating conjunction is doing.}
+The three fields of one node are three separate facts, so a proof may load the tag and still own the head and the tail.
+The recursive fact \(\mathsf{isList}(xs, q)\) owns every node of the tail and nothing of the cons cell.
+Those two regions are disjoint.
+That is why ``the tail is the original list'' can be stated by returning the original pointer together with \(\mathsf{isList}(xs, p)\), while the cons cell's own three fields sit beside it rather than inside it.
+
+A value that is not an object reference does not satisfy \(\mathsf{isList}\).
+The lemma \texttt{is\_list\_obj} records the useful direction: if the predicate holds, the value is \(\mathsf{obj}(o)\) for some \(o\).
+The proofs rewrite with that equality before they substitute, so an abstract pointer is a literal object reference by the time it is placed in a struct.
+Substitution then computes.
+
+\subsection{What each operation establishes}
+
+\paragraph{Empty list.}
+\[
+\Wpre\,\mathsf{nil}()\,\{\,v.\; \mathsf{isList}([], v)\,\}.
+\]
+\texttt{wp\_new} returns ownership of the three initial fields. The tail initially holds unit.
+\texttt{wp\_field\_store} then writes the new object into that field, which is the empty clause.
+Nothing else is allocated.
+This is \texttt{nil\_spec}.
+
+\paragraph{Cons.}
+\[
+\mathsf{isList}(xs, p)
+\vdash
+\Wpre\,\mathsf{cons}\,\langle x, p\rangle
+\,\Bigl\{\,v.\;
+  \exists o.\;
+  v = \mathsf{obj}(o)
+  \sep
+  o \ptso[0] \True
+  \sep
+  o \ptso[1] x
+  \sep
+  o \ptso[2] p
+  \sep
+  \mathsf{isList}(xs, p)
+\,\Bigr\}.
+\]
+The argument struct is unboxed.
+\texttt{wp\_struct\_load} copies \(x\) and then \(p\) out of it; those loads do not touch the heap.
+The body then allocates one object.
+The third field is the original pointer \(p\), not a copy of the tail's nodes.
+The fact \(\mathsf{isList}(xs, p)\) is framed across allocation: \texttt{wp\_new} does not ask for it, so it cannot be changed.
+The postcondition is the unfolding of \(\mathsf{isList}(x :: xs, v)\) with the tail pointer pinned to the pointer that was passed in.
+Pinning it is what makes the later inverse law an equality of values, not only an equality of mathematical lists up to some existential.
+This is \texttt{cons\_spec}.
+
+\paragraph{Head.}
+\[
+\mathsf{isList}(x :: xs, p)
+\vdash
+\Wpre\,\mathsf{head}\,p
+\,\{\,v.\; \pure{v = x} \sep \mathsf{isList}(x :: xs, p)\,\}.
+\]
+The proof opens the cons clause, loads field \(1\), and puts the same facts back together.
+The list predicate after the call is the list predicate before the call.
+Head is a pure observation.
+This is \texttt{head\_spec}.
+
+\paragraph{Tail.}
+\[
+\begin{aligned}
+&\mathsf{isList}(x :: xs, p) \vdash {}\\
+&\quad\Wpre\,\mathsf{tail}\,p
+\,\Bigl\{\,v.\;
+  \mathsf{isList}(xs, v)
+  \sep
+  \exists o.\;
+  p = \mathsf{obj}(o)
+  \sep
+  o \ptso[0] \True
+  \sep
+  o \ptso[1] x
+  \sep
+  o \ptso[2] v
+\,\Bigr\}.
+\end{aligned}
+\]
+Loading field \(2\) returns the tail pointer and gives the points-to fact back.
+The recursive clause of \(\mathsf{isList}\) already owned \(\mathsf{isList}(xs, v)\) separately from the cons cell, so the postcondition splits the list into the cell that was examined and the list that remains.
+It does not duplicate nodes.
+This is \texttt{tail\_spec}.
+
+\paragraph{Emptiness.}
+\[
+\begin{aligned}
+\mathsf{isList}([], p)
+  &\vdash
+  \Wpre\,\mathsf{empty}\,p
+  \,\{\,v.\; \pure{v = \True} \sep \mathsf{isList}([], p)\,\},\\
+\mathsf{isList}(x :: xs, p)
+  &\vdash
+  \Wpre\,\mathsf{empty}\,p
+  \,\{\,v.\; \pure{v = \False} \sep \mathsf{isList}(x :: xs, p)\,\}.
+\end{aligned}
+\]
+Both proofs load the tag and take one branch of \texttt{if}.
+The other branch is dead in that specification: a proof of the empty law never has to show anything about the cons branch, and conversely.
+The predicate is restored, so emptiness is an observation rather than a destructive read.
+These are \texttt{empty\_nil} and \texttt{empty\_cons}.
+
+\subsection{Adding an element and removing it}
+
+The program that the inverse law talks about is the composition of the two functions, not a fused implementation.
+
+\begin{lstlisting}
+Definition cons_then_tail (x : Z) (p : val) : expr :=
+  Let (Some "node") (call_cons x p)
+    (App (Rec None (Some "n") tail_body) (Var "node")).
+\end{lstlisting}
+
+\begin{theorem}[Cons then tail]
+\[
+\mathsf{isList}(xs, p)
+\vdash
+\Wpre\,(\mathsf{tail}\,(\mathsf{cons}\,\langle x, p\rangle))
+\,\{\,v.\; \pure{v = p} \sep \mathsf{isList}(xs, v)\,\}.
+\]
+\end{theorem}
+
+The Coq statement is \texttt{cons\_then\_tail\_spec}.
+Read it as an equation of lists.
+The value returned by removing the element just added is the original pointer, and that pointer still represents the original mathematical list.
+
+The proof follows the program in order.
+\begin{enumerate}
+\item \texttt{cons\_spec} allocates the node and frames \(\mathsf{isList}(xs, p)\).
+Its postcondition says field \(2\) of the new object is exactly \(p\), and the original list predicate is still owned.
+\item The \texttt{let} substitutes that object for \texttt{node}.
+\item \texttt{tail} is the function above.
+It loads field \(2\).
+The load rule returns the value that the points-to fact describes, which is \(p\), and it returns the points-to fact as well.
+\item The cons cell's three fields are no longer needed for the equation.
+They are discarded.
+Iris assertions are affine, so ownership of leftover cells may be dropped.
+The object remains allocated in the machine; the specification simply stops mentioning it.
+What remains is \(\pure{v = p}\) and \(\mathsf{isList}(xs, p)\).
+\end{enumerate}
+
+Two companion readings are already in the lemmas above, and they are the other usual equations.
+Head after cons returns \(x\) and still owns \(\mathsf{isList}(x :: xs, \cdot)\).
+Emptiness distinguishes \([]\) from \(x :: xs\).
+Together they say that the tag, the head field, and the tail field agree with the mathematical constructors, and that reading them does not damage the list those constructors describe.
+
+The next section proves in-place reversal of an arbitrary finite list using this representation.
+It opens one cons cell at a time, rewires its tail, and transfers that cell into a separate accumulator.
+Append remains outside this development.
+
+\section{In-place list reversal}
+\label{sec:list-reversal}
+
+The file \texttt{example/list\_rev/rocq/list\_rev.v} proves the classic iterative
+reversal of a singly linked list. This example changes the links of existing
+cons cells. It does not allocate replacement cons cells, copy the integers, or
+change the tag and head fields. It does allocate one fresh empty sentinel at
+entry, because the two list predicates in the loop invariant must own separate
+empty nodes. The old sentinel remains allocated when the loop finishes.
+The functional theorem describes the reversed contents; the proof also explains
+which field changes at each iteration and why that mutation is safe.
+
+\subsection{The representation being reused}
+
+There is one list representation in the development: \texttt{list.is\_list}
+from the preceding section. Reversal imports it rather than defining a second
+predicate. Its two clauses are
+\[
+\begin{aligned}
+\mathsf{isList}([],p) \equiv {}&
+ \exists o.\;\pure{p=\mathsf{obj}(o)}
+ \sep o\ptso[0]\False \sep o\ptso[1]0 \sep o\ptso[2]\mathsf{obj}(o),\\
+\mathsf{isList}(x::v,p) \equiv {}&
+ \exists o,q.\;\pure{p=\mathsf{obj}(o)}
+ \sep o\ptso[0]\True \sep o\ptso[1]x \sep o\ptso[2]q
+ \sep\mathsf{isList}(v,q).
+\end{aligned}
+\]
+The predicate owns all three fields of each node, including the terminal empty
+node. Its separating conjunction makes the recursive tail separate from the
+current cons cell. A finite list described this way cannot contain a cycle of
+cons cells or repeated ownership of a cons cell. The sentinel's self-link is
+allowed because the empty clause owns its three fields directly and does not
+recurse through that link.
+
+This ownership is the permission to perform the reversal. Another logical
+client cannot simultaneously hold full ownership of the same fields. An
+ordinary program variable can still contain an alias to a node: the algorithm
+mutates that node, so observations through such an alias change too. The
+specification transfers the input list's ownership into ownership of the
+returned list; it does not promise that the original head still denotes the
+original sequence.
+
+\subsection{The client specification}
+
+The main statement is \texttt{reverse\_spec}:
+\[
+\mathsf{isList}(xs,p)\vdash
+ \Wpre\,\mathsf{reverse}(p)
+ \,\{\,r.\;\mathsf{isList}(\mathsf{rev}(xs),r)\,\}.
+\]
+Here \(xs\) is a mathematical list of integers and \(p\) is a runtime value.
+The list predicate connects them. The output predicate establishes both the
+order of all values and a well-formed owned list. There is no positive-length
+precondition; the empty and singleton cases are included.
+
+The theorem uses Iris's ordinary weakest precondition, hence partial
+correctness and safety. It states the postcondition whenever execution returns
+and rules out getting stuck under its ownership precondition. The loop proof
+uses induction on the unprocessed finite list, which explains why each
+iteration consumes one remaining element. This chapter does not claim a
+separate total-correctness theorem, exact instruction count, physical pointer
+identity theorem, or verified equivalence between the CJR semantics and the
+Cangjie compiler. Executable tests complement the checked CJR theorem.
+
+By framing, a separate assertion \(R\) can accompany the input and output:
+\(\mathsf{isList}(xs,p)\sep R\) is transformed into
+\(\mathsf{isList}(\mathsf{rev}(xs),r)\sep R\). The proof needs none of the
+resources in \(R\); a disjoint second list is a concrete example.
+
+\subsection{The iteration definition: \texttt{rev\_step}}
+
+\begin{minipage}{\linewidth}
+\lstinputlisting[firstline=61,lastline=65]{example/list_rev/rocq/list_rev.v}
+\end{minipage}
+
+The immutable \texttt{let nxt} reads field \(2\) before the program overwrites
+it. Without this saved value, the algorithm would lose access to the remaining
+input. The field store then changes \texttt{cur.next} to the accumulator.
+The assignments make the current node the new accumulator head and advance
+\texttt{cur} to the saved tail. Their order matters: assigning \texttt{cur}
+first would lose the reference needed for \texttt{acc := cur}.
+
+Only field \(2\) is changed. The current node retains its true tag and its
+integer. After the store, that node and the old accumulator describe one new
+list with contents \(x::u\). The saved tail describes the remaining suffix
+\(v'\). The logical split follows the physical change in links.
+
+\subsection{The loop definition: \texttt{rev\_loop}}
+
+\begin{minipage}{\linewidth}
+\lstinputlisting[firstline=67,lastline=68]{example/list_rev/rocq/list_rev.v}
+\end{minipage}
+
+The condition loads the current node's tag. True means a cons node and permits
+one iteration; false means the empty sentinel and exits. The program does not
+use null as the stopping condition. The guard never reads field \(2\) of the
+empty node, so its self-link does not cause an extra iteration.
+
+\subsection{The function body: \texttt{rev\_body}}
+
+\begin{minipage}{\linewidth}
+\lstinputlisting[firstline=70,lastline=74]{example/list_rev/rocq/list_rev.v}
+\end{minipage}
+
+\texttt{call\_nil} allocates and initializes the fresh empty accumulator.
+\texttt{VarBind} allocates mutable stack bindings for \texttt{acc} and
+\texttt{cur}; \texttt{n} is the immutable function argument. The final expression
+reads the accumulator after the loop.
+
+\subsection{The call wrapper: \texttt{call\_reverse}}
+
+\begin{minipage}{\linewidth}
+\lstinputlisting[firstline=76,lastline=77]{example/list_rev/rocq/list_rev.v}
+\end{minipage}
+
+\texttt{call\_reverse} packages the body as a closure with one immutable
+argument \texttt{n}, then applies it to the supplied runtime value. The
+wrapper makes the client theorem talk about one complete function call rather
+than an open expression with a free argument.
+
+For an input with \(n\) cons cells, the source algorithm traverses those cells
+once and uses a constant number of local references. The only new list object
+is the empty sentinel. This is the intended linear-time, constant-extra-space
+algorithm; no resource-cost theorem is asserted by \texttt{reverse\_spec}.
+
+\subsection{Loading a local: \texttt{sld}}
+
+\begin{minipage}{\linewidth}
+\lstinputlisting[firstline=57,lastline=57]{example/list_rev/rocq/list_rev.v}
+\end{minipage}
+
+A \texttt{VarBind} replaces reads of a mutable variable with loads from a fresh
+stack slot. \texttt{sld z} abbreviates this concrete stack-load expression.
+Its argument is the slot's location, not the object reference stored there.
+The iteration proof uses the stack points-to fact to obtain that reference
+and then separately uses object-field ownership to access the node.
+
+\subsection{Assigning a local: \texttt{sas}}
+
+\begin{minipage}{\linewidth}
+\lstinputlisting[firstline=58,lastline=59]{example/list_rev/rocq/list_rev.v}
+\end{minipage}
+
+\texttt{sas z e} evaluates the expression \(e\) and writes the resulting value
+into stack slot \(z\). It changes the local reference rather than any object
+field. This distinction accounts for the three different writes in one
+iteration: one object-link write and two local-reference writes.
+
+\subsection{The iteration after substitution: \texttt{rev\_step\_at}}
+
+\begin{minipage}{\linewidth}
+\lstinputlisting[firstline=79,lastline=82]{example/list_rev/rocq/list_rev.v}
+\end{minipage}
+
+After allocating the accumulator and current bindings at locations
+\(l_a,l_c\), this is the iteration that actually executes in the CJR semantics.
+It reads the saved tail through \texttt{sld lc}, stores \texttt{sld la} in the
+current object's link, and performs the two local assignments using
+\texttt{sas}. It exposes the evaluation contexts used in the ownership proof.
+It is a proof-facing form of \texttt{rev\_step}, not a second algorithm.
+
+\subsection{The loop after substitution: \texttt{rev\_loop\_at}}
+
+\begin{minipage}{\linewidth}
+\lstinputlisting[firstline=84,lastline=85]{example/list_rev/rocq/list_rev.v}
+\end{minipage}
+
+The guard loads field \(0\) of the object referenced by the current stack
+slot, and the body is the substituted iteration. The accumulator location
+appears only in the body. Cangjie is printed from \texttt{rev\_body}, whose
+local variables retain their source names; these administrative stack forms
+are used to connect that source expression to primitive proof rules.
+
+\subsection{Iteration substitution: statement and proof}
+
+\begin{minipage}{\linewidth}
+\lstinputlisting[firstline=87,lastline=91]{example/list_rev/rocq/list_rev.v}
+\end{minipage}
+
+This equality connects the named iteration with code operating on two stack
+slots. The proof reduces \texttt{subst\_var} structurally through the
+expression constructors. \texttt{f\_equal} reduces equality of matching
+constructors to equality of their arguments; the remaining equalities are
+reflexive. This is an ordinary Coq equality between syntax trees. It assumes
+no ownership and executes no command.
+
+\subsection{Loop substitution: statement and proof}
+
+\begin{minipage}{\linewidth}
+\lstinputlisting[firstline=93,lastline=98]{example/list_rev/rocq/list_rev.v}
+\end{minipage}
+
+This proof unfolds the loop, reduces substitution in the condition, and uses
+\texttt{rev\_step\_at\_subst} for its body. Thus it connects the entire named
+loop to the loop verified over concrete stack slots. The main function proof
+uses the reverse order of the substitutions, which is definitionally the same
+for these two distinct variable names.
+
+\subsection{The loop invariant: \texttt{rev\_inv}}
+
+\begin{minipage}{\linewidth}
+\lstinputlisting[firstline=100,lastline=106]{example/list_rev/rocq/list_rev.v}
+\end{minipage}
+
+The witnesses \(u,v\) are respectively the contents of the accumulator and
+the unprocessed suffix. The witnesses \(a,c\) are their runtime references.
+The assertion says
+\[
+\exists u,v,a,c.\;
+ \pure{\mathsf{rev}(u)\mathbin{+\mkern-6mu+}v=xs}
+ \sep l_a\ptss a \sep l_c\ptss c
+ \sep\mathsf{isList}(v,c)\sep\mathsf{isList}(u,a).
+\]
+The accumulator already has reversed order. Reversing it mathematically
+recovers the processed prefix of the original input. Appending the remaining
+suffix must recover the entire original list. The stack facts describe the
+current values of the two mutable bindings, and the two list predicates give
+separate ownership of both chains.
+
+For \(xs=[1,2,3]\), the successive pairs \((u,v)\) are
+\(([],[1,2,3])\), \(([1],[2,3])\), \(([2,1],[3])\), and
+\(([3,2,1],[])\). For instance,
+\(\mathsf{rev}([2,1])\mathbin{+\mkern-6mu+}[3]=[1,2,3]\).
+At entry, \(u=[]\) and \(v=xs\). At exit, \(v=[]\), and the equation gives
+\(u=\mathsf{rev}(xs)\).
+
+Fresh allocation of the accumulator sentinel is essential to this particular
+invariant. Reusing the original terminal node would demand its full ownership
+inside both list predicates. The fresh sentinel lets the two complete chains
+remain separate throughout the traversal. At exit the original sentinel is
+owned by \(\mathsf{isList}([],c)\), while the new sentinel terminates the result.
+
+\subsection{Append right identity: statement and induction proof}
+
+\begin{minipage}{\linewidth}
+\lstinputlisting[firstline=13,lastline=14]{example/list_rev/rocq/list_rev.v}
+\end{minipage}
+
+\texttt{app\_nil\_r'} proves \(xs\mathbin{+\mkern-6mu+}[]=xs\).
+Induction on \(xs\) has a reflexive empty case. In the cons case, simplification
+exposes the unchanged head and an append on the tail; rewriting the induction
+hypothesis completes the equality. This identity is needed when the loop exits.
+
+\subsection{Append associativity: statement and proof}
+
+\begin{minipage}{\linewidth}
+\lstinputlisting[firstline=16,lastline=17]{example/list_rev/rocq/list_rev.v}
+\end{minipage}
+
+\texttt{app\_assoc'} proves that append associates. Again, induction on the
+first list makes the empty case reflexive and reduces the cons case to the
+same statement for its tail. The identity changes grouping, not element order.
+It is the algebraic step that lets one processed element move between the
+prefix and suffix descriptions.
+
+\subsection{Reversing append: statement and proof}
+
+\begin{minipage}{\linewidth}
+\lstinputlisting[firstline=19,lastline=24]{example/list_rev/rocq/list_rev.v}
+\end{minipage}
+
+\texttt{rev\_app} proves
+\(\mathsf{rev}(xs\mathbin{+\mkern-6mu+}ys)=
+\mathsf{rev}(ys)\mathbin{+\mkern-6mu+}\mathsf{rev}(xs)\).
+The empty case reduces to right identity of append. In the cons case,
+\(\mathsf{rev}(x::xs)=\mathsf{rev}(xs)\mathbin{+\mkern-6mu+}[x]\).
+The induction hypothesis moves \(\mathsf{rev}(ys)\) to the front; associativity
+then reconciles the two groupings of the three appended lists.
+
+\subsection{Reversing cons: statement and proof}
+
+\begin{minipage}{\linewidth}
+\lstinputlisting[firstline=26,lastline=27]{example/list_rev/rocq/list_rev.v}
+\end{minipage}
+
+\texttt{rev\_cons} is the defining cons equation of Coq's \texttt{rev}.
+Simplification already proves it. Even this small lemma is useful as a named
+explanation of why prepending \(x\) to the accumulator corresponds to extending
+the processed prefix at its right end.
+
+\subsection{The invariant equation after one step}
+
+\begin{minipage}{\linewidth}
+\lstinputlisting[firstline=29,lastline=33]{example/list_rev/rocq/list_rev.v}
+\end{minipage}
+
+Suppose \(v=x::v'\). Replacing the accumulator \(u\) by \(x::u\) and
+remaining list \(v\) by \(v'\) preserves the recovered original list:
+\[
+\begin{aligned}
+\mathsf{rev}(x::u)\mathbin{+\mkern-6mu+}v'
+ &= (\mathsf{rev}(u)\mathbin{+\mkern-6mu+}[x])
+       \mathbin{+\mkern-6mu+}v'\\
+ &= \mathsf{rev}(u)\mathbin{+\mkern-6mu+}([x]\mathbin{+\mkern-6mu+}v')\\
+ &= \mathsf{rev}(u)\mathbin{+\mkern-6mu+}(x::v').
+\end{aligned}
+\]
+The proof substitutes the premise \(v=x::v'\), rewrites \texttt{rev\_cons},
+uses associativity, and simplifies the singleton append. Thus the mutation
+proof can delegate its pure equality to this lemma.
+\subsection{The invariant equation at an empty suffix}
+
+\begin{minipage}{\linewidth}
+\lstinputlisting[firstline=35,lastline=37]{example/list_rev/rocq/list_rev.v}
+\end{minipage}
+
+\texttt{rev\_prefix\_nil} records the exit identity as a direct application of
+right identity. It is an explanatory corollary; the loop proof can use
+\texttt{app\_nil\_r'} directly.
+
+\subsection{Double reversal of mathematical lists: proof by induction}
+
+\begin{minipage}{\linewidth}
+\lstinputlisting[firstline=39,lastline=43]{example/list_rev/rocq/list_rev.v}
+\end{minipage}
+
+\texttt{rev\_rev} proves involution:
+\(\mathsf{rev}(\mathsf{rev}(xs))=xs\). The empty case is reflexive.
+For a cons list, the outer reversal sees an append; \texttt{rev\_app} turns it
+into the reversed singleton followed by the double-reversed tail. Simplification
+and the induction hypothesis produce \(x::xs\).
+
+\subsection{Recovering the accumulator contents from the exit equation}
+
+\begin{minipage}{\linewidth}
+\lstinputlisting[firstline=45,lastline=50]{example/list_rev/rocq/list_rev.v}
+\end{minipage}
+
+\texttt{rev\_eq\_rev} derives
+\(\mathsf{rev}(u)=xs\Rightarrow u=\mathsf{rev}(xs)\).
+Its proof passes through \(\mathsf{rev}(\mathsf{rev}(u))\): involution gives the
+first equality, and congruence under \texttt{rev} gives the second. This is what
+converts the invariant equation at loop exit into the desired representation
+predicate for the result.
+
+\subsection{Opening a cons cell: definition and proof}
+
+\begin{minipage}{\linewidth}
+\lstinputlisting[firstline=108,lastline=118]{example/list_rev/rocq/list_rev.v}
+\end{minipage}
+
+This lemma exposes exactly the resources in the cons clause of
+\texttt{is\_list}. The pointer equality identifies the runtime value as an
+object reference. The three field facts authorize reading the tag, reading the
+head if needed, and reading or overwriting the link. The recursive predicate
+owns the suffix independently. \texttt{iDestruct} opens the existential
+witnesses and separating conjunction; \texttt{iExists}, \texttt{iSplit}, and
+\texttt{iFrame} return the same resources in the stated form. No memory changes
+and no ownership is duplicated by this lemma.
+
+\subsection{Closing the new accumulator: definition and proof}
+
+\begin{minipage}{\linewidth}
+\lstinputlisting[firstline=120,lastline=128]{example/list_rev/rocq/list_rev.v}
+\end{minipage}
+
+Despite its historical name, this lemma constructs a cons at the front of the
+accumulator. After the current node's link has become \(a\), ownership of
+\(\mathsf{isList}(u,a)\) and the three fields of that node yields
+\(\mathsf{isList}(x::u,\mathsf{obj}(o))\). The proof chooses \(o,a\) as the
+existential witnesses, proves the pointer equality by reflexivity, and frames
+the four supplied resources. This is folding the predicate after mutation;
+it is not allocation and it does not copy a node.
+
+\subsection{One iteration: the full ownership proof}
+
+\lstinputlisting[firstline=131,lastline=176]{example/list_rev/rocq/list_rev.v}
+
+The pure premise supplies the invariant equation with a nonempty remaining
+list. The four spatial premises supply the two stack slots and both lists.
+The proof opens the remaining cons cell and substitutes its pointer equality.
+It then follows the source iteration in evaluation order:
+\begin{enumerate}
+\item \texttt{wp\_bind} with a \texttt{LetCtx} focuses on the initializer of
+\texttt{nxt}. A nested \texttt{FieldLoadCtx} first loads the current pointer
+from its stack slot. \texttt{wp\_field\_load} reads field \(2\), producing the
+saved tail reference and returning its ownership. The stack load also returns
+the stack fact. These returned facts must remain available for later commands.
+\item \texttt{wp\_let} substitutes the saved reference into the continuation.
+A \texttt{SeqCtx} focuses on the store while retaining both assignments as
+pending code. The store's left and right evaluation contexts load \texttt{cur}
+and \texttt{acc}, respectively. \texttt{wp\_field\_store} replaces only the
+link fact \(o\ptso[2]\mathit{nxt}\) by \(o\ptso[2]a\).
+The tag, head, old accumulator, and suffix stay framed.
+\item After the store returns unit, \texttt{wp\_seq} takes the sequencing
+step. The next \texttt{SeqCtx} focuses on \texttt{acc := cur}.
+A \texttt{StackAssignRCtx} loads the current reference before the stack write.
+\texttt{wp\_stack\_assign} replaces \(l_a\ptss a\) by
+\(l_a\ptss\mathsf{obj}(o)\), retaining ownership of \(l_c\).
+\item Another sequencing step reaches \texttt{cur := nxt}. The saved tail
+reference is already a value. The stack write replaces
+\(l_c\ptss\mathsf{obj}(o)\) by \(l_c\ptss\mathit{nxt}\).
+The program now has the references claimed by the new invariant.
+\item The proof chooses the saved tail as the existential witness, applies
+\texttt{rev\_prefix\_step} to the pure equation, and frames the stack slots and
+suffix. Finally \texttt{is\_list\_snoc\_acc} folds the modified node and old
+accumulator into the new accumulator predicate.
+\end{enumerate}
+
+\texttt{iIntros "!> \_ ..."} after each primitive memory rule introduces the
+later step and discards the step credit that the rule supplies. The remaining
+named hypothesis is the returned ownership. Discarding a credit is harmless;
+discarding the link or stack ownership would prevent a later access.
+The code uses explicit evaluation contexts because a store or assignment
+returns a value inside a pending sequence: the residual sequencing step must
+be handled before proving the next command. The bind rule arranges the
+continuation; it does not itself execute that sequencing step.
+
+\subsection{The exit assertion: \texttt{rev\_done}}
+
+\begin{minipage}{\linewidth}
+\lstinputlisting[firstline=179,lastline=181]{example/list_rev/rocq/list_rev.v}
+\end{minipage}
+
+An invariant alone does not imply that the loop has finished. For example, the
+entry state satisfies \texttt{rev\_inv} with the entire input still unprocessed.
+The loop's postcondition therefore separately states that \texttt{cur} owns an
+empty list and \texttt{acc} owns the reversed input. Both stack facts are
+retained for the enclosing variable scopes. This is a stronger assertion than
+merely re-establishing the invariant, and avoids an invalid inference that
+\(\mathsf{rev}(u)\mathbin{+\mkern-6mu+}v=xs\) forces \(v=[]\).
+
+\subsection{The loop theorem: induction and both branches}
+
+\lstinputlisting[firstline=183,lastline=225]{example/list_rev/rocq/list_rev.v}
+
+The induction is on the mathematical remaining list \(v\). The statement
+quantifies over \(u,a,c\) after fixing \(v\), so the induction hypothesis is
+available for any new accumulator and current reference. Fixing those values
+before induction would make the hypothesis too weak for the updates.
+
+\paragraph{Empty remaining list.}
+Opening \(\mathsf{isList}([],c)\) identifies the sentinel and gives its false
+tag. \texttt{wp\_while} unfolds one loop test into an \texttt{if}.
+The \texttt{IfCtx} retains the two branches while the nested load context
+reads the current reference and its tag. The field load returns false and
+\texttt{wp\_if\_false} selects unit. There is no body iteration in this case.
+Right identity reduces the invariant equation to \(\mathsf{rev}(u)=xs\);
+\texttt{rev\_eq\_rev} changes it to \(u=\mathsf{rev}(xs)\).
+The proof supplies both references to \texttt{rev\_done}, frames the accumulator
+and stack facts, and reconstructs the empty sentinel predicate from all three
+fields. The guard consumed none of the sentinel's ownership.
+
+\paragraph{Nonempty remaining list.}
+Opening \(\mathsf{isList}(x::v,c)\) gives the true tag and saved-tail witness.
+The guard proof reads the tag and selects the true branch. To invoke the body
+lemma, it must reassemble the cons predicate from the returned tag, head,
+link, and suffix ownership. A \texttt{SeqCtx} isolates the iteration from the
+recursive loop. \texttt{wp\_wand} first proves the iteration with its own
+postcondition, then supplies that postcondition to the remaining proof.
+
+The resulting existential tail reference and pure equation describe
+\(x::u\) and \(v\). After \texttt{wp\_seq}, the induction hypothesis applies to
+this strictly smaller remaining list with the updated references. It produces
+\texttt{rev\_done} directly. The proof never assumes that the loop has exited
+while a cons remains, and never needs to guess a final accumulator from the
+original invariant equation alone.
+
+\subsection{Packaging the invariant: \texttt{wp\_rev\_loop}}
+
+\begin{minipage}{\linewidth}
+\lstinputlisting[firstline=227,lastline=234]{example/list_rev/rocq/list_rev.v}
+\end{minipage}
+
+This wrapper opens the four existential witnesses of \texttt{rev\_inv} and
+its pure equality, then applies \texttt{wp\_rev\_loop\_run} with those witnesses
+and all four spatial resources. There is no additional operational argument.
+It is the interface used by the function proof, which can initialize an
+invariant without exposing its witnesses at the call site.
+
+\subsection{The complete function proof}
+
+\lstinputlisting[firstline=236,lastline=266]{example/list_rev/rocq/list_rev.v}
+
+First \texttt{is\_list\_obj} identifies the input value as an object reference
+while retaining its list ownership. This matters because the language's value
+type also includes closures: substituting a variable through an arbitrary
+value need not leave that value syntactically unchanged. An object literal has
+no free variables, so the substitutions reduce as required.
+
+The \texttt{AppLCtx} evaluates the closure, \texttt{wp\_rec} creates it, and
+\texttt{wp\_app} substitutes the object argument into the body. A
+\texttt{LetCtx} focuses on \texttt{call\_nil}. The proof uses
+\texttt{wp\_wand} with an empty resource selection to invoke \texttt{nil\_spec}:
+the allocator requires no input ownership, and the original list remains
+framed outside this call. The returned sentinel gives \(\mathsf{isList}([],a_0)\).
+
+The two \texttt{wp\_var\_bind} applications allocate the accumulator and current
+stack slots. Their postconditions require returning ownership of each slot at
+scope exit. After substitution the loop is \texttt{rev\_loop\_at}, and the last
+expression is \texttt{sld} of the accumulator slot. A \texttt{SeqCtx} focuses
+on the loop. Its invariant uses witnesses \([],xs,a_0,p\); the pure equality
+simplifies to \(xs=xs\), and the two stack facts and two list predicates are
+exactly the owned resources already available.
+
+\texttt{wp\_rev\_loop} yields the stronger exit assertion.
+After the final sequencing step, \texttt{wp\_stack\_load} returns the accumulator
+reference and its slot ownership. The two \texttt{iExists} and \texttt{iFrame}
+steps satisfy the nested variable scopes' requirements in the reverse order
+of their introduction: current slot first, accumulator slot second.
+The result predicate \(\mathsf{isList}(\mathsf{rev}(xs),a)\) remains for the
+client. Ownership of the old sentinel may be discarded because Iris is
+affine; this is not a deallocation step in the machine.
+
+\subsection{A client equation: reversing twice}
+
+\begin{minipage}{\linewidth}
+\lstinputlisting[firstline=268,lastline=270]{example/list_rev/rocq/list_rev.v}
+\end{minipage}
+
+This client composes two calls using an immutable intermediate reference.
+\subsection{The double-reversal client theorem and its proof}
+
+\begin{minipage}{\linewidth}
+\lstinputlisting[firstline=273,lastline=285]{example/list_rev/rocq/list_rev.v}
+\end{minipage}
+
+The proof focuses on the first call with \texttt{LetCtx}, applies
+\texttt{reverse\_spec}, and receives ownership of a list with contents
+\(\mathsf{rev}(xs)\). After substituting the returned reference, it applies the
+same theorem a second time. \texttt{rev\_rev} rewrites the second result's
+contents to \(xs\). This is an equation of represented sequences.
+Each call creates a fresh empty sentinel, so it is not a theorem that every
+heap field or the terminal sentinel's identity is restored.
+
+\subsection{The printed Cangjie program}
+
+\lstinputlisting{example/list_rev/extracted/list_rev.cj}
+
+\texttt{p\_list\_rev} in \texttt{emit\_cj.v} declares the same \texttt{Node}
+layout, reuses the five list constructors and observers, and adds
+\texttt{reverse} with \texttt{rev\_body}. Its closed example builds a singleton
+and reverses it. The printer renders the source \texttt{VarBind}s as mutable
+Cangjie locals and field \(2\) as \texttt{next}. The generated file is standalone
+so its node declarations do not collide with \texttt{list.cj} in the tests.
+It is included in the normal \texttt{make cj} pipeline and the expected-output
+check. The executable under test is this generated file, without a separately
+handwritten reversal implementation.
+
+\subsection{Executable tests and what they check}
+
+\lstinputlisting{example/list_rev/test/list_rev_test.cj}
+
+The six test cases cover empty input, a singleton, four distinct elements,
+duplicates and negative values, double reversal, and mutation through saved
+references while a separate list remains unchanged. The nonempty sequence
+tests inspect every expected element and check the terminal empty tag, so a
+missing or extra node is observable. The mutation test saves references to all
+three original cons nodes and observes their changed links. A copying
+implementation that left those original links unchanged would fail that test.
+The second list tests the concrete behavior expected from framing.
+
+These are finite runtime checks of the printed Cangjie on the installed
+compiler. They do not replace the general theorem over arbitrary mathematical
+lists. Conversely the Coq proof checks the CJR term and does not prove the
+compiler correct. The test command is
+\begin{lstlisting}
+cjc example/list_rev/extracted/list_rev.cj example/list_rev/test/list_rev_test.cj \
+    --test -o test/bin/list_rev_test
+test/bin/list_rev_test
+\end{lstlisting}
+The dated test report records the actual run. The assumption audit includes
+\texttt{reverse\_spec} and \texttt{reverse\_twice\_spec}; neither theorem is
+closed using an admitted obligation or an added axiom.
+
+
+\section{Arrays}
+\label{sec:arrays}
+
+The file \texttt{example/array/rocq/array.v} is a library, in the same sense as the list: the language has no array type, and the library builds one from a final class and a raw block.
+It remains an integer library. Section~\ref{sec:poly-arrays} adds a separate
+polymorphic array by adapting this representation and its proofs. That
+example uses managed native storage for arbitrary element types; it does
+not change this raw integer implementation.
+An array of \(n\) integers is an object with two fields and a contiguous block of \(n\) words.
+Field \(0\) holds \(n\).
+Field \(1\) holds the base pointer of the block.
+Word \(i\) of the block holds element \(i\).
+The index is a computed integer, so the elements cannot be object fields: a field index in the core is a static natural number, whereas \texttt{Offset} and \texttt{Load} take a value.
+
+\texttt{Alloc} of zero words is stuck, so \texttt{make} asks for a positive length.
+An index outside \(0,\ldots,n-1\) is likewise stuck: the specification owns only the words of the block, and a load with no points-to fact does not reduce.
+
+\subsection{The library}
+
+In Cangjie the value is a non-\texttt{open} class.
+Allocation of \(n\) words is \texttt{malloc} of \(n\) times the size of \texttt{Int64}; the core step is \texttt{Alloc} of the word count \(n\), which returns a pointer to \(n\) zero words.
+\texttt{get} and \texttt{set} take the array and the index, and \texttt{set} also takes the new element.
+Core application is unary, so those calls lower to one struct argument, as \texttt{cons} did.
+
+\lstinputlisting{example/array/extracted/array.cj}
+
+The core terms are the same operations with the struct lowering made explicit.
+
+\begin{lstlisting}
+Definition make_body : expr :=
+  Let (Some "p") (Alloc (Var "n"))
+    (New [] [Var "n"; Var "p"]).
+
+Definition get_body : expr :=
+  Let (Some "arr") (StructLoad (Var "args") 0)
+    (Let (Some "i") (StructLoad (Var "args") 1)
+      (Let (Some "p") (FieldLoad (Var "arr") 1)
+        (Load (Offset (Var "p") (Var "i"))))).
+
+Definition set_body : expr :=
+  Let (Some "arr") (StructLoad (Var "args") 0)
+    (Let (Some "i") (StructLoad (Var "args") 1)
+      (Let (Some "x") (StructLoad (Var "args") 2)
+        (Let (Some "p") (FieldLoad (Var "arr") 1)
+          (Store (Offset (Var "p") (Var "i")) (Var "x"))))).
+\end{lstlisting}
+
+\texttt{length} is a field load of index \(0\).
+
+\subsection{The representation}
+
+\begin{definition}[Array representation]
+\(\mathsf{isArray}(xs, a)\) holds when \(a = \mathsf{obj}(o)\), the base pointer is \(p\), and
+\[
+\begin{aligned}
+&o \ptso[0] \lvert xs \rvert
+\sep
+o \ptso[1] \mathsf{ptr}(p)
+\sep
+p \ptsb \lvert xs \rvert
+\sep
+\mathop{\ast}\limits_{i < \lvert xs \rvert}
+  (p+i) \ptsr xs_i.
+\end{aligned}
+\]
+\end{definition}
+
+The block fact is the right to treat \([p, p+\lvert xs \rvert)\) as one allocation.
+The separating conjunction of the words is what lets a proof load or store one index and still own the others.
+Two different indices are two different addresses, so the facts do not overlap.
+
+The Coq predicate is that assertion.
+\texttt{array\_cells} is the big separating conjunction, indexed by position in \(xs\).
+
+\begin{lstlisting}
+Definition array_cells (base : Z) (xs : list Z) : iProp S :=
+  (* separating conjunction over i |-> xs_i at address base+i *)
+  [ * list] i |-> x in xs,
+    RawId (base + Z.of_nat i) |->r LitV (LitInt x).
+
+Definition is_array (xs : list Z) (a : val) : iProp S :=
+  exists o base, pure (a = LitV (LitObj o)) *
+    ObjId o |->o[0] LitV (LitInt (Z.of_nat (length xs))) *
+    ObjId o |->o[1] LitV (LitPtr base) *
+    RawId base |->b (length xs) *
+    array_cells base xs.
+\end{lstlisting}
+
+\subsection{Allocation of \(n\) words}
+
+The one-word rule is not enough for \texttt{make}.
+The machine already steps \texttt{Alloc} of any positive word count: it zeroes that many words, records the length at the base, and advances the counter by the count.
+\texttt{wp\_alloc} is the matching logic rule.
+From \(0 < n\),
+\[
+\Wpre\,\mathsf{alloc}(n)
+\,\Bigl\{\,v.\;
+  \exists \ell.\;
+  v = \mathsf{ptr}(\ell)
+  \sep
+  \ell \ptsb n
+  \sep
+  \mathop{\ast}\limits_{i < n} (\ell+i) \ptsr 0
+\,\Bigr\}.
+\]
+The proof is the one-word proof with a finite map of cells instead of a singleton.
+\texttt{init\_cells} builds that map, \texttt{wf\_alloc} shows the resulting machine is well formed, and the ghost-map update hands back one points-to fact per word.
+
+\subsection{What each operation establishes}
+
+\paragraph{Make.}
+For \(0 < n\),
+\[
+\Wpre\,\mathsf{make}(n)
+\,\{\,a.\; \mathsf{isArray}(\mathsf{replicate}(n, 0), a)\,\}.
+\]
+Allocation produces the zero words and the block fact.
+The following \texttt{new} stores \(n\) and the pointer in the object.
+This is \texttt{make\_spec}.
+
+\paragraph{Length.}
+\[
+\mathsf{isArray}(xs, a)
+\vdash
+\Wpre\,\mathsf{length}(a)
+\,\{\,v.\; \pure{v = \lvert xs \rvert} \sep \mathsf{isArray}(xs, a)\,\}.
+\]
+The proof loads field \(0\) and returns the same predicate.
+Length is an observation.
+This is \texttt{length\_spec}.
+
+\paragraph{Get.}
+If \(xs_i = x\), writing \(i\) for the mathematical index,
+\[
+\mathsf{isArray}(xs, a)
+\vdash
+\Wpre\,\mathsf{get}(a, i)
+\,\{\,v.\; \pure{v = x} \sep \mathsf{isArray}(xs, a)\,\}.
+\]
+The body reads the pointer from field \(1\), adds \(i\), and loads that word.
+The lookup lemma for a big separating conjunction lends out the one cell and takes it back, so the other cells are not mentioned by the load rule and stay in the predicate.
+This is \texttt{get\_spec}.
+
+\paragraph{Set.}
+If index \(i\) is in range,
+\[
+\mathsf{isArray}(xs, a)
+\vdash
+\Wpre\,\mathsf{set}(a, i, x)
+\,\{\,v.\; \pure{v = \Unit} \sep \mathsf{isArray}(xs[i \mapsto x], a)\,\}.
+\]
+The store updates that one word.
+The length stored in the object and the block length are unchanged, because replacing an element does not change \(\lvert xs \rvert\).
+This is \texttt{set\_spec}.
+
+\subsection{The array equations}
+
+The programs are the compositions of the functions above.
+Each one is a \texttt{let} of one call followed by the next, not a fused body.
+
+\begin{theorem}[Read after write]
+If index \(i\) is in range, then
+\[
+\mathsf{isArray}(xs, a)
+\vdash
+\Wpre\,(\mathsf{get}(\mathsf{set}(a, i, x), i))
+\,\{\,v.\; \pure{v = x} \sep \mathsf{isArray}(xs[i \mapsto x], a)\,\}.
+\]
+If \(j\) is also in range and \(i \neq j\), then
+\[
+\mathsf{isArray}(xs, a)
+\vdash
+\Wpre\,(\mathsf{get}(\mathsf{set}(a, i, x), j))
+\,\{\,v.\; \pure{v = xs_j} \sep \mathsf{isArray}(xs[i \mapsto x], a)\,\}.
+\]
+\end{theorem}
+
+These are \texttt{set\_then\_get\_same} and \texttt{set\_then\_get\_other}.
+The first is \texttt{set\_spec} followed by \texttt{get\_spec} at the updated list, whose lookup at \(i\) is \(x\).
+The second uses the same \texttt{set\_spec}, then \texttt{get\_spec} at \(j\).
+The lookup of an updated list at a different index is the old element.
+The separating conjunction is why the store at \(i\) does not have a points-to fact for \(j\) among its hypotheses: that fact is framed, so it cannot change.
+
+\begin{theorem}[Length is invariant]
+If index \(i\) is in range, then
+\[
+\mathsf{isArray}(xs, a)
+\vdash
+\Wpre\,(\mathsf{length}(\mathsf{set}(a, i, x)))
+\,\{\,v.\; \pure{v = \lvert xs \rvert} \sep \mathsf{isArray}(xs[i \mapsto x], a)\,\}.
+\]
+For \(0 < n\) and \(i < n\),
+\[
+\begin{aligned}
+\Wpre\,(\mathsf{length}(\mathsf{make}(n)))
+&\,\{\,v.\; \exists a.\; \pure{v = n} \sep \mathsf{isArray}(\mathsf{replicate}(n, 0), a)\,\},\\
+\Wpre\,(\mathsf{get}(\mathsf{make}(n), i))
+&\,\{\,v.\; \exists a.\; \pure{v = 0} \sep \mathsf{isArray}(\mathsf{replicate}(n, 0), a)\,\}.
+\end{aligned}
+\]
+\end{theorem}
+
+The length equation is \texttt{set\_then\_length\_spec}: after \texttt{set}, \texttt{length} reads the field that still holds \(\lvert xs \rvert\).
+The two \texttt{make} equations are \texttt{make\_then\_length\_spec} and \texttt{make\_then\_get\_spec}.
+A fresh array is a vector of zeroes of the requested length, and reading it does not change that fact.
+
+What this development does not prove is an arbitrary loop over the array, such as a sum of every cell.
+The cells are already a separating conjunction indexed by the mathematical list, which is the induction hypothesis such a loop would use.
+The equations above are the base: read and write agree with list update, and they do not disturb the length or the other cells.
+
+% example/poly_array/extracted/poly_array.cj is discussed in the included section.
+\input{paper/poly-array.tex}
+
+\section{Array lists}
+\label{sec:array-lists}
+
+The file \texttt{example/array\_list/rocq/array\_list.v} lowers the resizable-buffer core of Cangjie's \texttt{ArrayList}: a default constructor, the live length, the capacity, emptiness, reading and writing an index, append, removal at an index, growth, and the version counter.
+The source class continues past that core, with an iterator, the \texttt{Collection} interface, ranges, higher-order methods, and an embedded sort.
+Those stay out.
+This array-list example is monomorphic in \texttt{Int64}, and it uses the array library already proved: a final object, a raw block, and a word-by-word copy.
+
+\texttt{Alloc} of zero words is stuck, so the only constructor is the default one, at capacity \(16\).
+There is no shift, so growth doubles by adding the capacity to itself.
+Array-list \texttt{get}, \texttt{set}, and \texttt{remove} access the backing
+buffer without range checks. Their specifications require an index in
+\([0, \mathit{size})\). CJR does not model exception propagation,
+catching, or recovery.
+\texttt{set} leaves the version alone.
+\texttt{add} and \texttt{remove} increment it.
+Growth replaces the buffer and drops the old block and the old array object.
+The source relies on collection for that drop.
+This language has a one-word free and no collection, so the old facts are not returned to the allocator.
+Iris is affine, and the proof simply does not use them again.
+
+\subsection{The library}
+
+In Cangjie the value is a non-\texttt{open} class.
+Field \(0\) is the buffer, itself the integer array of Section~\ref{sec:arrays}.
+Field \(1\) is the live length.
+Field \(2\) is the version.
+The buffer's own field \(0\) is the capacity, and its field \(1\) is the base pointer of a block of that many words.
+The live prefix of the block is the mathematical list.
+The tail is zero, which is what \texttt{Alloc} writes and what removal writes back.
+
+\lstinputlisting{example/array_list/extracted/array_list.cj}
+
+Core application is unary, so each method lowers to a closure applied to one struct of arguments, as \texttt{get} and \texttt{set} did for arrays.
+The pure model of the three mutating operations is ordinary list algebra.
+
+\begin{lstlisting}
+Definition al_set (xs : list Z) (i : nat) (x : Z) : list Z := <[i := x]> xs.
+Definition al_add (xs : list Z) (x : Z) : list Z := xs ++ [x].
+Definition al_remove (xs : list Z) (i : nat) : list Z :=
+  take i xs ++ drop (S i) xs.
+\end{lstlisting}
+
+Appending puts \(x\) at index \(\lvert xs \rvert\) and leaves every earlier index unchanged.
+Updating index \(i\) reads back \(x\) there and leaves every other index unchanged.
+Removing index \(i\) shortens the list by one and shifts the suffix down.
+
+\subsection{The representation}
+
+Two objects.
+The inner one is the buffer.
+The outer one is the list.
+
+\begin{definition}[Array-list representation]
+Write \(\mathsf{slots}(xs, c)\) for \(xs\) followed by \(c - \lvert xs \rvert\) zeroes, which is defined only for \(\lvert xs \rvert \le c\).
+\(\mathsf{isBuf}(\mathit{slots}, b)\) is the integer-array predicate of Section~\ref{sec:arrays} with the whole capacity in place of the live prefix: field \(0\) holds \(\lvert \mathit{slots} \rvert\), field \(1\) holds the base pointer, and the block owns every word of \(\mathit{slots}\).
+\(\mathsf{isArrayList}(xs, c, v, a)\) holds when \(0 < c\), \(\lvert xs \rvert \le c\), \(a = \mathsf{obj}(o)\), and
+\[
+\begin{aligned}
+&o \ptso[0] b
+\sep
+o \ptso[1] \lvert xs \rvert
+\sep
+o \ptso[2] v
+\sep
+\mathsf{isBuf}(\mathsf{slots}(xs, c), b).
+\end{aligned}
+\]
+\end{definition}
+
+The Coq predicates are \texttt{slots\_of}, \texttt{is\_buf}, and \texttt{is\_arraylist}.
+The cells are \texttt{array\_cells}, reused from the array library, so a proof of a single load or store is the same lookup lemma as \texttt{get} and \texttt{set} there.
+The zero tail is part of the owned block.
+Appending into spare capacity overwrites the first zero.
+Removing the last live word writes a zero back, so the tail stays zero.
+
+\subsection{Copy and growth}
+
+Copy is one loop.
+It binds an index at \(0\) and, while that index plus one is at most the length, loads one word and stores it one step further along.
+The loop is \texttt{copy\_vars}.
+Two invariants share that body.
+
+The first is a copy between two blocks, used by growth.
+Source and destination do not overlap, so each iteration may read the source and write the destination in either order.
+\texttt{copy\_disjoint} says that after \(\mathit{len}\) steps the destination holds the source chunk at the destination offset, and the source is unchanged.
+
+The second is a forward shift on one block, used by removal.
+The source offset is the destination offset plus one, so each word is read before the next store overwrites it.
+\texttt{copy\_shift} says that the live prefix is the list with the suffix shifted down by one.
+A left shift of length zero, which is removal of the last element, is the loop condition failing at once.
+
+Growth asks for a minimum capacity.
+The new capacity is \(2c\) when the minimum is at most \(2c\), and the minimum otherwise.
+\[
+\mathsf{growCap}(c, m) =
+\begin{cases}
+2c & \text{if } m \le 2c,\\
+m & \text{otherwise.}
+\end{cases}
+\]
+Both arms allocate a positive block, copy the live prefix into it, and store the new array object in field \(0\).
+The mathematical list and the version are unchanged.
+The old block remains allocated and is not mentioned by the postcondition.
+This is \texttt{grow\_spec}.
+The Coq name of the capacity is \texttt{grow\_cap}; doubling is \texttt{doubled}, which is addition because the core has no shift.
+
+Append uses that rule only when the live length already equals the capacity.
+Then the minimum is the length plus one, which is at most \(2c\) for \(c > 0\), so the capacity doubles.
+When the length is strictly below the capacity, append writes into the zero tail and the capacity stays.
+
+\subsection{What each operation establishes}
+
+\paragraph{Init.}
+\[
+\Wpre\,\mathsf{init}()
+\,\{\,a.\; \mathsf{isArrayList}([], 16, 0, a)\,\}.
+\]
+Allocation of \(16\) words produces the zero block.
+The inner object stores \(16\) and the pointer.
+The outer object stores that buffer, length \(0\), and version \(0\).
+This is \texttt{init\_spec}.
+\texttt{default\_capacity} is \(16\).
+
+\paragraph{Size, capacity, emptiness, version.}
+Each is a field load, or a load followed by a comparison with zero.
+\[
+\begin{aligned}
+\mathsf{isArrayList}(xs, c, v, a)
+&\vdash
+\Wpre\,\mathsf{size}(a)
+\,\{\,r.\; \pure{r = \lvert xs \rvert} \sep \mathsf{isArrayList}(xs, c, v, a)\,\},\\
+\mathsf{isArrayList}(xs, c, v, a)
+&\vdash
+\Wpre\,\mathsf{capacity}(a)
+\,\{\,r.\; \pure{r = c} \sep \mathsf{isArrayList}(xs, c, v, a)\,\},\\
+\mathsf{isArrayList}(xs, c, v, a)
+&\vdash
+\Wpre\,\mathsf{isEmpty}(a)
+\,\{\,r.\; \pure{r = (\lvert xs \rvert = 0)} \sep \mathsf{isArrayList}(xs, c, v, a)\,\},\\
+\mathsf{isArrayList}(xs, c, v, a)
+&\vdash
+\Wpre\,\mathsf{version}(a)
+\,\{\,r.\; \pure{r = v} \sep \mathsf{isArrayList}(xs, c, v, a)\,\}.
+\end{aligned}
+\]
+These are \texttt{size\_spec}, \texttt{capacity\_spec}, \texttt{is\_empty\_spec}, and \texttt{version\_spec}.
+Capacity reads the buffer's length field, which \texttt{slots\_of} keeps equal to \(c\).
+
+\paragraph{Get and set.}
+If \(xs_i = y\),
+\[
+\begin{aligned}
+\mathsf{isArrayList}(xs, c, v, a)
+&\vdash
+\Wpre\,\mathsf{get}(a, i)
+\,\{\,r.\; \pure{r = y} \sep \mathsf{isArrayList}(xs, c, v, a)\,\},\\
+\mathsf{isArrayList}(xs, c, v, a)
+&\vdash
+\Wpre\,\mathsf{set}(a, i, x)
+\,\{\,r.\; \pure{r = \Unit} \sep \mathsf{isArrayList}(xs[i \mapsto x], c, v, a)\,\}.
+\end{aligned}
+\]
+Both go through the buffer pointer and the raw word at index \(i\).
+\texttt{get} and \texttt{set} perform the load or store directly, using the valid-index precondition.
+\texttt{set} stores into the live prefix and does not touch field \(2\).
+These are \texttt{al\_get\_spec} and \texttt{al\_set\_spec}.
+The names are prefixed because the array library already exports \texttt{get\_spec} and \texttt{set\_spec}.
+
+\paragraph{Add.}
+\[
+\mathsf{isArrayList}(xs, c, v, a)
+\vdash
+\Wpre\,\mathsf{add}(a, x)
+\,\{\,r.\; \pure{r = \Unit} \sep
+  \mathsf{isArrayList}(xs \mathbin{+\mkern-6mu+} [x],\, \mathsf{addCap}(c, \lvert xs \rvert),\, v+1, a)\,\}.
+\]
+\(\mathsf{addCap}(c, n)\) is \(c\) when \(n < c\), and \(\mathsf{growCap}(c, n+1)\) otherwise.
+The body writes \(x\) at the old length, stores the new length, and increments the version.
+When the buffer is already full it first calls \texttt{grow}.
+This is \texttt{add\_spec}.
+
+\paragraph{Remove.}
+If \(xs_j = y\),
+\[
+\mathsf{isArrayList}(xs, c, v, a)
+\vdash
+\Wpre\,\mathsf{remove}(a, j)
+\,\{\,r.\; \pure{r = y} \sep
+  \mathsf{isArrayList}(\mathsf{delete}(xs, j),\, c,\, v+1, a)\,\}.
+\]
+\(\mathsf{delete}(xs, j)\) is the prefix of length \(j\) followed by the suffix after \(j\).
+The body loads \(y\) before the shift, copies the suffix down by one, writes zero at the old last index, stores the new length, and increments the version.
+The capacity is the same block. This is \texttt{remove\_spec}.
+
+\paragraph{Native bulk copying.} The CJR body and its copy proofs retain the
+word-by-word loop. For the exact verified array-list \texttt{grow} and
+\texttt{remove} method bodies, the printer now emits native \texttt{memmove}
+for that loop. Growth copies between disjoint allocations; removal copies
+a suffix left within the same allocation, requiring an overlap-safe move.
+The byte count is eight times the word count, and a positive-count guard
+skips empty copies. Clearing the old last word, updating size, and advancing
+the version remain explicit operations.
+
+This lowering is restricted to those exact method bodies. An arbitrary
+forward-copy loop with right overlap can propagate values written by earlier
+iterations, whereas \texttt{memmove} has snapshot-copy behavior. Replacing
+such a loop would change its meaning. Printer recognition regressions check
+both the enabled method bodies and excluded unrelated loops. The existing
+\texttt{copy\_disjoint} and \texttt{copy\_shift} contracts describe the valid
+copy domains; these remain CJR proofs, not a formal proof of the native FFI or
+printer. Front removal still moves a linear number of words, but native bulk
+copying avoids the emitted per-word pointer-access overhead.
+
+
+\subsection{The array-list equations}
+
+The programs are compositions of the calls above.
+Each one is a \texttt{let} of one call followed by the next, proved from the triples by framing, as \texttt{set\_then\_get} was for arrays.
+
+\begin{theorem}[A fresh list]
+\[
+\begin{aligned}
+\Wpre\,(\mathsf{size}(\mathsf{init}()))
+&\,\{\,r.\; \exists a.\; \pure{r = 0} \sep \mathsf{isArrayList}([], 16, 0, a)\,\},\\
+\Wpre\,(\mathsf{isEmpty}(\mathsf{init}()))
+&\,\{\,r.\; \exists a.\; \pure{r = \True} \sep \mathsf{isArrayList}([], 16, 0, a)\,\},\\
+\Wpre\,(\mathsf{capacity}(\mathsf{init}()))
+&\,\{\,r.\; \exists a.\; \pure{r = 16} \sep \mathsf{isArrayList}([], 16, 0, a)\,\},\\
+\Wpre\,(\mathsf{version}(\mathsf{init}()))
+&\,\{\,r.\; \exists a.\; \pure{r = 0} \sep \mathsf{isArrayList}([], 16, 0, a)\,\}.
+\end{aligned}
+\]
+\end{theorem}
+
+Size and emptiness are \texttt{init\_then\_size\_spec} and \texttt{init\_then\_empty\_spec}.
+Capacity and version are \texttt{init\_then\_capacity\_spec} and \texttt{init\_then\_version\_spec}.
+
+\begin{theorem}[Append]
+\[
+\begin{aligned}
+&\mathsf{isArrayList}(xs, c, v, a) \vdash
+  \Wpre\,(\mathsf{size}(\mathsf{add}(a, x)))\\
+&\qquad \{\,r.\; \pure{r = \lvert xs \rvert + 1} \sep
+  \mathsf{isArrayList}(xs \mathbin{+\mkern-6mu+} [x],\,
+    \mathsf{addCap}(c, \lvert xs \rvert),\, v+1, a)\,\},\\
+&\mathsf{isArrayList}(xs, c, v, a) \vdash
+  \Wpre\,(\mathsf{get}(\mathsf{add}(a, x), \lvert xs \rvert))\\
+&\qquad \{\,r.\; \pure{r = x} \sep
+  \mathsf{isArrayList}(xs \mathbin{+\mkern-6mu+} [x],\,
+    \mathsf{addCap}(c, \lvert xs \rvert),\, v+1, a)\,\}.
+\end{aligned}
+\]
+If \(i < \lvert xs \rvert\) and \(xs_i = y\), the same append followed by \texttt{get} at \(i\) returns \(y\).
+The capacity is \(c\) when \(\lvert xs \rvert < c\), and \(2c\) when \(\lvert xs \rvert = c\).
+The version after append is \(v+1\).
+\end{theorem}
+
+Size and the new-index lookup are \texttt{add\_then\_size\_spec} and \texttt{add\_then\_get\_new\_spec}.
+An older index is \texttt{add\_then\_get\_old\_spec}.
+Spare capacity is \texttt{add\_then\_capacity\_room\_spec}, a full buffer is \texttt{add\_then\_capacity\_full\_spec}, and the version is \texttt{add\_then\_version\_spec}.
+The lookup at the new index is the lemma that an appended element sits at the old length.
+The lookup at an older index is the lemma that append does not change a shorter prefix, including across the growth that replaces the block.
+
+\begin{theorem}[Update]
+If \(xs_i = y\), then reading index \(i\) after writing \(x\) there returns \(x\), and the version is still \(v\).
+If \(j\) is also in range and \(i \neq j\), reading \(j\) returns \(xs_j\).
+The length after the update is still \(\lvert xs \rvert\).
+\end{theorem}
+
+The two lookups are \texttt{set\_then\_get\_same\_spec} and \texttt{set\_then\_get\_other\_spec}.
+Length and version are \texttt{set\_then\_size\_spec} and \texttt{set\_then\_version\_spec}.
+The version equation is the observation that \texttt{set} does not store field \(2\).
+
+\begin{theorem}[Append then remove]
+\[
+\begin{aligned}
+&\mathsf{isArrayList}(xs, c, v, a) \vdash
+  \Wpre\,(\mathsf{remove}(\mathsf{add}(a, x), \lvert xs \rvert))\\
+&\qquad \{\,r.\; \pure{r = x} \sep
+  \mathsf{isArrayList}(xs,\, \mathsf{addCap}(c, \lvert xs \rvert),\, v+2, a)\,\}.
+\end{aligned}
+\]
+Removing an in-range index and then reading the size returns \(\lvert xs \rvert - 1\).
+\end{theorem}
+
+The round trip is \texttt{add\_then\_remove\_last\_spec}.
+Removal of the element just appended restores \(xs\).
+The capacity is whatever append left behind, which may be \(2c\), and the version has been incremented twice.
+The size equation is \texttt{remove\_then\_size\_spec}.
+
+What this development does not prove is the iterator, equality of two lists, or a bulk operation such as \texttt{filter}.
+The predicate already owns the live prefix and the zero tail as one separating conjunction, which is the induction hypothesis a further loop would use.
+The equations above are the base: length, lookup, update, append, and removal agree with the list algebra, growth only changes the capacity, and the version moves only on append and removal.
+
+\input{paper/further.tex}
+
+\section{Quicksort}
+\label{sec:qsort}
+
+\texttt{example/qsort/rocq/qsort.v} is an in-place Lomuto quicksort of \texttt{Int64}.
+One Gallina function is the functional specification.
+One core-language program, parameterised by length, read, and write, is proved to compute that function.
+The fixed array and the array list each supply those three operations.
+The algorithm applies their specifications and leaves \(\mathsf{isArray}\) and \(\mathsf{isArrayList}\) folded.
+
+The slice is half-open, \([lo, hi)\).
+The pivot is the element at index \(hi - 1\).
+A scan walks \(j\) from \(lo\) up to that index.
+Each value \(\le\) the pivot is swapped into the stored prefix and the prefix boundary \(i\) advances.
+The pivot is then swapped to \(i\).
+The recursive calls sort \([lo, i)\) and \([i+1, hi)\).
+The exported operation reads the length \(n\) and sorts \([0, n)\): every word of an array, or the live prefix of an array list.
+The arithmetic in the program is subtraction and \(\le\).
+
+\subsection{The functional algorithm}
+
+Lists are mathematical lists of integers.
+\(xs_k\) means the lookup \(xs !! k\), and \(xs[k \mapsto z]\) means the update \(\langle k := z \rangle\, xs\).
+A missing lookup leaves the list alone.
+
+\begin{lstlisting}
+Definition swap_list (xs : list Z) (i j : nat) : list Z :=
+  match xs !! i, xs !! j with
+  | Some xi, Some xj => <[i := xj]> (<[j := xi]> xs)
+  | _, _ => xs
+  end.
+\end{lstlisting}
+
+\(\mathsf{swap}(xs, i, j)\) exchanges the elements at two in-range indexes.
+The code performs the two writes in the other order, first index \(i\) and then index \(j\).
+When both lookups exist, the two orders agree: if \(i = j\) both are the identity, and if \(i \neq j\) the updates commute.
+That equation is \texttt{swap\_list\_code}.
+
+\begin{lstlisting}
+Lemma swap_list_code xs i j xi xj :
+  xs !! i = Some xi -> xs !! j = Some xj ->
+  <[j := xi]> (<[i := xj]> xs) = swap_list xs i j.
+\end{lstlisting}
+
+The scan is a fuelled recursion.
+The fuel \(n\) is the number of indexes still to visit.
+\(i\) is the boundary of the stored prefix, \(j\) is the next index to read, and \(\mathit{bound}\) is the index of the pivot, which the scan does not move.
+
+\begin{lstlisting}
+Fixpoint lomuto (n : nat) (xs : list Z) (pivot : Z) (i j bound : nat)
+  : list Z * nat :=
+  match n with
+  | O => (xs, i)
+  | S n =>
+      if Nat.ltb j bound then
+        match xs !! j with
+        | Some v =>
+            if Z.leb v pivot then
+              lomuto n (swap_list xs i j) pivot (S i) (S j) bound
+            else lomuto n xs pivot i (S j) bound
+        | None => (xs, i)
+        end
+      else (xs, i)
+  end.
+\end{lstlisting}
+
+While \(j < \mathit{bound}\) and index \(j\) holds \(v\), a value \(v \le \mathit{pivot}\) is exchanged with index \(i\) and both cursors advance.
+A value \(v > \mathit{pivot}\) leaves the list unchanged and advances only \(j\).
+The result is the list and the final boundary.
+
+Partition reads the pivot, runs the scan from \(i = j = lo\) with fuel \((hi - 1) - lo\), and exchanges the pivot with the returned boundary.
+
+\begin{lstlisting}
+Definition partition_list (xs : list Z) (lo hi : nat) : list Z * nat :=
+  match xs !! (hi - 1)%nat with
+  | Some pivot =>
+      match lomuto ((hi - 1) - lo)%nat xs pivot lo lo (hi - 1)%nat with
+      | (zs, q) => (swap_list zs q (hi - 1)%nat, q)
+      end
+  | None => (xs, lo)
+  end.
+\end{lstlisting}
+
+The recursive sort is also fuelled.
+The fuel is at least the length of the slice.
+A slice of length at most one is already finished.
+A longer slice is partitioned, the left part is sorted, and the right part is sorted on that result.
+Both recursive calls reuse the predecessor fuel: each of those slices has length at most \(hi - lo - 1\).
+
+\begin{lstlisting}
+Fixpoint qsort_slice (n : nat) (xs : list Z) (lo hi : nat) : list Z :=
+  match n with
+  | O => xs
+  | S n =>
+      if Nat.leb hi (lo + 1)%nat then xs
+      else
+        let '(ys, p) := partition_list xs lo hi in
+        qsort_slice n (qsort_slice n ys lo p) (S p) hi
+  end.
+
+Definition qsort (xs : list Z) : list Z :=
+  qsort_slice (length xs) xs 0%nat (length xs).
+\end{lstlisting}
+
+\(\mathsf{qsort}(xs)\) sorts the whole list.
+The test \(\mathit{hi} \le lo + 1\) is the Gallina form of the program test \((lo + 1) \le (hi - 1)\) failing.
+On a slice of length \(0\) or \(1\) the function returns its input.
+
+\subsection{Sortedness and permutation}
+
+A slice is sorted when every pair of elements in it is in non-decreasing order.
+Indexes outside the slice are not constrained.
+
+\begin{lstlisting}
+Definition slice_sorted (xs : list Z) (lo hi : nat) : Prop :=
+  forall i j x y, (lo <= i)%nat -> (i < j)%nat -> (j < hi)%nat ->
+    xs !! i = Some x -> xs !! j = Some y -> (x <= y)%Z.
+\end{lstlisting}
+
+In mathematics, \(\mathsf{sorted}(xs, lo, hi)\) means
+\[
+lo \le i < j < hi \land xs_i = x \land xs_j = y \implies x \le y.
+\]
+Equal values satisfy the comparison in either order.
+The specification records the multiset of values, which a permutation preserves, and this order.
+
+The slice specification is the induction hypothesis of the fuel recursion.
+\[
+ys = \mathsf{qsortSlice}(n, xs, lo, hi).
+\]
+
+The source writes a permutation as \(x \equiv_p y\), a pure assertion in corner brackets, and a stack cell as \(l \mapsto_s v\).
+The listings spell those with \texttt{Permutation}, \texttt{bi\_pure}, and \texttt{stack\_mapsto}.
+The wand is written \texttt{-*}.
+
+\begin{lemma}[Slice]
+If \(hi \le \lvert xs \rvert\) and \(hi - lo \le n\), then \(\lvert ys \rvert = \lvert xs \rvert\), \(ys\) is a permutation of \(xs\), \(ys\) and \(xs\) agree at every index outside \([lo, hi)\), and \(\mathsf{sorted}(ys, lo, hi)\).
+\end{lemma}
+
+\begin{lstlisting}
+Lemma qsort_slice_spec n xs lo hi :
+  (hi <= length xs)%nat ->
+  (hi - lo <= n)%nat ->
+  let ys := qsort_slice n xs lo hi in
+  length ys = length xs /\ Permutation ys xs /\
+  (forall k, (k < lo \/ hi <= k)%nat -> ys !! k = xs !! k) /\
+  slice_sorted ys lo hi.
+\end{lstlisting}
+
+The whole-list facts are that lemma at \(lo = 0\), \(hi = \lvert xs \rvert\), and \(n = \lvert xs \rvert\).
+
+\begin{lemma}[Permutation]
+\(\mathsf{qsort}(xs)\) is a permutation of \(xs\).
+\end{lemma}
+
+\begin{lstlisting}
+Lemma qsort_perm xs : Permutation (qsort xs) xs.
+\end{lstlisting}
+
+\begin{lemma}[Sorted]
+\(\mathsf{sorted}(\mathsf{qsort}(xs),\, 0,\, \lvert xs \rvert)\).
+\end{lemma}
+
+\begin{lstlisting}
+Lemma qsort_sorted xs : slice_sorted (qsort xs) 0%nat (length xs).
+\end{lstlisting}
+
+One concrete run is computed in Coq.
+
+\begin{lstlisting}
+Lemma qsort_example : qsort [3%Z; 1%Z; 2%Z] = [1%Z; 2%Z; 3%Z].
+\end{lstlisting}
+
+\subsection{The partition invariant}
+
+The scan is the one loop.
+Its invariant relates the list at the start of the slice, \(xs_0\), to the list \(xs\) at an intermediate cursor \((i, j)\).
+The pivot value sits at \(\mathit{bound}\) throughout the scan.
+The final exchange of the pivot happens after the loop, so the invariant still has the pivot at the end of the slice.
+
+\begin{lstlisting}
+Record lomuto_inv (xs0 xs : list Z) (lo i j bound : nat) (pivot : Z) : Prop := {
+  linv_len : length xs = length xs0;
+  linv_perm : Permutation xs xs0;
+  linv_lo : (lo <= i)%nat;
+  linv_ij : (i <= j)%nat;
+  linv_jb : (j <= bound)%nat;
+  linv_lenb : (bound < length xs)%nat;
+  linv_piv : xs !! bound = Some pivot;
+  linv_out : forall k, (k < lo \/ bound < k)%nat -> xs !! k = xs0 !! k;
+  linv_left : forall k x, (lo <= k < i)%nat -> xs !! k = Some x -> (x <= pivot)%Z;
+  linv_mid : forall k x, (i <= k < j)%nat -> xs !! k = Some x -> (pivot < x)%Z
+}.
+\end{lstlisting}
+
+Read as a picture of \([lo, \mathit{bound}]\):
+
+\begin{itemize}
+\item The length is unchanged, and the list is a permutation of the original.
+\item The cursors satisfy \(lo \le i \le j \le \mathit{bound}\), and \(\mathit{bound}\) is in range.
+\item Index \(\mathit{bound}\) still holds the pivot.
+\item Every index outside \([lo, \mathit{bound}]\) is unchanged.
+\item Every element of \([lo, i)\) is \(\le\) the pivot.
+\item Every element of \([i, j)\) is \(>\) the pivot.
+\item The segment \([j, \mathit{bound})\) has not been classified yet.
+\end{itemize}
+
+At the start, \(i = j = lo\), so both classified segments are empty.
+
+\begin{lstlisting}
+Lemma lomuto_inv_start xs lo bound pivot :
+  (lo <= bound)%nat ->
+  (bound < length xs)%nat ->
+  xs !! bound = Some pivot ->
+  lomuto_inv xs xs lo lo lo bound pivot.
+\end{lstlisting}
+
+One iteration preserves the invariant.
+If \(j < \mathit{bound}\) and \(xs_j = v\), the next state is the swapped list with both cursors advanced when \(v \le \mathit{pivot}\), and the same list with only \(j\) advanced when \(v > \mathit{pivot}\).
+In the first branch the old element at \(i\), which was in the unclassified or the greater segment, moves to \(j\), and \(v\) becomes the new end of the lesser prefix.
+In the second branch \(v\) becomes the new end of the greater segment.
+
+\begin{lstlisting}
+Lemma lomuto_step xs0 xs lo i j bound pivot v :
+  lomuto_inv xs0 xs lo i j bound pivot ->
+  (j < bound)%nat ->
+  xs !! j = Some v ->
+  lomuto_inv xs0
+    (if Z.leb v pivot then swap_list xs i j else xs)
+    lo (if Z.leb v pivot then S i else i) (S j) bound pivot.
+\end{lstlisting}
+
+Running the fuelled scan from a state that satisfies the invariant, with fuel \(\mathit{bound} - j\), finishes in a state whose cursors are \((p, \mathit{bound})\).
+
+\begin{lstlisting}
+Lemma lomuto_go n xs0 xs lo i j bound pivot ys p :
+  lomuto_inv xs0 xs lo i j bound pivot ->
+  (n = bound - j)%nat ->
+  lomuto n xs pivot i j bound = (ys, p) ->
+  lomuto_inv xs0 ys lo p bound bound pivot.
+\end{lstlisting}
+
+The final exchange moves the pivot from \(\mathit{bound}\) to \(p\).
+What partition establishes, for a non-empty in-range slice, is the predicate \texttt{part\_ok}.
+
+\begin{lstlisting}
+Definition part_ok (xs ys : list Z) (lo hi p : nat) (pivot : Z) : Prop :=
+  length ys = length xs /\ Permutation ys xs /\ (lo <= p < hi)%nat /\
+  ys !! p = Some pivot /\
+  (forall k, (k < lo \/ hi <= k)%nat -> ys !! k = xs !! k) /\
+  (forall k x, (lo <= k < p)%nat -> ys !! k = Some x -> (x <= pivot)%Z) /\
+  (forall k x, (p < k < hi)%nat -> ys !! k = Some x -> (pivot < x)%Z).
+
+Lemma partition_list_ok xs lo hi ys p :
+  (lo < hi)%nat -> (hi <= length xs)%nat ->
+  partition_list xs lo hi = (ys, p) ->
+  exists pivot, part_ok xs ys lo hi p pivot.
+\end{lstlisting}
+
+So \(ys\) has the same length as \(xs\) and is a permutation of it, the returned index \(p\) lies in \([lo, hi)\), index \(p\) holds the pivot, indexes outside the slice are untouched, \([lo, p)\) is \(\le\) the pivot, and \((p, hi)\) is \(>\) the pivot.
+
+The recursive calls sort those two sides.
+A permutation of a side can rearrange it, so the comparison with the pivot has to be re-established after the recursive call.
+The argument counts elements that fail the comparison.
+\(\mathsf{count}(P, xs)\) is the number of elements of \(xs\) for which \(P\) returns true.
+
+\begin{lstlisting}
+Fixpoint count_if (P : Z -> bool) (xs : list Z) : nat :=
+  match xs with
+  | [] => 0
+  | x :: xs => (if P x then 1%nat else 0%nat) + count_if P xs
+  end.
+\end{lstlisting}
+
+If a slice of \(xs\) lies entirely in \(P\), a list \(ys\) of the same length that permutes \(xs\) and agrees with \(xs\) outside that slice still lies entirely in \(P\) on that slice.
+The count of failures on the slice is zero on both sides, because the count is preserved by permutation and the outside regions contribute the same count.
+
+\begin{lstlisting}
+Lemma region_preserved (P : Z -> bool) (xs ys : list Z) (lo hi : nat) :
+  length ys = length xs ->
+  (lo <= hi <= length xs)%nat ->
+  (forall k, (k < lo \/ hi <= k)%nat -> ys !! k = xs !! k) ->
+  Permutation ys xs ->
+  (forall k x, (lo <= k < hi)%nat -> xs !! k = Some x -> P x = true) ->
+  forall k x, (lo <= k < hi)%nat -> ys !! k = Some x -> P x = true.
+\end{lstlisting}
+
+Applied to \(P(z) = (z \le \mathit{pivot})\) on the left of \(p\), and to \(P(z) = (\mathit{pivot} < z)\) on the right of \(p\), this is what lets the two sorted sides and the pivot in the middle combine into one sorted slice.
+A slice of length at most one is sorted outright.
+
+\begin{lstlisting}
+Lemma slice_sorted_short xs lo hi :
+  (hi <= lo + 1)%nat -> slice_sorted xs lo hi.
+\end{lstlisting}
+
+Two adjacent sorted slices, with every element of \([lo, p)\) at most the pivot and every element of \((p, hi)\) greater than the pivot, form one sorted slice.
+
+\begin{lstlisting}
+Lemma slice_sorted_join xs lo p hi pivot :
+  (lo <= p)%nat -> (p < hi)%nat ->
+  xs !! p = Some pivot ->
+  (forall k x, (lo <= k < p)%nat -> xs !! k = Some x -> (x <= pivot)%Z) ->
+  (forall k x, (p < k < hi)%nat -> xs !! k = Some x -> (pivot < x)%Z) ->
+  slice_sorted xs lo p ->
+  slice_sorted xs (S p) hi ->
+  slice_sorted xs lo hi.
+\end{lstlisting}
+
+\subsection{The length, get, and set interface}
+
+This existing raw-memory example remains monomorphic and has no interface constraints, so its shared program is a Coq section.
+Its Coq parameters express proof-level abstraction over two integer
+containers, rather than a Cangjie generic declaration. Rank-one generics
+do not by themselves provide the comparator and storage contracts needed
+to turn this algorithm into a sort of arbitrary element types.
+Its parameters are a ghost type \(G\), a representation \(R\), and three expression bodies.
+
+\begin{lstlisting}
+Variable G : Type.
+Variable R : G -> list Z -> val -> iProp.
+Variable len_body get_body set_body : expr.
+\end{lstlisting}
+
+\(R(g, xs, a)\) says that the value \(a\) currently represents the list \(xs\), with ghost information \(g\).
+For the array, \(G\) is unit and \(R\) ignores it.
+For the array list, \(g\) is the pair of the capacity and the version.
+
+Each body must be closed apart from its own parameter.
+Length binds \texttt{"a"}.
+Reading and writing bind \texttt{"args"}.
+Substitution of any other name, whether a value or a stack location, leaves the body unchanged.
+The six hypotheses have this shape.
+
+\begin{lstlisting}
+Hypothesis len_sub : forall x v, x <> "a" -> subst x v len_body = len_body.
+Hypothesis len_subvar :
+  forall x (l : loc), x <> "a" -> subst_var x l len_body = len_body.
+Hypothesis get_sub : forall x v, x <> "args" -> subst x v get_body = get_body.
+Hypothesis get_subvar :
+  forall x (l : loc), x <> "args" -> subst_var x l get_body = get_body.
+Hypothesis set_sub : forall x v, x <> "args" -> subst x v set_body = set_body.
+Hypothesis set_subvar :
+  forall x (l : loc), x <> "args" -> subst_var x l set_body = set_body.
+\end{lstlisting}
+
+The three specifications are the only facts the algorithm applies about the library.
+Each one is stated at the call form the program builds: a closure applied to one struct of arguments.
+The ghost \(g\) is the same in the precondition and the postcondition.
+A write changes the list and leaves \(g\) alone.
+
+\begin{lstlisting}
+Hypothesis len_spec : forall g xs (a : val),
+  R g xs a -*
+  WP App (Rec None (Some "a") len_body) (Val a)
+    {{ v, bi_pure (v = LitV (LitInt (Z.of_nat (length xs)))) * R g xs a }}.
+
+Hypothesis get_spec : forall g xs (a : val) (i : nat) x,
+  xs !! i = Some x ->
+  R g xs a -*
+  WP App (Rec None (Some "args") get_body)
+       (Val (StructV [a; LitV (LitInt (Z.of_nat i))]))
+    {{ v, bi_pure (v = LitV (LitInt x)) * R g xs a }}.
+
+Hypothesis set_spec : forall g xs (a : val) (i : nat) y x,
+  xs !! i = Some y ->
+  R g xs a -*
+  WP App (Rec None (Some "args") set_body)
+       (Val (StructV [a; LitV (LitInt (Z.of_nat i)); LitV (LitInt x)]))
+    {{ v, bi_pure (v = LitV LitUnit) * R g (<[i := x]> xs) a }}.
+\end{lstlisting}
+
+In mathematics, with the call written as the operation it prints to:
+
+\begin{definition}[Library interface]
+\[
+\begin{aligned}
+R(g, xs, a) &\vdash \Wpre\,(\mathsf{length}(a))
+  \{\,v.\; \pure{v = \lvert xs \rvert} \sep R(g, xs, a)\,\},\\
+xs_i = x \land R(g, xs, a) &\vdash \Wpre\,(\mathsf{get}(a, i))
+  \{\,v.\; \pure{v = x} \sep R(g, xs, a)\,\},\\
+xs_i = y \land R(g, xs, a) &\vdash \Wpre\,(\mathsf{set}(a, i, x))
+  \{\,v.\; \pure{v = ()} \sep R(g,\, xs[i \mapsto x],\, a)\,\}.
+\end{aligned}
+\]
+\end{definition}
+
+The value that represents the container is a literal object.
+Substituting into it does nothing, which is the predicate \texttt{rigid}.
+An instance opens the representation far enough to see \(a = \mathsf{lit}(o)\) and then rebuilds it.
+A literal satisfies \texttt{rigid} by computation, which is \texttt{lit\_rigid}.
+
+\begin{lstlisting}
+Definition rigid (v : val) : Prop :=
+  (forall x w, subst_val x w v = v) /\
+  (forall x (l : loc), subst_var_val x l v = v).
+\end{lstlisting}
+
+\subsection{The program}
+
+Application in the core language is unary, so a call of two or three arguments builds a struct, binds it, and applies the library closure to that struct.
+The printer erases the struct and prints \texttt{get(a, i)} or \texttt{a.get(i)}, according to which body was supplied.
+\texttt{call2} binds the result.
+\texttt{call3} is the call itself.
+\texttt{call3\_seq} sequences the call before a continuation.
+
+\begin{lstlisting}
+Definition call2 (body : expr) (a b : expr) (dst : string) (k : expr) : expr :=
+  Let (Some "pack") (Struct [] [a; b])
+    (Let (Some dst) (App (Rec None (Some "args") body) (Var "pack")) k).
+
+Definition call3 (body : expr) (a b c : expr) : expr :=
+  Let (Some "pack") (Struct [] [a; b; c])
+    (App (Rec None (Some "args") body) (Var "pack")).
+
+Definition call3_seq (body : expr) (a b c k : expr) : expr :=
+  Let (Some "pack") (Struct [] [a; b; c])
+    (Let None (App (Rec None (Some "args") body) (Var "pack")) k).
+\end{lstlisting}
+
+Swap reads index \(i\) into \texttt{t}, reads index \(j\) into \texttt{u}, writes \texttt{u} at \(i\), and writes \texttt{t} at \(j\).
+
+\begin{lstlisting}
+Definition swap_body : expr :=
+  Let (Some "a") (StructLoad (Var "args") 0)
+  (Let (Some "i") (StructLoad (Var "args") 1)
+  (Let (Some "j") (StructLoad (Var "args") 2)
+    (call2 get_body (Var "a") (Var "i") "t"
+      (call2 get_body (Var "a") (Var "j") "u"
+        (call3_seq set_body (Var "a") (Var "i") (Var "u")
+          (call3 set_body (Var "a") (Var "j") (Var "t"))))))).
+\end{lstlisting}
+
+\begin{lemma}[Swap]
+If \(a\) is rigid, \(xs_i = x_i\), and \(xs_j = x_j\), then
+\[
+R(g, xs, a) \vdash
+  \Wpre\,(\mathsf{swap}(a, i, j))
+  \{\,v.\; \pure{v = ()} \sep R(g,\, \mathsf{swap}(xs, i, j),\, a)\,\}.
+\]
+\end{lemma}
+
+\begin{lstlisting}
+Lemma swap_spec g xs (a : val) (i j : nat) xi xj :
+  rigid a ->
+  xs !! i = Some xi -> xs !! j = Some xj ->
+  R g xs a -*
+  WP call_swap a i j
+    {{ v, bi_pure (v = LitV LitUnit) * R g (swap_list xs i j) a }}.
+\end{lstlisting}
+
+The scan is the \texttt{while} of partition.
+Its condition is \((j + 1) \le (hi - 1)\), that is \(j < hi - 1\).
+The body reads index \(j\).
+When the value is \(\le\) the pivot it swaps indexes \(i\) and \(j\) and advances \(i\).
+It then advances \(j\).
+The two cursors are mutable \texttt{var} bindings, allocated by \texttt{VarBind} from the initial value \(lo\).
+
+\begin{lstlisting}
+Definition scan (a hi pivot : expr) : expr :=
+  While (BinOp LeOp (plus1 (Var "j")) (minus1 hi))
+    (call2 get_body a (Var "j") "v"
+      (Let None
+        (If (BinOp LeOp (Var "v") pivot)
+          (Let None (call3 swap_body a (Var "i") (Var "j"))
+            (Assign "i" (plus1 (Var "i"))))
+          unitv)
+        (Assign "j" (plus1 (Var "j"))))).
+\end{lstlisting}
+
+After the two \texttt{var} bindings are opened, \(i\) and \(j\) reside in stack cells \(l_i\) and \(l_j\).
+The loop specification is an induction on the number of steps remaining, \((hi - 1) - j\).
+The postcondition is the Gallina scan: the list is \(\mathsf{lomuto}(n, xs, \mathit{pivot}, i, j, hi - 1)\), the cell \(l_i\) holds the returned boundary, and the cell \(l_j\) holds \(hi - 1\).
+The invariant maintained at each iteration is \(\mathsf{lomutoInv}\) of the section above, instantiated at the current cursors.
+The base case is the failing loop test, \(j = hi - 1\).
+
+\begin{lstlisting}
+Lemma wp_scan n g xs (a : val) (hi : nat) (pivot : Z) (i j : nat) (li lj : loc) :
+  rigid a ->
+  (0 < hi)%nat ->
+  ((hi - 1) - j = n)%nat ->
+  (j <= hi - 1)%nat ->
+  (i <= j)%nat ->
+  (hi - 1 < length xs)%nat ->
+  stack_mapsto (StackId li) (nval i) -*
+  stack_mapsto (StackId lj) (nval j) -*
+  R g xs a -*
+  WP scan_open a (Z.of_nat hi) pivot li lj
+  {{ _, exists ys p,
+      bi_pure (lomuto n xs pivot i j (hi - 1) = (ys, p)) *
+      stack_mapsto (StackId li) (nval p) *
+      stack_mapsto (StackId lj) (nval (hi - 1)) * R g ys a }}.
+\end{lstlisting}
+
+Partition reads the pivot at \(hi - 1\), allocates \(i\) and \(j\) at \(lo\), runs the scan, swaps the pivot into the returned boundary, and returns that boundary.
+
+\begin{lstlisting}
+Definition partition_body : expr :=
+  Let (Some "a") (StructLoad (Var "args") 0)
+  (Let (Some "lo") (StructLoad (Var "args") 1)
+  (Let (Some "hi") (StructLoad (Var "args") 2)
+    (call2 get_body (Var "a") (minus1 (Var "hi")) "pivot"
+      (VarBind "i" (Var "lo")
+        (VarBind "j" (Var "lo")
+          (Let None (scan (Var "a") (Var "hi") (Var "pivot"))
+            (Let None (call3 swap_body (Var "a") (Var "i") (minus1 (Var "hi")))
+              (Var "i")))))))).
+\end{lstlisting}
+
+\begin{lemma}[Partition]
+If \(a\) is rigid, \(lo < hi \le \lvert xs \rvert\), and \(xs_{hi-1} = \mathit{pivot}\), then
+\[
+\begin{aligned}
+&R(g, xs, a) \vdash \Wpre\,(\mathsf{partition}(a, lo, hi))\\
+&\qquad \{\,v.\; \exists\, ys, p.\;
+  \pure{\mathsf{partition}(xs, lo, hi) = (ys, p)} \sep
+  \pure{v = p} \sep R(g, ys, a)\,\}.
+\end{aligned}
+\]
+\end{lemma}
+
+\begin{lstlisting}
+Lemma partition_spec g xs (a : val) (lo hi : nat) (pivot : Z) :
+  rigid a ->
+  (lo < hi)%nat ->
+  (hi <= length xs)%nat ->
+  xs !! (hi - 1)%nat = Some pivot ->
+  R g xs a -*
+  WP call_partition a lo hi
+  {{ v, exists ys p,
+      bi_pure (partition_list xs lo hi = (ys, p)) *
+      bi_pure (v = nval p) * R g ys a }}.
+\end{lstlisting}
+
+The recursive procedure is named \texttt{qsort}.
+Its test is \((lo + 1) \le (hi - 1)\), that is \(hi \ge lo + 2\).
+The failing branch is unit, so the printed program has no \texttt{else}.
+The succeeding branch partitions and calls itself on \([lo, p)\) and on \([p+1, hi)\).
+
+\begin{lstlisting}
+Definition qsort_body : expr :=
+  Let (Some "a") (StructLoad (Var "args") 0)
+  (Let (Some "lo") (StructLoad (Var "args") 1)
+  (Let (Some "hi") (StructLoad (Var "args") 2)
+    (If (BinOp LeOp (plus1 (Var "lo")) (minus1 (Var "hi")))
+      (Let (Some "p")
+        (App (Rec None (Some "args") partition_body)
+          (Struct [] [Var "a"; Var "lo"; Var "hi"]))
+        (Let None
+          (App (Var "qsort") (Struct [] [Var "a"; Var "lo"; Var "p"]))
+          (App (Var "qsort")
+            (Struct [] [Var "a"; plus1 (Var "p"); Var "hi"]))))
+      unitv))).
+\end{lstlisting}
+
+The specification follows the fuel of \texttt{qsort\_slice}.
+With fuel at least \(hi - lo\), the call replaces the represented list by the sorted slice and leaves the ghost \(g\) unchanged.
+Outside the slice the functional specification already says the elements are untouched, so the representation of the whole list is the specification of the slice.
+
+\begin{lstlisting}
+Lemma wp_qslice n g xs (a : val) (lo hi : nat) :
+  rigid a ->
+  (hi <= length xs)%nat ->
+  (hi - lo <= n)%nat ->
+  R g xs a -*
+  WP call_qsort a lo hi {{ _, R g (qsort_slice n xs lo hi) a }}.
+\end{lstlisting}
+
+\texttt{sort} reads the length and calls \texttt{qsort} on \([0, n)\).
+
+\begin{lstlisting}
+Definition sort_body : expr :=
+  Let (Some "n") (App (Rec None (Some "a") len_body) (Var "a"))
+    (Let (Some "pack") (Struct [] [Var "a"; zero; Var "n"])
+      (App (Rec (Some "qsort") (Some "args") qsort_body) (Var "pack"))).
+\end{lstlisting}
+
+\begin{theorem}[Sort]
+If \(a\) is rigid, then
+\[
+R(g, xs, a) \vdash
+  \Wpre\,(\mathsf{sort}(a))
+  \{\,\_.\; R(g,\, \mathsf{qsort}(xs),\, a)\,\}.
+\]
+\end{theorem}
+
+\begin{lstlisting}
+Lemma sort_spec g xs (a : val) :
+  rigid a ->
+  R g xs a -*
+  WP call_sort a {{ _, R g (qsort xs) a }}.
+\end{lstlisting}
+
+The proof is the slice specification at fuel \(\lvert xs \rvert\), on the slice \([0, \lvert xs \rvert)\).
+The length read produces that upper bound.
+A permutation preserves the length, so an array list's size, which is the length of \(xs\), is the same after sorting.
+
+\subsection{The two instances}
+
+The array instance takes \(G\) to be unit and \(R(\_, ys, b)\) to be \(\mathsf{isArray}(ys, b)\), the predicate of Section~\ref{sec:arrays}.
+The three bodies are \texttt{length\_body}, \texttt{get\_body}, and \texttt{set\_body}.
+Their closedness hypotheses are computed from those concrete terms.
+Their specifications are the library lemmas \texttt{length\_spec}, \texttt{get\_spec}, and \texttt{set\_spec}, each applied in range.
+The resulting statement mentions only the array predicate and \texttt{qsort}.
+
+\begin{lstlisting}
+Lemma array_qsort_spec xs (a : val) :
+  is_array xs a -*
+  WP call_sort length_body get_body set_body a
+    {{ _, is_array (qsort xs) a }}.
+\end{lstlisting}
+
+The array-list instance takes \(G\) to be \(\mathbb{N} \times \mathbb{Z}\) and \(R((c, v), ys, b)\) to be \(\mathsf{isArrayList}(ys, c, v, b)\).
+The three bodies are \texttt{size\_body}, \texttt{al\_get\_body}, and \texttt{al\_set\_body}.
+The write specification of the library already returns the same capacity and the same version, and the interface requires exactly that.
+Size is \(\lvert xs \rvert\) before the call and \(\lvert \mathsf{qsort}(xs) \rvert\) after it, and those lengths are equal.
+
+\begin{lstlisting}
+Lemma arraylist_qsort_spec xs cap ver (a : val) :
+  is_arraylist xs cap ver a -*
+  WP call_sort size_body al_get_body al_set_body a
+    {{ _, is_arraylist (qsort xs) cap ver a }}.
+\end{lstlisting}
+
+\subsection{The printed programs}
+
+\texttt{get} is a free function on \texttt{Array} and a method on \texttt{ArrayList}, and each generated file is compiled by itself, so the same three procedures are printed twice.
+The array file carries \texttt{make}, \texttt{length}, \texttt{get}, \texttt{set}, \texttt{swap}, \texttt{partition}, \texttt{qsort}, and \texttt{sort}.
+The array-list file carries \texttt{initArrayList}, \texttt{size}, \texttt{capacity}, \texttt{version}, \texttt{get}, \texttt{set}, \texttt{grow}, \texttt{add}, and the same three procedures.
+A client fills the list with \texttt{add}, and \texttt{add} calls \texttt{grow}.
+\texttt{sort} itself calls the length, the read, and the write.
+On the array those calls are \texttt{length(a)}, \texttt{get(a, i)}, and \texttt{set(a, i, x)}.
+On the array list they are \texttt{a.size()}, \texttt{a.get(i)}, and \texttt{a.set(i, x)}.
+
+\lstinputlisting{example/qsort/extracted/qsort_array.cj}
+
+\lstinputlisting{example/qsort/extracted/qsort_array_list.cj}
+
+\section{Hash maps}
+\label{sec:hashmap}
+
+\texttt{example/hash\_map/rocq/hash\_map.v} implements a monomorphic map from integer
+keys to integer values. The example uses open addressing: each key belongs in
+one of three parallel arrays, and collisions are resolved by scanning subsequent
+slots. The verified executable includes lookup, overwrite, insertion, removal,
+and rehashing when capacity doubles. Its model is a finite map
+$m : \mathbb{Z} \rightharpoonup \mathbb{Z}$, represented in Coq by
+\texttt{gmap Z Z}.
+
+\subsection{Storage and the representation invariant}
+
+A \texttt{HashMap} object has four fields: \texttt{mySize}, \texttt{tags},
+\texttt{keys}, and \texttt{vals}. All three arrays have the same capacity
+$c$. At index $i$, tag $0$ means empty, tag $1$ means occupied, and tag $2$
+means deleted, or a \emph{tombstone}. Only an occupied slot contributes its key
+and value to the mathematical map. Unoccupied keys and values are ignored;
+removal does not need to clear them.
+
+The pure function \texttt{contents\_of tags keys vals} walks the arrays and
+inserts occupied pairs into a finite map. By itself this function would conceal
+duplicate keys: a later map insertion can overwrite an earlier one. The
+invariant therefore proves separately that
+\texttt{NoDup (occ\_keys tags keys)}. Under that condition,
+\texttt{size\_contents} proves that the finite map's size is exactly
+\texttt{count\_occ tags}, the number of live slots.
+
+The record \texttt{wf\_table c tags keys vals} contains eight obligations.
+\begin{enumerate}
+\item The tag array has length $c$.
+\item The key array has length $c$.
+\item The value array has length $c$.
+\item $c=2^{e+1}$ for some natural number $e$, so $c$ is positive and even.
+\item Every tag is one of $0$, $1$, and $2$.
+\item Occupied keys have no duplicates.
+\item $2\,\texttt{count\_occ tags}\leq c$; at most half the slots are occupied.
+\item Every occupied key is \emph{placed}: the probe path from its bucket to
+its slot contains no empty slot before it.
+\end{enumerate}
+The last condition is essential. A search may stop at an empty slot only
+because no live key that belongs farther along that path can have crossed it.
+A tombstone is allowed on the path, so deleting an earlier key does not make a
+later colliding key unreachable.
+
+The spatial predicate \texttt{is\_hashmap m c a} adds ownership to these pure
+facts. It existentially names the map object, the three array objects, and their
+lists of contents. It owns all four map fields and all three array predicates,
+requires \texttt{contents\_of = m}, and requires
+\texttt{mySize = Z.of\_nat (count\_occ tags)}. Thus a proof must maintain both
+the finite-map meaning and the physical size field. The separating conjunction
+between the three array predicates also provides the disjoint ownership needed
+to write one array while framing the others.
+
+\subsection{Remainders and wrapped indexes}
+
+The starting bucket is
+\[
+ b(k,c)=\operatorname{Z.to\_nat}(\texttt{residue }(h(k))\ c).
+\]
+Here $h(k)=\operatorname{rem}(\operatorname{rem}(k,2147483647)
+\cdot1000000007,2147483647)$. The first reduction bounds the product within
+signed \texttt{Int64} for every input key; \texttt{hash\_product\_int64}
+proves this independently of the unbounded core arithmetic. Multiplication
+is the primitive \texttt{MulOp}, printed as \texttt{*}, with the pure rule
+\texttt{wp\_mul}. The final bucket normalization uses primitive signed remainder:
+\texttt{let rem = k \% cap}, followed by \texttt{rem + cap} when
+\texttt{rem < 0}. Cangjie integer division truncates toward zero, so the
+primitive is modeled by \texttt{Z.rem}, not \texttt{Z.modulo}.
+For example, $-7$ remainder $3$ is $-1$, and its normalized remainder is $2$.
+The \texttt{RemOp} evaluator rejects a zero divisor; \texttt{wp\_rem}
+requires a nonzero divisor and returns the signed remainder through the
+usual pure-step rule. Non-integer operands are also stuck.
+
+\texttt{residue\_spec} proves both
+$0\leq\texttt{residue }k\ c<c$ and equality with $k\bmod c$ for $c>0$.
+The proof uses the absolute bound on \texttt{Z.rem} and the quotient/remainder
+identity. In the negative branch, adding $c$ adjusts the quotient by one;
+in the nonnegative branch, no adjustment is needed. Uniqueness of the
+nonnegative remainder identifies the result with mathematical modulo.
+\texttt{residue\_wp} applies \texttt{wp\_rem}, evaluates the comparison,
+and proves the corresponding branch. All bindings are immutable, so this
+routine needs neither loop induction nor stack-slot cleanup.
+
+A probe at step $s$ visits $(b+s)\bmod c$. The bounded scan maintains
+$b<c$ and $s<c$, hence $b+s<2c$. At most one subtraction is required:
+\[
+ \texttt{probe\_slot}(b,s,c)=
+ \begin{cases}b+s,&b+s<c,\\b+s-c,&c\leq b+s.\end{cases}
+\]
+\texttt{probe\_slot\_sub} proves this identity and
+\texttt{probe\_slot\_e\_spec} verifies the executable branch. In the language's
+available operators, the strict test is written as $b+s+1\leq c$. For example,
+capacity $16$, bucket $15$, and steps $0,1,2$ visit slots $15,0,1$.
+The comparison must choose the unmodified sum precisely in the first case;
+choosing it after crossing the capacity would produce an out-of-bounds read.
+
+\subsection{The bounded probe and its proof}
+
+The pure function \texttt{probe\_from} carries a remaining fuel $n$, a starting
+bucket $b$, a current step $s$, and an optional first deleted slot
+\texttt{hole}. The executable \texttt{scan\_body} has the same parameters.
+It uses $-1$ for no remembered hole, and a nonnegative index for an existing
+hole. \texttt{hole\_or\_e\_spec} proves that the executable sentinel test agrees
+with the pure function \texttt{hole\_or}.
+
+An empty tag ends the search with an absent result. An occupied tag causes a
+key comparison: a match returns the current index and value; a different key
+continues with one less unit of fuel and one greater step. A tombstone also
+continues, remembering its index only if no earlier tombstone was remembered.
+This distinction prevents a subtle duplicate-key bug. After seeing a tombstone,
+insertion must keep looking for an existing equal key; it cannot immediately
+reuse the deleted slot. Otherwise an update could create a second occupied copy
+of a key that already lies farther along the path.
+
+The prefix invariant \texttt{probe\_prefix} records what the search has already
+established: the step is within the cycle, earlier visited slots contain neither
+an empty tag nor an occupied copy of the requested key, and the remembered hole
+agrees with the first tombstone in that prefix. \texttt{prefix\_zero}
+establishes it before any slot is read. \texttt{probe\_from\_inv} advances it
+through each tag case and proves that a returned index is below capacity.
+For a found result it additionally identifies the occupied tag, matching key,
+and stored value. For an absent result it identifies an empty or tombstone slot
+and a path to that slot with no earlier empty tag.
+
+Why can a complete cycle return a valid hole? The placement invariant alone
+does not establish this. The load bound implies
+$\texttt{count\_occ tags}<c$, so a complete cycle cannot consist entirely of
+occupied slots. If the scan has not stopped at an empty slot, it must have
+visited a tombstone. \texttt{full\_scan\_hole} proves this implication. This also
+covers a table whose slots are all tombstones after successive insertions and
+removals: the scan consumes exactly $c$ steps and returns the first remembered
+hole. It does not loop forever or attempt a step beyond the cycle.
+
+\texttt{probe\_shape} connects the slot result to \texttt{contents\_of}.
+For a found result, \texttt{contents\_at} and uniqueness show that the finite
+map returns the same value. For an absent result, the prefix and placement
+conditions exclude every possible occupied location for the requested key.
+\texttt{probe\_found} proves the complementary property: any occupied slot for
+an existing key is reached by the probe.
+
+The operational theorem \texttt{scan\_spec} is an induction on remaining fuel.
+Its preconditions include $s+n\leq c$ and equal array lengths. It returns the
+exact value encoding of \texttt{probe\_from}, together with ownership of all
+three unchanged arrays. The zero-fuel branch verifies the remembered-hole
+encoding. In a successor branch, \texttt{probe\_slot\_e\_spec} yields a bounded
+index, and \texttt{arr\_get\_spec} reads the tag. The proof follows the same tag
+and key cases as the pure function. Recursive cases reduce fuel and increase
+step, preserving $s+n\leq c$; the induction hypothesis then applies.
+The found branch reads the value at the same bounded index. Every read returns
+its array ownership, so the caller can reconstruct the complete map predicate.
+
+\texttt{buffer\_probe\_spec} first verifies the mixed bucket call, rewrites its
+result to the bucket index, and instantiates \texttt{scan\_spec} with
+$n=c$, $s=0$, and no hole. \texttt{probe\_spec} opens the map object, reads its
+array fields and capacity, applies that result, then closes the predicate.
+Its postcondition states not merely the shape of a returned struct but the
+semantic equation
+\[
+ m[k]=\begin{cases}\texttt{Some }v,&\texttt{found}=\texttt{true},\\
+ \texttt{None},&\texttt{found}=\texttt{false}.
+ \end{cases}
+\]
+An absent result additionally carries the canonical value zero.
+
+\subsection{Dedicated iterative lookup}
+
+Insertion and removal retain the tombstone-aware probe and its slot index.
+The \texttt{get} and \texttt{contains} methods instead call a dedicated
+\texttt{lookupBuffer} loop. Two mutable locals hold the probe step and an
+\texttt{Int64Option(false,0)} result. Each iteration computes the wrapped
+slot, reads its tag, and compares the key only for an occupied slot. An empty
+tag ends the loop; a match stores \texttt{Int64Option(true,value)} and ends
+it. Other occupied slots and tombstones advance the step. The loop is
+bounded by capacity, so even a complete cycle of tombstones terminates.
+It tracks no insertion hole and constructs no three-field probe result.
+
+\texttt{lookup\_loop\_spec} uses induction on the remaining capacity. Its
+postcondition equals \texttt{lookup\_val} applied to the existing pure
+\texttt{probe\_from}, discarding the slot index and remembered hole. All
+three arrays are preserved. \texttt{lookup\_buffer\_spec} allocates and
+releases the two local stack slots, and \texttt{lookup\_spec} combines this
+kernel with the existing placement argument to return the abstract map
+lookup. The public \texttt{get\_spec} and \texttt{contains\_spec} contracts
+remain unchanged.
+
+\subsection{Insertion and overwrite}
+
+\texttt{put\_body} is the shared operation on three buffers. It probes first.
+When the key is found, it writes only the value at the returned index. When
+absent, it writes an occupied tag, the requested key, and the requested value.
+\texttt{put\_spec} proves that its final arrays are exactly the triple computed
+by \texttt{write\_fresh}; it deliberately separates this physical claim from
+the stronger invariant claim.
+
+The array helper proofs expose the array's data pointer and use the bounded
+index to focus one cell with \texttt{big\_sepL\_lookup\_acc} or
+\texttt{big\_sepL\_insert\_acc}. A raw load or store acts on that cell, and the
+closing continuation restores ownership of the complete array. The store proof
+also establishes that an in-range list insertion preserves array length.
+These are the memory steps beneath both ordinary insertion and rehashing.
+
+For an existing key, \texttt{write\_fresh\_found} proves that overwriting the
+value preserves all eight table conditions and leaves the occupied count
+unchanged. No new key is introduced and no tag or probe path changes.
+For a missing key, \texttt{write\_fresh\_new} assumes strict room,
+$2\,\texttt{count\_occ tags}<c$. It proves that the chosen slot is available,
+that writing it introduces no duplicate, that its placement is valid, that old
+placements remain valid, and that the occupied count increases by one.
+Because $c$ is even, strict room implies
+$2(\texttt{count\_occ tags}+1)\leq c$, preserving the half-full bound.
+\texttt{write\_fresh\_effect} packages these two cases as one map update and a
+conditional occupied-count equation.
+
+\texttt{add\_room\_spec} opens the object, applies \texttt{put\_spec}, and uses
+\texttt{write\_fresh\_effect} to close the invariant. It increments
+\texttt{mySize} exactly when the initial probe said the key was absent.
+The public \texttt{add} checks presence before considering growth. An existing
+key is updated directly, including at the load limit. For a missing key, it
+reads size and capacity and grows when $c\leq 2\,\texttt{size}$.
+Otherwise strict room already holds. After doubling, the old load bound
+$2\,\texttt{size}\leq c$ and $c>0$ imply strict room in the new table.
+
+The public contract therefore permits the resulting capacity to change:
+\begin{lstlisting}
+Lemma add_spec m cap (a : val_cjr) (k v : Z) :
+  is_hashmap m cap a -∗
+  WP call_add a k v
+    {{ u, ⌜ u = LitV LitUnit ⌝ ∗
+          ∃ cap', is_hashmap (<[k:=v]> m) cap' a }}.
+\end{lstlisting} A fixed-capacity
+contract would be incorrect for an insertion that crosses the load threshold.
+In this implementation each call either keeps capacity or doubles it once.
+
+\subsection{Rehashing: why allocation alone is insufficient}
+
+Doubling changes bucket locations. Existing entries must be probed and inserted
+again under the new capacity; copying cells to the same indexes does not in
+general preserve placement. \texttt{grow\_table} describes the pure operation:
+allocate three zero lists of length $2c$, then fold over the old arrays with
+\texttt{rehash\_acc}. Empty and tombstone slots are skipped; each occupied pair
+is inserted into the destination with \texttt{write\_fresh}.
+
+The induction in \texttt{rehash\_acc\_lookup} maintains a well-formed destination,
+valid and unique remaining source keys, and two additional facts. First, every
+remaining occupied source key is absent from the destination. Second,
+\[
+ 2(\texttt{count\_occ destination}
+       +\texttt{count\_occ remaining})\leq 2c.
+\]
+When the source head is occupied, disjointness proves the insertion is new and
+the combined load bound proves strict room. \texttt{write\_fresh\_new}
+produces a well-formed destination whose count is one greater. Removing the
+source head decreases the remaining count by one, so the combined bound is
+preserved. Source uniqueness ensures the newly inserted key is absent from the
+remaining source, preserving disjointness. A skipped source head changes neither
+the destination nor the occupied count. At the empty source, the destination
+already satisfies the desired invariant.
+
+The lookup conclusion states that the final map is the source map combined
+with the initial accumulator. For fresh zero arrays the accumulator is empty.
+\texttt{grow\_table\_spec} obtains equality with the original map by
+pointwise finite-map equality. It also uses
+$2c=2^{(e+1)+1}$ to preserve the capacity condition. This proof explains both
+why no old entry disappears and why deleted entries are not resurrected.
+
+The executable \texttt{rehash\_body} is a recursive scan over the old arrays.
+Its arguments include a source index and remaining fuel, the three source
+arrays, and the new capacity and destination arrays. It calls \texttt{put\_body}
+only for an occupied source tag. \texttt{rehash\_spec} relates the index to
+suffixes of the source lists using \texttt{drop}. The small lemma
+\texttt{head\_drop\_hm} identifies the cell at the current index and the suffix
+at the next index. The proof follows the pure fold's induction, preserving all
+old array ownership and returning exactly its destination triple.
+
+Finally, \texttt{grow\_spec} allocates the new arrays, establishes
+\texttt{zeros\_wf}, invokes \texttt{rehash\_spec}, and only then replaces the
+object's three array fields. The old size field is retained.
+\texttt{size\_contents} applied to both well-formed tables and their equal maps
+proves that this unchanged size is the correct occupied count of the new table.
+The capacity becomes $2c$ and the contents remain $m$.
+The example's \texttt{grow(minCap)} interface performs one doubling;
+\texttt{minCap} is a retained interface argument, not a promise to grow repeatedly
+to an arbitrary requested capacity.
+
+\subsection{Removal, queries, and client proofs}
+
+\texttt{write\_remove\_spec} proves that marking a found slot as a tombstone
+produces \texttt{delete k m}. Uniqueness identifies the one occurrence being
+removed. \texttt{placed\_bury} preserves the paths of other keys: a tombstone,
+unlike an empty tag, does not terminate a probe. \texttt{count\_bury} proves
+that the old occupied count is the successor of the new one. The executable
+\texttt{remove\_spec} uses the precise probe result to write that tag, subtract
+one from \texttt{mySize}, return the old value, and reconstruct ownership.
+For a missing key it returns zero, performs no writes, and proves that deleting
+an absent key leaves the mathematical map unchanged.
+
+\texttt{get\_spec} returns \texttt{Int64Option(true,v)} when $m[k]=\texttt{Some }v$
+and \texttt{Int64Option(false,0)} when the key is absent.
+\texttt{contains\_spec} returns the boolean indicating whether that lookup is
+\texttt{Some}. Both proofs frame the unchanged map through
+\texttt{lookup\_spec}, which returns the option directly; \texttt{contains} projects its flag.
+The flag distinguishes a stored zero from absence. The older \texttt{remove}
+interface returns an integer alone, so removing a stored zero and removing a
+missing key both return zero; the map and its size still change differently.
+
+\texttt{init\_spec} verifies three zero-array allocations and the four-field
+object construction. Zero contents imply an empty map, valid tags, no duplicate
+keys, zero load, and vacuous placement. \texttt{size\_spec},
+\texttt{capacity\_spec}, and \texttt{is\_empty\_spec} read the owned fields and
+use the representation equations to obtain their abstract meanings.
+The three \texttt{init\_then\_*} lemmas compose initialization with those queries.
+
+The client theorems \texttt{add\_then\_get\_spec} and
+\texttt{add\_then\_contains\_spec} are short because the representation has
+already done the hard work. The first call establishes
+\texttt{is\_hashmap (<[k:=v]> m) cap' a}. The second uses the query contract and
+the finite-map law \texttt{lookup\_insert}: the updated map returns
+\texttt{Some v} at $k$. The resulting capacity is existentially retained, so
+the composition works both with and without growth. All program proofs are
+checked Coq proofs; the assumption audit includes the public operations and
+these client properties.
+
+\subsection{Executable validation and scope}
+
+The generated file below comes from these same core expressions. Its
+\texttt{ProbeResult} and \texttt{Int64Option} declarations are value structs;
+the mutable buffers and map remain classes. The 18 runtime cases cover fresh maps, extreme signed keys, bounded hash products,
+updates, removal, collision chains that wrap around capacity, negative keys,
+stored zero, a tombstone before an existing key, update at the load threshold,
+one and several doublings, explicit growth, and a complete cycle of tombstones.
+These tests exercise printing and compilation in addition to the formal core.
+
+The core's integer semantics uses unbounded \texttt{Z}; extracted Cangjie uses
+\texttt{Int64}. The Coq results do not establish freedom from finite-machine
+integer overflow for arbitrary counts or capacities. The hash product has
+a separate proved bound for every integer key. Remainder
+normalization uses one signed remainder and at most one addition, but a
+collision chain can scan the entire capacity; this is a small verified example rather than a
+performance specification for the full Cangjie standard library. Rehashing
+allocates new buffers without reclaiming the old ones, consistently with the
+example language's object-allocation model.
+
+\subsection{The checked proof scripts}
+
+\paragraph{Bounded hash multiplication.} The first remainder bounds the
+intermediate product; the executable bucket wrapper applies the primitive
+multiplication and remainder rules before normalization.
+
+\lstinputlisting[firstline=79,lastline=94]{example/hash_map/rocq/hash_map.v}
+\lstinputlisting[firstline=1633,lastline=1653]{example/hash_map/rocq/hash_map.v}
+
+These listings include the complete proofs of the public operations and client
+properties, together with the central probe, insertion, and rehash arguments.
+They are read directly from the checked source, rather than maintained as
+separate proof sketches. In the scripts, \texttt{hm\_admin} performs pure
+administrative reductions while leaving function calls for their specifications;
+\texttt{hm\_pure} also unfolds applications. \texttt{hm\_read} and
+\texttt{hm\_write} focus owned object fields, and \texttt{hm\_take} focuses the
+right-hand side of a let. Their evaluation-context definitions are in
+\texttt{example/hash\_map/rocq/hm\_tactics.v}. None supplies an assumption or
+changes the postcondition: each application constructs a proof from the
+language rules.\par
+\paragraph{The normalized remainder contract.} The signed remainder is corrected once, and the quotient/remainder identity establishes the same mathematical bucket as before.
+
+\lstinputlisting[firstline=48,lastline=65]{example/hash_map/rocq/hash_map.v}
+
+\paragraph{The executable remainder proof.} The wrapper uses immutable bindings, applies the primitive remainder rule under positive capacity, and selects the correction branch.
+
+\lstinputlisting[firstline=1616,lastline=1631]{example/hash_map/rocq/hash_map.v}
+
+\paragraph{Initialization.} Each array allocation is verified before the object is constructed. The final pure obligations are the zero-table invariant and the equality between zero occupied count and the stored size.
+
+\lstinputlisting[firstline=1965,lastline=1994]{example/hash_map/rocq/hash_map.v}
+
+\paragraph{The pure search result.} This proof combines the prefix invariant with placement and uniqueness. The found branch identifies the finite-map entry; the absent branch rules out every occupied location for the key.
+
+\lstinputlisting[firstline=816,lastline=866]{example/hash_map/rocq/hash_map.v}
+
+\paragraph{The executable bounded scan.} The induction follows the fuel parameter. Array reads preserve ownership, and each recursive call consumes one step while preserving the bound on the complete scan.
+
+\lstinputlisting[firstline=2100,lastline=2170]{example/hash_map/rocq/hash_map.v}
+
+\paragraph{From a remainder to a buffer search.} The range theorem permits converting the remainder to a natural bucket index. The scan is then instantiated with the full capacity as fuel.
+
+\lstinputlisting[firstline=2308,lastline=2327]{example/hash_map/rocq/hash_map.v}
+
+\paragraph{The iterative lookup kernel.} The induction advances one slot for a mismatch or tombstone, and verifies termination directly after an empty tag or matching key.
+
+\lstinputlisting[firstline=2204,lastline=2282]{example/hash_map/rocq/hash_map.v}
+
+\paragraph{The lookup local-state wrapper.} Two owned stack cells hold the step and result; both are returned to their lexical scopes after reading the final option.
+
+\lstinputlisting[firstline=2283,lastline=2306]{example/hash_map/rocq/hash_map.v}
+
+\paragraph{The dedicated abstract lookup.} The unchanged table invariant connects the loop result to the mathematical map lookup.
+
+\lstinputlisting[firstline=2641,lastline=2687]{example/hash_map/rocq/hash_map.v}
+
+\paragraph{Physical insertion and overwrite.} The proof first obtains the exact probe result. It writes one value cell for a hit and three corresponding cells for an absent key; its postcondition is the exact pure update triple.
+
+\lstinputlisting[firstline=2347,lastline=2382]{example/hash_map/rocq/hash_map.v}
+
+\paragraph{Preserving the invariant for a new key.} The pure proof checks the tag, key, value, uniqueness, load, and placement obligations. Strict room is used to preserve the half-full bound after increasing the live count.
+
+\lstinputlisting[firstline=1304,lastline=1349]{example/hash_map/rocq/hash_map.v}
+
+\paragraph{Preserving the invariant for overwrite.} A present key determines an occupied slot. Updating its value changes neither the occupied key list nor any placement path.
+
+\lstinputlisting[firstline=1447,lastline=1486]{example/hash_map/rocq/hash_map.v}
+
+\paragraph{The pure rehash induction.} Disjointness and the combined occupied-count bound are strengthened for the recursive call. The lookup equation then establishes preservation of every source key and accumulator key.
+
+\lstinputlisting[firstline=1362,lastline=1432]{example/hash_map/rocq/hash_map.v}
+
+\paragraph{The executable rehash induction.} The source index is related to remaining suffixes with drop. Source arrays are framed through insertion into the destination, and the postcondition tracks the exact pure fold.
+
+\lstinputlisting[firstline=2463,lastline=2532]{example/hash_map/rocq/hash_map.v}
+
+\paragraph{Updating the object and its stored size.} The buffer update is combined with the pure occupied-count equation. The size field is incremented in the absent-key case and retained in the overwrite case.
+
+\lstinputlisting[firstline=2550,lastline=2590]{example/hash_map/rocq/hash_map.v}
+
+\paragraph{The public search contract.} The object fields are opened, the buffer search is verified, and the complete representation is reconstructed. The semantic lookup equation and canonical absent value are exposed to clients.
+
+\lstinputlisting[firstline=2592,lastline=2639]{example/hash_map/rocq/hash_map.v}
+
+\paragraph{Presence queries.} The dedicated lookup contract supplies the abstract lookup meaning. Projecting its flag yields exactly the presence boolean.
+
+\lstinputlisting[firstline=2697,lastline=2710]{example/hash_map/rocq/hash_map.v}
+
+\paragraph{Value queries.} The dedicated lookup contract already supplies the option result, including the canonical zero for an absent key.
+
+\lstinputlisting[firstline=2712,lastline=2727]{example/hash_map/rocq/hash_map.v}
+
+\paragraph{Replacing the buffers after rehashing.} New array ownership is established first, then the rehash theorem is applied, and only afterward are the three object fields replaced. Equality of map contents proves equality of occupied counts.
+
+\lstinputlisting[firstline=2729,lastline=2787]{example/hash_map/rocq/hash_map.v}
+
+\paragraph{The public insertion proof.} The initial presence check separates overwrite from insertion. Only the missing-key branch checks the load threshold. Either strict room already holds or one verified doubling establishes it.
+
+\lstinputlisting[firstline=2802,lastline=2834]{example/hash_map/rocq/hash_map.v}
+
+\paragraph{The public removal proof.} The found branch marks the slot as a tombstone and uses the occupied-count decrement equation to update the size. The missing branch proves deletion of an absent map key.
+
+\lstinputlisting[firstline=2836,lastline=2879]{example/hash_map/rocq/hash_map.v}
+
+\paragraph{The stored size query.} The representation equation and size-contents lemma identify the field value with the finite map size.
+
+\lstinputlisting[firstline=1996,lastline=2010]{example/hash_map/rocq/hash_map.v}
+
+\paragraph{The capacity query.} The owned tag array length equals the abstract capacity, so reading its length field returns that capacity.
+
+\lstinputlisting[firstline=2012,lastline=2025]{example/hash_map/rocq/hash_map.v}
+
+\paragraph{The emptiness query.} The field equality and occupied-count theorem connect the zero comparison to emptiness of the mathematical map.
+
+\lstinputlisting[firstline=2027,lastline=2043]{example/hash_map/rocq/hash_map.v}
+
+\paragraph{Initialization followed by size.} The allocation result is bound to the next call, whose contract returns zero for the empty map.
+
+\lstinputlisting[firstline=2895,lastline=2904]{example/hash_map/rocq/hash_map.v}
+
+\paragraph{Initialization followed by capacity.} The initialized representation supplies the default capacity to the query contract.
+
+\lstinputlisting[firstline=2906,lastline=2916]{example/hash_map/rocq/hash_map.v}
+
+\paragraph{Initialization followed by emptiness.} The empty finite map supplies the true result to the emptiness query.
+
+\lstinputlisting[firstline=2918,lastline=2927]{example/hash_map/rocq/hash_map.v}
+
+\paragraph{Insertion followed by lookup.} The new capacity is unpacked from the insertion result and passed to the query contract. The finite-map insertion law determines the returned value.
+
+\lstinputlisting[firstline=2934,lastline=2946]{example/hash_map/rocq/hash_map.v}
+
+\paragraph{Insertion followed by presence.} The same composition uses the insertion lookup law to establish a true presence result.
+
+\lstinputlisting[firstline=2948,lastline=2960]{example/hash_map/rocq/hash_map.v}
+
+\lstinputlisting{example/hash_map/extracted/hash_map.cj}
+
+
+\section{Quadtrees}
+A quadtree indexes points by recursively dividing a rectangular region into
+four quadrants. The mathematical model describes bounds, routing, and the
+abstract contents independently of heap layout. The ownership predicate
+connects a concrete tree to that model. Routing lemmas justify child selection;
+insertion helpers preserve region bounds and the representation while
+updating contents. The algebra modules state how insertion order and union
+relate to the model. Boundary and unit-region cases are explicit because an
+unjustified recursive split can otherwise fail to make progress.
+The standalone benchmark compares the extracted tree with native alternatives
+on several spatial distributions. Its complete flat-oracle checks occur
+outside timing; timed batches consume checksums. A distribution-dependent
+result does not establish a universal complexity or performance advantage.
+
+\input{paper/benchmark.tex}
+\input{example/most_frequent/docs/most-frequent.tex}
+
+\section{Migration and current runtime evidence}
+Proofs were not revalidated during this repository split. Historical proof reports retain their original dates and provenance. Runtime timings measure generated native programs and do not establish cryptographic security or compiler correctness.
+\input{paper/current-benchmarks.tex}
+
+\begin{thebibliography}{99}
+\addcontentsline{toc}{section}{References}
+
+\bibitem{cangjie-docs}
+Cangjie documentation, version 1.0.0.
+\url{https://docs.cangjie-lang.cn/en/docs/1.0.0/}.
+
+\bibitem{reynolds-lics02}
+John C. Reynolds.
+Separation logic: A logic for shared mutable data structures.
+In \emph{Proceedings of LICS}, pages 55--74. IEEE, 2002.
+
+\bibitem{ohearn-csl01}
+Peter W. O'Hearn, John C. Reynolds, and Hongseok Yang.
+Local reasoning about programs that alter data structures.
+In \emph{Proceedings of CSL}, volume 2142 of \emph{LNCS}, pages 1--19. Springer, 2001.
+
+\bibitem{iris-popl15}
+Ralf Jung, David Swasey, Filip Sieczkowski, Kasper Svendsen, Aaron Turon, Lars Birkedal, and Derek Dreyer.
+Iris: Monoids and invariants as an orthogonal basis for concurrent reasoning.
+In \emph{Proceedings of POPL}, pages 637--650. ACM, 2015.
+
+\bibitem{iris-essence}
+Robbert Krebbers, Ralf Jung, Ale\v{s} Bizjak, Jacques-Henri Jourdan, Derek Dreyer, and Lars Birkedal.
+The essence of higher-order concurrent separation logic.
+In \emph{Proceedings of ESOP}, volume 10201 of \emph{LNCS}, pages 696--723. Springer, 2017.
+
+\bibitem{iris-ground-up}
+Ralf Jung, Robbert Krebbers, Jacques-Henri Jourdan, Ale\v{s} Bizjak, Lars Birkedal, and Derek Dreyer.
+Iris from the ground up: A modular foundation for higher-order concurrent separation logic.
+\emph{Journal of Functional Programming}, 28:e20, 2018.
+
+\bibitem{iris-ipm}
+Robbert Krebbers, Amin Timany, and Lars Birkedal.
+Interactive proofs in higher-order concurrent separation logic.
+In \emph{Proceedings of POPL}, pages 205--217. ACM, 2017.
+
+\bibitem{iris-notes}
+Lars Birkedal and Ale\v{s} Bizjak.
+Lecture notes on Iris: Higher-order concurrent separation logic.
+\url{https://iris-project.org/pdfs/iris-lecture-notes.pdf}.
+
+\bibitem{iris-coq}
+The Iris Project.
+The Iris Coq development, version 4.4.0, including HeapLang.
+\url{https://gitlab.mpi-sws.org/iris/iris}.
+
+\bibitem{coq}
+The Coq Development Team.
+The Coq proof assistant, version 8.20.1.
+\url{https://coq.inria.fr/}.
+
+\bibitem{stdpp}
+The Iris Project.
+coq-std++, version 1.12.0.
+\url{https://gitlab.mpi-sws.org/iris/stdpp}.
+
+\bibitem{cangjie-exceptions}
+Cangjie development guide, version 1.0.5.
+Throwing and handling exceptions (Chinese-language edition).
+\url{https://docs.cangjie-lang.cn/docs/1.0.5/dev-guide/source_zh_cn/error_handle/handle.html}.
+
+\bibitem{hazel-popl21}
+Paulo Em\'ilio de Vilhena and Fran\c{c}ois Pottier.
+A separation logic for effect handlers.
+\emph{Proceedings of the ACM on Programming Languages}, 5(POPL), article 33, pages 1--28, 2021.
+\url{https://doi.org/10.1145/3434314}.
+
+\bibitem{teslogic-esop23}
+Paulo Em\'ilio de Vilhena and Fran\c{c}ois Pottier.
+A type system for effect handlers and dynamic labels.
+In \emph{Proceedings of ESOP}, volume 13990 of \emph{LNCS}, pages 225--252. Springer, 2023.
+\url{https://doi.org/10.1007/978-3-031-30044-8_9}.
+
+\bibitem{reloc-lmcs21}
+Dan Frumin, Robbert Krebbers, and Lars Birkedal.
+ReLoC Reloaded: A mechanized relational logic for fine-grained concurrency and logical atomicity.
+\emph{Logical Methods in Computer Science}, 17(3), article 9, pages 1--59, 2021.
+\url{https://doi.org/10.46298/LMCS-17(3:9)2021}.
+
+\bibitem{cosmo-icfp20}
+Glen M\'evel, Jacques-Henri Jourdan, and Fran\c{c}ois Pottier.
+Cosmo: A concurrent separation logic for Multicore OCaml.
+\emph{Proceedings of the ACM on Programming Languages}, 4(ICFP), article 96, pages 1--29, 2020.
+\url{https://doi.org/10.1145/3408978}.
+
+\bibitem{actris-lmcs22}
+Jonas Kastberg Hinrichsen, Jesper Bengtson, and Robbert Krebbers.
+Actris 2.0: Asynchronous session-type based reasoning in separation logic.
+\emph{Logical Methods in Computer Science}, 18(2), article 16, pages 1--64, 2022.
+\url{https://doi.org/10.46298/LMCS-18(2:16)2022}.
+
+\bibitem{blaze-popl26}
+Paulo Em\'ilio de Vilhena, Simcha van Collem, Ines Wright, and Robbert Krebbers.
+A relational separation logic for effect handlers.
+\emph{Proceedings of the ACM on Programming Languages}, 10(POPL), article 34, pages 981--1009, 2026.
+\url{https://doi.org/10.1145/3776676}.
+Rocq formalization: \url{https://github.com/DeVilhena-Paulo/blaze}.
+
+\end{thebibliography}
+\end{document}

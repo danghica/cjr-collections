@@ -1,0 +1,16 @@
+{
+  "name": "cjr-collections",
+  "examples": [
+    "array",
+    "array_list",
+    "poly_array",
+    "list",
+    "list_rev",
+    "qsort",
+    "hash_map",
+    "most_frequent",
+    "quadtree"
+  ],
+  "checkpoint": "e07ccfb365e019f440480d6357d0251187acc8da",
+  "proofs_revalidated": false
+}

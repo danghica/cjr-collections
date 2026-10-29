@@ -1,0 +1,10 @@
+{
+  "name": "cjr-collections",
+  "title": "cjr-collections",
+  "index": "docs/index.html",
+  "css": "docs/style.css",
+  "artifacts": {
+    "docs": "example"
+  },
+  "links": []
+}
