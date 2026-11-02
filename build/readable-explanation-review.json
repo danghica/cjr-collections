@@ -1,0 +1,618 @@
+{
+  "reviewed_utc": "2026-11-02T17:14:56.077888+00:00",
+  "method": "Codex reviewed the displayed explanations against proof-free source statements and related definitions, checking premises, bounds, ownership, result claims and partial correctness versus termination. Automated checks bind this review to the regenerated HTML and reports.",
+  "scope": "All available explanations in the current readable build. Missing explanations were left explicitly unavailable. English text is reviewed, not formally verified.",
+  "fresh_symbol_data": true,
+  "declarations": 1018,
+  "explanations_reviewed": 81,
+  "explanations_unavailable": 937,
+  "unsupported_notices": 797,
+  "reports": [
+    {
+      "report": "example/array/docs/rocq/report.json",
+      "sha256": "5b3efe56a5c42244f71ad467a24851e6b6378ea9266d05ec2b0177513edf9858"
+    },
+    {
+      "report": "example/array_list/docs/rocq/report.json",
+      "sha256": "da4ed29b5c8664ef3f4ec59a3c724adcd40ad463505e2191bf19e89f7a57c1fd"
+    },
+    {
+      "report": "example/hash_map/docs/rocq/report.json",
+      "sha256": "9a1bde11424eee363c2cd99d12ff50f1a657af69cf6b89189e310efdc8549525"
+    },
+    {
+      "report": "example/list/docs/rocq/report.json",
+      "sha256": "bf490417e0a82789846270cc2109faf18fc8dd5f8e6fc87b1a28ee6249a8944e"
+    },
+    {
+      "report": "example/list_rev/docs/rocq/report.json",
+      "sha256": "41241c9ddad20dd084936cfe75a960e368b1336837321f3fd32a4230e78b65cc"
+    },
+    {
+      "report": "example/most_frequent/docs/rocq/report.json",
+      "sha256": "5640ab6d751976e90c425d52e9ca52e1b92c57774ec96a9442c0a329a5457fa3"
+    },
+    {
+      "report": "example/poly_array/docs/rocq/report.json",
+      "sha256": "86fac01efd53f796a0c835d6ad815c80f62c831e7685906f7b8d33101918eda1"
+    },
+    {
+      "report": "example/qsort/docs/rocq/report.json",
+      "sha256": "668b7e01df4aaac5fa7397a92b3a247a69885181eda97329aa5ae1d776e9f20c"
+    },
+    {
+      "report": "example/quadtree/docs/rocq/report.json",
+      "sha256": "e9c870007dde9bc4252c463b028f2a49f3cbc8cec208d7fa3fb3c905bb74bf13"
+    }
+  ],
+  "entries": [
+    {
+      "identity": "cjr.examples.list_rev.app_assoc'",
+      "page": "example/list_rev/docs/rocq/rocq/list_rev.html",
+      "declaration_sha256": "363e4749e6fa527a3035ca740e61ea1835c828fee1a7003f2bc60efb1052d17c",
+      "description_sha256": "017a39f706f9e130ab5f3fc7b74b93906a64630fe8159da8275411a96ed54982",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.examples.list_rev.app_nil_r'",
+      "page": "example/list_rev/docs/rocq/rocq/list_rev.html",
+      "declaration_sha256": "86bcda459135b619db1ec49acc0c39e52a15d956ee8c85e72abf77d90325de5a",
+      "description_sha256": "6cdca204cfe767e78a0abbee0ebcc77feaed961a33dd64e8e1fee0f6dea3d16a",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.examples.list_rev.call_reverse",
+      "page": "example/list_rev/docs/rocq/rocq/list_rev.html",
+      "declaration_sha256": "8cd25e80ebab49399a64dce3d33a4083bfcb72709f2776a807bf84be19a9f78d",
+      "description_sha256": "d91fbe3fa8ab5932b48dd3b05e0eebacc801ac831042a5bace2c41a5c7110b90",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.examples.list_rev.is_list_cons_destruct",
+      "page": "example/list_rev/docs/rocq/rocq/list_rev.html",
+      "declaration_sha256": "ab9134d74156fc8218fa0eb2a48e5e7b6418760685514f2a2d52dc852bafea20",
+      "description_sha256": "b8d9a03fbf3a0727a65ec7fdcf1e235accb2b1377010a8b3fd7fd36aef73d286",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.examples.list_rev.is_list_snoc_acc",
+      "page": "example/list_rev/docs/rocq/rocq/list_rev.html",
+      "declaration_sha256": "027e1c705d386df98bfeee60511f60ebab361357618518764c1ef32b8e768cec",
+      "description_sha256": "8b4e8b1dd77d416a87542855d14b5ba14d6a100518bc2f4cc6ef2d983c50f4a8",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.examples.list_rev.rev_app",
+      "page": "example/list_rev/docs/rocq/rocq/list_rev.html",
+      "declaration_sha256": "7cc409a16cf81fdb152761bb648a1ceb8cf3582a250caf066561cd91e30ad575",
+      "description_sha256": "a197cee00bcff52bc3990a839d2e4caa55af4936b96784cb9a97fcf51961558f",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.examples.list_rev.rev_body",
+      "page": "example/list_rev/docs/rocq/rocq/list_rev.html",
+      "declaration_sha256": "d3b17b0471bb59b52a2f3033386ef983dabeb7ffecac0c754e346546c7ca9847",
+      "description_sha256": "3784f3ddf8843f6bc47ba4871847eeed9766da4d9f39f1bb75cbb4325c0f62aa",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.examples.list_rev.rev_cons",
+      "page": "example/list_rev/docs/rocq/rocq/list_rev.html",
+      "declaration_sha256": "821031b4e98594c31183378dda8b628b022d8b1333bb2b7969d87dcdb36b69ba",
+      "description_sha256": "58f01a1039e2e7f940342439ebdf3464066c34146339f8066b840d6eeca58fcc",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.examples.list_rev.rev_done",
+      "page": "example/list_rev/docs/rocq/rocq/list_rev.html",
+      "declaration_sha256": "25f7f8bf8dbf153629587cc1471b7ffadbfbd9b8d12bbc92886d3eba70ab6fa3",
+      "description_sha256": "9c26b7a07ac9d6458a1cf497587e07023d2320cab4506f682d1d74825972c4a4",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.examples.list_rev.rev_eq_rev",
+      "page": "example/list_rev/docs/rocq/rocq/list_rev.html",
+      "declaration_sha256": "8e763fcacdc596d6845da55db07f1409e4bcb4e87d46b37b45b320408c77e896",
+      "description_sha256": "2a9faa6f9193421ab6259bf8dbe0824e1bb35fcd237f7ea75ff223faf4020981",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.examples.list_rev.rev_inv",
+      "page": "example/list_rev/docs/rocq/rocq/list_rev.html",
+      "declaration_sha256": "668681368324ccca08e6f79c83bbbaee749bf8ac271f402965fa4303c424889f",
+      "description_sha256": "5a15652b5e08f1c7133c393666958aa81a51c269fc1e05a4a958416ec32f8038",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.examples.list_rev.rev_loop",
+      "page": "example/list_rev/docs/rocq/rocq/list_rev.html",
+      "declaration_sha256": "7a88ad7379aaddcd84ee36eaa4040caead4dea0f6c58d34b8390f509520bb3cc",
+      "description_sha256": "85aef1140582471f7896157933b97244d5168cea19be96ab6ce5fc275aaa2ab8",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.examples.list_rev.rev_loop_at",
+      "page": "example/list_rev/docs/rocq/rocq/list_rev.html",
+      "declaration_sha256": "d2dda3c0f59e0d8a52e1a5b42073863d571bf93a8ef88467ae2a7d01dab555a9",
+      "description_sha256": "7e585f689fa7fef369fb634e37b484ad9723309cfeeb48f2058106bd6ecc8a23",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.examples.list_rev.rev_loop_at_subst",
+      "page": "example/list_rev/docs/rocq/rocq/list_rev.html",
+      "declaration_sha256": "507fbd57d9529397f5ca7f1b955482d691bb25a78bd50a47ce88d6437c93738c",
+      "description_sha256": "8f9d8cd5a986b059fbb39fc0adc96cf407ffd841c48d45aecf4232d75a11aa13",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.examples.list_rev.rev_prefix_nil",
+      "page": "example/list_rev/docs/rocq/rocq/list_rev.html",
+      "declaration_sha256": "3191cb05697df75a634ba357a31131951a14b94535f2430c6fcccb5a76d23a0c",
+      "description_sha256": "9ca7bff069aca23a8809efff04f479f870c40be01fff7522cd21c5d72827808e",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.examples.list_rev.rev_prefix_step",
+      "page": "example/list_rev/docs/rocq/rocq/list_rev.html",
+      "declaration_sha256": "4f029d55a4353a425fa11f971d05536b8ba0b46b52e06c53a9985a2640c296fd",
+      "description_sha256": "f816a7740dc607dda82cffcdf76d345bd0c2db72bab89e97e162ed53143b8c33",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.examples.list_rev.rev_rev",
+      "page": "example/list_rev/docs/rocq/rocq/list_rev.html",
+      "declaration_sha256": "0ea8d03f3587372be4375d3a76c8147dbac374400ac5d4e4c7893064d2ec87fc",
+      "description_sha256": "8cba90fa5a40efb64f98f04ff42ce2593e5386f5730ba099ce52a9456f46cbcc",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.examples.list_rev.rev_step",
+      "page": "example/list_rev/docs/rocq/rocq/list_rev.html",
+      "declaration_sha256": "cd7242006f5397f66c28337653691b631aaaf212c9e289649186a072e3bfbb33",
+      "description_sha256": "348489ca053d4efeeb75d6fda32573a372b1fc9d70e020d841bdae317cbb1075",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.examples.list_rev.rev_step_at",
+      "page": "example/list_rev/docs/rocq/rocq/list_rev.html",
+      "declaration_sha256": "b9413444a5761300b810a93405e8eca46f09d8573f5b62c0aa871a84548ddff4",
+      "description_sha256": "7e8ef3826f8fa52849106f65e1c06cc428bdc35e78020d8d99941f4cacc37c61",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.examples.list_rev.rev_step_at_subst",
+      "page": "example/list_rev/docs/rocq/rocq/list_rev.html",
+      "declaration_sha256": "c75e191e105f7d3769574d0aa77421b238a5b2a5ad425a98fbb4910894b3b982",
+      "description_sha256": "c9f6225c81bcc7723dff5618c58f3580480d19e824a200f8b81f5e9010b6f19e",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.examples.list_rev.reverse_spec",
+      "page": "example/list_rev/docs/rocq/rocq/list_rev.html",
+      "declaration_sha256": "c72fddef4fbb45ffe153d4a2ae27f0f0c6aa02e293c63fff29e88957409909af",
+      "description_sha256": "0cb31e2501ce479c3cbd464f0801401ee5383acc3344638c8ab307a5be660dc2",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.examples.list_rev.reverse_twice",
+      "page": "example/list_rev/docs/rocq/rocq/list_rev.html",
+      "declaration_sha256": "16260918f229b82ededa518d01ad38a87de7343ee88d2910bcf621c69f3c9b94",
+      "description_sha256": "64d537abfe823906cc736f3907403c0333a816ad18d6a7130f66e57918518bd0",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.examples.list_rev.reverse_twice_spec",
+      "page": "example/list_rev/docs/rocq/rocq/list_rev.html",
+      "declaration_sha256": "4bbfb35255151f63448bee819a46c3ddda5193513c6cd1ec3905eeea7f4e9f49",
+      "description_sha256": "e2285e1555c88b7da8dfec9c0a7a2a6cb0d89716289b24fd8cf5e3325508f051",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.examples.list_rev.sas",
+      "page": "example/list_rev/docs/rocq/rocq/list_rev.html",
+      "declaration_sha256": "6756005224682c5dbcdbe92821e28ab5667a926b9dad4510dd3e72b500f9434d",
+      "description_sha256": "c377a57cc204928a720ad59a18f9ba52eb6f44938e1f428a555edf1fbde13597",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.examples.list_rev.sld",
+      "page": "example/list_rev/docs/rocq/rocq/list_rev.html",
+      "declaration_sha256": "cb719f0fad5e6ec7b214c0168631fa2fd08b15bcb6419d1dbab231ea73c533f0",
+      "description_sha256": "502b52c44f5ab3774cf6a660478fd54e97d8bc6d15654b3815c03f8d45a7cae3",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.examples.list_rev.wp_rev_loop",
+      "page": "example/list_rev/docs/rocq/rocq/list_rev.html",
+      "declaration_sha256": "58aef331635e81a4fe2f03ca72891a20bef0ce86b6838550c1af7fb6572be69e",
+      "description_sha256": "9b925a284ac4abd29c9904e7ce45a9feac0f028fb725f9e91f834b920410f20d",
+      "clarified": true
+    },
+    {
+      "identity": "cjr.examples.list_rev.wp_rev_loop_run",
+      "page": "example/list_rev/docs/rocq/rocq/list_rev.html",
+      "declaration_sha256": "51cc2d1b23dee2fd5bd2d54d6e03155f42ec25e517a2ed101095fa5066091822",
+      "description_sha256": "84185d5ec0eddce42424f85cd89f160455b84cdabdb929967e3f2d5435362a69",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.examples.list_rev.wp_rev_step_at",
+      "page": "example/list_rev/docs/rocq/rocq/list_rev.html",
+      "declaration_sha256": "a0cf4a27e16e71becfd88a39213769302e0f049558d11f165550e3ff20734ad9",
+      "description_sha256": "be15b9aae206da6fb1e63ee0365c798a26c6737e5b7609e3519effc6c0fbcad3",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.quadtree.algorithm.extract.list_class",
+      "page": "example/quadtree/docs/rocq/algorithm/extract.html",
+      "declaration_sha256": "63e6efbf9953b3777e39cc4fc2ab343c935ba0bbcd0cc2630794e2b51af110fe",
+      "description_sha256": "a5bd28c0e8589824a93f3eed52d54d5129116279594c93efd95c9e0d077a8df4",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.quadtree.algorithm.extract.node_class",
+      "page": "example/quadtree/docs/rocq/algorithm/extract.html",
+      "declaration_sha256": "dc323413b0a1f74de01486bf6340bd6866e12af095f896bc72b7c8cb5fe65412",
+      "description_sha256": "cd9a86aefcc2ff7ae3cd81e75f6772e3360e1e16706a44d3fe6846f15e40bb98",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.quadtree.algorithm.extract.tree_class",
+      "page": "example/quadtree/docs/rocq/algorithm/extract.html",
+      "declaration_sha256": "b78c16e0632905c7047a5c50871a5da90c92cd6d57f2d24879a994779dda44a3",
+      "description_sha256": "9fee0b418e7d1bbc876c173a71b17ff7d722bee179d6f0f8b4104b1853381637",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.quadtree.proof.insertion_model.seeded",
+      "page": "example/quadtree/docs/rocq/proof/insertion_model.html",
+      "declaration_sha256": "50b7bbcbb0b9b480ed49f361c80a8ff5cfce623a62dd7ee13c739aea1dd5b398",
+      "description_sha256": "344c94d7cb492a246a8d5cce34dd3ccbe0e51a3a9bc33cfcfabad012c62e2238",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.quadtree.proof.insertion_model.seeded_valid",
+      "page": "example/quadtree/docs/rocq/proof/insertion_model.html",
+      "declaration_sha256": "158ac62ca083c861a3a7b62bcb3d0b9b4d15e82cbfe5ba28db7a3301817c8efc",
+      "description_sha256": "af7cb87f6474795c9d83bb4f1c160f04188c729c8578bba17f9ecb8951161fa3",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.quadtree.proof.ownership.fields",
+      "page": "example/quadtree/docs/rocq/proof/ownership.html",
+      "declaration_sha256": "a8135a6733d3748876b9c4688dbff0325a1698f1cbf7964e5ff124cf2945cc99",
+      "description_sha256": "b8520c73291a9cb7c682ab3085294052245ceecf088941e6b7ea0b27d056d160",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.quadtree.proof.routing.child_tree",
+      "page": "example/quadtree/docs/rocq/proof/routing.html",
+      "declaration_sha256": "bba92bd6a431abeb93f34ed3bb557fa1194eca93905dcc13f5391259911b3968",
+      "description_sha256": "ef9a96e5f49a6e320e59958997b42f770bba3cdcd11a5da1bbbf54909c033175",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.quadtree.proof.routing.overlap",
+      "page": "example/quadtree/docs/rocq/proof/routing.html",
+      "declaration_sha256": "a1b6326d5b3274bd0cc92810f71f5e03d37a66226702049445e76ab5b51d2339",
+      "description_sha256": "e594b3825dc17471bf4165d02ea3b8e9062be4d188915a265750fda33d3ca6d5",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.quadtree.proof.routing.overlap_dec",
+      "page": "example/quadtree/docs/rocq/proof/routing.html",
+      "declaration_sha256": "7ca9237367b0adf02d32e502bd824b27026ab5d9cf0b40ece5eaa06c603070de",
+      "description_sha256": "ec0743678114505d9f20d68045b43cd68d6eda5295de1c648117f7691a9e4d4a",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.quadtree.spec.bounds.all_bounds",
+      "page": "example/quadtree/docs/rocq/spec/bounds.html",
+      "declaration_sha256": "8c9fd398408967c1f80f4305576095da43801e9408658607c65f67cce0f3921a",
+      "description_sha256": "dd0680e426dae9e8e96c59ec3f09e370afd62381d460c98db73c29174f0b044a",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.quadtree.spec.bounds.box_bounds",
+      "page": "example/quadtree/docs/rocq/spec/bounds.html",
+      "declaration_sha256": "f2c7b1e19c6200b47a403c4fb5077581df178b10e7c8dfd9691f26d64a578cbd",
+      "description_sha256": "04509135277ded6673fb4aa8d1a5f5d56df428c5036881a88160947f44c3fd9a",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.quadtree.spec.bounds.domain_bounds",
+      "page": "example/quadtree/docs/rocq/spec/bounds.html",
+      "declaration_sha256": "a5a684859e74d28ba1fb35c359db4abcdde7d28ed34b429ba46be448b0bac00d",
+      "description_sha256": "d4484cf1cc59b4072deecb49ae37633384a520aedcc04a0aa7e0b24c4e08773a",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.quadtree.spec.bounds.int64",
+      "page": "example/quadtree/docs/rocq/spec/bounds.html",
+      "declaration_sha256": "0a7511e51623dab3b9ed79dcc662f72cc3c47b952cd94b7a0bb54fd3d158f9a6",
+      "description_sha256": "7fc970e1dedbf65fa60a370f600bafebad2e71fc2bb2eea45e4b67c7fa30864a",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.quadtree.spec.bounds.leaf_coordinates_int64",
+      "page": "example/quadtree/docs/rocq/spec/bounds.html",
+      "declaration_sha256": "ec6c2bf207f2d6951fa9e2a8915e278ca0443c25e734168f94b7fbee8042ed42",
+      "description_sha256": "fc8e438b143fac7bc0c7a54d9460b0dc41ce41c6f1be02214269a503c70958aa",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.quadtree.spec.bounds.power_result_int64",
+      "page": "example/quadtree/docs/rocq/spec/bounds.html",
+      "declaration_sha256": "007f18ff60ffc7873292199f04fef31d3b13220252c161c23d40b3aa98a308a6",
+      "description_sha256": "c8cdc882a864c4679265eb51219f23be7352046e55f897dab8df53db625fe29f",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.quadtree.spec.bounds.root_all_bounds",
+      "page": "example/quadtree/docs/rocq/spec/bounds.html",
+      "declaration_sha256": "e19f153cc1a3f07745929ab374d3cbac670833e69e5aa9ff94598408f4155fe7",
+      "description_sha256": "9fcb9855fa19c74f99b7bf41d76ff467930799dbf357219a7b9d22748633a75a",
+      "clarified": true
+    },
+    {
+      "identity": "cjr.quadtree.spec.bounds.stored_bounds_int64",
+      "page": "example/quadtree/docs/rocq/spec/bounds.html",
+      "declaration_sha256": "01e1e2b5923650bc2ca6fc43a6d5a75c8fc01c6cb01ba0abdc790cb1ec8f685b",
+      "description_sha256": "0136c87e480d8a65ad991a4aa87d1839883866992c14afb993def58b69d8b936",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.quadtree.spec.model.admissible",
+      "page": "example/quadtree/docs/rocq/spec/model.html",
+      "declaration_sha256": "d13c8ae4da1f948a91a7fc71edd401b3beed586f2278bd3fb4a8e2485aacb39f",
+      "description_sha256": "fe7ac093647a866100b2132267a4a4b10ffda6b209d202d03aedad59c4890df5",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.quadtree.spec.model.build_tree",
+      "page": "example/quadtree/docs/rocq/spec/model.html",
+      "declaration_sha256": "75057a5c2775f4050d84b3a728c64d333ad316ade5a552073a3fbe4d25bfaa27",
+      "description_sha256": "a872d633daa8917d694c50ac1684745f8c3ae1bc9860698ae8ea7fdc6a5e54a0",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.quadtree.spec.model.child_box",
+      "page": "example/quadtree/docs/rocq/spec/model.html",
+      "declaration_sha256": "5603f0b1fe11206756740d93d5b6448a62b3f8b502d98d75cfc2467f7654034d",
+      "description_sha256": "830a00ecf2b47ae35cef26a84e23cc8f2c5e9d93fa66059317fb6a808f6851ee",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.quadtree.spec.model.contains_set",
+      "page": "example/quadtree/docs/rocq/spec/model.html",
+      "declaration_sha256": "eed2b3c750e1c4f95006a9db2d05d4050eeb028a5f58916996acbaaa02df0db1",
+      "description_sha256": "7344d552b938505fdb76eb24fa4f09d32b18e5aa17feba1fd03666bab102f3f1",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.quadtree.spec.model.contains_state",
+      "page": "example/quadtree/docs/rocq/spec/model.html",
+      "declaration_sha256": "db4c53df6da6541e2010ee101714b7fd7b284ac2984b13e7a9bc9ca2499e979f",
+      "description_sha256": "1452092bffc87896a7e0509b1580390ab3780fb23cc95664f36385a404552d99",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.quadtree.spec.model.contents",
+      "page": "example/quadtree/docs/rocq/spec/model.html",
+      "declaration_sha256": "42b77db76f2ec58c01a0fb97a9f571fd1d24551a363da921a2dfec5f02a6b66b",
+      "description_sha256": "9fc0ac43c217a134975e6b41e406b30d1d5ed53a62d4c5d32a8db30e41f48b78",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.quadtree.spec.model.coordinate_int64",
+      "page": "example/quadtree/docs/rocq/spec/model.html",
+      "declaration_sha256": "8272f155d7c44bb351cef950aa23818477221ea8134d6d4fe2ed9afb43c8861c",
+      "description_sha256": "2b86571c8c86329a2b56cbff09b582c775f1bfb0b56fd3903ad1c9e339817f14",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.quadtree.spec.model.domain",
+      "page": "example/quadtree/docs/rocq/spec/model.html",
+      "declaration_sha256": "6dab182ebb4ec84c0b4b18dc3f9385dba34ce74b8aad37504e6aea2c0be4f226",
+      "description_sha256": "a88fb14b996dafe2d046082a10db909f7f7977f41eaf3c42b7a4d14920917885",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.quadtree.spec.model.enumerate",
+      "page": "example/quadtree/docs/rocq/spec/model.html",
+      "declaration_sha256": "155fd55c7ab35e61814991ce23f54bd473cfb4b4b2e5dcfe0b05e0a0f13bbb80",
+      "description_sha256": "83e93f967d7f8388efb13a8dee924305e19b3b7793a6cc8c7cc22544bd8b8de4",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.quadtree.spec.model.height",
+      "page": "example/quadtree/docs/rocq/spec/model.html",
+      "declaration_sha256": "ff9144b8afec6a0e2f7e223223caf3d24a2d8d48939a78d11eff3aeb69c787aa",
+      "description_sha256": "32e28f0fa16f1ff49650e832eb6f34db8d655c110a4e6bb4f110c01af50a68af",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.quadtree.spec.model.in_rect",
+      "page": "example/quadtree/docs/rocq/spec/model.html",
+      "declaration_sha256": "48772733bb8f1a0e31286f73f8321bdfae145ffc3f97410c71ec66d57a9cf645",
+      "description_sha256": "d81b774edf35f6a27bb885d8e92083223a4cc9da8faac19cbb310195fa8ce3f0",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.quadtree.spec.model.in_rect_dec",
+      "page": "example/quadtree/docs/rocq/spec/model.html",
+      "declaration_sha256": "d7fac29a8380a81920bcc95dc476e87ad5fe3b8ef8cd6f59fc5da74895acc025",
+      "description_sha256": "7f655caa9c38d5bd67fb401cdc11f38b383929f15d929b274ad2e499ccbca42d",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.quadtree.spec.model.insert_reference",
+      "page": "example/quadtree/docs/rocq/spec/model.html",
+      "declaration_sha256": "24db66dc5a569fefbb799ca5d33d1748a754b167022e5f27183f2098a53ea135",
+      "description_sha256": "71cad180997a3f585ba33607a25c26f56bc0c0263dbe15532b135cb904b1e446",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.quadtree.spec.model.insert_set",
+      "page": "example/quadtree/docs/rocq/spec/model.html",
+      "declaration_sha256": "c9f45d41c7f910368daff6f157a8b7b25765ab6e4ff90fc42a4742ab0e29a158",
+      "description_sha256": "274be8c8256f2270e59794b617ae531f0061503b79aef640fb8e97cbc075d476",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.quadtree.spec.model.insertion_preserves_domain",
+      "page": "example/quadtree/docs/rocq/spec/model.html",
+      "declaration_sha256": "00f314beb8d9c589ce866f718b23e6443d5b5f7ee9bb5c1b02f9a46e414fcccb",
+      "description_sha256": "f29a21dff687350822c770eab28dc381fdfedc4f9c20fc33946be5ab120e275e",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.quadtree.spec.model.midx",
+      "page": "example/quadtree/docs/rocq/spec/model.html",
+      "declaration_sha256": "fa3ed6ff41522620c71cfe0cba0bc509287d9155db23d7a8d4049ef4680ce5a4",
+      "description_sha256": "be31e67d54ac21057ed182c0b0b674a764e99aa44158d69cb5512e430568f9cd",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.quadtree.spec.model.midy",
+      "page": "example/quadtree/docs/rocq/spec/model.html",
+      "declaration_sha256": "e772ed3fbd12aabd2a558d5703b07acd0fbeb54743e134dc1aa3358f31ccd183",
+      "description_sha256": "0442b9440d0af8a4af064239aeb5b70f46b0176238c3a7c1478d54fd12789d10",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.quadtree.spec.model.point",
+      "page": "example/quadtree/docs/rocq/spec/model.html",
+      "declaration_sha256": "be2be4d9fa7f809998efe5f529f30f4dbffb2fdb696805d373e31acc62d39d64",
+      "description_sha256": "0e0367cf6bf6ce539561a912f3dc8adef80fdcd2d2be3f2cf2e8e99ee1acd53c",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.quadtree.spec.model.points",
+      "page": "example/quadtree/docs/rocq/spec/model.html",
+      "declaration_sha256": "48540ae873209a7a55c480d54a8a5c89f7298f3986325b9a7826c4b660bdaa50",
+      "description_sha256": "f039357d1c1865116f461fc09803ca1d0a49e183b6403d7ffc718846064b584b",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.quadtree.spec.model.qtree",
+      "page": "example/quadtree/docs/rocq/spec/model.html",
+      "declaration_sha256": "12f249917a5f0e6333f6176bf65db42511353dd745e180ae6fb43574cd3f18ed",
+      "description_sha256": "021ba36b037de44a4632d93bd4e6e980461f22199ec89950b2ae57ee833cbf76",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.quadtree.spec.model.quadrant",
+      "page": "example/quadtree/docs/rocq/spec/model.html",
+      "declaration_sha256": "e8d13d1015fe3b20b4a3551b528c575b644e847b1d5da27438bea4829866f5f9",
+      "description_sha256": "7da199d0c318309aa52446c46ecc24be747c53e2dbbbf526a5a5c8554b27e3d8",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.quadtree.spec.model.quadrant_eq_dec",
+      "page": "example/quadtree/docs/rocq/spec/model.html",
+      "declaration_sha256": "d03a6de58f32b40dce1ac9217dc68a1ef705a95f5db8bf973c6a7258bbc29801",
+      "description_sha256": "1b4f99b82774107ebd81280020b6c0d78e38f147ef8aa4529c3ba822999585b7",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.quadtree.spec.model.query_model",
+      "page": "example/quadtree/docs/rocq/spec/model.html",
+      "declaration_sha256": "f89bacae3a43445bbae8aa7221b67f2301a9701a04ec83933185816281607399",
+      "description_sha256": "4cb47b0490122f9f554c60eda805322b7b0f29dd8d242f61e8e9ee6d8f808ce0",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.quadtree.spec.model.query_state",
+      "page": "example/quadtree/docs/rocq/spec/model.html",
+      "declaration_sha256": "57545ee43eb6dd8618a87c12e69cf96a751084dced6bec37802367e98a49338c",
+      "description_sha256": "1cb04a22dba6d9f5776e09837bf9a7e801082482c6f25c20ac9ab3baff192155",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.quadtree.spec.model.range_set",
+      "page": "example/quadtree/docs/rocq/spec/model.html",
+      "declaration_sha256": "ea29de1db85a2e40d57d3e7443375dcccc2e6b5541c125f5b6862e86fd29ca03",
+      "description_sha256": "c26727964eeffb1f7e5fa4d6e16038634568c30ac79d623e52a3d16aab69b838",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.quadtree.spec.model.rectangle",
+      "page": "example/quadtree/docs/rocq/spec/model.html",
+      "declaration_sha256": "1199ad39aed233d4a5c08d867639beb3c523c7630b0198095b567971b3d1941f",
+      "description_sha256": "822ae5b949d0ee2353c8c3a819b39fa33c5c8f88f13835b5526d298b53ced8dc",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.quadtree.spec.model.route",
+      "page": "example/quadtree/docs/rocq/spec/model.html",
+      "declaration_sha256": "a06b1b21c4f088bca41074108a67375a4262deafda9707e4e2696f108b61f7a0",
+      "description_sha256": "eb4d9e098fbfb76e5299a92fbbc770cae2fa98c8542c9dc0eddbedea807fff99",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.quadtree.spec.model.select_points",
+      "page": "example/quadtree/docs/rocq/spec/model.html",
+      "declaration_sha256": "60f58151e387ff70ca33859f98afc3c7fe38374292056810668d6f6e59dfcbce",
+      "description_sha256": "3b53cdd5ec39854570476b69c5cbcc38710d06e96fb3031c787931d0ac868331",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.quadtree.spec.model.select_points_member",
+      "page": "example/quadtree/docs/rocq/spec/model.html",
+      "declaration_sha256": "70b9fedb5bfe728d0228feca8951e6574bc4a59408a576d0276a7c2e6503ac78",
+      "description_sha256": "03acc702e5cda6ec170a2eabf8ed4e6bd9053b3fcce5f1fec52d193df49419b5",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.quadtree.spec.model.union_reference",
+      "page": "example/quadtree/docs/rocq/spec/model.html",
+      "declaration_sha256": "779477dfa7cdb0ac64add81d218db9a4fd2e0c4ee23a13ebd80e60760d68becd",
+      "description_sha256": "ae2d028b94aa24e372fcef4ceb3003158fda6efb03ef72e7aaa6b1b4d4ed3d7c",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.quadtree.spec.model.union_set",
+      "page": "example/quadtree/docs/rocq/spec/model.html",
+      "declaration_sha256": "bf9622f961c0355f66d58e30b416cc21eed8761c7f6102d913a543eaacbbb90a",
+      "description_sha256": "7a86ffdd13f841a44d8c7ac61b1c046759900d35570f502610c32ea2210266b5",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.quadtree.spec.model.valid",
+      "page": "example/quadtree/docs/rocq/spec/model.html",
+      "declaration_sha256": "1e756bfca73f305bd1703a08484f72c5b5df0f94945fc2831b05cfdf0e05e40b",
+      "description_sha256": "3263ab2dec1b8bf44f67cee48e1a8ab0a1c970faba0395b69466fc3bc275297a",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.quadtree.spec.model.valid_height",
+      "page": "example/quadtree/docs/rocq/spec/model.html",
+      "declaration_sha256": "1418f155a3d54dfe46e19537284ac2dfec12176c62d29960ef35930dbe0bced9",
+      "description_sha256": "17849e679619b5578a35f0cbed809d4be8044b8bff553cd6d652edd5c845de0e",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.quadtree.spec.model.width",
+      "page": "example/quadtree/docs/rocq/spec/model.html",
+      "declaration_sha256": "2e6e8a861316213a66334f7a51b155c46a0047418ca35858df38a1f77198e506",
+      "description_sha256": "e1a71a68b58ad51a5246cc727b8d52f5083b162a4a898b7bc2ccc6268522a69b",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.quadtree.spec.model.width_bound",
+      "page": "example/quadtree/docs/rocq/spec/model.html",
+      "declaration_sha256": "8ddcf0e9b5e9a73fd764dc735feb8afa2d83231dba2b1f95903e0ecd6c3827c8",
+      "description_sha256": "3b390faa843bdfe207e57b68b36418e3619a08319c504503cf3667dece35dfe8",
+      "clarified": false
+    },
+    {
+      "identity": "cjr.quadtree.spec.model.width_positive",
+      "page": "example/quadtree/docs/rocq/spec/model.html",
+      "declaration_sha256": "4ad2838b9fe4ba38092b7a15e9272928a82c17b7684bae087f4fd1c0babbbab9",
+      "description_sha256": "5b75d342f733d5795874acce1a90eb9aaa655aab4fc93acacd8090054f103895",
+      "clarified": false
+    }
+  ],
+  "removed_obsolete_pages": []
+}

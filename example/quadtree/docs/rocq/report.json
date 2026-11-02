@@ -2845,7 +2845,7 @@
       "cjr.quadtree.spec.bounds.root_all_bounds": {
         "status": "available",
         "reason": "",
-        "description": "The lemma states that if the natural-number depth d is at most 30 and quadtree t is valid in the root rectangle from (0, 0) to (width d, width d), then that rectangle and every recursively assigned child rectangle satisfy box_bounds. Validity requires leaf points to lie in their assigned rectangles and forbids branches at depth zero; each branch checks its four children at one lower depth. The precise bounds enforced by box_bounds are not supplied, so their numerical meaning is uncertain."
+        "description": "The lemma states that if the natural-number depth d is at most 30 and t satisfies valid d (domain d) t, then all_bounds d (domain d) t holds. Thus the root box and every recursively assigned child box have ordered coordinates satisfying 0 ≤ xmin ≤ xmax ≤ 1073741824 and 0 ≤ ymin ≤ ymax ≤ 1073741824. At each branch the depth decreases by one; branches at depth zero are excluded. This conclusion bounds the boxes; leaf membership follows from the separate validity premise."
       },
       "cjr.quadtree.spec.bounds.stored_bounds_int64": {
         "status": "available",

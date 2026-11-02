@@ -1,0 +1,127 @@
+python3 scripts/project.py dependencies 
+Dependencies match lock file
+COQDEP VFILES
+COQC example/list/rocq/list.v
+COQC example/array/rocq/array.v
+COQC example/most_frequent/rocq/mf_memory.v
+COQC example/quadtree/algorithm/program.v
+COQC example/quadtree/spec/model.v
+COQC example/array_list/rocq/array_list.v
+COQC example/hash_map/rocq/hm_tactics.v
+COQC example/list_rev/rocq/list_rev.v
+COQC example/poly_array/rocq/poly_array.v
+COQC example/quadtree/algorithm/extract.v
+COQC example/quadtree/proof/ownership.v
+COQC example/quadtree/proof/routing.v
+COQC example/quadtree/spec/bounds.v
+COQC example/hash_map/rocq/hash_map.v
+COQC example/poly_array/rocq/poly_array_tests.v
+COQC example/quadtree/proof/helpers.v
+COQC example/quadtree/proof/insertion_model.v
+COQC extraction/copy_lowering.v
+COQC example/qsort/rocq/qsort.v
+COQC example/quadtree/proof/correctness.v
+COQC example/quadtree/proof/insertion_helpers.v
+COQC example/most_frequent/rocq/most_frequent.v
+COQC example/quadtree/proof/insertion.v
+COQC extraction/emit_cj.v
+COQC example/quadtree/proof/algebra.v
+COQC example/quadtree/proof/audit.v
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
+Closed under the global context
