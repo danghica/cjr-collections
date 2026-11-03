@@ -106,6 +106,9 @@
         "depends_on": [
           "cjr.examples.array_list.add_core"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.add_core"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.add_bridge": {
@@ -115,10 +118,17 @@
           "cjr.examples.array_list.add_suffix",
           "cjr.examples.array_list.add_suffix_var"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.add_core",
+          "cjr.examples.array_list.add_open"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.add_cap": {
         "depends_on": [
+          "cjr.examples.array_list.grow_cap"
+        ],
+        "statement_depends_on": [
           "cjr.examples.array_list.grow_cap"
         ],
         "issues": []
@@ -129,10 +139,17 @@
           "cjr.examples.array_list.doubled",
           "cjr.examples.array_list.grow_cap_double"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.add_cap",
+          "cjr.examples.array_list.doubled"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.add_cap_room": {
         "depends_on": [
+          "cjr.examples.array_list.add_cap"
+        ],
+        "statement_depends_on": [
           "cjr.examples.array_list.add_cap"
         ],
         "issues": []
@@ -142,10 +159,18 @@
           "cjr.examples.array_list.add_suffix_var",
           "cjr.examples.array_list.grow_body"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.add_suffix_var",
+          "cjr.examples.array_list.grow_body"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.add_open": {
         "depends_on": [
+          "cjr.examples.array_list.add_suffix",
+          "cjr.examples.array_list.grow_body"
+        ],
+        "statement_depends_on": [
           "cjr.examples.array_list.add_suffix",
           "cjr.examples.array_list.grow_body"
         ],
@@ -175,6 +200,12 @@
           "cjr.examples.array_list.suf_pcap",
           "cjr.examples.array_list.wp_struct_step"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.add_cap",
+          "cjr.examples.array_list.add_open",
+          "cjr.examples.array_list.al_add",
+          "cjr.examples.array_list.is_arraylist"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.add_spec": {
@@ -187,18 +218,30 @@
           "cjr.examples.array_list.call_add",
           "cjr.examples.array_list.is_arraylist"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.add_cap",
+          "cjr.examples.array_list.al_add",
+          "cjr.examples.array_list.call_add",
+          "cjr.examples.array_list.is_arraylist"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.add_suffix": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.array_list.add_suffix_var": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.array_list.add_then_capacity": {
         "depends_on": [
+          "cjr.examples.array_list.call_add",
+          "cjr.examples.array_list.call_capacity"
+        ],
+        "statement_depends_on": [
           "cjr.examples.array_list.call_add",
           "cjr.examples.array_list.call_capacity"
         ],
@@ -216,6 +259,12 @@
           "cjr.examples.array_list.doubled",
           "cjr.examples.array_list.is_arraylist"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.add_then_capacity",
+          "cjr.examples.array_list.al_add",
+          "cjr.examples.array_list.doubled",
+          "cjr.examples.array_list.is_arraylist"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.add_then_capacity_room_spec": {
@@ -229,10 +278,19 @@
           "cjr.examples.array_list.capacity_spec",
           "cjr.examples.array_list.is_arraylist"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.add_then_capacity",
+          "cjr.examples.array_list.al_add",
+          "cjr.examples.array_list.is_arraylist"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.add_then_get": {
         "depends_on": [
+          "cjr.examples.array_list.call_add",
+          "cjr.examples.array_list.call_al_get"
+        ],
+        "statement_depends_on": [
           "cjr.examples.array_list.call_add",
           "cjr.examples.array_list.call_al_get"
         ],
@@ -249,6 +307,12 @@
           "cjr.examples.array_list.call_al_get",
           "cjr.examples.array_list.is_arraylist"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.add_cap",
+          "cjr.examples.array_list.add_then_get",
+          "cjr.examples.array_list.al_add",
+          "cjr.examples.array_list.is_arraylist"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.add_then_get_old_spec": {
@@ -262,10 +326,20 @@
           "cjr.examples.array_list.call_al_get",
           "cjr.examples.array_list.is_arraylist"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.add_cap",
+          "cjr.examples.array_list.add_then_get",
+          "cjr.examples.array_list.al_add",
+          "cjr.examples.array_list.is_arraylist"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.add_then_remove": {
         "depends_on": [
+          "cjr.examples.array_list.call_add",
+          "cjr.examples.array_list.call_remove"
+        ],
+        "statement_depends_on": [
           "cjr.examples.array_list.call_add",
           "cjr.examples.array_list.call_remove"
         ],
@@ -284,10 +358,19 @@
           "cjr.examples.array_list.is_arraylist",
           "cjr.examples.array_list.remove_spec"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.add_cap",
+          "cjr.examples.array_list.add_then_remove",
+          "cjr.examples.array_list.is_arraylist"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.add_then_size": {
         "depends_on": [
+          "cjr.examples.array_list.call_add",
+          "cjr.examples.array_list.call_size"
+        ],
+        "statement_depends_on": [
           "cjr.examples.array_list.call_add",
           "cjr.examples.array_list.call_size"
         ],
@@ -304,10 +387,20 @@
           "cjr.examples.array_list.is_arraylist",
           "cjr.examples.array_list.size_spec"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.add_cap",
+          "cjr.examples.array_list.add_then_size",
+          "cjr.examples.array_list.al_add",
+          "cjr.examples.array_list.is_arraylist"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.add_then_version": {
         "depends_on": [
+          "cjr.examples.array_list.call_add",
+          "cjr.examples.array_list.call_version"
+        ],
+        "statement_depends_on": [
           "cjr.examples.array_list.call_add",
           "cjr.examples.array_list.call_version"
         ],
@@ -323,10 +416,19 @@
           "cjr.examples.array_list.is_arraylist",
           "cjr.examples.array_list.version_spec"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.add_cap",
+          "cjr.examples.array_list.add_then_version",
+          "cjr.examples.array_list.al_add",
+          "cjr.examples.array_list.is_arraylist"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.add_write_e": {
         "depends_on": [
+          "cjr.examples.array_list.add_suffix"
+        ],
+        "statement_depends_on": [
           "cjr.examples.array_list.add_suffix"
         ],
         "issues": []
@@ -342,26 +444,35 @@
           "cjr.examples.array_list.slots_lookup_zero",
           "cjr.examples.array_list.slots_snoc"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.add_write_e",
+          "cjr.examples.array_list.is_arraylist"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.al_add": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.array_list.al_add_length": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.array_list.al_add_lookup_new": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.array_list.al_add_lookup_old": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.array_list.al_get_body": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.array_list.al_get_spec": {
@@ -370,14 +481,22 @@
           "cjr.examples.array_list.is_arraylist",
           "cjr.examples.array_list.slots_lookup_prefix"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.call_al_get",
+          "cjr.examples.array_list.is_arraylist"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.al_remove": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.array_list.al_remove_length": {
         "depends_on": [
+          "cjr.examples.array_list.al_remove"
+        ],
+        "statement_depends_on": [
           "cjr.examples.array_list.al_remove"
         ],
         "issues": []
@@ -386,10 +505,16 @@
         "depends_on": [
           "cjr.examples.array_list.al_remove"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.al_remove"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.al_remove_lookup_right": {
         "depends_on": [
+          "cjr.examples.array_list.al_remove"
+        ],
+        "statement_depends_on": [
           "cjr.examples.array_list.al_remove"
         ],
         "issues": []
@@ -398,26 +523,34 @@
         "depends_on": [
           "cjr.examples.array_list.al_remove"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.al_remove"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.al_set": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.array_list.al_set_body": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.array_list.al_set_length": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.array_list.al_set_lookup": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.array_list.al_set_lookup_ne": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.array_list.al_set_spec": {
@@ -429,10 +562,16 @@
           "cjr.examples.array_list.slots_lookup_prefix",
           "cjr.examples.array_list.slots_set"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.al_set",
+          "cjr.examples.array_list.call_al_set",
+          "cjr.examples.array_list.is_arraylist"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.array_cells_cons": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.array_list.array_cells_read_update": {
@@ -441,6 +580,7 @@
           "cjr.examples.array_list.if_decide_ne_elim",
           "cjr.examples.array_list.if_decide_ne_intro"
         ],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.array_list.array_cells_replace": {
@@ -450,24 +590,31 @@
           "cjr.examples.array_list.big_sepL_succ0_emp",
           "cjr.examples.array_list.big_sepL_succ_index"
         ],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.array_list.big_sepL_shift_cells": {
         "depends_on": [
           "cjr.examples.array_list.array_cells_cons"
         ],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.array_list.big_sepL_succ0_emp": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.array_list.big_sepL_succ_index": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.array_list.call_add": {
         "depends_on": [
+          "cjr.examples.array_list.add_body"
+        ],
+        "statement_depends_on": [
           "cjr.examples.array_list.add_body"
         ],
         "issues": []
@@ -476,10 +623,16 @@
         "depends_on": [
           "cjr.examples.array_list.al_get_body"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.al_get_body"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.call_al_set": {
         "depends_on": [
+          "cjr.examples.array_list.al_set_body"
+        ],
+        "statement_depends_on": [
           "cjr.examples.array_list.al_set_body"
         ],
         "issues": []
@@ -488,10 +641,16 @@
         "depends_on": [
           "cjr.examples.array_list.capacity_body"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.capacity_body"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.call_grow": {
         "depends_on": [
+          "cjr.examples.array_list.grow_body"
+        ],
+        "statement_depends_on": [
           "cjr.examples.array_list.grow_body"
         ],
         "issues": []
@@ -500,10 +659,16 @@
         "depends_on": [
           "cjr.examples.array_list.init_body"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.init_body"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.call_is_empty": {
         "depends_on": [
+          "cjr.examples.array_list.is_empty_body"
+        ],
+        "statement_depends_on": [
           "cjr.examples.array_list.is_empty_body"
         ],
         "issues": []
@@ -512,10 +677,16 @@
         "depends_on": [
           "cjr.examples.array_list.remove_body"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.remove_body"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.call_size": {
         "depends_on": [
+          "cjr.examples.array_list.size_body"
+        ],
+        "statement_depends_on": [
           "cjr.examples.array_list.size_body"
         ],
         "issues": []
@@ -524,16 +695,23 @@
         "depends_on": [
           "cjr.examples.array_list.version_body"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.version_body"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.capacity_at": {
         "depends_on": [
           "cjr.examples.array_list.capacity_body"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.capacity_body"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.capacity_body": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.array_list.capacity_spec": {
@@ -542,10 +720,17 @@
           "cjr.examples.array_list.is_arraylist",
           "cjr.examples.array_list.slots_length"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.call_capacity",
+          "cjr.examples.array_list.is_arraylist"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.copy_cond": {
         "depends_on": [
+          "cjr.examples.array_list.sload"
+        ],
+        "statement_depends_on": [
           "cjr.examples.array_list.sload"
         ],
         "issues": []
@@ -555,6 +740,10 @@
           "cjr.examples.array_list.copy_disjoint_go",
           "cjr.examples.array_list.copy_open",
           "cjr.examples.array_list.copy_while_eq",
+          "cjr.examples.array_list.overwrite"
+        ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.copy_open",
           "cjr.examples.array_list.overwrite"
         ],
         "issues": []
@@ -568,10 +757,17 @@
           "cjr.examples.array_list.wp_copy_iter",
           "cjr.examples.array_list.wp_copy_stop"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.copy_while",
+          "cjr.examples.array_list.overwrite"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.copy_open": {
         "depends_on": [
+          "cjr.examples.array_list.copy_vars"
+        ],
+        "statement_depends_on": [
           "cjr.examples.array_list.copy_vars"
         ],
         "issues": []
@@ -580,10 +776,17 @@
         "depends_on": [
           "cjr.examples.array_list.copy_vars"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.copy_vars"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.copy_pending_eq": {
         "depends_on": [
+          "cjr.examples.array_list.copy_open",
+          "cjr.examples.array_list.copy_pending_dst"
+        ],
+        "statement_depends_on": [
           "cjr.examples.array_list.copy_open",
           "cjr.examples.array_list.copy_pending_dst"
         ],
@@ -594,6 +797,10 @@
           "cjr.examples.array_list.copy_open",
           "cjr.examples.array_list.copy_shift_go",
           "cjr.examples.array_list.copy_while_eq",
+          "cjr.examples.array_list.shift_from"
+        ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.copy_open",
           "cjr.examples.array_list.shift_from"
         ],
         "issues": []
@@ -608,20 +815,32 @@
           "cjr.examples.array_list.wp_copy_iter",
           "cjr.examples.array_list.wp_copy_stop"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.copy_while",
+          "cjr.examples.array_list.shift_from"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.copy_step": {
         "depends_on": [
           "cjr.examples.array_list.sload"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.sload"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.copy_vars": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.array_list.copy_while": {
         "depends_on": [
+          "cjr.examples.array_list.copy_cond",
+          "cjr.examples.array_list.copy_step"
+        ],
+        "statement_depends_on": [
           "cjr.examples.array_list.copy_cond",
           "cjr.examples.array_list.copy_step"
         ],
@@ -632,22 +851,32 @@
           "cjr.examples.array_list.copy_open",
           "cjr.examples.array_list.copy_while"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.copy_open",
+          "cjr.examples.array_list.copy_while"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.decide_succ_eq": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.array_list.default_capacity": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.array_list.doubled": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.array_list.drop_buf": {
         "depends_on": [
+          "cjr.examples.array_list.ga_of"
+        ],
+        "statement_depends_on": [
           "cjr.examples.array_list.ga_of"
         ],
         "issues": []
@@ -656,10 +885,16 @@
         "depends_on": [
           "cjr.examples.array_list.ga_of"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.ga_of"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.drop_min": {
         "depends_on": [
+          "cjr.examples.array_list.ga_of"
+        ],
+        "statement_depends_on": [
           "cjr.examples.array_list.ga_of"
         ],
         "issues": []
@@ -668,10 +903,16 @@
         "depends_on": [
           "cjr.examples.array_list.ga_of"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.ga_of"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.g_doff": {
         "depends_on": [
+          "cjr.examples.array_list.g_soff"
+        ],
+        "statement_depends_on": [
           "cjr.examples.array_list.g_soff"
         ],
         "issues": []
@@ -680,10 +921,16 @@
         "depends_on": [
           "cjr.examples.array_list.g_src"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.g_src"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.g_new": {
         "depends_on": [
+          "cjr.examples.array_list.ga_of"
+        ],
+        "statement_depends_on": [
           "cjr.examples.array_list.ga_of"
         ],
         "issues": []
@@ -692,10 +939,16 @@
         "depends_on": [
           "cjr.examples.array_list.g_len"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.g_len"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.g_src": {
         "depends_on": [
+          "cjr.examples.array_list.g_new"
+        ],
+        "statement_depends_on": [
           "cjr.examples.array_list.g_new"
         ],
         "issues": []
@@ -704,10 +957,16 @@
         "depends_on": [
           "cjr.examples.array_list.grow_open"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.grow_open"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.grow_alloc_e": {
         "depends_on": [
+          "cjr.examples.array_list.copy_pending_dst"
+        ],
+        "statement_depends_on": [
           "cjr.examples.array_list.copy_pending_dst"
         ],
         "issues": []
@@ -725,10 +984,18 @@
           "cjr.examples.array_list.slots_of",
           "cjr.examples.array_list.wp_new_step"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.grow_alloc_e",
+          "cjr.examples.array_list.is_arraylist",
+          "cjr.examples.array_list.slots_of"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.grow_body": {
         "depends_on": [
+          "cjr.examples.array_list.grow_open"
+        ],
+        "statement_depends_on": [
           "cjr.examples.array_list.grow_open"
         ],
         "issues": []
@@ -737,10 +1004,17 @@
         "depends_on": [
           "cjr.examples.array_list.doubled"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.doubled"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.grow_cap_Z": {
         "depends_on": [
+          "cjr.examples.array_list.doubled",
+          "cjr.examples.array_list.grow_cap"
+        ],
+        "statement_depends_on": [
           "cjr.examples.array_list.doubled",
           "cjr.examples.array_list.grow_cap"
         ],
@@ -751,11 +1025,18 @@
           "cjr.examples.array_list.doubled",
           "cjr.examples.array_list.grow_cap"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.doubled",
+          "cjr.examples.array_list.grow_cap"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.grow_cap_ge": {
         "depends_on": [
           "cjr.examples.array_list.doubled",
+          "cjr.examples.array_list.grow_cap"
+        ],
+        "statement_depends_on": [
           "cjr.examples.array_list.grow_cap"
         ],
         "issues": []
@@ -765,16 +1046,26 @@
           "cjr.examples.array_list.doubled",
           "cjr.examples.array_list.grow_cap"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.grow_cap"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.grow_open": {
         "depends_on": [
           "cjr.examples.array_list.copy_vars"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.copy_vars"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.grow_open_eq": {
         "depends_on": [
+          "cjr.examples.array_list.grow_alloc_e",
+          "cjr.examples.array_list.grow_open"
+        ],
+        "statement_depends_on": [
           "cjr.examples.array_list.grow_alloc_e",
           "cjr.examples.array_list.grow_open"
         ],
@@ -801,18 +1092,28 @@
           "cjr.examples.array_list.is_arraylist",
           "cjr.examples.array_list.slots_length"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.call_grow",
+          "cjr.examples.array_list.grow_cap",
+          "cjr.examples.array_list.is_arraylist"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.if_decide_ne_elim": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.array_list.if_decide_ne_intro": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.array_list.init_body": {
         "depends_on": [
+          "cjr.examples.array_list.default_capacity"
+        ],
+        "statement_depends_on": [
           "cjr.examples.array_list.default_capacity"
         ],
         "issues": []
@@ -825,10 +1126,19 @@
           "cjr.examples.array_list.slots_of",
           "cjr.examples.array_list.wp_new_step"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.call_init",
+          "cjr.examples.array_list.default_capacity",
+          "cjr.examples.array_list.is_arraylist"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.init_then_capacity": {
         "depends_on": [
+          "cjr.examples.array_list.call_init",
+          "cjr.examples.array_list.capacity_at"
+        ],
+        "statement_depends_on": [
           "cjr.examples.array_list.call_init",
           "cjr.examples.array_list.capacity_at"
         ],
@@ -843,10 +1153,19 @@
           "cjr.examples.array_list.init_then_capacity",
           "cjr.examples.array_list.is_arraylist"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.default_capacity",
+          "cjr.examples.array_list.init_then_capacity",
+          "cjr.examples.array_list.is_arraylist"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.init_then_empty": {
         "depends_on": [
+          "cjr.examples.array_list.call_init",
+          "cjr.examples.array_list.is_empty_at"
+        ],
+        "statement_depends_on": [
           "cjr.examples.array_list.call_init",
           "cjr.examples.array_list.is_empty_at"
         ],
@@ -861,10 +1180,19 @@
           "cjr.examples.array_list.is_empty_at",
           "cjr.examples.array_list.is_empty_spec"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.default_capacity",
+          "cjr.examples.array_list.init_then_empty",
+          "cjr.examples.array_list.is_arraylist"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.init_then_size": {
         "depends_on": [
+          "cjr.examples.array_list.call_init",
+          "cjr.examples.array_list.size_at"
+        ],
+        "statement_depends_on": [
           "cjr.examples.array_list.call_init",
           "cjr.examples.array_list.size_at"
         ],
@@ -879,10 +1207,19 @@
           "cjr.examples.array_list.size_at",
           "cjr.examples.array_list.size_spec"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.default_capacity",
+          "cjr.examples.array_list.init_then_size",
+          "cjr.examples.array_list.is_arraylist"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.init_then_version": {
         "depends_on": [
+          "cjr.examples.array_list.call_init",
+          "cjr.examples.array_list.version_at"
+        ],
+        "statement_depends_on": [
           "cjr.examples.array_list.call_init",
           "cjr.examples.array_list.version_at"
         ],
@@ -897,6 +1234,11 @@
           "cjr.examples.array_list.version_at",
           "cjr.examples.array_list.version_spec"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.default_capacity",
+          "cjr.examples.array_list.init_then_version",
+          "cjr.examples.array_list.is_arraylist"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.is_arraylist": {
@@ -904,20 +1246,29 @@
           "cjr.examples.array_list.is_buf",
           "cjr.examples.array_list.slots_of"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.is_buf",
+          "cjr.examples.array_list.slots_of"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.is_buf": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.array_list.is_empty_at": {
         "depends_on": [
           "cjr.examples.array_list.is_empty_body"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.is_empty_body"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.is_empty_body": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.array_list.is_empty_spec": {
@@ -925,26 +1276,37 @@
           "cjr.examples.array_list.call_is_empty",
           "cjr.examples.array_list.is_arraylist"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.call_is_empty",
+          "cjr.examples.array_list.is_arraylist"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.nat_decide_eq_refl": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.array_list.nat_decide_succ_ne": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.array_list.nat_decide_zero_succ": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.array_list.overwrite": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.array_list.overwrite_cons": {
         "depends_on": [
+          "cjr.examples.array_list.overwrite"
+        ],
+        "statement_depends_on": [
           "cjr.examples.array_list.overwrite"
         ],
         "issues": []
@@ -953,16 +1315,25 @@
         "depends_on": [
           "cjr.examples.array_list.overwrite"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.overwrite"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.overwrite_replicate": {
         "depends_on": [
           "cjr.examples.array_list.overwrite"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.overwrite"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.remove_body": {
         "depends_on": [
+          "cjr.examples.array_list.remove_core"
+        ],
+        "statement_depends_on": [
           "cjr.examples.array_list.remove_core"
         ],
         "issues": []
@@ -974,6 +1345,10 @@
           "cjr.examples.array_list.remove_tail",
           "cjr.examples.array_list.remove_tail_var"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.remove_core",
+          "cjr.examples.array_list.remove_open"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.remove_core": {
@@ -981,10 +1356,15 @@
           "cjr.examples.array_list.copy_vars",
           "cjr.examples.array_list.remove_tail_var"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.copy_vars",
+          "cjr.examples.array_list.remove_tail_var"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.remove_finish_e": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.array_list.remove_finish_spec": {
@@ -1000,10 +1380,21 @@
           "cjr.examples.array_list.slots_length",
           "cjr.examples.array_list.slots_of"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.al_remove",
+          "cjr.examples.array_list.is_arraylist",
+          "cjr.examples.array_list.remove_finish_e",
+          "cjr.examples.array_list.shift_from",
+          "cjr.examples.array_list.slots_of"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.remove_open": {
         "depends_on": [
+          "cjr.examples.array_list.copy_vars",
+          "cjr.examples.array_list.remove_tail"
+        ],
+        "statement_depends_on": [
           "cjr.examples.array_list.copy_vars",
           "cjr.examples.array_list.remove_tail"
         ],
@@ -1030,10 +1421,18 @@
           "cjr.examples.array_list.slots_lookup_prefix",
           "cjr.examples.array_list.slots_of"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.al_remove",
+          "cjr.examples.array_list.is_arraylist",
+          "cjr.examples.array_list.remove_open"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.remove_ready": {
         "depends_on": [
+          "cjr.examples.array_list.remove_tail"
+        ],
+        "statement_depends_on": [
           "cjr.examples.array_list.remove_tail"
         ],
         "issues": []
@@ -1044,10 +1443,19 @@
           "cjr.examples.array_list.remove_ready",
           "cjr.examples.array_list.remove_tail"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.remove_finish_e",
+          "cjr.examples.array_list.remove_ready"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.remove_slots": {
         "depends_on": [
+          "cjr.examples.array_list.al_remove",
+          "cjr.examples.array_list.shift_from",
+          "cjr.examples.array_list.slots_of"
+        ],
+        "statement_depends_on": [
           "cjr.examples.array_list.al_remove",
           "cjr.examples.array_list.shift_from",
           "cjr.examples.array_list.slots_of"
@@ -1063,18 +1471,29 @@
           "cjr.examples.array_list.remove_core",
           "cjr.examples.array_list.remove_open_spec"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.al_remove",
+          "cjr.examples.array_list.call_remove",
+          "cjr.examples.array_list.is_arraylist"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.remove_tail": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.array_list.remove_tail_var": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.array_list.remove_then_size": {
         "depends_on": [
+          "cjr.examples.array_list.call_remove",
+          "cjr.examples.array_list.call_size"
+        ],
+        "statement_depends_on": [
           "cjr.examples.array_list.call_remove",
           "cjr.examples.array_list.call_size"
         ],
@@ -1090,10 +1509,18 @@
           "cjr.examples.array_list.remove_then_size",
           "cjr.examples.array_list.size_spec"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.al_remove",
+          "cjr.examples.array_list.is_arraylist",
+          "cjr.examples.array_list.remove_then_size"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.rr_buf": {
         "depends_on": [
+          "cjr.examples.array_list.remove_tail"
+        ],
+        "statement_depends_on": [
           "cjr.examples.array_list.remove_tail"
         ],
         "issues": []
@@ -1103,12 +1530,18 @@
           "cjr.examples.array_list.remove_ready",
           "cjr.examples.array_list.remove_tail"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.remove_ready"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.rr_dst": {
         "depends_on": [
           "cjr.examples.array_list.remove_ready",
           "cjr.examples.array_list.remove_tail"
+        ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.remove_ready"
         ],
         "issues": []
       },
@@ -1117,12 +1550,18 @@
           "cjr.examples.array_list.remove_ready",
           "cjr.examples.array_list.remove_tail"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.remove_ready"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.rr_soff": {
         "depends_on": [
           "cjr.examples.array_list.remove_ready",
           "cjr.examples.array_list.remove_tail"
+        ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.remove_ready"
         ],
         "issues": []
       },
@@ -1131,10 +1570,17 @@
           "cjr.examples.array_list.remove_ready",
           "cjr.examples.array_list.remove_tail"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.remove_ready"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.set_then_get": {
         "depends_on": [
+          "cjr.examples.array_list.call_al_get",
+          "cjr.examples.array_list.call_al_set"
+        ],
+        "statement_depends_on": [
           "cjr.examples.array_list.call_al_get",
           "cjr.examples.array_list.call_al_set"
         ],
@@ -1150,6 +1596,11 @@
           "cjr.examples.array_list.is_arraylist",
           "cjr.examples.array_list.set_then_get"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.al_set",
+          "cjr.examples.array_list.is_arraylist",
+          "cjr.examples.array_list.set_then_get"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.set_then_get_same_spec": {
@@ -1162,10 +1613,19 @@
           "cjr.examples.array_list.is_arraylist",
           "cjr.examples.array_list.set_then_get"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.al_set",
+          "cjr.examples.array_list.is_arraylist",
+          "cjr.examples.array_list.set_then_get"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.set_then_size": {
         "depends_on": [
+          "cjr.examples.array_list.call_al_set",
+          "cjr.examples.array_list.call_size"
+        ],
+        "statement_depends_on": [
           "cjr.examples.array_list.call_al_set",
           "cjr.examples.array_list.call_size"
         ],
@@ -1181,10 +1641,19 @@
           "cjr.examples.array_list.set_then_size",
           "cjr.examples.array_list.size_spec"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.al_set",
+          "cjr.examples.array_list.is_arraylist",
+          "cjr.examples.array_list.set_then_size"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.set_then_version": {
         "depends_on": [
+          "cjr.examples.array_list.call_al_set",
+          "cjr.examples.array_list.call_version"
+        ],
+        "statement_depends_on": [
           "cjr.examples.array_list.call_al_set",
           "cjr.examples.array_list.call_version"
         ],
@@ -1199,14 +1668,23 @@
           "cjr.examples.array_list.set_then_version",
           "cjr.examples.array_list.version_spec"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.al_set",
+          "cjr.examples.array_list.is_arraylist",
+          "cjr.examples.array_list.set_then_version"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.shift_from": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.array_list.shift_from_done": {
         "depends_on": [
+          "cjr.examples.array_list.shift_from"
+        ],
+        "statement_depends_on": [
           "cjr.examples.array_list.shift_from"
         ],
         "issues": []
@@ -1215,10 +1693,16 @@
         "depends_on": [
           "cjr.examples.array_list.shift_from"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.shift_from"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.shift_from_step": {
         "depends_on": [
+          "cjr.examples.array_list.shift_from"
+        ],
+        "statement_depends_on": [
           "cjr.examples.array_list.shift_from"
         ],
         "issues": []
@@ -1227,10 +1711,14 @@
         "depends_on": [
           "cjr.examples.array_list.size_body"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.size_body"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.size_body": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.array_list.size_spec": {
@@ -1238,14 +1726,22 @@
           "cjr.examples.array_list.call_size",
           "cjr.examples.array_list.is_arraylist"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.call_size",
+          "cjr.examples.array_list.is_arraylist"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.sload": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.array_list.slots_length": {
         "depends_on": [
+          "cjr.examples.array_list.slots_of"
+        ],
+        "statement_depends_on": [
           "cjr.examples.array_list.slots_of"
         ],
         "issues": []
@@ -1254,26 +1750,39 @@
         "depends_on": [
           "cjr.examples.array_list.slots_of"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.slots_of"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.slots_lookup_zero": {
         "depends_on": [
           "cjr.examples.array_list.slots_of"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.slots_of"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.slots_of": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.array_list.slots_set": {
         "depends_on": [
           "cjr.examples.array_list.slots_of"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.slots_of"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.slots_snoc": {
         "depends_on": [
+          "cjr.examples.array_list.slots_of"
+        ],
+        "statement_depends_on": [
           "cjr.examples.array_list.slots_of"
         ],
         "issues": []
@@ -1283,11 +1792,17 @@
           "cjr.examples.array_list.add_suffix",
           "cjr.examples.array_list.add_write_e"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.add_write_e"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.suf_gargs": {
         "depends_on": [
           "cjr.examples.array_list.add_suffix",
+          "cjr.examples.array_list.add_write_e"
+        ],
+        "statement_depends_on": [
           "cjr.examples.array_list.add_write_e"
         ],
         "issues": []
@@ -1297,11 +1812,17 @@
           "cjr.examples.array_list.add_suffix",
           "cjr.examples.array_list.add_write_e"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.add_write_e"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.suf_pcap": {
         "depends_on": [
           "cjr.examples.array_list.add_suffix",
+          "cjr.examples.array_list.add_write_e"
+        ],
+        "statement_depends_on": [
           "cjr.examples.array_list.add_write_e"
         ],
         "issues": []
@@ -1310,14 +1831,22 @@
         "depends_on": [
           "cjr.examples.array_list.version_body"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.version_body"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.version_body": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.array_list.version_spec": {
         "depends_on": [
+          "cjr.examples.array_list.call_version",
+          "cjr.examples.array_list.is_arraylist"
+        ],
+        "statement_depends_on": [
           "cjr.examples.array_list.call_version",
           "cjr.examples.array_list.is_arraylist"
         ],
@@ -1330,6 +1859,9 @@
           "cjr.examples.array_list.copy_while",
           "cjr.examples.array_list.sload"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.copy_while"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.wp_copy_stop": {
@@ -1339,14 +1871,19 @@
           "cjr.examples.array_list.copy_while",
           "cjr.examples.array_list.sload"
         ],
+        "statement_depends_on": [
+          "cjr.examples.array_list.copy_while"
+        ],
         "issues": []
       },
       "cjr.examples.array_list.wp_new_step": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.array_list.wp_struct_step": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       }
     }
@@ -2227,6 +2764,261 @@
       }
     }
   },
+  "cangjie": {
+    "cjr.examples.array_list.sload": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.array_list.copy_vars": {
+      "status": "available",
+      "text": "while ((i + 1) <= len) {\n    unsafe { (dst + (i + doff)).write(unsafe { (src + (i + soff)).read() }) }\n    i = i + 1\n}"
+    },
+    "cjr.examples.array_list.copy_open": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.array_list.copy_cond": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.array_list.copy_step": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.array_list.copy_while": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.array_list.init_body": {
+      "status": "unavailable",
+      "reason": "The Gallina printer reported an unsupported construct or missing layout metadata."
+    },
+    "cjr.examples.array_list.call_init": {
+      "status": "unavailable",
+      "reason": "The Gallina printer reported an unsupported construct or missing layout metadata."
+    },
+    "cjr.examples.array_list.size_body": {
+      "status": "available",
+      "text": "a.f1"
+    },
+    "cjr.examples.array_list.call_size": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.array_list.capacity_body": {
+      "status": "available",
+      "text": "let buf = a.f0\nbuf.f0"
+    },
+    "cjr.examples.array_list.call_capacity": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.array_list.version_body": {
+      "status": "available",
+      "text": "a.f2"
+    },
+    "cjr.examples.array_list.call_version": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.array_list.is_empty_body": {
+      "status": "available",
+      "text": "let n = a.f1\nn == 0"
+    },
+    "cjr.examples.array_list.call_is_empty": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.array_list.al_get_body": {
+      "status": "available",
+      "text": "let a = args[0]\nlet i = args[1]\nlet buf = a.f0\nlet p = buf.f1\nunsafe { (p + i).read() }"
+    },
+    "cjr.examples.array_list.call_al_get": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.array_list.al_set_body": {
+      "status": "available",
+      "text": "let a = args[0]\nlet i = args[1]\nlet x = args[2]\nlet buf = a.f0\nlet p = buf.f1\nunsafe { (p + i).write(x) }"
+    },
+    "cjr.examples.array_list.call_al_set": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.array_list.copy_pending_dst": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.array_list.grow_alloc_e": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.array_list.grow_open": {
+      "status": "unavailable",
+      "reason": "The Gallina printer reported an unsupported construct or missing layout metadata."
+    },
+    "cjr.examples.array_list.ga_of": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.array_list.g_new": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.array_list.g_src": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.array_list.g_len": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.array_list.g_soff": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.array_list.g_doff": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.array_list.grow_body": {
+      "status": "unavailable",
+      "reason": "The Gallina printer reported an unsupported construct or missing layout metadata."
+    },
+    "cjr.examples.array_list.call_grow": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.array_list.add_suffix": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.array_list.add_write_e": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.array_list.add_suffix_var": {
+      "status": "available",
+      "text": "let buf2 = a.f0\nlet p = buf2.f1\nunsafe { (p + n).write(x) }\nlet n1 = n + 1\na.f1 = n1\nlet ver = a.f2\na.f2 = ver + 1"
+    },
+    "cjr.examples.array_list.add_core": {
+      "status": "unavailable",
+      "reason": "The Gallina printer reported an unsupported construct or missing layout metadata."
+    },
+    "cjr.examples.array_list.add_open": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.array_list.add_body": {
+      "status": "unavailable",
+      "reason": "The Gallina printer reported an unsupported construct or missing layout metadata."
+    },
+    "cjr.examples.array_list.call_add": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.array_list.remove_finish_e": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.array_list.remove_tail": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.array_list.remove_ready": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.array_list.remove_tail_var": {
+      "status": "available",
+      "text": "let last = n - 1\nunsafe { (p + last).write(0) }\na.f1 = last\nlet ver = a.f2\na.f2 = ver + 1\nremoved"
+    },
+    "cjr.examples.array_list.remove_core": {
+      "status": "available",
+      "text": "let n = a.f1\nlet buf = a.f0\nlet p = buf.f1\nlet removed = unsafe { (p + at).read() }\nlet src = p\nlet dst = p\nlet soff = at + 1\nlet doff = at\nlet len = (n - at) - 1\nvar i = 0\nwhile ((i + 1) <= len) {\n    unsafe { (dst + (i + doff)).write(unsafe { (src + (i + soff)).read() }) }\n    i = i + 1\n}\nlet last = n - 1\nunsafe { (p + last).write(0) }\na.f1 = last\nlet ver = a.f2\na.f2 = ver + 1\nremoved"
+    },
+    "cjr.examples.array_list.remove_open": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.array_list.remove_body": {
+      "status": "available",
+      "text": "let a = args[0]\nlet at = args[1]\nlet n = a.f1\nlet buf = a.f0\nlet p = buf.f1\nlet removed = unsafe { (p + at).read() }\nlet src = p\nlet dst = p\nlet soff = at + 1\nlet doff = at\nlet len = (n - at) - 1\nvar i = 0\nwhile ((i + 1) <= len) {\n    unsafe { (dst + (i + doff)).write(unsafe { (src + (i + soff)).read() }) }\n    i = i + 1\n}\nlet last = n - 1\nunsafe { (p + last).write(0) }\na.f1 = last\nlet ver = a.f2\na.f2 = ver + 1\nremoved"
+    },
+    "cjr.examples.array_list.call_remove": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.array_list.size_at": {
+      "status": "available",
+      "text": "({ a => a.f1 })(arr)"
+    },
+    "cjr.examples.array_list.capacity_at": {
+      "status": "available",
+      "text": "({ a => let buf = a.f0\nbuf.f0 })(arr)"
+    },
+    "cjr.examples.array_list.version_at": {
+      "status": "available",
+      "text": "({ a => a.f2 })(arr)"
+    },
+    "cjr.examples.array_list.is_empty_at": {
+      "status": "available",
+      "text": "({ a => let n = a.f1\nn == 0 })(arr)"
+    },
+    "cjr.examples.array_list.init_then_size": {
+      "status": "unavailable",
+      "reason": "The Gallina printer reported an unsupported construct or missing layout metadata."
+    },
+    "cjr.examples.array_list.init_then_empty": {
+      "status": "unavailable",
+      "reason": "The Gallina printer reported an unsupported construct or missing layout metadata."
+    },
+    "cjr.examples.array_list.init_then_capacity": {
+      "status": "unavailable",
+      "reason": "The Gallina printer reported an unsupported construct or missing layout metadata."
+    },
+    "cjr.examples.array_list.init_then_version": {
+      "status": "unavailable",
+      "reason": "The Gallina printer reported an unsupported construct or missing layout metadata."
+    },
+    "cjr.examples.array_list.add_then_size": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.array_list.add_then_get": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.array_list.add_then_version": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.array_list.add_then_capacity": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.array_list.add_then_remove": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.array_list.set_then_get": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.array_list.set_then_size": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.array_list.set_then_version": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.array_list.remove_then_size": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    }
+  },
+  "correctness_contracts": {},
   "history": {
     "complete": true,
     "declarations": {
@@ -3100,6 +3892,15 @@
         "issues": [],
         "complete": true
       }
+    }
+  },
+  "rendering": {
+    "proof_validation": "not_run",
+    "proof_bodies_evaluated": false,
+    "preserved_available_explanations": 0,
+    "explanations_mode": "offline",
+    "sources": {
+      "rocq/array_list.v": "1aba5db8f2793990ad981862772b507e3c3ea3af433f824440293b5b6493d288"
     }
   }
 }

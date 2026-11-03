@@ -29,24 +29,31 @@
     "declarations": {
       "cjr.examples.list_rev.app_assoc'": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.list_rev.app_nil_r'": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.list_rev.call_reverse": {
         "depends_on": [
           "cjr.examples.list_rev.rev_body"
         ],
+        "statement_depends_on": [
+          "cjr.examples.list_rev.rev_body"
+        ],
         "issues": []
       },
       "cjr.examples.list_rev.is_list_cons_destruct": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.list_rev.is_list_snoc_acc": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.list_rev.rev_app": {
@@ -54,40 +61,55 @@
           "cjr.examples.list_rev.app_assoc'",
           "cjr.examples.list_rev.app_nil_r'"
         ],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.list_rev.rev_body": {
         "depends_on": [
           "cjr.examples.list_rev.rev_loop"
         ],
+        "statement_depends_on": [
+          "cjr.examples.list_rev.rev_loop"
+        ],
         "issues": []
       },
       "cjr.examples.list_rev.rev_cons": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.list_rev.rev_done": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.list_rev.rev_eq_rev": {
         "depends_on": [
           "cjr.examples.list_rev.rev_rev"
         ],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.list_rev.rev_inv": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.list_rev.rev_loop": {
         "depends_on": [
           "cjr.examples.list_rev.rev_step"
         ],
+        "statement_depends_on": [
+          "cjr.examples.list_rev.rev_step"
+        ],
         "issues": []
       },
       "cjr.examples.list_rev.rev_loop_at": {
         "depends_on": [
+          "cjr.examples.list_rev.rev_step_at",
+          "cjr.examples.list_rev.sld"
+        ],
+        "statement_depends_on": [
           "cjr.examples.list_rev.rev_step_at",
           "cjr.examples.list_rev.sld"
         ],
@@ -100,12 +122,17 @@
           "cjr.examples.list_rev.rev_step_at_subst",
           "cjr.examples.list_rev.sld"
         ],
+        "statement_depends_on": [
+          "cjr.examples.list_rev.rev_loop",
+          "cjr.examples.list_rev.rev_loop_at"
+        ],
         "issues": []
       },
       "cjr.examples.list_rev.rev_prefix_nil": {
         "depends_on": [
           "cjr.examples.list_rev.app_nil_r'"
         ],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.list_rev.rev_prefix_step": {
@@ -113,20 +140,27 @@
           "cjr.examples.list_rev.app_assoc'",
           "cjr.examples.list_rev.rev_cons"
         ],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.list_rev.rev_rev": {
         "depends_on": [
           "cjr.examples.list_rev.rev_app"
         ],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.list_rev.rev_step": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.list_rev.rev_step_at": {
         "depends_on": [
+          "cjr.examples.list_rev.sas",
+          "cjr.examples.list_rev.sld"
+        ],
+        "statement_depends_on": [
           "cjr.examples.list_rev.sas",
           "cjr.examples.list_rev.sld"
         ],
@@ -139,6 +173,10 @@
           "cjr.examples.list_rev.sas",
           "cjr.examples.list_rev.sld"
         ],
+        "statement_depends_on": [
+          "cjr.examples.list_rev.rev_step",
+          "cjr.examples.list_rev.rev_step_at"
+        ],
         "issues": []
       },
       "cjr.examples.list_rev.reverse_spec": {
@@ -150,10 +188,17 @@
           "cjr.examples.list_rev.sld",
           "cjr.examples.list_rev.wp_rev_loop"
         ],
+        "statement_depends_on": [
+          "cjr.examples.list_rev.call_reverse"
+        ],
         "issues": []
       },
       "cjr.examples.list_rev.reverse_twice": {
         "depends_on": [
+          "cjr.examples.list_rev.call_reverse",
+          "cjr.examples.list_rev.rev_body"
+        ],
+        "statement_depends_on": [
           "cjr.examples.list_rev.call_reverse",
           "cjr.examples.list_rev.rev_body"
         ],
@@ -166,14 +211,19 @@
           "cjr.examples.list_rev.reverse_spec",
           "cjr.examples.list_rev.reverse_twice"
         ],
+        "statement_depends_on": [
+          "cjr.examples.list_rev.reverse_twice"
+        ],
         "issues": []
       },
       "cjr.examples.list_rev.sas": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.list_rev.sld": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.list_rev.wp_rev_loop": {
@@ -182,6 +232,11 @@
           "cjr.examples.list_rev.rev_inv",
           "cjr.examples.list_rev.rev_loop_at",
           "cjr.examples.list_rev.wp_rev_loop_run"
+        ],
+        "statement_depends_on": [
+          "cjr.examples.list_rev.rev_done",
+          "cjr.examples.list_rev.rev_inv",
+          "cjr.examples.list_rev.rev_loop_at"
         ],
         "issues": []
       },
@@ -196,6 +251,10 @@
           "cjr.examples.list_rev.sld",
           "cjr.examples.list_rev.wp_rev_step_at"
         ],
+        "statement_depends_on": [
+          "cjr.examples.list_rev.rev_done",
+          "cjr.examples.list_rev.rev_loop_at"
+        ],
         "issues": []
       },
       "cjr.examples.list_rev.wp_rev_step_at": {
@@ -206,6 +265,9 @@
           "cjr.examples.list_rev.rev_step_at",
           "cjr.examples.list_rev.sas",
           "cjr.examples.list_rev.sld"
+        ],
+        "statement_depends_on": [
+          "cjr.examples.list_rev.rev_step_at"
         ],
         "issues": []
       }
@@ -357,6 +419,45 @@
       }
     }
   },
+  "cangjie": {
+    "cjr.examples.list_rev.sld": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.list_rev.sas": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.list_rev.rev_step": {
+      "status": "available",
+      "text": "let nxt = cur.f2\ncur.f2 = acc\nacc = cur\ncur = nxt"
+    },
+    "cjr.examples.list_rev.rev_loop": {
+      "status": "available",
+      "text": "while (cur.f0) {\n    let nxt = cur.f2\n    cur.f2 = acc\n    acc = cur\n    cur = nxt\n}"
+    },
+    "cjr.examples.list_rev.rev_body": {
+      "status": "unavailable",
+      "reason": "The Gallina printer reported an unsupported construct or missing layout metadata."
+    },
+    "cjr.examples.list_rev.call_reverse": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.list_rev.rev_step_at": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.list_rev.rev_loop_at": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.list_rev.reverse_twice": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    }
+  },
+  "correctness_contracts": {},
   "history": {
     "complete": false,
     "declarations": {
@@ -514,6 +615,15 @@
         ],
         "complete": false
       }
+    }
+  },
+  "rendering": {
+    "proof_validation": "not_run",
+    "proof_bodies_evaluated": false,
+    "preserved_available_explanations": 28,
+    "explanations_mode": "offline",
+    "sources": {
+      "rocq/list_rev.v": "882c0e5991f2e651c03fc2822a4a8e1682ec55cd6100ac13dce70cd5a43add54"
     }
   }
 }

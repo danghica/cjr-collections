@@ -283,12 +283,6 @@
         "unmapped notation ∅"
       ],
       "declarations": 224
-    },
-    {
-      "file": "rocq/hm_tactics.v",
-      "errors": [],
-      "unsupported": [],
-      "declarations": 0
     }
   ],
   "dependencies": {
@@ -305,12 +299,19 @@
       "cjr.examples.hash_map.remove_spec"
     ],
     "source_issues": {
-      "rocq/hash_map.v": [],
-      "rocq/hm_tactics.v": []
+      "rocq/hash_map.v": []
     },
     "declarations": {
       "cjr.examples.hash_map.add_body": {
         "depends_on": [
+          "cjr.examples.hash_map.add_room_e",
+          "cjr.examples.hash_map.call_probe_e",
+          "cjr.examples.hash_map.capacity_body",
+          "cjr.examples.hash_map.grow_e",
+          "cjr.examples.hash_map.size_body",
+          "cjr.examples.hash_map.zlit"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.add_room_e",
           "cjr.examples.hash_map.call_probe_e",
           "cjr.examples.hash_map.capacity_body",
@@ -326,10 +327,18 @@
           "cjr.examples.hash_map.put_e",
           "cjr.examples.hash_map.zlit"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.arr_len",
+          "cjr.examples.hash_map.put_e",
+          "cjr.examples.hash_map.zlit"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.add_room_e": {
         "depends_on": [
+          "cjr.examples.hash_map.add_room_body"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.add_room_body"
         ],
         "issues": []
@@ -349,6 +358,10 @@
           "cjr.examples.hash_map.write_fresh",
           "cjr.examples.hash_map.write_fresh_effect"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.call_add_room",
+          "cjr.examples.hash_map.is_hashmap"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.add_spec": {
@@ -365,10 +378,18 @@
           "cjr.examples.hash_map.probe_spec",
           "cjr.examples.hash_map.size_spec"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.call_add",
+          "cjr.examples.hash_map.is_hashmap"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.add_then_contains": {
         "depends_on": [
+          "cjr.examples.hash_map.call_add",
+          "cjr.examples.hash_map.call_contains"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.call_add",
           "cjr.examples.hash_map.call_contains"
         ],
@@ -382,10 +403,18 @@
           "cjr.examples.hash_map.contains_spec",
           "cjr.examples.hash_map.is_hashmap"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.add_then_contains",
+          "cjr.examples.hash_map.is_hashmap"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.add_then_get": {
         "depends_on": [
+          "cjr.examples.hash_map.call_add",
+          "cjr.examples.hash_map.call_get"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.call_add",
           "cjr.examples.hash_map.call_get"
         ],
@@ -399,10 +428,15 @@
           "cjr.examples.hash_map.get_spec",
           "cjr.examples.hash_map.is_hashmap"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.add_then_get",
+          "cjr.examples.hash_map.is_hashmap"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.arr_get": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.hash_map.arr_get_spec": {
@@ -411,18 +445,29 @@
           "cjr.examples.hash_map.nlit",
           "cjr.examples.hash_map.zlit"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.arr_get",
+          "cjr.examples.hash_map.nlit"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.arr_len": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.hash_map.arr_set": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.hash_map.arr_set_spec": {
         "depends_on": [
+          "cjr.examples.hash_map.arr_set",
+          "cjr.examples.hash_map.nlit",
+          "cjr.examples.hash_map.zlit"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.arr_set",
           "cjr.examples.hash_map.nlit",
           "cjr.examples.hash_map.zlit"
@@ -434,10 +479,19 @@
           "cjr.examples.hash_map.hash_key",
           "cjr.examples.hash_map.residue"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.hash_key",
+          "cjr.examples.hash_map.residue"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.bucket_body": {
         "depends_on": [
+          "cjr.examples.hash_map.hash_multiplier",
+          "cjr.examples.hash_map.hash_prime",
+          "cjr.examples.hash_map.residue_body"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.hash_multiplier",
           "cjr.examples.hash_map.hash_prime",
           "cjr.examples.hash_map.residue_body"
@@ -449,6 +503,9 @@
           "cjr.examples.hash_map.bucket",
           "cjr.examples.hash_map.residue_nat_lt"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.bucket"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.bucket_wp": {
@@ -459,6 +516,11 @@
           "cjr.examples.hash_map.residue",
           "cjr.examples.hash_map.residue_wp"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.call_bucket",
+          "cjr.examples.hash_map.hash_key",
+          "cjr.examples.hash_map.residue"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.buffer_probe_body": {
@@ -468,10 +530,19 @@
           "cjr.examples.hash_map.scan_v",
           "cjr.examples.hash_map.zlit"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.bucket_body",
+          "cjr.examples.hash_map.lit_m1",
+          "cjr.examples.hash_map.scan_v",
+          "cjr.examples.hash_map.zlit"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.buffer_probe_e": {
         "depends_on": [
+          "cjr.examples.hash_map.buffer_probe_body"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.buffer_probe_body"
         ],
         "issues": []
@@ -491,10 +562,19 @@
           "cjr.examples.hash_map.residue_spec",
           "cjr.examples.hash_map.scan_spec"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.bucket",
+          "cjr.examples.hash_map.call_buffer_probe",
+          "cjr.examples.hash_map.probe",
+          "cjr.examples.hash_map.probe_val"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.call_add": {
         "depends_on": [
+          "cjr.examples.hash_map.add_body"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.add_body"
         ],
         "issues": []
@@ -503,10 +583,16 @@
         "depends_on": [
           "cjr.examples.hash_map.add_room_body"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.add_room_body"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.call_bucket": {
         "depends_on": [
+          "cjr.examples.hash_map.bucket_body"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.bucket_body"
         ],
         "issues": []
@@ -515,10 +601,16 @@
         "depends_on": [
           "cjr.examples.hash_map.buffer_probe_body"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.buffer_probe_body"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.call_capacity": {
         "depends_on": [
+          "cjr.examples.hash_map.capacity_body"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.capacity_body"
         ],
         "issues": []
@@ -527,10 +619,16 @@
         "depends_on": [
           "cjr.examples.hash_map.contains_body"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.contains_body"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.call_get": {
         "depends_on": [
+          "cjr.examples.hash_map.get_body"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.get_body"
         ],
         "issues": []
@@ -539,10 +637,16 @@
         "depends_on": [
           "cjr.examples.hash_map.grow_body"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.grow_body"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.call_init": {
         "depends_on": [
+          "cjr.examples.hash_map.init_body"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.init_body"
         ],
         "issues": []
@@ -551,10 +655,16 @@
         "depends_on": [
           "cjr.examples.hash_map.is_empty_body"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.is_empty_body"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.call_lookup": {
         "depends_on": [
+          "cjr.examples.hash_map.lookup_for_body"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.lookup_for_body"
         ],
         "issues": []
@@ -563,10 +673,16 @@
         "depends_on": [
           "cjr.examples.hash_map.lookup_buffer_body"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.lookup_buffer_body"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.call_lookup_e": {
         "depends_on": [
+          "cjr.examples.hash_map.lookup_for_body"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.lookup_for_body"
         ],
         "issues": []
@@ -575,10 +691,16 @@
         "depends_on": [
           "cjr.examples.hash_map.probe_for_body"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.probe_for_body"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.call_probe_e": {
         "depends_on": [
+          "cjr.examples.hash_map.probe_for_body"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.probe_for_body"
         ],
         "issues": []
@@ -587,10 +709,16 @@
         "depends_on": [
           "cjr.examples.hash_map.put_body"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.put_body"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.call_rehash": {
         "depends_on": [
+          "cjr.examples.hash_map.rehash_v"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.rehash_v"
         ],
         "issues": []
@@ -599,10 +727,16 @@
         "depends_on": [
           "cjr.examples.hash_map.remove_body"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.remove_body"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.call_residue": {
         "depends_on": [
+          "cjr.examples.hash_map.residue_body"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.residue_body"
         ],
         "issues": []
@@ -612,10 +746,17 @@
           "cjr.examples.hash_map.hole_z",
           "cjr.examples.hash_map.scan_v"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.hole_z",
+          "cjr.examples.hash_map.scan_v"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.call_size": {
         "depends_on": [
+          "cjr.examples.hash_map.size_body"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.size_body"
         ],
         "issues": []
@@ -625,16 +766,23 @@
           "cjr.examples.hash_map.pow_positive",
           "cjr.examples.hash_map.wf_table"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.wf_table"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.capacity_at": {
         "depends_on": [
           "cjr.examples.hash_map.capacity_body"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.capacity_body"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.capacity_body": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.hash_map.capacity_spec": {
@@ -642,6 +790,10 @@
           "cjr.examples.hash_map.call_capacity",
           "cjr.examples.hash_map.capacity_body",
           "cjr.examples.hash_map.count_occ",
+          "cjr.examples.hash_map.is_hashmap"
+        ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.call_capacity",
           "cjr.examples.hash_map.is_hashmap"
         ],
         "issues": []
@@ -652,10 +804,18 @@
           "cjr.examples.hash_map.tag_empty",
           "cjr.examples.hash_map.tag_occ"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.probe_slot",
+          "cjr.examples.hash_map.tag_empty",
+          "cjr.examples.hash_map.tag_occ"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.contains_body": {
         "depends_on": [
+          "cjr.examples.hash_map.call_lookup_e"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.call_lookup_e"
         ],
         "issues": []
@@ -668,12 +828,21 @@
           "cjr.examples.hash_map.is_hashmap_obj",
           "cjr.examples.hash_map.lookup_spec"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.call_contains",
+          "cjr.examples.hash_map.is_hashmap"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.contents_at": {
         "depends_on": [
           "cjr.examples.hash_map.contents_of",
           "cjr.examples.hash_map.occ_in",
+          "cjr.examples.hash_map.occ_keys",
+          "cjr.examples.hash_map.tag_occ"
+        ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.contents_of",
           "cjr.examples.hash_map.occ_keys",
           "cjr.examples.hash_map.tag_occ"
         ],
@@ -689,6 +858,12 @@
           "cjr.examples.hash_map.tag_tomb",
           "cjr.examples.hash_map.tag_tomb_ne_occ"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.contents_of",
+          "cjr.examples.hash_map.occ_keys",
+          "cjr.examples.hash_map.tag_occ",
+          "cjr.examples.hash_map.tag_tomb"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.contents_none_iff": {
@@ -697,10 +872,18 @@
           "cjr.examples.hash_map.occ_keys",
           "cjr.examples.hash_map.tag_occ"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.contents_of",
+          "cjr.examples.hash_map.occ_keys"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.contents_of": {
         "depends_on": [
+          "cjr.examples.hash_map.contents_of",
+          "cjr.examples.hash_map.tag_occ"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.contents_of",
           "cjr.examples.hash_map.tag_occ"
         ],
@@ -713,10 +896,20 @@
           "cjr.examples.hash_map.occ_keys",
           "cjr.examples.hash_map.tag_occ"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.contents_of",
+          "cjr.examples.hash_map.occ_keys",
+          "cjr.examples.hash_map.tag_occ"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.contents_place": {
         "depends_on": [
+          "cjr.examples.hash_map.contents_of",
+          "cjr.examples.hash_map.occ_keys",
+          "cjr.examples.hash_map.tag_occ"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.contents_of",
           "cjr.examples.hash_map.occ_keys",
           "cjr.examples.hash_map.tag_occ"
@@ -728,10 +921,18 @@
           "cjr.examples.hash_map.contents_of",
           "cjr.examples.hash_map.tag_occ"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.contents_of"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.count_bury": {
         "depends_on": [
+          "cjr.examples.hash_map.count_occ",
+          "cjr.examples.hash_map.tag_occ",
+          "cjr.examples.hash_map.tag_tomb"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.count_occ",
           "cjr.examples.hash_map.tag_occ",
           "cjr.examples.hash_map.tag_tomb"
@@ -745,10 +946,20 @@
           "cjr.examples.hash_map.tag_occ",
           "cjr.examples.hash_map.tag_tomb"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.count_occ",
+          "cjr.examples.hash_map.tag_empty",
+          "cjr.examples.hash_map.tag_occ",
+          "cjr.examples.hash_map.tag_tomb"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.count_lt_exists": {
         "depends_on": [
+          "cjr.examples.hash_map.count_occ",
+          "cjr.examples.hash_map.tag_occ"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.count_occ",
           "cjr.examples.hash_map.tag_occ"
         ],
@@ -759,12 +970,19 @@
           "cjr.examples.hash_map.count_occ",
           "cjr.examples.hash_map.tag_occ"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.count_occ",
+          "cjr.examples.hash_map.tag_occ"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.count_occ_len": {
         "depends_on": [
           "cjr.examples.hash_map.count_occ",
           "cjr.examples.hash_map.tag_occ"
+        ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.count_occ"
         ],
         "issues": []
       },
@@ -773,16 +991,23 @@
           "cjr.examples.hash_map.count_occ",
           "cjr.examples.hash_map.tag_occ"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.count_occ"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.default_cap_pow": {
         "depends_on": [
           "cjr.examples.hash_map.default_capacity"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.default_capacity"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.default_capacity": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.hash_map.double_pow": {
@@ -790,10 +1015,12 @@
           "cjr.examples.hash_map.even_pow",
           "cjr.examples.hash_map.twice_add"
         ],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.hash_map.doubled_cap": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.hash_map.doubled_cap_pow": {
@@ -801,14 +1028,23 @@
           "cjr.examples.hash_map.double_pow",
           "cjr.examples.hash_map.doubled_cap"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.doubled_cap"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.even_pow": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.hash_map.first_tomb": {
         "depends_on": [
+          "cjr.examples.hash_map.first_tomb",
+          "cjr.examples.hash_map.probe_slot",
+          "cjr.examples.hash_map.tag_tomb"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.first_tomb",
           "cjr.examples.hash_map.probe_slot",
           "cjr.examples.hash_map.tag_tomb"
@@ -821,6 +1057,11 @@
           "cjr.examples.hash_map.probe_slot",
           "cjr.examples.hash_map.tag_tomb"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.first_tomb",
+          "cjr.examples.hash_map.probe_slot",
+          "cjr.examples.hash_map.tag_tomb"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.first_tomb_none_clear": {
@@ -829,10 +1070,20 @@
           "cjr.examples.hash_map.probe_slot",
           "cjr.examples.hash_map.tag_tomb"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.first_tomb",
+          "cjr.examples.hash_map.probe_slot",
+          "cjr.examples.hash_map.tag_tomb"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.first_tomb_some": {
         "depends_on": [
+          "cjr.examples.hash_map.first_tomb",
+          "cjr.examples.hash_map.probe_slot",
+          "cjr.examples.hash_map.tag_tomb"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.first_tomb",
           "cjr.examples.hash_map.probe_slot",
           "cjr.examples.hash_map.tag_tomb"
@@ -859,10 +1110,20 @@
           "cjr.examples.hash_map.tags_ok",
           "cjr.examples.hash_map.tags_ok_lookup"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.count_occ",
+          "cjr.examples.hash_map.no_empty_before",
+          "cjr.examples.hash_map.probe_prefix",
+          "cjr.examples.hash_map.tag_tomb",
+          "cjr.examples.hash_map.tags_ok"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.get_body": {
         "depends_on": [
+          "cjr.examples.hash_map.call_lookup_e"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.call_lookup_e"
         ],
         "issues": []
@@ -875,6 +1136,10 @@
           "cjr.examples.hash_map.is_hashmap_obj",
           "cjr.examples.hash_map.lookup_spec"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.call_get",
+          "cjr.examples.hash_map.is_hashmap"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.grow_body": {
@@ -883,10 +1148,18 @@
           "cjr.examples.hash_map.rehash_v",
           "cjr.examples.hash_map.zlit"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.arr_len",
+          "cjr.examples.hash_map.rehash_v",
+          "cjr.examples.hash_map.zlit"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.grow_e": {
         "depends_on": [
+          "cjr.examples.hash_map.grow_body"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.grow_body"
         ],
         "issues": []
@@ -912,10 +1185,19 @@
           "cjr.examples.hash_map.wf_table",
           "cjr.examples.hash_map.zeros_wf"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.call_grow",
+          "cjr.examples.hash_map.doubled_cap",
+          "cjr.examples.hash_map.is_hashmap"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.grow_table": {
         "depends_on": [
+          "cjr.examples.hash_map.doubled_cap",
+          "cjr.examples.hash_map.rehash_acc"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.doubled_cap",
           "cjr.examples.hash_map.rehash_acc"
         ],
@@ -935,6 +1217,12 @@
           "cjr.examples.hash_map.wf_table",
           "cjr.examples.hash_map.zeros_wf"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.contents_of",
+          "cjr.examples.hash_map.doubled_cap",
+          "cjr.examples.hash_map.grow_table",
+          "cjr.examples.hash_map.wf_table"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.hash_key": {
@@ -942,18 +1230,28 @@
           "cjr.examples.hash_map.hash_multiplier",
           "cjr.examples.hash_map.hash_prime"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.hash_multiplier",
+          "cjr.examples.hash_map.hash_prime"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.hash_multiplier": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.hash_map.hash_prime": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.hash_map.hash_product_int64": {
         "depends_on": [
+          "cjr.examples.hash_map.hash_multiplier",
+          "cjr.examples.hash_map.hash_prime"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.hash_multiplier",
           "cjr.examples.hash_map.hash_prime"
         ],
@@ -967,18 +1265,26 @@
           "cjr.examples.hash_map.size_contents",
           "cjr.examples.hash_map.wf_table"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.is_hashmap"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.head_drop_hm": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.hash_map.hole_or": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.hash_map.hole_or_e": {
         "depends_on": [
+          "cjr.examples.hash_map.lit_m1"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.lit_m1"
         ],
         "issues": []
@@ -992,14 +1298,25 @@
           "cjr.examples.hash_map.nlit",
           "cjr.examples.hash_map.zlit"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.hole_or",
+          "cjr.examples.hash_map.hole_or_e",
+          "cjr.examples.hash_map.hole_z",
+          "cjr.examples.hash_map.nlit",
+          "cjr.examples.hash_map.zlit"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.hole_z": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.hash_map.init_body": {
         "depends_on": [
+          "cjr.examples.hash_map.make_zero_array"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.make_zero_array"
         ],
         "issues": []
@@ -1018,10 +1335,19 @@
           "cjr.examples.hash_map.make_zero_spec",
           "cjr.examples.hash_map.zeros_wf"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.call_init",
+          "cjr.examples.hash_map.default_capacity",
+          "cjr.examples.hash_map.is_hashmap"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.init_then_capacity": {
         "depends_on": [
+          "cjr.examples.hash_map.call_init",
+          "cjr.examples.hash_map.capacity_at"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.call_init",
           "cjr.examples.hash_map.capacity_at"
         ],
@@ -1036,10 +1362,19 @@
           "cjr.examples.hash_map.init_then_capacity",
           "cjr.examples.hash_map.is_hashmap"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.default_capacity",
+          "cjr.examples.hash_map.init_then_capacity",
+          "cjr.examples.hash_map.is_hashmap"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.init_then_empty": {
         "depends_on": [
+          "cjr.examples.hash_map.call_init",
+          "cjr.examples.hash_map.is_empty_at"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.call_init",
           "cjr.examples.hash_map.is_empty_at"
         ],
@@ -1054,10 +1389,19 @@
           "cjr.examples.hash_map.is_empty_spec",
           "cjr.examples.hash_map.is_hashmap"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.default_capacity",
+          "cjr.examples.hash_map.init_then_empty",
+          "cjr.examples.hash_map.is_hashmap"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.init_then_size": {
         "depends_on": [
+          "cjr.examples.hash_map.call_init",
+          "cjr.examples.hash_map.size_at"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.call_init",
           "cjr.examples.hash_map.size_at"
         ],
@@ -1072,24 +1416,35 @@
           "cjr.examples.hash_map.size_at",
           "cjr.examples.hash_map.size_spec"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.default_capacity",
+          "cjr.examples.hash_map.init_then_size",
+          "cjr.examples.hash_map.is_hashmap"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.insert_length_eq": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.hash_map.is_array_obj_hm": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.hash_map.is_empty_at": {
         "depends_on": [
           "cjr.examples.hash_map.is_empty_body"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.is_empty_body"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.is_empty_body": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.hash_map.is_empty_spec": {
@@ -1101,10 +1456,19 @@
           "cjr.examples.hash_map.size_contents",
           "cjr.examples.hash_map.wf_table"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.call_is_empty",
+          "cjr.examples.hash_map.is_hashmap"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.is_hashmap": {
         "depends_on": [
+          "cjr.examples.hash_map.contents_of",
+          "cjr.examples.hash_map.count_occ",
+          "cjr.examples.hash_map.is_hm_slots"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.contents_of",
           "cjr.examples.hash_map.count_occ",
           "cjr.examples.hash_map.is_hm_slots"
@@ -1115,20 +1479,30 @@
         "depends_on": [
           "cjr.examples.hash_map.is_hashmap"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.is_hashmap"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.is_hm_slots": {
         "depends_on": [
           "cjr.examples.hash_map.wf_table"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.wf_table"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.lit_m1": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.hash_map.lit_tag_empty": {
         "depends_on": [
+          "cjr.examples.hash_map.tag_empty"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.tag_empty"
         ],
         "issues": []
@@ -1137,10 +1511,16 @@
         "depends_on": [
           "cjr.examples.hash_map.tag_occ"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.tag_occ"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.lit_tag_tomb": {
         "depends_on": [
+          "cjr.examples.hash_map.tag_tomb"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.tag_tomb"
         ],
         "issues": []
@@ -1152,10 +1532,21 @@
           "cjr.examples.hash_map.tag_occ",
           "cjr.examples.hash_map.tag_tomb"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.count_occ",
+          "cjr.examples.hash_map.tag_occ",
+          "cjr.examples.hash_map.tag_tomb"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.lookup_buffer_body": {
         "depends_on": [
+          "cjr.examples.hash_map.lookup_inner",
+          "cjr.examples.hash_map.lookup_val",
+          "cjr.examples.hash_map.probe_out",
+          "cjr.examples.hash_map.zlit"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.lookup_inner",
           "cjr.examples.hash_map.lookup_val",
           "cjr.examples.hash_map.probe_out",
@@ -1173,10 +1564,18 @@
           "cjr.examples.hash_map.probe",
           "cjr.examples.hash_map.sld"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.call_lookup_buffer",
+          "cjr.examples.hash_map.lookup_val",
+          "cjr.examples.hash_map.probe"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.lookup_for_body": {
         "depends_on": [
+          "cjr.examples.hash_map.lookup_open"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.lookup_open"
         ],
         "issues": []
@@ -1185,10 +1584,20 @@
         "depends_on": [
           "cjr.examples.hash_map.lookup_loop_e"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.lookup_loop_e"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.lookup_loop_e": {
         "depends_on": [
+          "cjr.examples.hash_map.arr_get",
+          "cjr.examples.hash_map.lit_tag_empty",
+          "cjr.examples.hash_map.lit_tag_occ",
+          "cjr.examples.hash_map.probe_slot_e",
+          "cjr.examples.hash_map.zlit"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.arr_get",
           "cjr.examples.hash_map.lit_tag_empty",
           "cjr.examples.hash_map.lit_tag_occ",
@@ -1216,10 +1625,25 @@
           "cjr.examples.hash_map.tag_occ",
           "cjr.examples.hash_map.zlit"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.lookup_loop_e",
+          "cjr.examples.hash_map.lookup_val",
+          "cjr.examples.hash_map.nlit",
+          "cjr.examples.hash_map.probe_from",
+          "cjr.examples.hash_map.probe_out",
+          "cjr.examples.hash_map.sas",
+          "cjr.examples.hash_map.sld",
+          "cjr.examples.hash_map.zlit"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.lookup_open": {
         "depends_on": [
+          "cjr.examples.hash_map.arr_len",
+          "cjr.examples.hash_map.bucket_body",
+          "cjr.examples.hash_map.lookup_buffer_body"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.arr_len",
           "cjr.examples.hash_map.bucket_body",
           "cjr.examples.hash_map.lookup_buffer_body"
@@ -1248,10 +1672,21 @@
           "cjr.examples.hash_map.residue_spec",
           "cjr.examples.hash_map.wf_table"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.call_lookup",
+          "cjr.examples.hash_map.is_hashmap"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.lookup_stopped": {
         "depends_on": [
+          "cjr.examples.hash_map.lookup_loop_e",
+          "cjr.examples.hash_map.nlit",
+          "cjr.examples.hash_map.sas",
+          "cjr.examples.hash_map.sld",
+          "cjr.examples.hash_map.zlit"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.lookup_loop_e",
           "cjr.examples.hash_map.nlit",
           "cjr.examples.hash_map.sas",
@@ -1264,10 +1699,16 @@
         "depends_on": [
           "cjr.examples.hash_map.probe_out"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.probe_out"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.make_zero_array": {
         "depends_on": [
+          "cjr.examples.hash_map.default_capacity"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.default_capacity"
         ],
         "issues": []
@@ -1278,16 +1719,28 @@
           "cjr.examples.hash_map.make_zero_array",
           "cjr.examples.hash_map.wp_new_step"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.default_capacity",
+          "cjr.examples.hash_map.make_zero_array"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.nlit": {
         "depends_on": [
           "cjr.examples.hash_map.zlit"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.zlit"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.no_empty_before": {
         "depends_on": [
+          "cjr.examples.hash_map.probe_slot",
+          "cjr.examples.hash_map.steps_between",
+          "cjr.examples.hash_map.tag_empty"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.probe_slot",
           "cjr.examples.hash_map.steps_between",
           "cjr.examples.hash_map.tag_empty"
@@ -1300,6 +1753,10 @@
           "cjr.examples.hash_map.probe_slot",
           "cjr.examples.hash_map.tag_empty"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.no_empty_before",
+          "cjr.examples.hash_map.tag_empty"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.nodup_bury": {
@@ -1310,12 +1767,21 @@
           "cjr.examples.hash_map.tag_tomb",
           "cjr.examples.hash_map.tag_tomb_ne_occ"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.occ_keys",
+          "cjr.examples.hash_map.tag_occ",
+          "cjr.examples.hash_map.tag_tomb"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.nodup_place": {
         "depends_on": [
           "cjr.examples.hash_map.occ_keys",
           "cjr.examples.hash_map.occ_place_iff",
+          "cjr.examples.hash_map.tag_occ"
+        ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.occ_keys",
           "cjr.examples.hash_map.tag_occ"
         ],
         "issues": []
@@ -1327,10 +1793,19 @@
           "cjr.examples.hash_map.tag_tomb",
           "cjr.examples.hash_map.tag_tomb_ne_occ"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.occ_keys",
+          "cjr.examples.hash_map.tag_occ",
+          "cjr.examples.hash_map.tag_tomb"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.occ_in": {
         "depends_on": [
+          "cjr.examples.hash_map.occ_keys",
+          "cjr.examples.hash_map.tag_occ"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.occ_keys",
           "cjr.examples.hash_map.tag_occ"
         ],
@@ -1341,6 +1816,10 @@
           "cjr.examples.hash_map.occ_keys",
           "cjr.examples.hash_map.tag_occ"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.occ_keys",
+          "cjr.examples.hash_map.tag_occ"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.occ_keys": {
@@ -1348,10 +1827,18 @@
           "cjr.examples.hash_map.occ_keys",
           "cjr.examples.hash_map.tag_occ"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.occ_keys",
+          "cjr.examples.hash_map.tag_occ"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.occ_place_iff": {
         "depends_on": [
+          "cjr.examples.hash_map.occ_keys",
+          "cjr.examples.hash_map.tag_occ"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.occ_keys",
           "cjr.examples.hash_map.tag_occ"
         ],
@@ -1363,12 +1850,19 @@
           "cjr.examples.hash_map.occ_keys",
           "cjr.examples.hash_map.tag_occ"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.occ_keys",
+          "cjr.examples.hash_map.tag_occ"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.occ_zeros": {
         "depends_on": [
           "cjr.examples.hash_map.occ_keys",
           "cjr.examples.hash_map.tag_occ"
+        ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.occ_keys"
         ],
         "issues": []
       },
@@ -1380,16 +1874,28 @@
           "cjr.examples.hash_map.steps_between",
           "cjr.examples.hash_map.steps_between_lt"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.probe_slot",
+          "cjr.examples.hash_map.steps_between"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.place_slot": {
         "depends_on": [
           "cjr.examples.hash_map.tag_occ"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.tag_occ"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.placed": {
         "depends_on": [
+          "cjr.examples.hash_map.bucket",
+          "cjr.examples.hash_map.no_empty_before",
+          "cjr.examples.hash_map.tag_occ"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.bucket",
           "cjr.examples.hash_map.no_empty_before",
           "cjr.examples.hash_map.tag_occ"
@@ -1402,6 +1908,10 @@
           "cjr.examples.hash_map.placed",
           "cjr.examples.hash_map.tag_tomb",
           "cjr.examples.hash_map.tag_tomb_ne_empty"
+        ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.placed",
+          "cjr.examples.hash_map.tag_tomb"
         ],
         "issues": []
       },
@@ -1422,6 +1932,14 @@
           "cjr.examples.hash_map.tag_empty",
           "cjr.examples.hash_map.tag_occ"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.bucket",
+          "cjr.examples.hash_map.occ_keys",
+          "cjr.examples.hash_map.placed",
+          "cjr.examples.hash_map.segment_clear",
+          "cjr.examples.hash_map.steps_between",
+          "cjr.examples.hash_map.tag_occ"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.placed_place": {
@@ -1436,6 +1954,12 @@
           "cjr.examples.hash_map.tag_occ",
           "cjr.examples.hash_map.tag_occ_ne_empty"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.bucket",
+          "cjr.examples.hash_map.no_empty_before",
+          "cjr.examples.hash_map.placed",
+          "cjr.examples.hash_map.tag_occ"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.placed_zeros": {
@@ -1443,14 +1967,22 @@
           "cjr.examples.hash_map.placed",
           "cjr.examples.hash_map.tag_occ"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.placed"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.pow_positive": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.hash_map.prefix_pred": {
         "depends_on": [
+          "cjr.examples.hash_map.first_tomb",
+          "cjr.examples.hash_map.probe_prefix"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.first_tomb",
           "cjr.examples.hash_map.probe_prefix"
         ],
@@ -1460,6 +1992,9 @@
         "depends_on": [
           "cjr.examples.hash_map.probe_prefix"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.probe_prefix"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.probe": {
@@ -1467,14 +2002,22 @@
           "cjr.examples.hash_map.probe_from",
           "cjr.examples.hash_map.probe_out"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.probe_from",
+          "cjr.examples.hash_map.probe_out"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.probe_done": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.hash_map.probe_for_body": {
         "depends_on": [
+          "cjr.examples.hash_map.probe_open"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.probe_open"
         ],
         "issues": []
@@ -1500,10 +2043,27 @@
           "cjr.examples.hash_map.tag_occ",
           "cjr.examples.hash_map.tags_ok"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.bucket",
+          "cjr.examples.hash_map.occ_keys",
+          "cjr.examples.hash_map.placed",
+          "cjr.examples.hash_map.probe",
+          "cjr.examples.hash_map.probe_out",
+          "cjr.examples.hash_map.tag_occ",
+          "cjr.examples.hash_map.tags_ok"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.probe_from": {
         "depends_on": [
+          "cjr.examples.hash_map.hole_or",
+          "cjr.examples.hash_map.probe_from",
+          "cjr.examples.hash_map.probe_out",
+          "cjr.examples.hash_map.probe_slot",
+          "cjr.examples.hash_map.tag_empty",
+          "cjr.examples.hash_map.tag_occ"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.hole_or",
           "cjr.examples.hash_map.probe_from",
           "cjr.examples.hash_map.probe_out",
@@ -1534,6 +2094,17 @@
           "cjr.examples.hash_map.tags_ok",
           "cjr.examples.hash_map.tags_ok_lookup"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.count_occ",
+          "cjr.examples.hash_map.no_empty_before",
+          "cjr.examples.hash_map.probe_from",
+          "cjr.examples.hash_map.probe_out",
+          "cjr.examples.hash_map.probe_prefix",
+          "cjr.examples.hash_map.tag_empty",
+          "cjr.examples.hash_map.tag_occ",
+          "cjr.examples.hash_map.tag_tomb",
+          "cjr.examples.hash_map.tags_ok"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.probe_hit_now": {
@@ -1542,6 +2113,12 @@
           "cjr.examples.hash_map.probe_out",
           "cjr.examples.hash_map.probe_slot",
           "cjr.examples.hash_map.tag_empty",
+          "cjr.examples.hash_map.tag_occ"
+        ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.probe_from",
+          "cjr.examples.hash_map.probe_out",
+          "cjr.examples.hash_map.probe_slot",
           "cjr.examples.hash_map.tag_occ"
         ],
         "issues": []
@@ -1554,14 +2131,26 @@
           "cjr.examples.hash_map.scan_body",
           "cjr.examples.hash_map.zlit"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.arr_len",
+          "cjr.examples.hash_map.bucket_body",
+          "cjr.examples.hash_map.lit_m1",
+          "cjr.examples.hash_map.scan_body",
+          "cjr.examples.hash_map.zlit"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.probe_out": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.hash_map.probe_prefix": {
         "depends_on": [
+          "cjr.examples.hash_map.first_tomb",
+          "cjr.examples.hash_map.segment_clear"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.first_tomb",
           "cjr.examples.hash_map.segment_clear"
         ],
@@ -1590,14 +2179,29 @@
           "cjr.examples.hash_map.tag_tomb",
           "cjr.examples.hash_map.tags_ok"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.bucket",
+          "cjr.examples.hash_map.contents_of",
+          "cjr.examples.hash_map.count_occ",
+          "cjr.examples.hash_map.no_empty_before",
+          "cjr.examples.hash_map.occ_keys",
+          "cjr.examples.hash_map.placed",
+          "cjr.examples.hash_map.probe",
+          "cjr.examples.hash_map.probe_out",
+          "cjr.examples.hash_map.tag_empty",
+          "cjr.examples.hash_map.tag_tomb",
+          "cjr.examples.hash_map.tags_ok"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.probe_slot": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.hash_map.probe_slot_e": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.hash_map.probe_slot_e_spec": {
@@ -1608,6 +2212,11 @@
           "cjr.examples.hash_map.probe_slot_sub",
           "cjr.examples.hash_map.zlit"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.nlit",
+          "cjr.examples.hash_map.probe_slot",
+          "cjr.examples.hash_map.probe_slot_e"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.probe_slot_inj": {
@@ -1615,10 +2224,16 @@
           "cjr.examples.hash_map.probe_slot",
           "cjr.examples.hash_map.probe_slot_sub"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.probe_slot"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.probe_slot_lt": {
         "depends_on": [
+          "cjr.examples.hash_map.probe_slot"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.probe_slot"
         ],
         "issues": []
@@ -1628,10 +2243,17 @@
           "cjr.examples.hash_map.probe_slot",
           "cjr.examples.hash_map.steps_between"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.probe_slot",
+          "cjr.examples.hash_map.steps_between"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.probe_slot_sub": {
         "depends_on": [
+          "cjr.examples.hash_map.probe_slot"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.probe_slot"
         ],
         "issues": []
@@ -1646,6 +2268,15 @@
           "cjr.examples.hash_map.probe",
           "cjr.examples.hash_map.probe_from",
           "cjr.examples.hash_map.probe_from_inv",
+          "cjr.examples.hash_map.probe_out",
+          "cjr.examples.hash_map.tag_empty",
+          "cjr.examples.hash_map.tag_occ",
+          "cjr.examples.hash_map.tag_tomb",
+          "cjr.examples.hash_map.wf_table"
+        ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.bucket",
+          "cjr.examples.hash_map.probe",
           "cjr.examples.hash_map.probe_out",
           "cjr.examples.hash_map.tag_empty",
           "cjr.examples.hash_map.tag_occ",
@@ -1676,10 +2307,17 @@
           "cjr.examples.hash_map.scan_spec",
           "cjr.examples.hash_map.wf_table"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.call_probe",
+          "cjr.examples.hash_map.is_hashmap"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.probe_val": {
         "depends_on": [
+          "cjr.examples.hash_map.probe_out"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.probe_out"
         ],
         "issues": []
@@ -1690,10 +2328,18 @@
           "cjr.examples.hash_map.buffer_probe_e",
           "cjr.examples.hash_map.lit_tag_occ"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.arr_set",
+          "cjr.examples.hash_map.buffer_probe_e",
+          "cjr.examples.hash_map.lit_tag_occ"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.put_e": {
         "depends_on": [
+          "cjr.examples.hash_map.put_body"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.put_body"
         ],
         "issues": []
@@ -1714,10 +2360,20 @@
           "cjr.examples.hash_map.wf_table",
           "cjr.examples.hash_map.write_fresh"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.call_put",
+          "cjr.examples.hash_map.wf_table",
+          "cjr.examples.hash_map.write_fresh"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.rehash_acc": {
         "depends_on": [
+          "cjr.examples.hash_map.rehash_acc",
+          "cjr.examples.hash_map.tag_occ",
+          "cjr.examples.hash_map.write_fresh"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.rehash_acc",
           "cjr.examples.hash_map.tag_occ",
           "cjr.examples.hash_map.write_fresh"
@@ -1736,6 +2392,14 @@
           "cjr.examples.hash_map.wf_table",
           "cjr.examples.hash_map.write_fresh_new"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.contents_of",
+          "cjr.examples.hash_map.count_occ",
+          "cjr.examples.hash_map.occ_keys",
+          "cjr.examples.hash_map.rehash_acc",
+          "cjr.examples.hash_map.tags_ok",
+          "cjr.examples.hash_map.wf_table"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.rehash_acc_sound": {
@@ -1748,10 +2412,24 @@
           "cjr.examples.hash_map.tags_ok",
           "cjr.examples.hash_map.wf_table"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.contents_of",
+          "cjr.examples.hash_map.count_occ",
+          "cjr.examples.hash_map.occ_keys",
+          "cjr.examples.hash_map.rehash_acc",
+          "cjr.examples.hash_map.tags_ok",
+          "cjr.examples.hash_map.wf_table"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.rehash_body": {
         "depends_on": [
+          "cjr.examples.hash_map.arr_get",
+          "cjr.examples.hash_map.lit_tag_occ",
+          "cjr.examples.hash_map.put_e",
+          "cjr.examples.hash_map.zlit"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.arr_get",
           "cjr.examples.hash_map.lit_tag_occ",
           "cjr.examples.hash_map.put_e",
@@ -1777,16 +2455,35 @@
           "cjr.examples.hash_map.wf_table",
           "cjr.examples.hash_map.write_fresh_new"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.call_rehash",
+          "cjr.examples.hash_map.contents_of",
+          "cjr.examples.hash_map.count_occ",
+          "cjr.examples.hash_map.occ_keys",
+          "cjr.examples.hash_map.rehash_acc",
+          "cjr.examples.hash_map.tags_ok",
+          "cjr.examples.hash_map.wf_table"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.rehash_v": {
         "depends_on": [
           "cjr.examples.hash_map.rehash_body"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.rehash_body"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.remove_body": {
         "depends_on": [
+          "cjr.examples.hash_map.arr_len",
+          "cjr.examples.hash_map.arr_set",
+          "cjr.examples.hash_map.buffer_probe_e",
+          "cjr.examples.hash_map.lit_tag_tomb",
+          "cjr.examples.hash_map.zlit"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.arr_len",
           "cjr.examples.hash_map.arr_set",
           "cjr.examples.hash_map.buffer_probe_e",
@@ -1817,14 +2514,20 @@
           "cjr.examples.hash_map.write_remove",
           "cjr.examples.hash_map.write_remove_spec"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.call_remove",
+          "cjr.examples.hash_map.is_hashmap"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.residue": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.hash_map.residue_body": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.hash_map.residue_nat_lt": {
@@ -1832,10 +2535,16 @@
           "cjr.examples.hash_map.residue",
           "cjr.examples.hash_map.residue_spec"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.residue"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.residue_spec": {
         "depends_on": [
+          "cjr.examples.hash_map.residue"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.residue"
         ],
         "issues": []
@@ -1846,30 +2555,49 @@
           "cjr.examples.hash_map.residue",
           "cjr.examples.hash_map.residue_body"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.call_residue",
+          "cjr.examples.hash_map.residue"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.room_for_one": {
         "depends_on": [
           "cjr.examples.hash_map.even_pow"
         ],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.hash_map.sas": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.hash_map.scan_body": {
         "depends_on": [
           "cjr.examples.hash_map.scan_loop"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.scan_loop"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.scan_call_e": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.hash_map.scan_loop": {
         "depends_on": [
+          "cjr.examples.hash_map.arr_get",
+          "cjr.examples.hash_map.hole_or_e",
+          "cjr.examples.hash_map.lit_tag_empty",
+          "cjr.examples.hash_map.lit_tag_occ",
+          "cjr.examples.hash_map.probe_done",
+          "cjr.examples.hash_map.probe_slot_e",
+          "cjr.examples.hash_map.scan_call_e"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.arr_get",
           "cjr.examples.hash_map.hole_or_e",
           "cjr.examples.hash_map.lit_tag_empty",
@@ -1894,6 +2622,12 @@
           "cjr.examples.hash_map.tags_ok",
           "cjr.examples.hash_map.tags_ok_lookup"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.first_tomb",
+          "cjr.examples.hash_map.probe_from",
+          "cjr.examples.hash_map.probe_prefix",
+          "cjr.examples.hash_map.tags_ok"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.scan_spec": {
@@ -1916,10 +2650,18 @@
           "cjr.examples.hash_map.tag_occ",
           "cjr.examples.hash_map.zlit"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.call_scan",
+          "cjr.examples.hash_map.probe_from",
+          "cjr.examples.hash_map.probe_val"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.scan_v": {
         "depends_on": [
+          "cjr.examples.hash_map.scan_body"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.scan_body"
         ],
         "issues": []
@@ -1929,10 +2671,19 @@
           "cjr.examples.hash_map.cell_clear",
           "cjr.examples.hash_map.segment_clear"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.cell_clear",
+          "cjr.examples.hash_map.segment_clear"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.segment_clear": {
         "depends_on": [
+          "cjr.examples.hash_map.probe_slot",
+          "cjr.examples.hash_map.tag_empty",
+          "cjr.examples.hash_map.tag_occ"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.probe_slot",
           "cjr.examples.hash_map.tag_empty",
           "cjr.examples.hash_map.tag_occ"
@@ -1946,10 +2697,18 @@
           "cjr.examples.hash_map.segment_clear",
           "cjr.examples.hash_map.steps_of_slot"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.no_empty_before",
+          "cjr.examples.hash_map.probe_slot",
+          "cjr.examples.hash_map.segment_clear"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.segment_short": {
         "depends_on": [
+          "cjr.examples.hash_map.segment_clear"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.segment_clear"
         ],
         "issues": []
@@ -1958,10 +2717,14 @@
         "depends_on": [
           "cjr.examples.hash_map.size_body"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.size_body"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.size_body": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.hash_map.size_contents": {
@@ -1971,6 +2734,11 @@
           "cjr.examples.hash_map.count_occ",
           "cjr.examples.hash_map.occ_keys",
           "cjr.examples.hash_map.tag_occ"
+        ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.contents_of",
+          "cjr.examples.hash_map.count_occ",
+          "cjr.examples.hash_map.occ_keys"
         ],
         "issues": []
       },
@@ -1983,18 +2751,27 @@
           "cjr.examples.hash_map.size_contents",
           "cjr.examples.hash_map.wf_table"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.call_size",
+          "cjr.examples.hash_map.is_hashmap"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.sld": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.hash_map.steps_between": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.hash_map.steps_between_lt": {
         "depends_on": [
+          "cjr.examples.hash_map.steps_between"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.steps_between"
         ],
         "issues": []
@@ -2008,18 +2785,28 @@
           "cjr.examples.hash_map.steps_between",
           "cjr.examples.hash_map.steps_between_lt"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.probe_slot",
+          "cjr.examples.hash_map.steps_between"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.tag_empty": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.hash_map.tag_occ": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.hash_map.tag_occ_ne_empty": {
         "depends_on": [
+          "cjr.examples.hash_map.tag_empty",
+          "cjr.examples.hash_map.tag_occ"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.tag_empty",
           "cjr.examples.hash_map.tag_occ"
         ],
@@ -2031,14 +2818,24 @@
           "cjr.examples.hash_map.tag_occ",
           "cjr.examples.hash_map.tag_tomb"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.tag_empty",
+          "cjr.examples.hash_map.tag_occ",
+          "cjr.examples.hash_map.tag_tomb"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.tag_tomb": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.hash_map.tag_tomb_ne_empty": {
         "depends_on": [
+          "cjr.examples.hash_map.tag_empty",
+          "cjr.examples.hash_map.tag_tomb"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.tag_empty",
           "cjr.examples.hash_map.tag_tomb"
         ],
@@ -2049,10 +2846,17 @@
           "cjr.examples.hash_map.tag_occ",
           "cjr.examples.hash_map.tag_tomb"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.tag_occ",
+          "cjr.examples.hash_map.tag_tomb"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.tags_ok": {
         "depends_on": [
+          "cjr.examples.hash_map.tag_ok"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.tag_ok"
         ],
         "issues": []
@@ -2062,10 +2866,18 @@
           "cjr.examples.hash_map.tag_ok",
           "cjr.examples.hash_map.tags_ok"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.tag_ok",
+          "cjr.examples.hash_map.tags_ok"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.tags_ok_lookup": {
         "depends_on": [
+          "cjr.examples.hash_map.tag_ok",
+          "cjr.examples.hash_map.tags_ok"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.tag_ok",
           "cjr.examples.hash_map.tags_ok"
         ],
@@ -2077,10 +2889,14 @@
           "cjr.examples.hash_map.tag_ok",
           "cjr.examples.hash_map.tags_ok"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.tags_ok"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.twice_add": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.hash_map.wf_table": {
@@ -2090,14 +2906,27 @@
           "cjr.examples.hash_map.placed",
           "cjr.examples.hash_map.tags_ok"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.count_occ",
+          "cjr.examples.hash_map.occ_keys",
+          "cjr.examples.hash_map.placed",
+          "cjr.examples.hash_map.tags_ok"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.wp_new_step": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.hash_map.write_fresh": {
         "depends_on": [
+          "cjr.examples.hash_map.bucket",
+          "cjr.examples.hash_map.place_slot",
+          "cjr.examples.hash_map.probe",
+          "cjr.examples.hash_map.probe_out"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.bucket",
           "cjr.examples.hash_map.place_slot",
           "cjr.examples.hash_map.probe",
@@ -2113,6 +2942,12 @@
           "cjr.examples.hash_map.write_fresh",
           "cjr.examples.hash_map.write_fresh_found",
           "cjr.examples.hash_map.write_fresh_new"
+        ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.contents_of",
+          "cjr.examples.hash_map.count_occ",
+          "cjr.examples.hash_map.wf_table",
+          "cjr.examples.hash_map.write_fresh"
         ],
         "issues": []
       },
@@ -2130,6 +2965,11 @@
           "cjr.examples.hash_map.probe",
           "cjr.examples.hash_map.probe_found",
           "cjr.examples.hash_map.probe_out",
+          "cjr.examples.hash_map.wf_table",
+          "cjr.examples.hash_map.write_fresh"
+        ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.contents_of",
           "cjr.examples.hash_map.wf_table",
           "cjr.examples.hash_map.write_fresh"
         ],
@@ -2157,10 +2997,23 @@
           "cjr.examples.hash_map.wf_table",
           "cjr.examples.hash_map.write_fresh"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.contents_of",
+          "cjr.examples.hash_map.count_occ",
+          "cjr.examples.hash_map.tag_occ",
+          "cjr.examples.hash_map.wf_table",
+          "cjr.examples.hash_map.write_fresh"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.write_remove": {
         "depends_on": [
+          "cjr.examples.hash_map.bucket",
+          "cjr.examples.hash_map.probe",
+          "cjr.examples.hash_map.probe_out",
+          "cjr.examples.hash_map.tag_tomb"
+        ],
+        "statement_depends_on": [
           "cjr.examples.hash_map.bucket",
           "cjr.examples.hash_map.probe",
           "cjr.examples.hash_map.probe_out",
@@ -2191,6 +3044,11 @@
           "cjr.examples.hash_map.wf_table",
           "cjr.examples.hash_map.write_remove"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.contents_of",
+          "cjr.examples.hash_map.wf_table",
+          "cjr.examples.hash_map.write_remove"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.zeros_wf": {
@@ -2201,10 +3059,14 @@
           "cjr.examples.hash_map.tags_ok_zeros",
           "cjr.examples.hash_map.wf_table"
         ],
+        "statement_depends_on": [
+          "cjr.examples.hash_map.wf_table"
+        ],
         "issues": []
       },
       "cjr.examples.hash_map.zlit": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       }
     }
@@ -3335,6 +4197,317 @@
       }
     }
   },
+  "cangjie": {
+    "cjr.examples.hash_map.sld": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.hash_map.sas": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.hash_map.residue_body": {
+      "status": "available",
+      "text": "let k = args[0]\nlet cap = args[1]\nlet rem = k % cap\nif (rem <= -1) { rem + cap } else { rem }"
+    },
+    "cjr.examples.hash_map.call_residue": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.hash_map.bucket_body": {
+      "status": "available",
+      "text": "let k = args[0]\nlet cap = args[1]\nlet reduced = k % 2147483647\nlet product = reduced * 1000000007\nlet mixed = product % 2147483647\n({ args => let k = args[0]\nlet cap = args[1]\nlet rem = k % cap\nif (rem <= -1) { rem + cap } else { rem } })(mixed, cap)"
+    },
+    "cjr.examples.hash_map.call_bucket": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.hash_map.lit_tag_empty": {
+      "status": "available",
+      "text": "0"
+    },
+    "cjr.examples.hash_map.lit_tag_occ": {
+      "status": "available",
+      "text": "1"
+    },
+    "cjr.examples.hash_map.lit_tag_tomb": {
+      "status": "available",
+      "text": "2"
+    },
+    "cjr.examples.hash_map.lit_m1": {
+      "status": "available",
+      "text": "-1"
+    },
+    "cjr.examples.hash_map.arr_len": {
+      "status": "available",
+      "text": "({ a => a.f0 })(a)"
+    },
+    "cjr.examples.hash_map.arr_get": {
+      "status": "available",
+      "text": "({ args => let arr = args[0]\nlet i = args[1]\nlet p = arr.f1\nunsafe { (p + i).read() } })(a, i)"
+    },
+    "cjr.examples.hash_map.arr_set": {
+      "status": "available",
+      "text": "({ args => let arr = args[0]\nlet i = args[1]\nlet x = args[2]\nlet p = arr.f1\nunsafe { (p + i).write(x) } })(a, i, x)"
+    },
+    "cjr.examples.hash_map.make_zero_array": {
+      "status": "unavailable",
+      "reason": "The Gallina printer reported an unsupported construct or missing layout metadata."
+    },
+    "cjr.examples.hash_map.init_body": {
+      "status": "unavailable",
+      "reason": "The Gallina printer reported an unsupported construct or missing layout metadata."
+    },
+    "cjr.examples.hash_map.call_init": {
+      "status": "unavailable",
+      "reason": "The Gallina printer reported an unsupported construct or missing layout metadata."
+    },
+    "cjr.examples.hash_map.size_body": {
+      "status": "available",
+      "text": "m.f0"
+    },
+    "cjr.examples.hash_map.call_size": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.hash_map.capacity_body": {
+      "status": "available",
+      "text": "let tags = m.f1\ntags.f0"
+    },
+    "cjr.examples.hash_map.call_capacity": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.hash_map.is_empty_body": {
+      "status": "available",
+      "text": "m.f0 == 0"
+    },
+    "cjr.examples.hash_map.call_is_empty": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.hash_map.probe_slot_e": {
+      "status": "available",
+      "text": "if (((start + step) + 1) <= cap) {\n    start + step\n} else {\n    (start + step) - cap\n}"
+    },
+    "cjr.examples.hash_map.probe_done": {
+      "status": "available",
+      "text": "(found, slot, value)"
+    },
+    "cjr.examples.hash_map.hole_or_e": {
+      "status": "available",
+      "text": "if (hole == -1) { fallback } else { hole }"
+    },
+    "cjr.examples.hash_map.scan_call_e": {
+      "status": "available",
+      "text": "scan(fuel, start, step, cap, tags, keys, vals, key, hole)"
+    },
+    "cjr.examples.hash_map.scan_loop": {
+      "status": "available",
+      "text": "if (fuel <= 0) {\n    (false, if (hole == -1) { start } else { hole }, 0)\n} else {\n    let slot = if (((start + step) + 1) <= cap) {\n        start + step\n    } else {\n        (start + step) - cap\n    }\n    let tag = ({ args => let arr = args[0]\n    let i = args[1]\n    let p = arr.f1\n    unsafe { (p + i).read() } })(tags, slot)\n    if (tag == 0) {\n        (false, if (hole == -1) { slot } else { hole }, 0)\n    } else {\n        if (tag == 1) {\n            let key = ({ args => let arr = args[0]\n            let i = args[1]\n            let p = arr.f1\n            unsafe { (p + i).read() } })(keys, slot)\n            if (key == k) {\n                (true, slot, ({ args => let arr = args[0]\n                let i = args[1]\n                let p = arr.f1\n                unsafe { (p + i).read() } })(vals, slot))\n            } else {\n                scan(fuel - 1, start, step + 1, cap, tags, keys, vals, k, hole)\n            }\n        } else {\n            scan(fuel - 1, start, step + 1, cap, tags, keys, vals, k, if (hole == -1) { slot } else { hole })\n        }\n    }\n}"
+    },
+    "cjr.examples.hash_map.scan_body": {
+      "status": "available",
+      "text": "let fuel = args[0]\nlet start = args[1]\nlet step = args[2]\nlet cap = args[3]\nlet tags = args[4]\nlet keys = args[5]\nlet vals = args[6]\nlet k = args[7]\nlet hole = args[8]\nif (fuel <= 0) {\n    (false, if (hole == -1) { start } else { hole }, 0)\n} else {\n    let slot = if (((start + step) + 1) <= cap) {\n        start + step\n    } else {\n        (start + step) - cap\n    }\n    let tag = ({ args => let arr = args[0]\n    let i = args[1]\n    let p = arr.f1\n    unsafe { (p + i).read() } })(tags, slot)\n    if (tag == 0) {\n        (false, if (hole == -1) { slot } else { hole }, 0)\n    } else {\n        if (tag == 1) {\n            let key = ({ args => let arr = args[0]\n            let i = args[1]\n            let p = arr.f1\n            unsafe { (p + i).read() } })(keys, slot)\n            if (key == k) {\n                (true, slot, ({ args => let arr = args[0]\n                let i = args[1]\n                let p = arr.f1\n                unsafe { (p + i).read() } })(vals, slot))\n            } else {\n                scan(fuel - 1, start, step + 1, cap, tags, keys, vals, k, hole)\n            }\n        } else {\n            scan(fuel - 1, start, step + 1, cap, tags, keys, vals, k, if (hole == -1) { slot } else { hole })\n        }\n    }\n}"
+    },
+    "cjr.examples.hash_map.scan_v": {
+      "status": "unavailable",
+      "reason": "The Gallina printer reported an unsupported construct or missing layout metadata."
+    },
+    "cjr.examples.hash_map.zlit": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.hash_map.nlit": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.hash_map.probe_val": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.hash_map.call_scan": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.hash_map.buffer_probe_body": {
+      "status": "unavailable",
+      "reason": "The Gallina printer reported an unsupported construct or missing layout metadata."
+    },
+    "cjr.examples.hash_map.buffer_probe_e": {
+      "status": "unavailable",
+      "reason": "The Gallina printer reported an unsupported construct or missing layout metadata."
+    },
+    "cjr.examples.hash_map.call_buffer_probe": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.hash_map.put_body": {
+      "status": "unavailable",
+      "reason": "The Gallina printer reported an unsupported construct or missing layout metadata."
+    },
+    "cjr.examples.hash_map.put_e": {
+      "status": "unavailable",
+      "reason": "The Gallina printer reported an unsupported construct or missing layout metadata."
+    },
+    "cjr.examples.hash_map.call_put": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.hash_map.probe_open": {
+      "status": "unavailable",
+      "reason": "The Gallina printer reported an unsupported construct or missing layout metadata."
+    },
+    "cjr.examples.hash_map.probe_for_body": {
+      "status": "unavailable",
+      "reason": "The Gallina printer reported an unsupported construct or missing layout metadata."
+    },
+    "cjr.examples.hash_map.call_probe": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.hash_map.call_probe_e": {
+      "status": "unavailable",
+      "reason": "The Gallina printer reported an unsupported construct or missing layout metadata."
+    },
+    "cjr.examples.hash_map.lookup_val": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.hash_map.lookup_loop_e": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.hash_map.lookup_inner": {
+      "status": "available",
+      "text": "while ((step + 1) <= cap) {\n    let s = step\n    let slot = if (((start + s) + 1) <= cap) {\n        start + s\n    } else {\n        (start + s) - cap\n    }\n    let tag = ({ args => let arr = args[0]\n    let i = args[1]\n    let p = arr.f1\n    unsafe { (p + i).read() } })(tags, slot)\n    if (tag == 0) {\n        step = cap\n    } else {\n        if (tag == 1) {\n            let key = ({ args => let arr = args[0]\n            let i = args[1]\n            let p = arr.f1\n            unsafe { (p + i).read() } })(keys, slot)\n            if (key == k) {\n                res = (true, ({ args => let arr = args[0]\n                let i = args[1]\n                let p = arr.f1\n                unsafe { (p + i).read() } })(vals, slot))\n                step = cap\n            } else {\n                step = step + 1\n            }\n        } else {\n            step = step + 1\n        }\n    }\n}\nres"
+    },
+    "cjr.examples.hash_map.lookup_buffer_body": {
+      "status": "available",
+      "text": "let tags = args[0]\nlet keys = args[1]\nlet vals = args[2]\nlet cap = args[3]\nlet start = args[4]\nlet k = args[5]\nvar step = 0\nvar res = (false, 0)\nwhile ((step + 1) <= cap) {\n    let s = step\n    let slot = if (((start + s) + 1) <= cap) {\n        start + s\n    } else {\n        (start + s) - cap\n    }\n    let tag = ({ args => let arr = args[0]\n    let i = args[1]\n    let p = arr.f1\n    unsafe { (p + i).read() } })(tags, slot)\n    if (tag == 0) {\n        step = cap\n    } else {\n        if (tag == 1) {\n            let key = ({ args => let arr = args[0]\n            let i = args[1]\n            let p = arr.f1\n            unsafe { (p + i).read() } })(keys, slot)\n            if (key == k) {\n                res = (true, ({ args => let arr = args[0]\n                let i = args[1]\n                let p = arr.f1\n                unsafe { (p + i).read() } })(vals, slot))\n                step = cap\n            } else {\n                step = step + 1\n            }\n        } else {\n            step = step + 1\n        }\n    }\n}\nres"
+    },
+    "cjr.examples.hash_map.call_lookup_buffer": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.hash_map.lookup_open": {
+      "status": "available",
+      "text": "let tags = m.f1\nlet keys = m.f2\nlet vals = m.f3\nlet cap = ({ a => a.f0 })(tags)\nlet start = ({ args => let k = args[0]\nlet cap = args[1]\nlet reduced = k % 2147483647\nlet product = reduced * 1000000007\nlet mixed = product % 2147483647\n({ args => let k = args[0]\nlet cap = args[1]\nlet rem = k % cap\nif (rem <= -1) { rem + cap } else { rem } })(mixed, cap) })(k, cap)\n({ args => let tags = args[0]\nlet keys = args[1]\nlet vals = args[2]\nlet cap = args[3]\nlet start = args[4]\nlet k = args[5]\nvar step = 0\nvar res = (false, 0)\nwhile ((step + 1) <= cap) {\n    let s = step\n    let slot = if (((start + s) + 1) <= cap) {\n        start + s\n    } else {\n        (start + s) - cap\n    }\n    let tag = ({ args => let arr = args[0]\n    let i = args[1]\n    let p = arr.f1\n    unsafe { (p + i).read() } })(tags, slot)\n    if (tag == 0) {\n        step = cap\n    } else {\n        if (tag == 1) {\n            let key = ({ args => let arr = args[0]\n            let i = args[1]\n            let p = arr.f1\n            unsafe { (p + i).read() } })(keys, slot)\n            if (key == k) {\n                res = (true, ({ args => let arr = args[0]\n                let i = args[1]\n                let p = arr.f1\n                unsafe { (p + i).read() } })(vals, slot))\n                step = cap\n            } else {\n                step = step + 1\n            }\n        } else {\n            step = step + 1\n        }\n    }\n}\nres })(tags, keys, vals, cap, start, k)"
+    },
+    "cjr.examples.hash_map.lookup_for_body": {
+      "status": "available",
+      "text": "let m = args[0]\nlet k = args[1]\nlet tags = m.f1\nlet keys = m.f2\nlet vals = m.f3\nlet cap = ({ a => a.f0 })(tags)\nlet start = ({ args => let k = args[0]\nlet cap = args[1]\nlet reduced = k % 2147483647\nlet product = reduced * 1000000007\nlet mixed = product % 2147483647\n({ args => let k = args[0]\nlet cap = args[1]\nlet rem = k % cap\nif (rem <= -1) { rem + cap } else { rem } })(mixed, cap) })(k, cap)\n({ args => let tags = args[0]\nlet keys = args[1]\nlet vals = args[2]\nlet cap = args[3]\nlet start = args[4]\nlet k = args[5]\nvar step = 0\nvar res = (false, 0)\nwhile ((step + 1) <= cap) {\n    let s = step\n    let slot = if (((start + s) + 1) <= cap) {\n        start + s\n    } else {\n        (start + s) - cap\n    }\n    let tag = ({ args => let arr = args[0]\n    let i = args[1]\n    let p = arr.f1\n    unsafe { (p + i).read() } })(tags, slot)\n    if (tag == 0) {\n        step = cap\n    } else {\n        if (tag == 1) {\n            let key = ({ args => let arr = args[0]\n            let i = args[1]\n            let p = arr.f1\n            unsafe { (p + i).read() } })(keys, slot)\n            if (key == k) {\n                res = (true, ({ args => let arr = args[0]\n                let i = args[1]\n                let p = arr.f1\n                unsafe { (p + i).read() } })(vals, slot))\n                step = cap\n            } else {\n                step = step + 1\n            }\n        } else {\n            step = step + 1\n        }\n    }\n}\nres })(tags, keys, vals, cap, start, k)"
+    },
+    "cjr.examples.hash_map.call_lookup": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.hash_map.call_lookup_e": {
+      "status": "available",
+      "text": "({ args => let m = args[0]\nlet k = args[1]\nlet tags = m.f1\nlet keys = m.f2\nlet vals = m.f3\nlet cap = ({ a => a.f0 })(tags)\nlet start = ({ args => let k = args[0]\nlet cap = args[1]\nlet reduced = k % 2147483647\nlet product = reduced * 1000000007\nlet mixed = product % 2147483647\n({ args => let k = args[0]\nlet cap = args[1]\nlet rem = k % cap\nif (rem <= -1) { rem + cap } else { rem } })(mixed, cap) })(k, cap)\n({ args => let tags = args[0]\nlet keys = args[1]\nlet vals = args[2]\nlet cap = args[3]\nlet start = args[4]\nlet k = args[5]\nvar step = 0\nvar res = (false, 0)\nwhile ((step + 1) <= cap) {\n    let s = step\n    let slot = if (((start + s) + 1) <= cap) {\n        start + s\n    } else {\n        (start + s) - cap\n    }\n    let tag = ({ args => let arr = args[0]\n    let i = args[1]\n    let p = arr.f1\n    unsafe { (p + i).read() } })(tags, slot)\n    if (tag == 0) {\n        step = cap\n    } else {\n        if (tag == 1) {\n            let key = ({ args => let arr = args[0]\n            let i = args[1]\n            let p = arr.f1\n            unsafe { (p + i).read() } })(keys, slot)\n            if (key == k) {\n                res = (true, ({ args => let arr = args[0]\n                let i = args[1]\n                let p = arr.f1\n                unsafe { (p + i).read() } })(vals, slot))\n                step = cap\n            } else {\n                step = step + 1\n            }\n        } else {\n            step = step + 1\n        }\n    }\n}\nres })(tags, keys, vals, cap, start, k) })(m, k)"
+    },
+    "cjr.examples.hash_map.contains_body": {
+      "status": "available",
+      "text": "let m = args[0]\nlet k = args[1]\nlet res = ({ args => let m = args[0]\nlet k = args[1]\nlet tags = m.f1\nlet keys = m.f2\nlet vals = m.f3\nlet cap = ({ a => a.f0 })(tags)\nlet start = ({ args => let k = args[0]\nlet cap = args[1]\nlet reduced = k % 2147483647\nlet product = reduced * 1000000007\nlet mixed = product % 2147483647\n({ args => let k = args[0]\nlet cap = args[1]\nlet rem = k % cap\nif (rem <= -1) { rem + cap } else { rem } })(mixed, cap) })(k, cap)\n({ args => let tags = args[0]\nlet keys = args[1]\nlet vals = args[2]\nlet cap = args[3]\nlet start = args[4]\nlet k = args[5]\nvar step = 0\nvar res = (false, 0)\nwhile ((step + 1) <= cap) {\n    let s = step\n    let slot = if (((start + s) + 1) <= cap) {\n        start + s\n    } else {\n        (start + s) - cap\n    }\n    let tag = ({ args => let arr = args[0]\n    let i = args[1]\n    let p = arr.f1\n    unsafe { (p + i).read() } })(tags, slot)\n    if (tag == 0) {\n        step = cap\n    } else {\n        if (tag == 1) {\n            let key = ({ args => let arr = args[0]\n            let i = args[1]\n            let p = arr.f1\n            unsafe { (p + i).read() } })(keys, slot)\n            if (key == k) {\n                res = (true, ({ args => let arr = args[0]\n                let i = args[1]\n                let p = arr.f1\n                unsafe { (p + i).read() } })(vals, slot))\n                step = cap\n            } else {\n                step = step + 1\n            }\n        } else {\n            step = step + 1\n        }\n    }\n}\nres })(tags, keys, vals, cap, start, k) })(m, k)\nres[0]"
+    },
+    "cjr.examples.hash_map.call_contains": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.hash_map.get_body": {
+      "status": "available",
+      "text": "let m = args[0]\nlet k = args[1]\n({ args => let m = args[0]\nlet k = args[1]\nlet tags = m.f1\nlet keys = m.f2\nlet vals = m.f3\nlet cap = ({ a => a.f0 })(tags)\nlet start = ({ args => let k = args[0]\nlet cap = args[1]\nlet reduced = k % 2147483647\nlet product = reduced * 1000000007\nlet mixed = product % 2147483647\n({ args => let k = args[0]\nlet cap = args[1]\nlet rem = k % cap\nif (rem <= -1) { rem + cap } else { rem } })(mixed, cap) })(k, cap)\n({ args => let tags = args[0]\nlet keys = args[1]\nlet vals = args[2]\nlet cap = args[3]\nlet start = args[4]\nlet k = args[5]\nvar step = 0\nvar res = (false, 0)\nwhile ((step + 1) <= cap) {\n    let s = step\n    let slot = if (((start + s) + 1) <= cap) {\n        start + s\n    } else {\n        (start + s) - cap\n    }\n    let tag = ({ args => let arr = args[0]\n    let i = args[1]\n    let p = arr.f1\n    unsafe { (p + i).read() } })(tags, slot)\n    if (tag == 0) {\n        step = cap\n    } else {\n        if (tag == 1) {\n            let key = ({ args => let arr = args[0]\n            let i = args[1]\n            let p = arr.f1\n            unsafe { (p + i).read() } })(keys, slot)\n            if (key == k) {\n                res = (true, ({ args => let arr = args[0]\n                let i = args[1]\n                let p = arr.f1\n                unsafe { (p + i).read() } })(vals, slot))\n                step = cap\n            } else {\n                step = step + 1\n            }\n        } else {\n            step = step + 1\n        }\n    }\n}\nres })(tags, keys, vals, cap, start, k) })(m, k)"
+    },
+    "cjr.examples.hash_map.call_get": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.hash_map.rehash_body": {
+      "status": "unavailable",
+      "reason": "The Gallina printer reported an unsupported construct or missing layout metadata."
+    },
+    "cjr.examples.hash_map.rehash_v": {
+      "status": "unavailable",
+      "reason": "The Gallina printer reported an unsupported construct or missing layout metadata."
+    },
+    "cjr.examples.hash_map.call_rehash": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.hash_map.grow_body": {
+      "status": "unavailable",
+      "reason": "The Gallina printer reported an unsupported construct or missing layout metadata."
+    },
+    "cjr.examples.hash_map.call_grow": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.hash_map.grow_e": {
+      "status": "unavailable",
+      "reason": "The Gallina printer reported an unsupported construct or missing layout metadata."
+    },
+    "cjr.examples.hash_map.add_room_body": {
+      "status": "unavailable",
+      "reason": "The Gallina printer reported an unsupported construct or missing layout metadata."
+    },
+    "cjr.examples.hash_map.call_add_room": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.hash_map.add_room_e": {
+      "status": "unavailable",
+      "reason": "The Gallina printer reported an unsupported construct or missing layout metadata."
+    },
+    "cjr.examples.hash_map.add_body": {
+      "status": "unavailable",
+      "reason": "The Gallina printer reported an unsupported construct or missing layout metadata."
+    },
+    "cjr.examples.hash_map.call_add": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.hash_map.remove_body": {
+      "status": "unavailable",
+      "reason": "The Gallina printer reported an unsupported construct or missing layout metadata."
+    },
+    "cjr.examples.hash_map.call_remove": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.hash_map.size_at": {
+      "status": "available",
+      "text": "({ m => m.f0 })(m)"
+    },
+    "cjr.examples.hash_map.capacity_at": {
+      "status": "available",
+      "text": "({ m => let tags = m.f1\ntags.f0 })(m)"
+    },
+    "cjr.examples.hash_map.is_empty_at": {
+      "status": "available",
+      "text": "({ m => m.f0 == 0 })(m)"
+    },
+    "cjr.examples.hash_map.init_then_size": {
+      "status": "unavailable",
+      "reason": "The Gallina printer reported an unsupported construct or missing layout metadata."
+    },
+    "cjr.examples.hash_map.init_then_capacity": {
+      "status": "unavailable",
+      "reason": "The Gallina printer reported an unsupported construct or missing layout metadata."
+    },
+    "cjr.examples.hash_map.init_then_empty": {
+      "status": "unavailable",
+      "reason": "The Gallina printer reported an unsupported construct or missing layout metadata."
+    },
+    "cjr.examples.hash_map.add_then_get": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.hash_map.add_then_contains": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    }
+  },
+  "correctness_contracts": {},
   "history": {
     "complete": false,
     "declarations": {
@@ -3398,6 +4571,7 @@
           {
             "commit": "833ab1c62aa7a9932f38aa5c298128e362bc2d8e",
             "date": "2026-10-16T08:36:57+01:00",
+            "subject": "Add integer multiplication and improve hashmap hashing",
             "prompts": [
               {
                 "text": "the extracted code to rocq ration is strangely low. why? ",
@@ -3491,8 +4665,7 @@
                 "text": "push to github without rerunning the proof verification script",
                 "timestamp": "2026-10-16T07:36:26+00:00"
               }
-            ],
-            "subject": "Add integer multiplication and improve hashmap hashing"
+            ]
           }
         ],
         "issues": [
@@ -3505,6 +4678,7 @@
           {
             "commit": "833ab1c62aa7a9932f38aa5c298128e362bc2d8e",
             "date": "2026-10-16T08:36:57+01:00",
+            "subject": "Add integer multiplication and improve hashmap hashing",
             "prompts": [
               {
                 "text": "the extracted code to rocq ration is strangely low. why? ",
@@ -3598,8 +4772,7 @@
                 "text": "push to github without rerunning the proof verification script",
                 "timestamp": "2026-10-16T07:36:26+00:00"
               }
-            ],
-            "subject": "Add integer multiplication and improve hashmap hashing"
+            ]
           }
         ],
         "issues": [
@@ -3612,6 +4785,7 @@
           {
             "commit": "833ab1c62aa7a9932f38aa5c298128e362bc2d8e",
             "date": "2026-10-16T08:36:57+01:00",
+            "subject": "Add integer multiplication and improve hashmap hashing",
             "prompts": [
               {
                 "text": "the extracted code to rocq ration is strangely low. why? ",
@@ -3705,8 +4879,7 @@
                 "text": "push to github without rerunning the proof verification script",
                 "timestamp": "2026-10-16T07:36:26+00:00"
               }
-            ],
-            "subject": "Add integer multiplication and improve hashmap hashing"
+            ]
           }
         ],
         "issues": [
@@ -3719,6 +4892,7 @@
           {
             "commit": "833ab1c62aa7a9932f38aa5c298128e362bc2d8e",
             "date": "2026-10-16T08:36:57+01:00",
+            "subject": "Add integer multiplication and improve hashmap hashing",
             "prompts": [
               {
                 "text": "the extracted code to rocq ration is strangely low. why? ",
@@ -3812,8 +4986,7 @@
                 "text": "push to github without rerunning the proof verification script",
                 "timestamp": "2026-10-16T07:36:26+00:00"
               }
-            ],
-            "subject": "Add integer multiplication and improve hashmap hashing"
+            ]
           }
         ],
         "issues": [
@@ -3826,6 +4999,7 @@
           {
             "commit": "833ab1c62aa7a9932f38aa5c298128e362bc2d8e",
             "date": "2026-10-16T08:36:57+01:00",
+            "subject": "Add integer multiplication and improve hashmap hashing",
             "prompts": [
               {
                 "text": "the extracted code to rocq ration is strangely low. why? ",
@@ -3919,8 +5093,7 @@
                 "text": "push to github without rerunning the proof verification script",
                 "timestamp": "2026-10-16T07:36:26+00:00"
               }
-            ],
-            "subject": "Add integer multiplication and improve hashmap hashing"
+            ]
           }
         ],
         "issues": [],
@@ -4401,6 +5574,7 @@
           {
             "commit": "833ab1c62aa7a9932f38aa5c298128e362bc2d8e",
             "date": "2026-10-16T08:36:57+01:00",
+            "subject": "Add integer multiplication and improve hashmap hashing",
             "prompts": [
               {
                 "text": "the extracted code to rocq ration is strangely low. why? ",
@@ -4494,8 +5668,7 @@
                 "text": "push to github without rerunning the proof verification script",
                 "timestamp": "2026-10-16T07:36:26+00:00"
               }
-            ],
-            "subject": "Add integer multiplication and improve hashmap hashing"
+            ]
           }
         ],
         "issues": [],
@@ -4506,6 +5679,7 @@
           {
             "commit": "833ab1c62aa7a9932f38aa5c298128e362bc2d8e",
             "date": "2026-10-16T08:36:57+01:00",
+            "subject": "Add integer multiplication and improve hashmap hashing",
             "prompts": [
               {
                 "text": "the extracted code to rocq ration is strangely low. why? ",
@@ -4599,8 +5773,7 @@
                 "text": "push to github without rerunning the proof verification script",
                 "timestamp": "2026-10-16T07:36:26+00:00"
               }
-            ],
-            "subject": "Add integer multiplication and improve hashmap hashing"
+            ]
           }
         ],
         "issues": [],
@@ -4611,6 +5784,7 @@
           {
             "commit": "833ab1c62aa7a9932f38aa5c298128e362bc2d8e",
             "date": "2026-10-16T08:36:57+01:00",
+            "subject": "Add integer multiplication and improve hashmap hashing",
             "prompts": [
               {
                 "text": "the extracted code to rocq ration is strangely low. why? ",
@@ -4704,8 +5878,7 @@
                 "text": "push to github without rerunning the proof verification script",
                 "timestamp": "2026-10-16T07:36:26+00:00"
               }
-            ],
-            "subject": "Add integer multiplication and improve hashmap hashing"
+            ]
           }
         ],
         "issues": [],
@@ -4898,6 +6071,7 @@
           {
             "commit": "833ab1c62aa7a9932f38aa5c298128e362bc2d8e",
             "date": "2026-10-16T08:36:57+01:00",
+            "subject": "Add integer multiplication and improve hashmap hashing",
             "prompts": [
               {
                 "text": "the extracted code to rocq ration is strangely low. why? ",
@@ -4991,8 +6165,7 @@
                 "text": "push to github without rerunning the proof verification script",
                 "timestamp": "2026-10-16T07:36:26+00:00"
               }
-            ],
-            "subject": "Add integer multiplication and improve hashmap hashing"
+            ]
           }
         ],
         "issues": [
@@ -5040,6 +6213,7 @@
           {
             "commit": "833ab1c62aa7a9932f38aa5c298128e362bc2d8e",
             "date": "2026-10-16T08:36:57+01:00",
+            "subject": "Add integer multiplication and improve hashmap hashing",
             "prompts": [
               {
                 "text": "the extracted code to rocq ration is strangely low. why? ",
@@ -5133,8 +6307,7 @@
                 "text": "push to github without rerunning the proof verification script",
                 "timestamp": "2026-10-16T07:36:26+00:00"
               }
-            ],
-            "subject": "Add integer multiplication and improve hashmap hashing"
+            ]
           }
         ],
         "issues": [],
@@ -5185,6 +6358,7 @@
           {
             "commit": "833ab1c62aa7a9932f38aa5c298128e362bc2d8e",
             "date": "2026-10-16T08:36:57+01:00",
+            "subject": "Add integer multiplication and improve hashmap hashing",
             "prompts": [
               {
                 "text": "the extracted code to rocq ration is strangely low. why? ",
@@ -5278,8 +6452,7 @@
                 "text": "push to github without rerunning the proof verification script",
                 "timestamp": "2026-10-16T07:36:26+00:00"
               }
-            ],
-            "subject": "Add integer multiplication and improve hashmap hashing"
+            ]
           }
         ],
         "issues": [],
@@ -5407,6 +6580,7 @@
           {
             "commit": "833ab1c62aa7a9932f38aa5c298128e362bc2d8e",
             "date": "2026-10-16T08:36:57+01:00",
+            "subject": "Add integer multiplication and improve hashmap hashing",
             "prompts": [
               {
                 "text": "the extracted code to rocq ration is strangely low. why? ",
@@ -5500,8 +6674,7 @@
                 "text": "push to github without rerunning the proof verification script",
                 "timestamp": "2026-10-16T07:36:26+00:00"
               }
-            ],
-            "subject": "Add integer multiplication and improve hashmap hashing"
+            ]
           }
         ],
         "issues": [
@@ -5647,6 +6820,7 @@
           {
             "commit": "833ab1c62aa7a9932f38aa5c298128e362bc2d8e",
             "date": "2026-10-16T08:36:57+01:00",
+            "subject": "Add integer multiplication and improve hashmap hashing",
             "prompts": [
               {
                 "text": "the extracted code to rocq ration is strangely low. why? ",
@@ -5740,8 +6914,7 @@
                 "text": "push to github without rerunning the proof verification script",
                 "timestamp": "2026-10-16T07:36:26+00:00"
               }
-            ],
-            "subject": "Add integer multiplication and improve hashmap hashing"
+            ]
           }
         ],
         "issues": [
@@ -5754,6 +6927,7 @@
           {
             "commit": "833ab1c62aa7a9932f38aa5c298128e362bc2d8e",
             "date": "2026-10-16T08:36:57+01:00",
+            "subject": "Add integer multiplication and improve hashmap hashing",
             "prompts": [
               {
                 "text": "the extracted code to rocq ration is strangely low. why? ",
@@ -5847,8 +7021,7 @@
                 "text": "push to github without rerunning the proof verification script",
                 "timestamp": "2026-10-16T07:36:26+00:00"
               }
-            ],
-            "subject": "Add integer multiplication and improve hashmap hashing"
+            ]
           }
         ],
         "issues": [],
@@ -5963,5 +7136,17 @@
         "complete": true
       }
     }
+  },
+  "rendering": {
+    "proof_validation": "not_run",
+    "proof_bodies_evaluated": false,
+    "preserved_available_explanations": 0,
+    "explanations_mode": "offline",
+    "sources": {
+      "rocq/hash_map.v": "c570b07ee10a68102f3d20df9f639badbedf17c37f964d535de8616fd9210bff"
+    },
+    "auxiliary_pages": [
+      "rocq/hm_tactics.html"
+    ]
   }
 }

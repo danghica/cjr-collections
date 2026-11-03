@@ -33,10 +33,16 @@
         "depends_on": [
           "cjr.examples.list.cons_body"
         ],
+        "statement_depends_on": [
+          "cjr.examples.list.cons_body"
+        ],
         "issues": []
       },
       "cjr.examples.list.call_empty": {
         "depends_on": [
+          "cjr.examples.list.empty_body"
+        ],
+        "statement_depends_on": [
           "cjr.examples.list.empty_body"
         ],
         "issues": []
@@ -45,10 +51,16 @@
         "depends_on": [
           "cjr.examples.list.head_body"
         ],
+        "statement_depends_on": [
+          "cjr.examples.list.head_body"
+        ],
         "issues": []
       },
       "cjr.examples.list.call_nil": {
         "depends_on": [
+          "cjr.examples.list.nil_body"
+        ],
+        "statement_depends_on": [
           "cjr.examples.list.nil_body"
         ],
         "issues": []
@@ -57,10 +69,14 @@
         "depends_on": [
           "cjr.examples.list.tail_body"
         ],
+        "statement_depends_on": [
+          "cjr.examples.list.tail_body"
+        ],
         "issues": []
       },
       "cjr.examples.list.cons_body": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.list.cons_spec": {
@@ -70,10 +86,18 @@
           "cjr.examples.list.is_list_obj",
           "cjr.examples.list.wp_new_step"
         ],
+        "statement_depends_on": [
+          "cjr.examples.list.call_cons",
+          "cjr.examples.list.is_list"
+        ],
         "issues": []
       },
       "cjr.examples.list.cons_then_tail": {
         "depends_on": [
+          "cjr.examples.list.call_cons",
+          "cjr.examples.list.tail_body"
+        ],
+        "statement_depends_on": [
           "cjr.examples.list.call_cons",
           "cjr.examples.list.tail_body"
         ],
@@ -86,14 +110,23 @@
           "cjr.examples.list.is_list",
           "cjr.examples.list.tail_body"
         ],
+        "statement_depends_on": [
+          "cjr.examples.list.cons_then_tail",
+          "cjr.examples.list.is_list"
+        ],
         "issues": []
       },
       "cjr.examples.list.empty_body": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.list.empty_cons": {
         "depends_on": [
+          "cjr.examples.list.call_empty",
+          "cjr.examples.list.is_list"
+        ],
+        "statement_depends_on": [
           "cjr.examples.list.call_empty",
           "cjr.examples.list.is_list"
         ],
@@ -104,14 +137,23 @@
           "cjr.examples.list.call_empty",
           "cjr.examples.list.is_list"
         ],
+        "statement_depends_on": [
+          "cjr.examples.list.call_empty",
+          "cjr.examples.list.is_list"
+        ],
         "issues": []
       },
       "cjr.examples.list.head_body": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.list.head_spec": {
         "depends_on": [
+          "cjr.examples.list.call_head",
+          "cjr.examples.list.is_list"
+        ],
+        "statement_depends_on": [
           "cjr.examples.list.call_head",
           "cjr.examples.list.is_list"
         ],
@@ -121,16 +163,23 @@
         "depends_on": [
           "cjr.examples.list.is_list"
         ],
+        "statement_depends_on": [
+          "cjr.examples.list.is_list"
+        ],
         "issues": []
       },
       "cjr.examples.list.is_list_obj": {
         "depends_on": [
           "cjr.examples.list.is_list"
         ],
+        "statement_depends_on": [
+          "cjr.examples.list.is_list"
+        ],
         "issues": []
       },
       "cjr.examples.list.nil_body": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.list.nil_spec": {
@@ -138,10 +187,15 @@
           "cjr.examples.list.call_nil",
           "cjr.examples.list.is_list"
         ],
+        "statement_depends_on": [
+          "cjr.examples.list.call_nil",
+          "cjr.examples.list.is_list"
+        ],
         "issues": []
       },
       "cjr.examples.list.tail_body": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.list.tail_spec": {
@@ -149,10 +203,15 @@
           "cjr.examples.list.call_tail",
           "cjr.examples.list.is_list"
         ],
+        "statement_depends_on": [
+          "cjr.examples.list.call_tail",
+          "cjr.examples.list.is_list"
+        ],
         "issues": []
       },
       "cjr.examples.list.wp_new_step": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       }
     }
@@ -268,6 +327,53 @@
       }
     }
   },
+  "cangjie": {
+    "cjr.examples.list.nil_body": {
+      "status": "unavailable",
+      "reason": "The Gallina printer reported an unsupported construct or missing layout metadata."
+    },
+    "cjr.examples.list.cons_body": {
+      "status": "unavailable",
+      "reason": "The Gallina printer reported an unsupported construct or missing layout metadata."
+    },
+    "cjr.examples.list.head_body": {
+      "status": "available",
+      "text": "n.f1"
+    },
+    "cjr.examples.list.tail_body": {
+      "status": "available",
+      "text": "n.f2"
+    },
+    "cjr.examples.list.empty_body": {
+      "status": "available",
+      "text": "if (n.f0) { false } else { true }"
+    },
+    "cjr.examples.list.call_nil": {
+      "status": "unavailable",
+      "reason": "The Gallina printer reported an unsupported construct or missing layout metadata."
+    },
+    "cjr.examples.list.call_cons": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.list.call_head": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.list.call_tail": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.list.call_empty": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.list.cons_then_tail": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    }
+  },
+  "correctness_contracts": {},
   "history": {
     "complete": true,
     "declarations": {
@@ -376,6 +482,15 @@
         "issues": [],
         "complete": true
       }
+    }
+  },
+  "rendering": {
+    "proof_validation": "not_run",
+    "proof_bodies_evaluated": false,
+    "preserved_available_explanations": 0,
+    "explanations_mode": "offline",
+    "sources": {
+      "rocq/list.v": "306d583fa63390e218e5ea5d3d61c88bf03f9f269b5cea919a0b136d279fdef1"
     }
   }
 }

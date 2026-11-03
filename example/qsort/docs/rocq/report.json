@@ -158,6 +158,10 @@
           "cjr.examples.qsort.qsort",
           "cjr.examples.qsort.sort_spec"
         ],
+        "statement_depends_on": [
+          "cjr.examples.qsort.call_sort",
+          "cjr.examples.qsort.qsort"
+        ],
         "issues": []
       },
       "cjr.examples.qsort.arraylist_qsort_at": {
@@ -167,6 +171,10 @@
           "cjr.examples.qsort.qsort",
           "cjr.examples.qsort.sort_spec"
         ],
+        "statement_depends_on": [
+          "cjr.examples.qsort.call_sort",
+          "cjr.examples.qsort.qsort"
+        ],
         "issues": []
       },
       "cjr.examples.qsort.arraylist_qsort_spec": {
@@ -175,22 +183,33 @@
           "cjr.examples.qsort.call_sort",
           "cjr.examples.qsort.qsort"
         ],
+        "statement_depends_on": [
+          "cjr.examples.qsort.call_sort",
+          "cjr.examples.qsort.qsort"
+        ],
         "issues": []
       },
       "cjr.examples.qsort.call2": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.qsort.call3": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.qsort.call3_seq": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.qsort.call_partition": {
         "depends_on": [
+          "cjr.examples.qsort.nval",
+          "cjr.examples.qsort.partition_body"
+        ],
+        "statement_depends_on": [
           "cjr.examples.qsort.nval",
           "cjr.examples.qsort.partition_body"
         ],
@@ -201,10 +220,17 @@
           "cjr.examples.qsort.nval",
           "cjr.examples.qsort.qsort_v"
         ],
+        "statement_depends_on": [
+          "cjr.examples.qsort.nval",
+          "cjr.examples.qsort.qsort_v"
+        ],
         "issues": []
       },
       "cjr.examples.qsort.call_sort": {
         "depends_on": [
+          "cjr.examples.qsort.sort_body"
+        ],
+        "statement_depends_on": [
           "cjr.examples.qsort.sort_body"
         ],
         "issues": []
@@ -214,10 +240,17 @@
           "cjr.examples.qsort.nval",
           "cjr.examples.qsort.swap_body"
         ],
+        "statement_depends_on": [
+          "cjr.examples.qsort.nval",
+          "cjr.examples.qsort.swap_body"
+        ],
         "issues": []
       },
       "cjr.examples.qsort.count_if": {
         "depends_on": [
+          "cjr.examples.qsort.count_if"
+        ],
+        "statement_depends_on": [
           "cjr.examples.qsort.count_if"
         ],
         "issues": []
@@ -226,10 +259,16 @@
         "depends_on": [
           "cjr.examples.qsort.count_if"
         ],
+        "statement_depends_on": [
+          "cjr.examples.qsort.count_if"
+        ],
         "issues": []
       },
       "cjr.examples.qsort.count_if_perm": {
         "depends_on": [
+          "cjr.examples.qsort.count_if"
+        ],
+        "statement_depends_on": [
           "cjr.examples.qsort.count_if"
         ],
         "issues": []
@@ -239,36 +278,52 @@
           "cjr.examples.qsort.count_if",
           "cjr.examples.qsort.count_if_app"
         ],
+        "statement_depends_on": [
+          "cjr.examples.qsort.count_if"
+        ],
         "issues": []
       },
       "cjr.examples.qsort.count_insert": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.qsort.count_zero_lookup": {
         "depends_on": [
           "cjr.examples.qsort.count_if"
         ],
+        "statement_depends_on": [
+          "cjr.examples.qsort.count_if"
+        ],
         "issues": []
       },
       "cjr.examples.qsort.drop_lookup_eq": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.qsort.exchange": {
         "depends_on": [
           "cjr.examples.qsort.move_cons"
         ],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.qsort.lit_rigid": {
         "depends_on": [
           "cjr.examples.qsort.rigid"
         ],
+        "statement_depends_on": [
+          "cjr.examples.qsort.rigid"
+        ],
         "issues": []
       },
       "cjr.examples.qsort.lomuto": {
         "depends_on": [
+          "cjr.examples.qsort.lomuto",
+          "cjr.examples.qsort.swap_list"
+        ],
+        "statement_depends_on": [
           "cjr.examples.qsort.lomuto",
           "cjr.examples.qsort.swap_list"
         ],
@@ -281,14 +336,22 @@
           "cjr.examples.qsort.lomuto_step",
           "cjr.examples.qsort.swap_list"
         ],
+        "statement_depends_on": [
+          "cjr.examples.qsort.lomuto",
+          "cjr.examples.qsort.lomuto_inv"
+        ],
         "issues": []
       },
       "cjr.examples.qsort.lomuto_inv": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.qsort.lomuto_inv_start": {
         "depends_on": [
+          "cjr.examples.qsort.lomuto_inv"
+        ],
+        "statement_depends_on": [
           "cjr.examples.qsort.lomuto_inv"
         ],
         "issues": []
@@ -301,26 +364,38 @@
           "cjr.examples.qsort.swap_list_perm",
           "cjr.examples.qsort.swap_lookup"
         ],
+        "statement_depends_on": [
+          "cjr.examples.qsort.lomuto_inv",
+          "cjr.examples.qsort.swap_list"
+        ],
         "issues": []
       },
       "cjr.examples.qsort.minus1": {
         "depends_on": [
           "cjr.examples.qsort.one"
         ],
+        "statement_depends_on": [
+          "cjr.examples.qsort.one"
+        ],
         "issues": []
       },
       "cjr.examples.qsort.move_cons": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.qsort.nval": {
         "depends_on": [
           "cjr.examples.qsort.zval"
         ],
+        "statement_depends_on": [
+          "cjr.examples.qsort.zval"
+        ],
         "issues": []
       },
       "cjr.examples.qsort.one": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.qsort.part_closed_n": {
@@ -335,6 +410,9 @@
           "cjr.examples.qsort.swap_body",
           "cjr.examples.qsort.swap_closed_n",
           "cjr.examples.qsort.unitv"
+        ],
+        "statement_depends_on": [
+          "cjr.examples.qsort.partition_body"
         ],
         "issues": [
           "Project reference has no rendered declaration: cjr.examples.qsort.get_body",
@@ -354,6 +432,9 @@
           "cjr.examples.qsort.swap_closed_pack",
           "cjr.examples.qsort.unitv"
         ],
+        "statement_depends_on": [
+          "cjr.examples.qsort.partition_body"
+        ],
         "issues": [
           "Project reference has no rendered declaration: cjr.examples.qsort.get_body",
           "Project reference has no rendered declaration: cjr.examples.qsort.set_body"
@@ -361,10 +442,18 @@
       },
       "cjr.examples.qsort.part_ok": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.qsort.part_tail": {
         "depends_on": [
+          "cjr.examples.qsort.call3",
+          "cjr.examples.qsort.minus1",
+          "cjr.examples.qsort.sload",
+          "cjr.examples.qsort.swap_body",
+          "cjr.examples.qsort.zval"
+        ],
+        "statement_depends_on": [
           "cjr.examples.qsort.call3",
           "cjr.examples.qsort.minus1",
           "cjr.examples.qsort.sload",
@@ -391,6 +480,16 @@
           "cjr.examples.qsort.swap_var_j",
           "cjr.examples.qsort.zval"
         ],
+        "statement_depends_on": [
+          "cjr.examples.qsort.call3",
+          "cjr.examples.qsort.minus1",
+          "cjr.examples.qsort.part_tail",
+          "cjr.examples.qsort.rigid",
+          "cjr.examples.qsort.scan",
+          "cjr.examples.qsort.scan_open",
+          "cjr.examples.qsort.swap_body",
+          "cjr.examples.qsort.zval"
+        ],
         "issues": [
           "Project reference has no rendered declaration: cjr.examples.qsort.get_body",
           "Project reference has no rendered declaration: cjr.examples.qsort.set_body"
@@ -404,10 +503,21 @@
           "cjr.examples.qsort.scan",
           "cjr.examples.qsort.swap_body"
         ],
+        "statement_depends_on": [
+          "cjr.examples.qsort.call2",
+          "cjr.examples.qsort.call3",
+          "cjr.examples.qsort.minus1",
+          "cjr.examples.qsort.scan",
+          "cjr.examples.qsort.swap_body"
+        ],
         "issues": []
       },
       "cjr.examples.qsort.partition_list": {
         "depends_on": [
+          "cjr.examples.qsort.lomuto",
+          "cjr.examples.qsort.swap_list"
+        ],
+        "statement_depends_on": [
           "cjr.examples.qsort.lomuto",
           "cjr.examples.qsort.swap_list"
         ],
@@ -423,6 +533,10 @@
           "cjr.examples.qsort.swap_list_length",
           "cjr.examples.qsort.swap_list_perm",
           "cjr.examples.qsort.swap_lookup"
+        ],
+        "statement_depends_on": [
+          "cjr.examples.qsort.part_ok",
+          "cjr.examples.qsort.partition_list"
         ],
         "issues": []
       },
@@ -457,16 +571,28 @@
           "cjr.examples.qsort.wp_struct_step",
           "cjr.examples.qsort.zval"
         ],
+        "statement_depends_on": [
+          "cjr.examples.qsort.call_partition",
+          "cjr.examples.qsort.nval",
+          "cjr.examples.qsort.partition_list",
+          "cjr.examples.qsort.rigid"
+        ],
         "issues": []
       },
       "cjr.examples.qsort.plus1": {
         "depends_on": [
           "cjr.examples.qsort.one"
         ],
+        "statement_depends_on": [
+          "cjr.examples.qsort.one"
+        ],
         "issues": []
       },
       "cjr.examples.qsort.qsort": {
         "depends_on": [
+          "cjr.examples.qsort.qsort_slice"
+        ],
+        "statement_depends_on": [
           "cjr.examples.qsort.qsort_slice"
         ],
         "issues": []
@@ -478,10 +604,19 @@
           "cjr.examples.qsort.plus1",
           "cjr.examples.qsort.unitv"
         ],
+        "statement_depends_on": [
+          "cjr.examples.qsort.minus1",
+          "cjr.examples.qsort.partition_body",
+          "cjr.examples.qsort.plus1",
+          "cjr.examples.qsort.unitv"
+        ],
         "issues": []
       },
       "cjr.examples.qsort.qsort_example": {
         "depends_on": [
+          "cjr.examples.qsort.qsort"
+        ],
+        "statement_depends_on": [
           "cjr.examples.qsort.qsort"
         ],
         "issues": []
@@ -491,10 +626,17 @@
           "cjr.examples.qsort.qsort",
           "cjr.examples.qsort.qsort_slice_spec"
         ],
+        "statement_depends_on": [
+          "cjr.examples.qsort.qsort"
+        ],
         "issues": []
       },
       "cjr.examples.qsort.qsort_slice": {
         "depends_on": [
+          "cjr.examples.qsort.partition_list",
+          "cjr.examples.qsort.qsort_slice"
+        ],
+        "statement_depends_on": [
           "cjr.examples.qsort.partition_list",
           "cjr.examples.qsort.qsort_slice"
         ],
@@ -511,6 +653,10 @@
           "cjr.examples.qsort.slice_sorted_same",
           "cjr.examples.qsort.slice_sorted_short"
         ],
+        "statement_depends_on": [
+          "cjr.examples.qsort.qsort_slice",
+          "cjr.examples.qsort.slice_sorted"
+        ],
         "issues": []
       },
       "cjr.examples.qsort.qsort_sorted": {
@@ -519,10 +665,17 @@
           "cjr.examples.qsort.qsort_slice_spec",
           "cjr.examples.qsort.slice_sorted"
         ],
+        "statement_depends_on": [
+          "cjr.examples.qsort.qsort",
+          "cjr.examples.qsort.slice_sorted"
+        ],
         "issues": []
       },
       "cjr.examples.qsort.qsort_v": {
         "depends_on": [
+          "cjr.examples.qsort.qsort_body"
+        ],
+        "statement_depends_on": [
           "cjr.examples.qsort.qsort_body"
         ],
         "issues": []
@@ -531,6 +684,9 @@
         "depends_on": [
           "cjr.examples.qsort.count_if",
           "cjr.examples.qsort.count_if_take_drop"
+        ],
+        "statement_depends_on": [
+          "cjr.examples.qsort.count_if"
         ],
         "issues": []
       },
@@ -544,14 +700,24 @@
           "cjr.examples.qsort.take_lookup_eq",
           "cjr.examples.qsort.take_region_zero"
         ],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.qsort.rigid": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.qsort.scan": {
         "depends_on": [
+          "cjr.examples.qsort.call2",
+          "cjr.examples.qsort.call3",
+          "cjr.examples.qsort.minus1",
+          "cjr.examples.qsort.plus1",
+          "cjr.examples.qsort.swap_body",
+          "cjr.examples.qsort.unitv"
+        ],
+        "statement_depends_on": [
           "cjr.examples.qsort.call2",
           "cjr.examples.qsort.call3",
           "cjr.examples.qsort.minus1",
@@ -572,6 +738,16 @@
           "cjr.examples.qsort.unitv",
           "cjr.examples.qsort.zval"
         ],
+        "statement_depends_on": [
+          "cjr.examples.qsort.call2",
+          "cjr.examples.qsort.call3",
+          "cjr.examples.qsort.plus1",
+          "cjr.examples.qsort.sload",
+          "cjr.examples.qsort.sset",
+          "cjr.examples.qsort.swap_body",
+          "cjr.examples.qsort.unitv",
+          "cjr.examples.qsort.zval"
+        ],
         "issues": []
       },
       "cjr.examples.qsort.scan_body_eq": {
@@ -583,10 +759,29 @@
           "cjr.examples.qsort.sload",
           "cjr.examples.qsort.zval"
         ],
+        "statement_depends_on": [
+          "cjr.examples.qsort.minus1",
+          "cjr.examples.qsort.plus1",
+          "cjr.examples.qsort.scan_body",
+          "cjr.examples.qsort.scan_open",
+          "cjr.examples.qsort.sload",
+          "cjr.examples.qsort.zval"
+        ],
         "issues": []
       },
       "cjr.examples.qsort.scan_open": {
         "depends_on": [
+          "cjr.examples.qsort.call2",
+          "cjr.examples.qsort.call3",
+          "cjr.examples.qsort.minus1",
+          "cjr.examples.qsort.plus1",
+          "cjr.examples.qsort.sload",
+          "cjr.examples.qsort.sset",
+          "cjr.examples.qsort.swap_body",
+          "cjr.examples.qsort.unitv",
+          "cjr.examples.qsort.zval"
+        ],
+        "statement_depends_on": [
           "cjr.examples.qsort.call2",
           "cjr.examples.qsort.call3",
           "cjr.examples.qsort.minus1",
@@ -616,6 +811,12 @@
           "cjr.examples.qsort.swap_var_j",
           "cjr.examples.qsort.zval"
         ],
+        "statement_depends_on": [
+          "cjr.examples.qsort.rigid",
+          "cjr.examples.qsort.scan",
+          "cjr.examples.qsort.scan_open",
+          "cjr.examples.qsort.zval"
+        ],
         "issues": [
           "Project reference has no rendered declaration: cjr.examples.qsort.get_body",
           "Project reference has no rendered declaration: cjr.examples.qsort.set_body"
@@ -623,10 +824,14 @@
       },
       "cjr.examples.qsort.slice_sorted": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.qsort.slice_sorted_join": {
         "depends_on": [
+          "cjr.examples.qsort.slice_sorted"
+        ],
+        "statement_depends_on": [
           "cjr.examples.qsort.slice_sorted"
         ],
         "issues": []
@@ -635,10 +840,16 @@
         "depends_on": [
           "cjr.examples.qsort.slice_sorted"
         ],
+        "statement_depends_on": [
+          "cjr.examples.qsort.slice_sorted"
+        ],
         "issues": []
       },
       "cjr.examples.qsort.slice_sorted_short": {
         "depends_on": [
+          "cjr.examples.qsort.slice_sorted"
+        ],
+        "statement_depends_on": [
           "cjr.examples.qsort.slice_sorted"
         ],
         "issues": []
@@ -647,14 +858,22 @@
         "depends_on": [
           "cjr.examples.qsort.slot"
         ],
+        "statement_depends_on": [
+          "cjr.examples.qsort.slot"
+        ],
         "issues": []
       },
       "cjr.examples.qsort.slot": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.qsort.sort_body": {
         "depends_on": [
+          "cjr.examples.qsort.qsort_body",
+          "cjr.examples.qsort.zero"
+        ],
+        "statement_depends_on": [
           "cjr.examples.qsort.qsort_body",
           "cjr.examples.qsort.zero"
         ],
@@ -679,10 +898,18 @@
           "cjr.examples.qsort.zero",
           "cjr.examples.qsort.zval"
         ],
+        "statement_depends_on": [
+          "cjr.examples.qsort.call_sort",
+          "cjr.examples.qsort.qsort",
+          "cjr.examples.qsort.rigid"
+        ],
         "issues": []
       },
       "cjr.examples.qsort.sset": {
         "depends_on": [
+          "cjr.examples.qsort.slot"
+        ],
+        "statement_depends_on": [
           "cjr.examples.qsort.slot"
         ],
         "issues": []
@@ -693,10 +920,18 @@
           "cjr.examples.qsort.call3",
           "cjr.examples.qsort.call3_seq"
         ],
+        "statement_depends_on": [
+          "cjr.examples.qsort.call2",
+          "cjr.examples.qsort.call3",
+          "cjr.examples.qsort.call3_seq"
+        ],
         "issues": []
       },
       "cjr.examples.qsort.swap_closed_a": {
         "depends_on": [
+          "cjr.examples.qsort.swap_body"
+        ],
+        "statement_depends_on": [
           "cjr.examples.qsort.swap_body"
         ],
         "issues": []
@@ -705,10 +940,16 @@
         "depends_on": [
           "cjr.examples.qsort.swap_body"
         ],
+        "statement_depends_on": [
+          "cjr.examples.qsort.swap_body"
+        ],
         "issues": []
       },
       "cjr.examples.qsort.swap_closed_i": {
         "depends_on": [
+          "cjr.examples.qsort.swap_body"
+        ],
+        "statement_depends_on": [
           "cjr.examples.qsort.swap_body"
         ],
         "issues": []
@@ -717,10 +958,16 @@
         "depends_on": [
           "cjr.examples.qsort.swap_body"
         ],
+        "statement_depends_on": [
+          "cjr.examples.qsort.swap_body"
+        ],
         "issues": []
       },
       "cjr.examples.qsort.swap_closed_lo": {
         "depends_on": [
+          "cjr.examples.qsort.swap_body"
+        ],
+        "statement_depends_on": [
           "cjr.examples.qsort.swap_body"
         ],
         "issues": []
@@ -729,10 +976,16 @@
         "depends_on": [
           "cjr.examples.qsort.swap_body"
         ],
+        "statement_depends_on": [
+          "cjr.examples.qsort.swap_body"
+        ],
         "issues": []
       },
       "cjr.examples.qsort.swap_closed_p": {
         "depends_on": [
+          "cjr.examples.qsort.swap_body"
+        ],
+        "statement_depends_on": [
           "cjr.examples.qsort.swap_body"
         ],
         "issues": []
@@ -741,10 +994,16 @@
         "depends_on": [
           "cjr.examples.qsort.swap_body"
         ],
+        "statement_depends_on": [
+          "cjr.examples.qsort.swap_body"
+        ],
         "issues": []
       },
       "cjr.examples.qsort.swap_closed_pivot": {
         "depends_on": [
+          "cjr.examples.qsort.swap_body"
+        ],
+        "statement_depends_on": [
           "cjr.examples.qsort.swap_body"
         ],
         "issues": []
@@ -753,20 +1012,30 @@
         "depends_on": [
           "cjr.examples.qsort.swap_body"
         ],
+        "statement_depends_on": [
+          "cjr.examples.qsort.swap_body"
+        ],
         "issues": []
       },
       "cjr.examples.qsort.swap_closed_v": {
         "depends_on": [
           "cjr.examples.qsort.swap_body"
         ],
+        "statement_depends_on": [
+          "cjr.examples.qsort.swap_body"
+        ],
         "issues": []
       },
       "cjr.examples.qsort.swap_list": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.qsort.swap_list_code": {
         "depends_on": [
+          "cjr.examples.qsort.swap_list"
+        ],
+        "statement_depends_on": [
           "cjr.examples.qsort.swap_list"
         ],
         "issues": []
@@ -775,10 +1044,16 @@
         "depends_on": [
           "cjr.examples.qsort.swap_list"
         ],
+        "statement_depends_on": [
+          "cjr.examples.qsort.swap_list"
+        ],
         "issues": []
       },
       "cjr.examples.qsort.swap_list_length": {
         "depends_on": [
+          "cjr.examples.qsort.swap_list"
+        ],
+        "statement_depends_on": [
           "cjr.examples.qsort.swap_list"
         ],
         "issues": []
@@ -789,10 +1064,16 @@
           "cjr.examples.qsort.swap_list",
           "cjr.examples.qsort.swap_list_id"
         ],
+        "statement_depends_on": [
+          "cjr.examples.qsort.swap_list"
+        ],
         "issues": []
       },
       "cjr.examples.qsort.swap_lookup": {
         "depends_on": [
+          "cjr.examples.qsort.swap_list"
+        ],
+        "statement_depends_on": [
           "cjr.examples.qsort.swap_list"
         ],
         "issues": []
@@ -812,10 +1093,18 @@
           "cjr.examples.qsort.wp_pack3",
           "cjr.examples.qsort.zval"
         ],
+        "statement_depends_on": [
+          "cjr.examples.qsort.call_swap",
+          "cjr.examples.qsort.rigid",
+          "cjr.examples.qsort.swap_list"
+        ],
         "issues": []
       },
       "cjr.examples.qsort.swap_var_i": {
         "depends_on": [
+          "cjr.examples.qsort.swap_body"
+        ],
+        "statement_depends_on": [
           "cjr.examples.qsort.swap_body"
         ],
         "issues": []
@@ -824,20 +1113,28 @@
         "depends_on": [
           "cjr.examples.qsort.swap_body"
         ],
+        "statement_depends_on": [
+          "cjr.examples.qsort.swap_body"
+        ],
         "issues": []
       },
       "cjr.examples.qsort.take_lookup_eq": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.qsort.take_region_zero": {
         "depends_on": [
           "cjr.examples.qsort.count_if"
         ],
+        "statement_depends_on": [
+          "cjr.examples.qsort.count_if"
+        ],
         "issues": []
       },
       "cjr.examples.qsort.unitv": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.qsort.wp_cons2": {
@@ -848,6 +1145,10 @@
           "cjr.examples.qsort.wp_struct_step",
           "cjr.examples.qsort.zval"
         ],
+        "statement_depends_on": [
+          "cjr.examples.qsort.nval",
+          "cjr.examples.qsort.sload"
+        ],
         "issues": []
       },
       "cjr.examples.qsort.wp_cons3": {
@@ -857,6 +1158,10 @@
           "cjr.examples.qsort.slot",
           "cjr.examples.qsort.wp_struct_step",
           "cjr.examples.qsort.zval"
+        ],
+        "statement_depends_on": [
+          "cjr.examples.qsort.nval",
+          "cjr.examples.qsort.sload"
         ],
         "issues": []
       },
@@ -870,18 +1175,26 @@
           "cjr.examples.qsort.sset",
           "cjr.examples.qsort.zval"
         ],
+        "statement_depends_on": [
+          "cjr.examples.qsort.nval",
+          "cjr.examples.qsort.plus1",
+          "cjr.examples.qsort.sload",
+          "cjr.examples.qsort.sset"
+        ],
         "issues": []
       },
       "cjr.examples.qsort.wp_pack2": {
         "depends_on": [
           "cjr.examples.qsort.wp_struct_step"
         ],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.qsort.wp_pack3": {
         "depends_on": [
           "cjr.examples.qsort.wp_struct_step"
         ],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.qsort.wp_qslice": {
@@ -906,6 +1219,11 @@
           "cjr.examples.qsort.wp_struct_step",
           "cjr.examples.qsort.zval"
         ],
+        "statement_depends_on": [
+          "cjr.examples.qsort.call_qsort",
+          "cjr.examples.qsort.qsort_slice",
+          "cjr.examples.qsort.rigid"
+        ],
         "issues": []
       },
       "cjr.examples.qsort.wp_scan": {
@@ -926,6 +1244,12 @@
           "cjr.examples.qsort.wp_scan_stop",
           "cjr.examples.qsort.zval"
         ],
+        "statement_depends_on": [
+          "cjr.examples.qsort.lomuto",
+          "cjr.examples.qsort.nval",
+          "cjr.examples.qsort.rigid",
+          "cjr.examples.qsort.scan_open"
+        ],
         "issues": []
       },
       "cjr.examples.qsort.wp_scan_body": {
@@ -942,6 +1266,12 @@
           "cjr.examples.qsort.wp_cons3",
           "cjr.examples.qsort.wp_inc"
         ],
+        "statement_depends_on": [
+          "cjr.examples.qsort.nval",
+          "cjr.examples.qsort.rigid",
+          "cjr.examples.qsort.scan_body",
+          "cjr.examples.qsort.swap_list"
+        ],
         "issues": []
       },
       "cjr.examples.qsort.wp_scan_stop": {
@@ -953,18 +1283,24 @@
           "cjr.examples.qsort.sload",
           "cjr.examples.qsort.slot"
         ],
+        "statement_depends_on": [
+          "cjr.examples.qsort.scan_open"
+        ],
         "issues": []
       },
       "cjr.examples.qsort.wp_struct_step": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.qsort.zero": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.qsort.zval": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       }
     }
@@ -1470,6 +1806,113 @@
       }
     }
   },
+  "cangjie": {
+    "cjr.examples.qsort.one": {
+      "status": "available",
+      "text": "1"
+    },
+    "cjr.examples.qsort.zero": {
+      "status": "available",
+      "text": "0"
+    },
+    "cjr.examples.qsort.unitv": {
+      "status": "available",
+      "text": "()"
+    },
+    "cjr.examples.qsort.plus1": {
+      "status": "available",
+      "text": "e + 1"
+    },
+    "cjr.examples.qsort.minus1": {
+      "status": "available",
+      "text": "e - 1"
+    },
+    "cjr.examples.qsort.zval": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.qsort.nval": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.qsort.call2": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.qsort.call3": {
+      "status": "available",
+      "text": "({ args => body })(a, b, c)"
+    },
+    "cjr.examples.qsort.call3_seq": {
+      "status": "available",
+      "text": "({ args => body })(a, b, c)\nk"
+    },
+    "cjr.examples.qsort.swap_body": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.qsort.call_swap": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.qsort.scan": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.qsort.partition_body": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.qsort.call_partition": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.qsort.qsort_body": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.qsort.qsort_v": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.qsort.call_qsort": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.qsort.sort_body": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.qsort.call_sort": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.qsort.slot": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.qsort.sload": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.qsort.sset": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.qsort.scan_open": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.qsort.scan_body": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.qsort.part_tail": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    }
+  },
+  "correctness_contracts": {},
   "history": {
     "complete": true,
     "declarations": {
@@ -1968,6 +2411,15 @@
         "issues": [],
         "complete": true
       }
+    }
+  },
+  "rendering": {
+    "proof_validation": "not_run",
+    "proof_bodies_evaluated": false,
+    "preserved_available_explanations": 0,
+    "explanations_mode": "offline",
+    "sources": {
+      "rocq/qsort.v": "7db0c4f205e7ea3c5528440a7f02f4e15672b4fd45b2d6546de3ad35f1336728"
     }
   }
 }

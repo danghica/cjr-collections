@@ -166,14 +166,17 @@
     "declarations": {
       "cjr.examples.mf_memory.mf_free_dom_subset": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.mf_memory.mf_free_lookup_outside": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.mf_memory.mf_ghost_free_cells": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.mf_memory.mf_wf_free_block": {
@@ -181,6 +184,7 @@
           "cjr.examples.mf_memory.mf_free_dom_subset",
           "cjr.examples.mf_memory.mf_free_lookup_outside"
         ],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.mf_memory.mf_wp_free_block": {
@@ -188,14 +192,21 @@
           "cjr.examples.mf_memory.mf_ghost_free_cells",
           "cjr.examples.mf_memory.mf_wf_free_block"
         ],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_array_object": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_best_cells": {
         "depends_on": [
+          "cjr.examples.most_frequent.mf_summary",
+          "cjr.examples.most_frequent.mf_summary_count",
+          "cjr.examples.most_frequent.mf_summary_first"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_summary",
           "cjr.examples.most_frequent.mf_summary_count",
           "cjr.examples.most_frequent.mf_summary_first"
@@ -207,10 +218,17 @@
           "cjr.examples.most_frequent.mf_summary_count",
           "cjr.examples.most_frequent.mf_summary_first"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_summary_count",
+          "cjr.examples.most_frequent.mf_summary_first"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_best_decision_slot": {
         "depends_on": [
+          "cjr.examples.most_frequent.mf_summary_count"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_summary_count"
         ],
         "issues": []
@@ -220,6 +238,12 @@
           "cjr.examples.most_frequent.mf_best_decision_slot",
           "cjr.examples.most_frequent.mf_strict_better",
           "cjr.examples.most_frequent.mf_strict_better_case",
+          "cjr.examples.most_frequent.mf_summary_count",
+          "cjr.examples.most_frequent.mf_summary_first"
+        ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_best_decision_slot",
+          "cjr.examples.most_frequent.mf_strict_better",
           "cjr.examples.most_frequent.mf_summary_count",
           "cjr.examples.most_frequent.mf_summary_first"
         ],
@@ -233,10 +257,21 @@
           "cjr.examples.most_frequent.mf_summary_count",
           "cjr.examples.most_frequent.mf_summary_first"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_best_decision",
+          "cjr.examples.most_frequent.mf_strict_better",
+          "cjr.examples.most_frequent.mf_summary_count",
+          "cjr.examples.most_frequent.mf_summary_first"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_best_summary": {
         "depends_on": [
+          "cjr.examples.most_frequent.mf_best_summary",
+          "cjr.examples.most_frequent.mf_score_leb",
+          "cjr.examples.most_frequent.mf_summary"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_best_summary",
           "cjr.examples.most_frequent.mf_score_leb",
           "cjr.examples.most_frequent.mf_summary"
@@ -247,6 +282,9 @@
         "depends_on": [
           "cjr.examples.most_frequent.mf_best_summary",
           "cjr.examples.most_frequent.mf_score_leb"
+        ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_best_summary"
         ],
         "issues": []
       },
@@ -261,6 +299,10 @@
           "cjr.examples.most_frequent.mf_score_total",
           "cjr.examples.most_frequent.mf_score_trans"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_best_summary",
+          "cjr.examples.most_frequent.mf_score"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_best_update": {
@@ -269,10 +311,19 @@
           "cjr.examples.most_frequent.mf_summary_count",
           "cjr.examples.most_frequent.mf_summary_first"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_best_decision",
+          "cjr.examples.most_frequent.mf_summary_count",
+          "cjr.examples.most_frequent.mf_summary_first"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_best_update_slot": {
         "depends_on": [
+          "cjr.examples.most_frequent.mf_best_decision_slot",
+          "cjr.examples.most_frequent.mf_summary_count"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_best_decision_slot",
           "cjr.examples.most_frequent.mf_summary_count"
         ],
@@ -287,6 +338,12 @@
           "cjr.examples.most_frequent.mf_summary_first",
           "cjr.examples.most_frequent.mf_update_best"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_best_cells",
+          "cjr.examples.most_frequent.mf_best_update_slot",
+          "cjr.examples.most_frequent.mf_summary_first",
+          "cjr.examples.most_frequent.mf_update_best"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_best_update_wp": {
@@ -297,10 +354,18 @@
           "cjr.examples.most_frequent.mf_strict_better",
           "cjr.examples.most_frequent.mf_update_best"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_best_cells",
+          "cjr.examples.most_frequent.mf_best_update",
+          "cjr.examples.most_frequent.mf_update_best"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_body": {
         "depends_on": [
+          "cjr.examples.most_frequent.mf_qsort_body"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_qsort_body"
         ],
         "issues": []
@@ -309,10 +374,16 @@
         "depends_on": [
           "cjr.examples.most_frequent.mf_pair"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_pair"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_bounded_perm": {
         "depends_on": [
+          "cjr.examples.most_frequent.mf_bounded"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_bounded"
         ],
         "issues": []
@@ -321,10 +392,16 @@
         "depends_on": [
           "cjr.examples.most_frequent.mf_partition_body"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_partition_body"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_call_qsort": {
         "depends_on": [
+          "cjr.examples.most_frequent.mf_qsort_body"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_qsort_body"
         ],
         "issues": []
@@ -333,10 +410,17 @@
         "depends_on": [
           "cjr.examples.most_frequent.mf_swap_body"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_swap_body"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_choose": {
         "depends_on": [
+          "cjr.examples.most_frequent.mf_choose",
+          "cjr.examples.most_frequent.mf_frequency"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_choose",
           "cjr.examples.most_frequent.mf_frequency"
         ],
@@ -354,12 +438,19 @@
           "cjr.examples.most_frequent.most_frequent_empty",
           "cjr.examples.most_frequent.most_frequent_spec"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_choose",
+          "cjr.examples.most_frequent.most_frequent_spec"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_choose_none": {
         "depends_on": [
           "cjr.examples.most_frequent.mf_choose",
           "cjr.examples.most_frequent.mf_frequency"
+        ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_choose"
         ],
         "issues": []
       },
@@ -372,10 +463,16 @@
           "cjr.examples.most_frequent.mf_first_index_or_len_skip",
           "cjr.examples.most_frequent.mf_frequency"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_choose",
+          "cjr.examples.most_frequent.mf_first_index_or_len",
+          "cjr.examples.most_frequent.mf_frequency"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_cleanup": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_cleanup_wp": {
@@ -383,10 +480,16 @@
           "cjr.examples.most_frequent.mf_cleanup",
           "cjr.examples.most_frequent.mf_release_array_wp"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_cleanup"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_copy_code": {
         "depends_on": [
+          "cjr.examples.most_frequent.mf_body"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_body"
         ],
         "issues": []
@@ -399,14 +502,23 @@
           "cjr.examples.most_frequent.mf_pairs_indices",
           "cjr.examples.most_frequent.mf_pairs_values"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_copy_indices",
+          "cjr.examples.most_frequent.mf_copy_values",
+          "cjr.examples.most_frequent.mf_pairs"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_copy_indices": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_copy_indices_insert": {
         "depends_on": [
+          "cjr.examples.most_frequent.mf_copy_indices"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_copy_indices"
         ],
         "issues": []
@@ -415,16 +527,25 @@
         "depends_on": [
           "cjr.examples.most_frequent.mf_copy_indices"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_copy_indices"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_copy_indices_lookup": {
         "depends_on": [
           "cjr.examples.most_frequent.mf_copy_indices"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_copy_indices"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_copy_loop": {
         "depends_on": [
+          "cjr.examples.most_frequent.mf_copy_step"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_copy_step"
         ],
         "issues": []
@@ -435,6 +556,10 @@
           "cjr.examples.most_frequent.mf_copy_code",
           "cjr.examples.most_frequent.mf_copy_loop",
           "cjr.examples.most_frequent.mf_copy_step"
+        ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_copy_code",
+          "cjr.examples.most_frequent.mf_copy_loop"
         ],
         "issues": []
       },
@@ -448,10 +573,18 @@
           "cjr.examples.most_frequent.mf_pair_arrays",
           "cjr.examples.most_frequent.mf_pairs"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_copy_indices",
+          "cjr.examples.most_frequent.mf_copy_loop",
+          "cjr.examples.most_frequent.mf_copy_values",
+          "cjr.examples.most_frequent.mf_pair_arrays",
+          "cjr.examples.most_frequent.mf_pairs"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_copy_step": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_copy_step_wp": {
@@ -467,14 +600,23 @@
           "cjr.examples.most_frequent.mf_increment_wp",
           "cjr.examples.most_frequent.mf_set_value_wp"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_copy_indices",
+          "cjr.examples.most_frequent.mf_copy_step",
+          "cjr.examples.most_frequent.mf_copy_values"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_copy_values": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_copy_values_insert": {
         "depends_on": [
+          "cjr.examples.most_frequent.mf_copy_values"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_copy_values"
         ],
         "issues": []
@@ -483,10 +625,16 @@
         "depends_on": [
           "cjr.examples.most_frequent.mf_copy_values"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_copy_values"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_copy_values_lookup": {
         "depends_on": [
+          "cjr.examples.most_frequent.mf_copy_values"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_copy_values"
         ],
         "issues": []
@@ -496,10 +644,17 @@
           "cjr.examples.most_frequent.mf_pair",
           "cjr.examples.most_frequent.mf_pair_eq_dec"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_pair",
+          "cjr.examples.most_frequent.mf_pair_eq_dec"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_empty_wp": {
         "depends_on": [
+          "cjr.examples.most_frequent.mf_body"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_body"
         ],
         "issues": []
@@ -511,16 +666,28 @@
           "cjr.examples.most_frequent.mf_summary_count",
           "cjr.examples.most_frequent.mf_summary_first"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_pair",
+          "cjr.examples.most_frequent.mf_summary",
+          "cjr.examples.most_frequent.mf_summary_count",
+          "cjr.examples.most_frequent.mf_summary_first"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_find_group_loop": {
         "depends_on": [
           "cjr.examples.most_frequent.mf_find_group_loop"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_find_group_loop"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_first_index": {
         "depends_on": [
+          "cjr.examples.most_frequent.mf_first_index"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_first_index"
         ],
         "issues": []
@@ -531,10 +698,16 @@
           "cjr.examples.most_frequent.mf_first_index_or_len_head",
           "cjr.examples.most_frequent.mf_first_index_or_len_skip"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_first_index_or_len"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_first_index_head": {
         "depends_on": [
+          "cjr.examples.most_frequent.mf_first_index"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_first_index"
         ],
         "issues": []
@@ -545,10 +718,16 @@
           "cjr.examples.most_frequent.mf_first_index_or_len_head",
           "cjr.examples.most_frequent.mf_first_index_or_len_skip"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_first_index_or_len"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_first_index_or_len": {
         "depends_on": [
+          "cjr.examples.most_frequent.mf_first_index"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_first_index"
         ],
         "issues": []
@@ -558,6 +737,9 @@
           "cjr.examples.most_frequent.mf_first_index_head",
           "cjr.examples.most_frequent.mf_first_index_or_len"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_first_index_or_len"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_first_index_or_len_skip": {
@@ -565,10 +747,18 @@
           "cjr.examples.most_frequent.mf_first_index",
           "cjr.examples.most_frequent.mf_first_index_or_len"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_first_index_or_len"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_fold_best": {
         "depends_on": [
+          "cjr.examples.most_frequent.mf_fold_best",
+          "cjr.examples.most_frequent.mf_summary",
+          "cjr.examples.most_frequent.mf_update_best"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_fold_best",
           "cjr.examples.most_frequent.mf_summary",
           "cjr.examples.most_frequent.mf_update_best"
@@ -585,10 +775,21 @@
           "cjr.examples.most_frequent.mf_update_best",
           "cjr.examples.most_frequent.mf_update_best_scores"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_fold_best",
+          "cjr.examples.most_frequent.mf_score"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_forward_scan": {
         "depends_on": [
+          "cjr.examples.most_frequent.mf_forward_scan",
+          "cjr.examples.most_frequent.mf_pair",
+          "cjr.examples.most_frequent.mf_scan_run",
+          "cjr.examples.most_frequent.mf_summary",
+          "cjr.examples.most_frequent.mf_update_best"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_forward_scan",
           "cjr.examples.most_frequent.mf_pair",
           "cjr.examples.most_frequent.mf_scan_run",
@@ -614,6 +815,12 @@
           "cjr.examples.most_frequent.mf_summary_count",
           "cjr.examples.most_frequent.most_frequent_spec"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_forward_scan",
+          "cjr.examples.most_frequent.mf_sorted_pairs",
+          "cjr.examples.most_frequent.mf_summary_count",
+          "cjr.examples.most_frequent.most_frequent_spec"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_forward_scan_groups": {
@@ -624,14 +831,23 @@
           "cjr.examples.most_frequent.mf_run_summaries",
           "cjr.examples.most_frequent.mf_scan_run"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_fold_best",
+          "cjr.examples.most_frequent.mf_forward_scan",
+          "cjr.examples.most_frequent.mf_run_summaries"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_frequency": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_frequency_cons_other": {
         "depends_on": [
+          "cjr.examples.most_frequent.mf_frequency"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_frequency"
         ],
         "issues": []
@@ -640,10 +856,16 @@
         "depends_on": [
           "cjr.examples.most_frequent.mf_frequency"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_frequency"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_frequency_not_mem": {
         "depends_on": [
+          "cjr.examples.most_frequent.mf_frequency"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_frequency"
         ],
         "issues": []
@@ -652,18 +874,27 @@
         "depends_on": [
           "cjr.examples.most_frequent.mf_frequency"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_frequency"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_get_value_wp": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_group_inner": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_group_inner_code": {
         "depends_on": [
+          "cjr.examples.most_frequent.mf_body",
+          "cjr.examples.most_frequent.mf_find_group_loop"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_body",
           "cjr.examples.most_frequent.mf_find_group_loop"
         ],
@@ -672,6 +903,10 @@
       "cjr.examples.most_frequent.mf_group_inner_is_code": {
         "depends_on": [
           "cjr.examples.most_frequent.mf_body",
+          "cjr.examples.most_frequent.mf_group_inner",
+          "cjr.examples.most_frequent.mf_group_inner_code"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_group_inner",
           "cjr.examples.most_frequent.mf_group_inner_code"
         ],
@@ -686,10 +921,18 @@
           "cjr.examples.most_frequent.mf_pair_arrays",
           "cjr.examples.most_frequent.mf_scan_run"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_group_inner",
+          "cjr.examples.most_frequent.mf_pair_arrays",
+          "cjr.examples.most_frequent.mf_scan_run"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_group_outer": {
         "depends_on": [
+          "cjr.examples.most_frequent.mf_group_step"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_group_step"
         ],
         "issues": []
@@ -700,6 +943,11 @@
           "cjr.examples.most_frequent.mf_find_group_loop",
           "cjr.examples.most_frequent.mf_group_outer",
           "cjr.examples.most_frequent.mf_group_step"
+        ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_body",
+          "cjr.examples.most_frequent.mf_find_group_loop",
+          "cjr.examples.most_frequent.mf_group_outer"
         ],
         "issues": []
       },
@@ -715,10 +963,17 @@
           "cjr.examples.most_frequent.mf_scan_run_bound",
           "cjr.examples.most_frequent.mf_update_best"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_best_cells",
+          "cjr.examples.most_frequent.mf_forward_scan",
+          "cjr.examples.most_frequent.mf_group_outer",
+          "cjr.examples.most_frequent.mf_pair_arrays"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_group_step": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_group_step_wp": {
@@ -727,6 +982,13 @@
           "cjr.examples.most_frequent.mf_best_update_slot_wp",
           "cjr.examples.most_frequent.mf_get_value_wp",
           "cjr.examples.most_frequent.mf_group_inner_wp",
+          "cjr.examples.most_frequent.mf_group_step",
+          "cjr.examples.most_frequent.mf_pair_arrays",
+          "cjr.examples.most_frequent.mf_scan_run",
+          "cjr.examples.most_frequent.mf_update_best"
+        ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_best_cells",
           "cjr.examples.most_frequent.mf_group_step",
           "cjr.examples.most_frequent.mf_pair_arrays",
           "cjr.examples.most_frequent.mf_scan_run",
@@ -742,18 +1004,28 @@
           "cjr.examples.most_frequent.mf_scan_run_summaries",
           "cjr.examples.most_frequent.mf_single_summary"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_run_summaries",
+          "cjr.examples.most_frequent.mf_scan_run"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_increment_wp": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_input": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_join_summary": {
         "depends_on": [
+          "cjr.examples.most_frequent.mf_merge_summary",
+          "cjr.examples.most_frequent.mf_summary"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_merge_summary",
           "cjr.examples.most_frequent.mf_summary"
         ],
@@ -766,14 +1038,20 @@
           "cjr.examples.most_frequent.mf_summary_count",
           "cjr.examples.most_frequent.mf_summary_first"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_join_summary",
+          "cjr.examples.most_frequent.mf_merge_summary"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_le_bool": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_lex_compare": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_lex_compare_wp": {
@@ -783,10 +1061,20 @@
           "cjr.examples.most_frequent.mf_nat_le_bool",
           "cjr.examples.most_frequent.mf_pair_leb"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_lex_compare",
+          "cjr.examples.most_frequent.mf_pair_leb"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_lomuto": {
         "depends_on": [
+          "cjr.examples.most_frequent.mf_lomuto",
+          "cjr.examples.most_frequent.mf_pair",
+          "cjr.examples.most_frequent.mf_pair_leb",
+          "cjr.examples.most_frequent.mf_pair_swap"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_lomuto",
           "cjr.examples.most_frequent.mf_pair",
           "cjr.examples.most_frequent.mf_pair_leb",
@@ -799,6 +1087,9 @@
           "cjr.examples.most_frequent.mf_lomuto",
           "cjr.examples.most_frequent.mf_pair_leb",
           "cjr.examples.most_frequent.mf_pair_swap"
+        ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_lomuto"
         ],
         "issues": []
       },
@@ -813,6 +1104,11 @@
           "cjr.examples.most_frequent.mf_rank_compare",
           "cjr.examples.most_frequent.mf_swap_map"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_bounded",
+          "cjr.examples.most_frequent.mf_lomuto",
+          "cjr.examples.most_frequent.mf_rank"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_lomuto_perm": {
@@ -820,6 +1116,9 @@
           "cjr.examples.most_frequent.mf_lomuto",
           "cjr.examples.most_frequent.mf_pair_leb",
           "cjr.examples.most_frequent.mf_pair_swap_perm"
+        ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_lomuto"
         ],
         "issues": []
       },
@@ -829,10 +1128,16 @@
           "cjr.examples.most_frequent.mf_summary_count",
           "cjr.examples.most_frequent.mf_summary_first"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_summary",
+          "cjr.examples.most_frequent.mf_summary_count",
+          "cjr.examples.most_frequent.mf_summary_first"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_nat_le_bool": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_nonempty_wp": {
@@ -862,18 +1167,27 @@
           "cjr.examples.most_frequent.most_frequent_spec",
           "cjr.examples.most_frequent.most_frequent_spec_unique"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_body",
+          "cjr.examples.most_frequent.mf_sort_scan"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_option_value": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_pair": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_pair_arrays": {
         "depends_on": [
+          "cjr.examples.most_frequent.mf_pair"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_pair"
         ],
         "issues": []
@@ -882,16 +1196,26 @@
         "depends_on": [
           "cjr.examples.most_frequent.mf_pair"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_pair"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_pair_leb": {
         "depends_on": [
           "cjr.examples.most_frequent.mf_pair"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_pair"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_pair_leb_spec": {
         "depends_on": [
+          "cjr.examples.most_frequent.mf_pair_leb",
+          "cjr.examples.most_frequent.pair_before"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_pair_leb",
           "cjr.examples.most_frequent.pair_before"
         ],
@@ -906,6 +1230,10 @@
           "cjr.examples.most_frequent.mf_summary_count",
           "cjr.examples.most_frequent.mf_summary_first"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_extend_summary",
+          "cjr.examples.most_frequent.mf_pair_summary_valid"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_pair_summary_skip": {
@@ -916,10 +1244,20 @@
           "cjr.examples.most_frequent.mf_summary_count",
           "cjr.examples.most_frequent.mf_summary_first"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_pair_summary_valid"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_pair_summary_valid": {
         "depends_on": [
+          "cjr.examples.most_frequent.mf_frequency",
+          "cjr.examples.most_frequent.mf_pair",
+          "cjr.examples.most_frequent.mf_summary",
+          "cjr.examples.most_frequent.mf_summary_count",
+          "cjr.examples.most_frequent.mf_summary_first"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_frequency",
           "cjr.examples.most_frequent.mf_pair",
           "cjr.examples.most_frequent.mf_summary",
@@ -932,6 +1270,9 @@
         "depends_on": [
           "cjr.examples.most_frequent.mf_pair"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_pair"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_pair_swap_perm": {
@@ -940,10 +1281,17 @@
           "cjr.examples.most_frequent.mf_pair_eq_dec",
           "cjr.examples.most_frequent.mf_pair_swap"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_pair_swap"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_pairs": {
         "depends_on": [
+          "cjr.examples.most_frequent.mf_pair",
+          "cjr.examples.most_frequent.mf_pairs"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_pair",
           "cjr.examples.most_frequent.mf_pairs"
         ],
@@ -955,10 +1303,17 @@
           "cjr.examples.most_frequent.mf_pairs",
           "cjr.examples.most_frequent.mf_pairs_lookup"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_bounded",
+          "cjr.examples.most_frequent.mf_pairs"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_pairs_indices": {
         "depends_on": [
+          "cjr.examples.most_frequent.mf_pairs"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_pairs"
         ],
         "issues": []
@@ -967,10 +1322,16 @@
         "depends_on": [
           "cjr.examples.most_frequent.mf_pairs"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_pairs"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_pairs_values": {
         "depends_on": [
+          "cjr.examples.most_frequent.mf_pairs"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_pairs"
         ],
         "issues": []
@@ -981,10 +1342,18 @@
           "cjr.examples.most_frequent.mf_pair",
           "cjr.examples.most_frequent.mf_pair_swap"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_lomuto",
+          "cjr.examples.most_frequent.mf_pair",
+          "cjr.examples.most_frequent.mf_pair_swap"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_partition_body": {
         "depends_on": [
+          "cjr.examples.most_frequent.mf_swap_body"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_swap_body"
         ],
         "issues": []
@@ -995,16 +1364,25 @@
           "cjr.examples.most_frequent.mf_lomuto_bounds",
           "cjr.examples.most_frequent.mf_partition"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_partition"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_partition_loop": {
         "depends_on": [
           "cjr.examples.most_frequent.mf_partition_body"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_partition_body"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_partition_loop_body": {
         "depends_on": [
+          "cjr.examples.most_frequent.mf_partition_body"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_partition_body"
         ],
         "issues": []
@@ -1018,6 +1396,11 @@
           "cjr.examples.most_frequent.mf_rank",
           "cjr.examples.most_frequent.mf_swap_map"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_bounded",
+          "cjr.examples.most_frequent.mf_partition",
+          "cjr.examples.most_frequent.mf_rank"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_partition_perm": {
@@ -1027,10 +1410,16 @@
           "cjr.examples.most_frequent.mf_pair_swap_perm",
           "cjr.examples.most_frequent.mf_partition"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_partition"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_partition_scan": {
         "depends_on": [
+          "cjr.examples.most_frequent.mf_partition_step"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_partition_step"
         ],
         "issues": []
@@ -1042,6 +1431,10 @@
           "cjr.examples.most_frequent.mf_partition_loop",
           "cjr.examples.most_frequent.mf_partition_scan",
           "cjr.examples.most_frequent.mf_partition_step"
+        ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_partition_loop",
+          "cjr.examples.most_frequent.mf_partition_scan"
         ],
         "issues": []
       },
@@ -1055,10 +1448,20 @@
           "cjr.examples.most_frequent.mf_partition_scan",
           "cjr.examples.most_frequent.mf_partition_step_wp"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_lomuto",
+          "cjr.examples.most_frequent.mf_pair_arrays",
+          "cjr.examples.most_frequent.mf_partition_scan"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_partition_step": {
         "depends_on": [
+          "cjr.examples.most_frequent.mf_lex_compare",
+          "cjr.examples.most_frequent.mf_pair",
+          "cjr.examples.most_frequent.mf_swap_body"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_lex_compare",
           "cjr.examples.most_frequent.mf_pair",
           "cjr.examples.most_frequent.mf_swap_body"
@@ -1069,6 +1472,10 @@
         "depends_on": [
           "cjr.examples.most_frequent.mf_lex_compare",
           "cjr.examples.most_frequent.mf_partition_body",
+          "cjr.examples.most_frequent.mf_partition_loop_body",
+          "cjr.examples.most_frequent.mf_partition_step"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_partition_loop_body",
           "cjr.examples.most_frequent.mf_partition_step"
         ],
@@ -1084,6 +1491,12 @@
           "cjr.examples.most_frequent.mf_pair_swap",
           "cjr.examples.most_frequent.mf_partition_step",
           "cjr.examples.most_frequent.mf_swap_pairs_wp"
+        ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_pair_arrays",
+          "cjr.examples.most_frequent.mf_pair_leb",
+          "cjr.examples.most_frequent.mf_pair_swap",
+          "cjr.examples.most_frequent.mf_partition_step"
         ],
         "issues": []
       },
@@ -1102,10 +1515,19 @@
           "cjr.examples.most_frequent.mf_swap_body",
           "cjr.examples.most_frequent.mf_swap_pairs_wp"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_call_partition",
+          "cjr.examples.most_frequent.mf_pair_arrays",
+          "cjr.examples.most_frequent.mf_partition"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_qsort": {
         "depends_on": [
+          "cjr.examples.most_frequent.mf_pair",
+          "cjr.examples.most_frequent.mf_qsort_slice"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_pair",
           "cjr.examples.most_frequent.mf_qsort_slice"
         ],
@@ -1115,6 +1537,9 @@
         "depends_on": [
           "cjr.examples.most_frequent.mf_partition_body"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_partition_body"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_qsort_perm": {
@@ -1122,10 +1547,18 @@
           "cjr.examples.most_frequent.mf_qsort",
           "cjr.examples.most_frequent.mf_qsort_slice_perm"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_qsort"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_qsort_slice": {
         "depends_on": [
+          "cjr.examples.most_frequent.mf_pair",
+          "cjr.examples.most_frequent.mf_partition",
+          "cjr.examples.most_frequent.mf_qsort_slice"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_pair",
           "cjr.examples.most_frequent.mf_partition",
           "cjr.examples.most_frequent.mf_qsort_slice"
@@ -1143,12 +1576,20 @@
           "cjr.examples.most_frequent.mf_qsort_slice_perm",
           "cjr.examples.most_frequent.mf_rank"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_bounded",
+          "cjr.examples.most_frequent.mf_qsort_slice",
+          "cjr.examples.most_frequent.mf_rank"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_qsort_slice_perm": {
         "depends_on": [
           "cjr.examples.most_frequent.mf_partition",
           "cjr.examples.most_frequent.mf_partition_perm",
+          "cjr.examples.most_frequent.mf_qsort_slice"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_qsort_slice"
         ],
         "issues": []
@@ -1164,6 +1605,11 @@
           "cjr.examples.most_frequent.mf_qsort_slice",
           "cjr.examples.most_frequent.mf_qsort_slice_perm"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_call_qsort",
+          "cjr.examples.most_frequent.mf_pair_arrays",
+          "cjr.examples.most_frequent.mf_qsort_slice"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_qsort_sorted": {
@@ -1177,6 +1623,11 @@
           "cjr.examples.most_frequent.mf_rank_order",
           "cjr.examples.most_frequent.pair_before"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_bounded",
+          "cjr.examples.most_frequent.mf_qsort",
+          "cjr.examples.most_frequent.pair_before"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_qsort_wp": {
@@ -1186,10 +1637,18 @@
           "cjr.examples.most_frequent.mf_qsort",
           "cjr.examples.most_frequent.mf_qsort_slice_wp"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_call_qsort",
+          "cjr.examples.most_frequent.mf_pair_arrays",
+          "cjr.examples.most_frequent.mf_qsort"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_rank": {
         "depends_on": [
+          "cjr.examples.most_frequent.mf_pair"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_pair"
         ],
         "issues": []
@@ -1201,10 +1660,18 @@
           "cjr.examples.most_frequent.mf_rank",
           "cjr.examples.most_frequent.mf_rank_order"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_pair_leb",
+          "cjr.examples.most_frequent.mf_rank"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_rank_order": {
         "depends_on": [
+          "cjr.examples.most_frequent.mf_rank",
+          "cjr.examples.most_frequent.pair_before"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_rank",
           "cjr.examples.most_frequent.pair_before"
         ],
@@ -1214,6 +1681,7 @@
         "depends_on": [
           "cjr.examples.mf_memory.mf_wp_free_block"
         ],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_run_result": {
@@ -1222,10 +1690,22 @@
           "cjr.examples.most_frequent.mf_pair_summary_valid",
           "cjr.examples.most_frequent.mf_summary"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_pair",
+          "cjr.examples.most_frequent.mf_pair_summary_valid",
+          "cjr.examples.most_frequent.mf_summary"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_run_summaries": {
         "depends_on": [
+          "cjr.examples.most_frequent.mf_extend_summary",
+          "cjr.examples.most_frequent.mf_pair",
+          "cjr.examples.most_frequent.mf_run_summaries",
+          "cjr.examples.most_frequent.mf_single_summary",
+          "cjr.examples.most_frequent.mf_summary"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_extend_summary",
           "cjr.examples.most_frequent.mf_pair",
           "cjr.examples.most_frequent.mf_run_summaries",
@@ -1251,6 +1731,11 @@
           "cjr.examples.most_frequent.mf_summary_first",
           "cjr.examples.most_frequent.mf_summary_valid"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_run_summaries",
+          "cjr.examples.most_frequent.mf_sorted_pairs",
+          "cjr.examples.most_frequent.mf_summaries_complete"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_run_summaries_cons": {
@@ -1263,6 +1748,11 @@
           "cjr.examples.most_frequent.mf_summary_count",
           "cjr.examples.most_frequent.mf_summary_first"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_join_summary",
+          "cjr.examples.most_frequent.mf_run_summaries",
+          "cjr.examples.most_frequent.mf_single_summary"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_run_summaries_head": {
@@ -1271,10 +1761,16 @@
           "cjr.examples.most_frequent.mf_run_summaries",
           "cjr.examples.most_frequent.mf_single_summary"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_run_summaries"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_run_summaries_nil": {
         "depends_on": [
+          "cjr.examples.most_frequent.mf_run_summaries"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_run_summaries"
         ],
         "issues": []
@@ -1298,6 +1794,11 @@
           "cjr.examples.most_frequent.mf_summary_first",
           "cjr.examples.most_frequent.mf_values_sorted"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_run_result",
+          "cjr.examples.most_frequent.mf_run_summaries",
+          "cjr.examples.most_frequent.mf_values_sorted"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_scan_run": {
@@ -1305,10 +1806,17 @@
           "cjr.examples.most_frequent.mf_pair",
           "cjr.examples.most_frequent.mf_scan_run"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_pair",
+          "cjr.examples.most_frequent.mf_scan_run"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_scan_run_bound": {
         "depends_on": [
+          "cjr.examples.most_frequent.mf_scan_run"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_scan_run"
         ],
         "issues": []
@@ -1326,10 +1834,20 @@
           "cjr.examples.most_frequent.mf_summary_count",
           "cjr.examples.most_frequent.mf_summary_first"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_join_summary",
+          "cjr.examples.most_frequent.mf_run_summaries",
+          "cjr.examples.most_frequent.mf_scan_run"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_score": {
         "depends_on": [
+          "cjr.examples.most_frequent.mf_summary",
+          "cjr.examples.most_frequent.mf_summary_count",
+          "cjr.examples.most_frequent.mf_summary_first"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_summary",
           "cjr.examples.most_frequent.mf_summary_count",
           "cjr.examples.most_frequent.mf_summary_first"
@@ -1342,6 +1860,11 @@
           "cjr.examples.most_frequent.mf_summary_count",
           "cjr.examples.most_frequent.mf_summary_first"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_summary",
+          "cjr.examples.most_frequent.mf_summary_count",
+          "cjr.examples.most_frequent.mf_summary_first"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_score_leb_spec": {
@@ -1349,10 +1872,17 @@
           "cjr.examples.most_frequent.mf_score",
           "cjr.examples.most_frequent.mf_score_leb"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_score",
+          "cjr.examples.most_frequent.mf_score_leb"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_score_refl": {
         "depends_on": [
+          "cjr.examples.most_frequent.mf_score"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_score"
         ],
         "issues": []
@@ -1363,6 +1893,9 @@
           "cjr.examples.most_frequent.mf_summary_count",
           "cjr.examples.most_frequent.mf_summary_first"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_score"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_score_trans": {
@@ -1370,14 +1903,22 @@
           "cjr.examples.most_frequent.mf_score",
           "cjr.examples.most_frequent.mf_summary_first"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_score"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_set_value_wp": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_single_summary": {
         "depends_on": [
+          "cjr.examples.most_frequent.mf_pair",
+          "cjr.examples.most_frequent.mf_summary"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_pair",
           "cjr.examples.most_frequent.mf_summary"
         ],
@@ -1392,10 +1933,19 @@
           "cjr.examples.most_frequent.mf_summary_count",
           "cjr.examples.most_frequent.mf_summary_first"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_pair_summary_valid",
+          "cjr.examples.most_frequent.mf_single_summary"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_sort_scan": {
         "depends_on": [
+          "cjr.examples.most_frequent.mf_best_summary",
+          "cjr.examples.most_frequent.mf_run_summaries",
+          "cjr.examples.most_frequent.mf_sorted_pairs"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_best_summary",
           "cjr.examples.most_frequent.mf_run_summaries",
           "cjr.examples.most_frequent.mf_sorted_pairs"
@@ -1409,10 +1959,17 @@
           "cjr.examples.most_frequent.mf_summary_selection_correct",
           "cjr.examples.most_frequent.most_frequent_spec"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_sort_scan",
+          "cjr.examples.most_frequent.most_frequent_spec"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_sort_scan_empty": {
         "depends_on": [
+          "cjr.examples.most_frequent.mf_sort_scan"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_sort_scan"
         ],
         "issues": []
@@ -1421,10 +1978,16 @@
         "depends_on": [
           "cjr.examples.most_frequent.mf_sort_scan"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_sort_scan"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_sort_scan_three_way_tie": {
         "depends_on": [
+          "cjr.examples.most_frequent.mf_sort_scan"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_sort_scan"
         ],
         "issues": []
@@ -1433,10 +1996,17 @@
         "depends_on": [
           "cjr.examples.most_frequent.mf_values_sorted"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_values_sorted"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_sorted_pairs": {
         "depends_on": [
+          "cjr.examples.most_frequent.mf_pairs",
+          "cjr.examples.most_frequent.mf_qsort"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_pairs",
           "cjr.examples.most_frequent.mf_qsort"
         ],
@@ -1447,6 +2017,9 @@
           "cjr.examples.most_frequent.mf_pairs",
           "cjr.examples.most_frequent.mf_pairs_lookup",
           "cjr.examples.most_frequent.mf_qsort_perm",
+          "cjr.examples.most_frequent.mf_sorted_pairs"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_sorted_pairs"
         ],
         "issues": []
@@ -1460,6 +2033,10 @@
           "cjr.examples.most_frequent.mf_qsort_perm",
           "cjr.examples.most_frequent.mf_sorted_pairs"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_frequency",
+          "cjr.examples.most_frequent.mf_sorted_pairs"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_sorted_pairs_length": {
@@ -1467,6 +2044,9 @@
           "cjr.examples.most_frequent.mf_pairs",
           "cjr.examples.most_frequent.mf_pairs_values",
           "cjr.examples.most_frequent.mf_qsort_perm",
+          "cjr.examples.most_frequent.mf_sorted_pairs"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_sorted_pairs"
         ],
         "issues": []
@@ -1480,6 +2060,10 @@
           "cjr.examples.most_frequent.mf_sorted_pairs",
           "cjr.examples.most_frequent.pair_before"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_sorted_pairs",
+          "cjr.examples.most_frequent.pair_before"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_sorted_pairs_origin": {
@@ -1487,6 +2071,9 @@
           "cjr.examples.most_frequent.mf_pairs",
           "cjr.examples.most_frequent.mf_pairs_lookup",
           "cjr.examples.most_frequent.mf_qsort_perm",
+          "cjr.examples.most_frequent.mf_sorted_pairs"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_sorted_pairs"
         ],
         "issues": []
@@ -1500,6 +2087,10 @@
           "cjr.examples.most_frequent.mf_values_sorted_from_lookup",
           "cjr.examples.most_frequent.pair_before"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_sorted_pairs",
+          "cjr.examples.most_frequent.mf_values_sorted"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_spec_wp": {
@@ -1512,10 +2103,22 @@
           "cjr.examples.most_frequent.mf_wp",
           "cjr.examples.most_frequent.most_frequent_spec"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_body",
+          "cjr.examples.most_frequent.mf_input",
+          "cjr.examples.most_frequent.mf_option_value",
+          "cjr.examples.most_frequent.mf_sort_scan",
+          "cjr.examples.most_frequent.most_frequent_spec"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_strict_better": {
         "depends_on": [
+          "cjr.examples.most_frequent.mf_summary",
+          "cjr.examples.most_frequent.mf_summary_count",
+          "cjr.examples.most_frequent.mf_summary_first"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_summary",
           "cjr.examples.most_frequent.mf_summary_count",
           "cjr.examples.most_frequent.mf_summary_first"
@@ -1528,10 +2131,19 @@
           "cjr.examples.most_frequent.mf_summary_count",
           "cjr.examples.most_frequent.mf_summary_first"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_strict_better",
+          "cjr.examples.most_frequent.mf_summary_count",
+          "cjr.examples.most_frequent.mf_summary_first"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_strict_better_no": {
         "depends_on": [
+          "cjr.examples.most_frequent.mf_score",
+          "cjr.examples.most_frequent.mf_strict_better"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_score",
           "cjr.examples.most_frequent.mf_strict_better"
         ],
@@ -1542,26 +2154,40 @@
           "cjr.examples.most_frequent.mf_score",
           "cjr.examples.most_frequent.mf_strict_better"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_score",
+          "cjr.examples.most_frequent.mf_strict_better"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_summaries_complete": {
         "depends_on": [
           "cjr.examples.most_frequent.mf_summary_valid"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_summary_valid"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_summary": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_summary_count": {
         "depends_on": [
           "cjr.examples.most_frequent.mf_summary"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_summary"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_summary_first": {
         "depends_on": [
+          "cjr.examples.most_frequent.mf_summary"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_summary"
         ],
         "issues": []
@@ -1578,10 +2204,21 @@
           "cjr.examples.most_frequent.mf_summaries_complete",
           "cjr.examples.most_frequent.most_frequent_spec"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_best_summary",
+          "cjr.examples.most_frequent.mf_summaries_complete",
+          "cjr.examples.most_frequent.most_frequent_spec"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_summary_valid": {
         "depends_on": [
+          "cjr.examples.most_frequent.mf_first_index_or_len",
+          "cjr.examples.most_frequent.mf_frequency",
+          "cjr.examples.most_frequent.mf_summary_count",
+          "cjr.examples.most_frequent.mf_summary_first"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_first_index_or_len",
           "cjr.examples.most_frequent.mf_frequency",
           "cjr.examples.most_frequent.mf_summary_count",
@@ -1596,14 +2233,22 @@
           "cjr.examples.most_frequent.mf_set_value_wp",
           "cjr.examples.most_frequent.mf_swap_body"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_call_swap"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_swap_body": {
         "depends_on": [],
+        "statement_depends_on": [],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_swap_map": {
         "depends_on": [
+          "cjr.examples.most_frequent.mf_pair",
+          "cjr.examples.most_frequent.mf_pair_swap"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_pair",
           "cjr.examples.most_frequent.mf_pair_swap"
         ],
@@ -1617,10 +2262,18 @@
           "cjr.examples.most_frequent.mf_swap_arrays_wp",
           "cjr.examples.most_frequent.mf_swap_map"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_call_swap",
+          "cjr.examples.most_frequent.mf_pair_arrays",
+          "cjr.examples.most_frequent.mf_pair_swap"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_update_best": {
         "depends_on": [
+          "cjr.examples.most_frequent.mf_strict_better"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_strict_better"
         ],
         "issues": []
@@ -1634,16 +2287,26 @@
           "cjr.examples.most_frequent.mf_strict_better_yes",
           "cjr.examples.most_frequent.mf_update_best"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_score",
+          "cjr.examples.most_frequent.mf_update_best"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_values_sorted": {
         "depends_on": [
           "cjr.examples.most_frequent.mf_pair"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_pair"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.mf_values_sorted_from_lookup": {
         "depends_on": [
+          "cjr.examples.most_frequent.mf_values_sorted"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_values_sorted"
         ],
         "issues": []
@@ -1657,16 +2320,29 @@
           "cjr.examples.most_frequent.mf_option_value",
           "cjr.examples.most_frequent.mf_sort_scan"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.mf_body",
+          "cjr.examples.most_frequent.mf_input",
+          "cjr.examples.most_frequent.mf_option_value",
+          "cjr.examples.most_frequent.mf_sort_scan"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.most_frequent_empty": {
         "depends_on": [
           "cjr.examples.most_frequent.most_frequent_spec"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.most_frequent_spec"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.most_frequent_spec": {
         "depends_on": [
+          "cjr.examples.most_frequent.mf_first_index_or_len",
+          "cjr.examples.most_frequent.mf_frequency"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_first_index_or_len",
           "cjr.examples.most_frequent.mf_frequency"
         ],
@@ -1680,10 +2356,16 @@
           "cjr.examples.most_frequent.mf_frequency_pos_mem",
           "cjr.examples.most_frequent.most_frequent_spec"
         ],
+        "statement_depends_on": [
+          "cjr.examples.most_frequent.most_frequent_spec"
+        ],
         "issues": []
       },
       "cjr.examples.most_frequent.pair_before": {
         "depends_on": [
+          "cjr.examples.most_frequent.mf_pair"
+        ],
+        "statement_depends_on": [
           "cjr.examples.most_frequent.mf_pair"
         ],
         "issues": []
@@ -2646,6 +3328,113 @@
       }
     }
   },
+  "cangjie": {
+    "cjr.examples.most_frequent.mf_swap_body": {
+      "status": "available",
+      "text": "let values = args[0]\nlet indices = args[1]\nlet i = args[2]\nlet j = args[3]\nlet x = ({ args => let arr = args[0]\nlet i = args[1]\nlet p = arr.f1\nunsafe { (p + i).read() } })(values, i)\nlet xi = ({ args => let arr = args[0]\nlet i = args[1]\nlet p = arr.f1\nunsafe { (p + i).read() } })(indices, i)\nlet y = ({ args => let arr = args[0]\nlet i = args[1]\nlet p = arr.f1\nunsafe { (p + i).read() } })(values, j)\nlet yi = ({ args => let arr = args[0]\nlet i = args[1]\nlet p = arr.f1\nunsafe { (p + i).read() } })(indices, j)\n({ args => let arr = args[0]\nlet i = args[1]\nlet x = args[2]\nlet p = arr.f1\nunsafe { (p + i).write(x) } })(values, i, y)\n({ args => let arr = args[0]\nlet i = args[1]\nlet x = args[2]\nlet p = arr.f1\nunsafe { (p + i).write(x) } })(indices, i, yi)\n({ args => let arr = args[0]\nlet i = args[1]\nlet x = args[2]\nlet p = arr.f1\nunsafe { (p + i).write(x) } })(values, j, x)\n({ args => let arr = args[0]\nlet i = args[1]\nlet x = args[2]\nlet p = arr.f1\nunsafe { (p + i).write(x) } })(indices, j, xi)"
+    },
+    "cjr.examples.most_frequent.mf_partition_body": {
+      "status": "available",
+      "text": "let values = args[0]\nlet indices = args[1]\nlet lo = args[2]\nlet hi = args[3]\nlet pv = ({ args => let arr = args[0]\nlet i = args[1]\nlet p = arr.f1\nunsafe { (p + i).read() } })(values, hi - 1)\nlet pi = ({ args => let arr = args[0]\nlet i = args[1]\nlet p = arr.f1\nunsafe { (p + i).read() } })(indices, hi - 1)\nvar i = lo\nvar j = lo\nwhile ((j + 1) <= (hi - 1)) {\n    let v = ({ args => let arr = args[0]\n    let i = args[1]\n    let p = arr.f1\n    unsafe { (p + i).read() } })(values, j)\n    let ix = ({ args => let arr = args[0]\n    let i = args[1]\n    let p = arr.f1\n    unsafe { (p + i).read() } })(indices, j)\n    if (if (v <= pv) {\n        if (pv <= v) { ix <= pi } else { true }\n    } else {\n        false\n    }) {\n        ({ args => let values = args[0]\n        let indices = args[1]\n        let i = args[2]\n        let j = args[3]\n        let x = ({ args => let arr = args[0]\n        let i = args[1]\n        let p = arr.f1\n        unsafe { (p + i).read() } })(values, i)\n        let xi = ({ args => let arr = args[0]\n        let i = args[1]\n        let p = arr.f1\n        unsafe { (p + i).read() } })(indices, i)\n        let y = ({ args => let arr = args[0]\n        let i = args[1]\n        let p = arr.f1\n        unsafe { (p + i).read() } })(values, j)\n        let yi = ({ args => let arr = args[0]\n        let i = args[1]\n        let p = arr.f1\n        unsafe { (p + i).read() } })(indices, j)\n        ({ args => let arr = args[0]\n        let i = args[1]\n        let x = args[2]\n        let p = arr.f1\n        unsafe { (p + i).write(x) } })(values, i, y)\n        ({ args => let arr = args[0]\n        let i = args[1]\n        let x = args[2]\n        let p = arr.f1\n        unsafe { (p + i).write(x) } })(indices, i, yi)\n        ({ args => let arr = args[0]\n        let i = args[1]\n        let x = args[2]\n        let p = arr.f1\n        unsafe { (p + i).write(x) } })(values, j, x)\n        ({ args => let arr = args[0]\n        let i = args[1]\n        let x = args[2]\n        let p = arr.f1\n        unsafe { (p + i).write(x) } })(indices, j, xi) })(values, indices, i, j)\n        i = i + 1\n    }\n    j = j + 1\n}\n({ args => let values = args[0]\nlet indices = args[1]\nlet i = args[2]\nlet j = args[3]\nlet x = ({ args => let arr = args[0]\nlet i = args[1]\nlet p = arr.f1\nunsafe { (p + i).read() } })(values, i)\nlet xi = ({ args => let arr = args[0]\nlet i = args[1]\nlet p = arr.f1\nunsafe { (p + i).read() } })(indices, i)\nlet y = ({ args => let arr = args[0]\nlet i = args[1]\nlet p = arr.f1\nunsafe { (p + i).read() } })(values, j)\nlet yi = ({ args => let arr = args[0]\nlet i = args[1]\nlet p = arr.f1\nunsafe { (p + i).read() } })(indices, j)\n({ args => let arr = args[0]\nlet i = args[1]\nlet x = args[2]\nlet p = arr.f1\nunsafe { (p + i).write(x) } })(values, i, y)\n({ args => let arr = args[0]\nlet i = args[1]\nlet x = args[2]\nlet p = arr.f1\nunsafe { (p + i).write(x) } })(indices, i, yi)\n({ args => let arr = args[0]\nlet i = args[1]\nlet x = args[2]\nlet p = arr.f1\nunsafe { (p + i).write(x) } })(values, j, x)\n({ args => let arr = args[0]\nlet i = args[1]\nlet x = args[2]\nlet p = arr.f1\nunsafe { (p + i).write(x) } })(indices, j, xi) })(values, indices, i, hi - 1)\ni"
+    },
+    "cjr.examples.most_frequent.mf_qsort_body": {
+      "status": "available",
+      "text": "let values = args[0]\nlet indices = args[1]\nlet lo = args[2]\nlet hi = args[3]\nif ((lo + 1) <= (hi - 1)) {\n    let p = ({ args => let values = args[0]\n    let indices = args[1]\n    let lo = args[2]\n    let hi = args[3]\n    let pv = ({ args => let arr = args[0]\n    let i = args[1]\n    let p = arr.f1\n    unsafe { (p + i).read() } })(values, hi - 1)\n    let pi = ({ args => let arr = args[0]\n    let i = args[1]\n    let p = arr.f1\n    unsafe { (p + i).read() } })(indices, hi - 1)\n    var i = lo\n    var j = lo\n    while ((j + 1) <= (hi - 1)) {\n        let v = ({ args => let arr = args[0]\n        let i = args[1]\n        let p = arr.f1\n        unsafe { (p + i).read() } })(values, j)\n        let ix = ({ args => let arr = args[0]\n        let i = args[1]\n        let p = arr.f1\n        unsafe { (p + i).read() } })(indices, j)\n        if (if (v <= pv) {\n            if (pv <= v) { ix <= pi } else { true }\n        } else {\n            false\n        }) {\n            ({ args => let values = args[0]\n            let indices = args[1]\n            let i = args[2]\n            let j = args[3]\n            let x = ({ args => let arr = args[0]\n            let i = args[1]\n            let p = arr.f1\n            unsafe { (p + i).read() } })(values, i)\n            let xi = ({ args => let arr = args[0]\n            let i = args[1]\n            let p = arr.f1\n            unsafe { (p + i).read() } })(indices, i)\n            let y = ({ args => let arr = args[0]\n            let i = args[1]\n            let p = arr.f1\n            unsafe { (p + i).read() } })(values, j)\n            let yi = ({ args => let arr = args[0]\n            let i = args[1]\n            let p = arr.f1\n            unsafe { (p + i).read() } })(indices, j)\n            ({ args => let arr = args[0]\n            let i = args[1]\n            let x = args[2]\n            let p = arr.f1\n            unsafe { (p + i).write(x) } })(values, i, y)\n            ({ args => let arr = args[0]\n            let i = args[1]\n            let x = args[2]\n            let p = arr.f1\n            unsafe { (p + i).write(x) } })(indices, i, yi)\n            ({ args => let arr = args[0]\n            let i = args[1]\n            let x = args[2]\n            let p = arr.f1\n            unsafe { (p + i).write(x) } })(values, j, x)\n            ({ args => let arr = args[0]\n            let i = args[1]\n            let x = args[2]\n            let p = arr.f1\n            unsafe { (p + i).write(x) } })(indices, j, xi) })(values, indices, i, j)\n            i = i + 1\n        }\n        j = j + 1\n    }\n    ({ args => let values = args[0]\n    let indices = args[1]\n    let i = args[2]\n    let j = args[3]\n    let x = ({ args => let arr = args[0]\n    let i = args[1]\n    let p = arr.f1\n    unsafe { (p + i).read() } })(values, i)\n    let xi = ({ args => let arr = args[0]\n    let i = args[1]\n    let p = arr.f1\n    unsafe { (p + i).read() } })(indices, i)\n    let y = ({ args => let arr = args[0]\n    let i = args[1]\n    let p = arr.f1\n    unsafe { (p + i).read() } })(values, j)\n    let yi = ({ args => let arr = args[0]\n    let i = args[1]\n    let p = arr.f1\n    unsafe { (p + i).read() } })(indices, j)\n    ({ args => let arr = args[0]\n    let i = args[1]\n    let x = args[2]\n    let p = arr.f1\n    unsafe { (p + i).write(x) } })(values, i, y)\n    ({ args => let arr = args[0]\n    let i = args[1]\n    let x = args[2]\n    let p = arr.f1\n    unsafe { (p + i).write(x) } })(indices, i, yi)\n    ({ args => let arr = args[0]\n    let i = args[1]\n    let x = args[2]\n    let p = arr.f1\n    unsafe { (p + i).write(x) } })(values, j, x)\n    ({ args => let arr = args[0]\n    let i = args[1]\n    let x = args[2]\n    let p = arr.f1\n    unsafe { (p + i).write(x) } })(indices, j, xi) })(values, indices, i, hi - 1)\n    i })(values, indices, lo, hi)\n    pairQsort(values, indices, lo, p)\n    pairQsort(values, indices, p + 1, hi)\n}"
+    },
+    "cjr.examples.most_frequent.mf_body": {
+      "status": "unavailable",
+      "reason": "The Gallina printer reported an unsupported construct or missing layout metadata."
+    },
+    "cjr.examples.most_frequent.mf_cleanup": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.most_frequent.mf_call_swap": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.most_frequent.mf_lex_compare": {
+      "status": "available",
+      "text": "if (x <= y) {\n    if (y <= x) { ix <= iy } else { true }\n} else {\n    false\n}"
+    },
+    "cjr.examples.most_frequent.mf_partition_step": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.most_frequent.mf_partition_loop_body": {
+      "status": "available",
+      "text": "let v = ({ args => let arr = args[0]\nlet i = args[1]\nlet p = arr.f1\nunsafe { (p + i).read() } })(values, j)\nlet ix = ({ args => let arr = args[0]\nlet i = args[1]\nlet p = arr.f1\nunsafe { (p + i).read() } })(indices, j)\nif (if (v <= pv) {\n    if (pv <= v) { ix <= pi } else { true }\n} else {\n    false\n}) {\n    ({ args => let values = args[0]\n    let indices = args[1]\n    let i = args[2]\n    let j = args[3]\n    let x = ({ args => let arr = args[0]\n    let i = args[1]\n    let p = arr.f1\n    unsafe { (p + i).read() } })(values, i)\n    let xi = ({ args => let arr = args[0]\n    let i = args[1]\n    let p = arr.f1\n    unsafe { (p + i).read() } })(indices, i)\n    let y = ({ args => let arr = args[0]\n    let i = args[1]\n    let p = arr.f1\n    unsafe { (p + i).read() } })(values, j)\n    let yi = ({ args => let arr = args[0]\n    let i = args[1]\n    let p = arr.f1\n    unsafe { (p + i).read() } })(indices, j)\n    ({ args => let arr = args[0]\n    let i = args[1]\n    let x = args[2]\n    let p = arr.f1\n    unsafe { (p + i).write(x) } })(values, i, y)\n    ({ args => let arr = args[0]\n    let i = args[1]\n    let x = args[2]\n    let p = arr.f1\n    unsafe { (p + i).write(x) } })(indices, i, yi)\n    ({ args => let arr = args[0]\n    let i = args[1]\n    let x = args[2]\n    let p = arr.f1\n    unsafe { (p + i).write(x) } })(values, j, x)\n    ({ args => let arr = args[0]\n    let i = args[1]\n    let x = args[2]\n    let p = arr.f1\n    unsafe { (p + i).write(x) } })(indices, j, xi) })(values, indices, i, j)\n    i = i + 1\n}\nj = j + 1"
+    },
+    "cjr.examples.most_frequent.mf_partition_scan": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.most_frequent.mf_partition_loop": {
+      "status": "available",
+      "text": "while ((j + 1) <= (hi - 1)) {\n    let v = ({ args => let arr = args[0]\n    let i = args[1]\n    let p = arr.f1\n    unsafe { (p + i).read() } })(values, j)\n    let ix = ({ args => let arr = args[0]\n    let i = args[1]\n    let p = arr.f1\n    unsafe { (p + i).read() } })(indices, j)\n    if (if (v <= pv) {\n        if (pv <= v) { ix <= pi } else { true }\n    } else {\n        false\n    }) {\n        ({ args => let values = args[0]\n        let indices = args[1]\n        let i = args[2]\n        let j = args[3]\n        let x = ({ args => let arr = args[0]\n        let i = args[1]\n        let p = arr.f1\n        unsafe { (p + i).read() } })(values, i)\n        let xi = ({ args => let arr = args[0]\n        let i = args[1]\n        let p = arr.f1\n        unsafe { (p + i).read() } })(indices, i)\n        let y = ({ args => let arr = args[0]\n        let i = args[1]\n        let p = arr.f1\n        unsafe { (p + i).read() } })(values, j)\n        let yi = ({ args => let arr = args[0]\n        let i = args[1]\n        let p = arr.f1\n        unsafe { (p + i).read() } })(indices, j)\n        ({ args => let arr = args[0]\n        let i = args[1]\n        let x = args[2]\n        let p = arr.f1\n        unsafe { (p + i).write(x) } })(values, i, y)\n        ({ args => let arr = args[0]\n        let i = args[1]\n        let x = args[2]\n        let p = arr.f1\n        unsafe { (p + i).write(x) } })(indices, i, yi)\n        ({ args => let arr = args[0]\n        let i = args[1]\n        let x = args[2]\n        let p = arr.f1\n        unsafe { (p + i).write(x) } })(values, j, x)\n        ({ args => let arr = args[0]\n        let i = args[1]\n        let x = args[2]\n        let p = arr.f1\n        unsafe { (p + i).write(x) } })(indices, j, xi) })(values, indices, i, j)\n        i = i + 1\n    }\n    j = j + 1\n}"
+    },
+    "cjr.examples.most_frequent.mf_call_partition": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.most_frequent.mf_call_qsort": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.most_frequent.mf_copy_step": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.most_frequent.mf_copy_loop": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.most_frequent.mf_copy_code": {
+      "status": "available",
+      "text": "while ((copyAt + 1) <= n) {\n    ({ args => let arr = args[0]\n    let i = args[1]\n    let x = args[2]\n    let p = arr.f1\n    unsafe { (p + i).write(x) } })(values, copyAt, ({ args => let arr = args[0]\n    let i = args[1]\n    let p = arr.f1\n    unsafe { (p + i).read() } })(input, copyAt))\n    ({ args => let arr = args[0]\n    let i = args[1]\n    let x = args[2]\n    let p = arr.f1\n    unsafe { (p + i).write(x) } })(indices, copyAt, copyAt)\n    copyAt = copyAt + 1\n}"
+    },
+    "cjr.examples.most_frequent.mf_group_inner": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.most_frequent.mf_find_group_loop": {
+      "status": "available",
+      "text": "()"
+    },
+    "cjr.examples.most_frequent.mf_group_inner_code": {
+      "status": "available",
+      "text": "while (if ((end + 1) <= n) {\n    ({ args => let arr = args[0]\n    let i = args[1]\n    let p = arr.f1\n    unsafe { (p + i).read() } })(values, end) == value\n} else {\n    false\n}) {\n    let ix = ({ args => let arr = args[0]\n    let i = args[1]\n    let p = arr.f1\n    unsafe { (p + i).read() } })(indices, end)\n    if ((ix + 1) <= first) {\n        first = ix\n    }\n    end = end + 1\n}"
+    },
+    "cjr.examples.most_frequent.mf_best_decision": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.most_frequent.mf_best_update": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.most_frequent.mf_best_decision_slot": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.most_frequent.mf_best_update_slot": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.most_frequent.mf_group_step": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.most_frequent.mf_group_outer": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    },
+    "cjr.examples.most_frequent.mf_option_value": {
+      "status": "unavailable",
+      "reason": "The Gallina printer requires concrete non-expression arguments."
+    }
+  },
+  "correctness_contracts": {},
   "history": {
     "complete": true,
     "declarations": {
@@ -3599,6 +4388,16 @@
         "issues": [],
         "complete": true
       }
+    }
+  },
+  "rendering": {
+    "proof_validation": "not_run",
+    "proof_bodies_evaluated": false,
+    "preserved_available_explanations": 0,
+    "explanations_mode": "offline",
+    "sources": {
+      "rocq/mf_memory.v": "d4f0d44a70f43815e0e367b348c683baff9d1b9d2fdc7c3c620e0d5f5a253065",
+      "rocq/most_frequent.v": "eeb72954a091be8f2dfffae5ab57ae5f4119aadb38f44262faca7a04a56570cb"
     }
   }
 }
