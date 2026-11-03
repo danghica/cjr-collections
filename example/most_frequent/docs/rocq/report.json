@@ -2645,5 +2645,960 @@
         "description": null
       }
     }
+  },
+  "history": {
+    "complete": true,
+    "declarations": {
+      "cjr.examples.mf_memory.mf_free_lookup_outside": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.mf_memory.mf_free_dom_subset": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.mf_memory.mf_wf_free_block": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.mf_memory.mf_ghost_free_cells": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.mf_memory.mf_wp_free_block": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_pair": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.pair_before": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_pairs": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_frequency": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_first_index": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_first_index_or_len": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.most_frequent_spec": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.most_frequent_empty": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_first_index_head": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_first_index_or_len_head": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_first_index_or_len_skip": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_frequency_head": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_choose": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_choose_none": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_choose_sound": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_frequency_pos_mem": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_frequency_not_mem": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_choose_correct": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_swap_body": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_partition_body": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_qsort_body": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_body": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_pair_leb": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_pair_leb_spec": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_pair_swap": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_pair_eq_dec": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_count_insert": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_pair_swap_perm": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_lomuto": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_lomuto_perm": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_partition": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_partition_perm": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_qsort_slice": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_qsort": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_qsort_slice_perm": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_qsort_perm": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_bounded": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_rank": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_bounded_perm": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_rank_order": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_rank_compare": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_swap_map": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_lomuto_map": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_partition_map": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_qsort_slice_map": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_qsort_sorted": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_empty_wp": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_pairs_values": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_pairs_lookup": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_pairs_bounded": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_sorted_pairs": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_sorted_pairs_ordered": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_sorted_pairs_frequency": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_sorted_pairs_origin": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_summary": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_summary_count": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_summary_first": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_score": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_score_leb": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_score_leb_spec": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_score_refl": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_score_trans": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_score_total": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_best_summary": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_best_summary_none": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_best_summary_sound": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_summary_valid": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_summaries_complete": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_summary_selection_correct": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_single_summary": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_extend_summary": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_run_summaries": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_pair_summary_valid": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_frequency_cons_other": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_pair_summary_skip": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_pair_summary_extend": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_run_summaries_nil": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_run_summaries_head": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_values_sorted": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_sorted_head_absent": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_run_result": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_single_summary_valid": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_run_summaries_sound": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_values_sorted_from_lookup": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_sorted_pairs_length": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_sorted_pairs_values_sorted": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_first_index_attained": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_first_index_minimum": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_sorted_pairs_contains": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_run_summaries_complete": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_sort_scan": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_sort_scan_correct": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_sort_scan_empty": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_sort_scan_interleaved_tie": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_sort_scan_three_way_tie": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.most_frequent_spec_unique": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_release_array_wp": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_cleanup": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_cleanup_wp": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_get_value_wp": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_set_value_wp": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_call_swap": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_swap_arrays_wp": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_pair_arrays": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_swap_pairs_wp": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_lex_compare": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_le_bool": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_nat_le_bool": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_lex_compare_wp": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_increment_wp": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_partition_step": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_partition_step_wp": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_partition_loop_body": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_partition_step_is_code": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_partition_scan": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_partition_scan_wp": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_partition_loop": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_partition_scan_is_code": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_lomuto_bounds": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_partition_bounds": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_call_partition": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_partition_wp": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_call_qsort": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_qsort_slice_wp": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_qsort_wp": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_copy_values": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_copy_indices": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_copy_values_length": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_copy_indices_length": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_copy_values_lookup": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_copy_indices_lookup": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_copy_values_insert": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_copy_indices_insert": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_pairs_indices": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_copy_complete": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_copy_step": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_copy_step_wp": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_copy_loop": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_copy_loop_wp": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_copy_code": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_copy_loop_is_code": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_scan_run": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_scan_run_bound": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_group_inner": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_group_inner_wp": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_find_group_loop": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_group_inner_code": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_group_inner_is_code": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_merge_summary": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_join_summary": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_run_summaries_cons": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_join_summary_same": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_scan_run_summaries": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_group_summary_decomposition": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_strict_better": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_update_best": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_fold_best": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_strict_better_yes": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_strict_better_no": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_update_best_scores": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_fold_best_sound": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_forward_scan": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_forward_scan_groups": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_forward_scan_correct": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_best_cells": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_strict_better_case": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_best_decision": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_best_decision_wp": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_best_update": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_best_update_wp": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_best_decision_slot": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_best_decision_slot_wp": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_best_update_slot": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_best_update_slot_wp": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_group_step": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_group_step_wp": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_group_outer": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_group_outer_wp": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_group_outer_is_code": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_array_object": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_nonempty_wp": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_option_value": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_input": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_wp": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.most_frequent.mf_spec_wp": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      }
+    }
   }
 }

@@ -356,5 +356,164 @@
         "description": "This lemma gives a partial-correctness contract for one list-reversal step: assuming reversing u and appending x :: v yields xs, and separately owning stack slots la and lc containing acc and cur together with list representations of u at acc and x :: v at cur, rev_step_at moves the first node of the current list onto the accumulator. If it terminates, la contains cur representing x :: u, and lc contains some nxt representing v, with the corresponding ownership restored and rev (x :: u) ++ v still equal to xs. The return value is ignored, and the WP contract does not establish termination."
       }
     }
+  },
+  "history": {
+    "complete": false,
+    "declarations": {
+      "cjr.examples.list_rev.app_nil_r'": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.list_rev.app_assoc'": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.list_rev.rev_app": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.list_rev.rev_cons": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.list_rev.rev_prefix_step": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.list_rev.rev_prefix_nil": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.list_rev.rev_rev": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.list_rev.rev_eq_rev": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.list_rev.sld": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.list_rev.sas": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.list_rev.rev_step": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.list_rev.rev_loop": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.list_rev.rev_body": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.list_rev.call_reverse": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.list_rev.rev_step_at": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.list_rev.rev_loop_at": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.list_rev.rev_step_at_subst": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.list_rev.rev_loop_at_subst": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.list_rev.rev_inv": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.list_rev.is_list_cons_destruct": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.list_rev.is_list_snoc_acc": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.list_rev.wp_rev_step_at": {
+        "entries": [],
+        "issues": [
+          "Earlier attribution is ambiguous because a replacement crosses declaration boundaries."
+        ],
+        "complete": false
+      },
+      "cjr.examples.list_rev.rev_done": {
+        "entries": [],
+        "issues": [
+          "Earlier attribution is ambiguous because a replacement crosses declaration boundaries."
+        ],
+        "complete": false
+      },
+      "cjr.examples.list_rev.wp_rev_loop_run": {
+        "entries": [],
+        "issues": [
+          "Earlier attribution is ambiguous because a replacement crosses declaration boundaries."
+        ],
+        "complete": false
+      },
+      "cjr.examples.list_rev.wp_rev_loop": {
+        "entries": [],
+        "issues": [
+          "Earlier attribution is ambiguous because a replacement crosses declaration boundaries."
+        ],
+        "complete": false
+      },
+      "cjr.examples.list_rev.reverse_spec": {
+        "entries": [],
+        "issues": [
+          "Earlier attribution is ambiguous because a replacement crosses declaration boundaries."
+        ],
+        "complete": false
+      },
+      "cjr.examples.list_rev.reverse_twice": {
+        "entries": [],
+        "issues": [
+          "Earlier attribution is ambiguous because a replacement crosses declaration boundaries."
+        ],
+        "complete": false
+      },
+      "cjr.examples.list_rev.reverse_twice_spec": {
+        "entries": [],
+        "issues": [
+          "Earlier attribution is ambiguous because a replacement crosses declaration boundaries."
+        ],
+        "complete": false
+      }
+    }
   }
 }

@@ -60,5 +60,11 @@
     "proof/insertion_model.v",
     "proof/ownership.v",
     "proof/routing.v"
+  ],
+  "main_correctness_contracts": [
+    "cjr.quadtree.proof.helpers.wp_qt_make",
+    "cjr.quadtree.proof.insertion.wp_qt_insert",
+    "cjr.quadtree.proof.correctness.wp_qt_contains",
+    "cjr.quadtree.proof.correctness.wp_qt_range"
   ]
 }

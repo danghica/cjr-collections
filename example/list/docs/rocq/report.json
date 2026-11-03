@@ -267,5 +267,115 @@
         "description": null
       }
     }
+  },
+  "history": {
+    "complete": true,
+    "declarations": {
+      "cjr.examples.list.is_list": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.list.nil_body": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.list.cons_body": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.list.head_body": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.list.tail_body": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.list.empty_body": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.list.call_nil": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.list.call_cons": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.list.call_head": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.list.call_tail": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.list.call_empty": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.list.cons_then_tail": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.list.is_list_obj": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.list.wp_new_step": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.list.nil_spec": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.list.cons_spec": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.list.head_spec": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.list.tail_spec": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.list.empty_nil": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.list.empty_cons": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.list.cons_then_tail_spec": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      }
+    }
   }
 }

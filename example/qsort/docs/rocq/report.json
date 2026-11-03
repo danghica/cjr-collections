@@ -1469,5 +1469,505 @@
         "description": null
       }
     }
+  },
+  "history": {
+    "complete": true,
+    "declarations": {
+      "cjr.examples.qsort.swap_list": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.lomuto": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.partition_list": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.qsort_slice": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.qsort": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.slice_sorted": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.swap_list_length": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.swap_list_id": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.swap_lookup": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.move_cons": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.exchange": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.count_insert": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.swap_list_perm": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.take_lookup_eq": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.drop_lookup_eq": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.count_if": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.count_if_app": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.count_if_perm": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.count_if_take_drop": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.region_count": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.take_region_zero": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.count_zero_lookup": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.region_preserved": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.lomuto_inv": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.lomuto_step": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.lomuto_inv_start": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.lomuto_go": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.slice_sorted_short": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.slice_sorted_join": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.part_ok": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.partition_list_ok": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.slice_sorted_same": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.qsort_slice_spec": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.qsort_perm": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.qsort_sorted": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.qsort_example": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.swap_list_code": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.wp_struct_step": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.wp_pack2": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.wp_pack3": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.one": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.zero": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.unitv": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.plus1": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.minus1": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.zval": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.nval": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.call2": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.call3": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.call3_seq": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.swap_body": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.call_swap": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.scan": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.partition_body": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.call_partition": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.qsort_body": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.qsort_v": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.call_qsort": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.sort_body": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.call_sort": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.rigid": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.swap_var_i": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.swap_var_j": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.swap_closed_v": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.swap_closed_pack": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.swap_closed_a": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.swap_closed_lo": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.swap_closed_hi": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.swap_closed_pivot": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.swap_closed_p": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.swap_closed_n": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.part_closed_n": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.part_closed_pack": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.swap_closed_qsort": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.swap_closed_i": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.swap_closed_j": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.slot": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.sload": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.sset": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.scan_open": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.scan_open_eq": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.swap_spec": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.wp_scan_stop": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.wp_inc": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.wp_cons2": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.wp_cons3": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.scan_body": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.scan_body_eq": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.wp_scan_body": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.wp_scan": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.part_tail": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.part_tail_eq": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.partition_spec": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.wp_qslice": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.sort_spec": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.lit_rigid": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.array_qsort_spec": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.arraylist_qsort_at": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.qsort.arraylist_qsort_spec": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      }
+    }
   }
 }

@@ -3334,5 +3334,2634 @@
         "description": null
       }
     }
+  },
+  "history": {
+    "complete": false,
+    "declarations": {
+      "cjr.examples.hash_map.default_capacity": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.tag_empty": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.tag_occ": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.tag_tomb": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.tag_ok": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.tags_ok": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.tags_ok_lookup": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.residue": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.residue_spec": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.pow_positive": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.residue_nat_lt": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.hash_prime": {
+        "entries": [
+          {
+            "commit": "833ab1c62aa7a9932f38aa5c298128e362bc2d8e",
+            "date": "2026-10-16T08:36:57+01:00",
+            "prompts": [
+              {
+                "text": "the extracted code to rocq ration is strangely low. why? ",
+                "timestamp": "2026-10-15T08:01:51+00:00"
+              },
+              {
+                "text": "what definitions are relvant for s-box functions? ",
+                "timestamp": "2026-10-15T08:04:01+00:00"
+              },
+              {
+                "text": "what rocq file contains the code extracted into the s-box cangjie function? ",
+                "timestamp": "2026-10-15T08:04:50+00:00"
+              },
+              {
+                "text": "what is the cangjie flie? ",
+                "timestamp": "2026-10-15T08:06:42+00:00"
+              },
+              {
+                "text": "is aesSbox extracted by the standard Galina script or is it a one-off?",
+                "timestamp": "2026-10-15T08:07:58+00:00"
+              },
+              {
+                "text": "what is a sbox_table? ",
+                "timestamp": "2026-10-15T08:08:52+00:00"
+              },
+              {
+                "text": "why is it hardcoded? ",
+                "timestamp": "2026-10-15T08:09:36+00:00"
+              },
+              {
+                "text": "'same fixed substitution' for all implementations ? ",
+                "timestamp": "2026-10-15T08:10:04+00:00"
+              },
+              {
+                "text": "what other popular languages other than cangjie can cjr be extracted as? ",
+                "timestamp": "2026-10-15T08:13:42+00:00"
+              },
+              {
+                "text": "when was the four color theorem and feith-0thomson proved in coq?",
+                "timestamp": "2026-10-15T08:20:36+00:00"
+              },
+              {
+                "text": "when did compcert start? ",
+                "timestamp": "2026-10-15T08:21:24+00:00"
+              },
+              {
+                "text": "does the adequacy result prove no memory leaks?",
+                "timestamp": "2026-10-15T08:24:22+00:00"
+              },
+              {
+                "text": "can you find an implementation of aes  here [https://github.com/CJPLUK/Telegram_Cangjie/tree/main/Telegram_Cangjie/entry/src/main/cangjie/core/mtproto](https://github.com/CJPLUK/Telegram_Cangjie/tree/main/Telegram_Cangjie/entry/src/main/cangjie/core/mtproto)",
+                "timestamp": "2026-10-15T09:15:03+00:00"
+              },
+              {
+                "text": "how does it compare to cjr? ",
+                "timestamp": "2026-10-15T09:17:45+00:00"
+              },
+              {
+                "text": "do cjr arithmetic operations deal with overflow and underflow? ",
+                "timestamp": "2026-10-16T02:21:30+00:00"
+              },
+              {
+                "text": "add integer multiplication to cjr and use it to improve performance of hashmaps. rerun the benchmarks. ",
+                "timestamp": "2026-10-16T02:36:18+00:00"
+              },
+              {
+                "text": "\n# Response annotations:\nEach item contains text selected from an earlier Codex response and may include a user comment. Treat items as Annotation 1, Annotation 2, and so on in array order. Use every selection as context and address every comment. For every annotation you address, include its inline directive `:codex-annotation{index=\"N\"}`, where N is its one-based array position (for example, `:codex-annotation{index=\"1\"}`). Do not use unstructured annotation labels.\n<response-annotations>\n[{\"text\":\"Ordinary hits/builds: 10–37% slower; larger-map misses roughly 2× slower.\",\"annotation\":\"explain this\",\"source\":{\"messageId\":\"msg_0fc3b472e4552312016ad1a6e3f9c48191b3ea920880bdf422\",\"startOffset\":170,\"endOffset\":243}}]\n</response-annotations>\n\n## My request:\nexplain this",
+                "timestamp": "2026-10-16T05:37:11+00:00"
+              },
+              {
+                "text": "\n# Response annotations:\nEach item contains text selected from an earlier Codex response and may include a user comment. Treat items as Annotation 1, Annotation 2, and so on in array order. Use every selection as context and address every comment. For every annotation you address, include its inline directive `:codex-annotation{index=\"N\"}`, where N is its one-based array position (for example, `:codex-annotation{index=\"1\"}`). Do not use unstructured annotation labels.\n<response-annotations>\n[{\"text\":\"Capacity-spaced lookups: 38–658× faster.\",\"source\":{\"messageId\":\"msg_0fc3b472e4552312016ad1a6e3f9c48191b3ea920880bdf422\",\"startOffset\":130,\"endOffset\":170}}]\n</response-annotations>\n\n## My request:\nexplain ",
+                "timestamp": "2026-10-16T05:39:35+00:00"
+              },
+              {
+                "text": "explain **Hashmap_Build_Scan data in the benchmark report**\\",
+                "timestamp": "2026-10-16T05:40:44+00:00"
+              },
+              {
+                "text": "it is suspicious that the data points for cjr and std are identical. justify",
+                "timestamp": "2026-10-16T05:43:41+00:00"
+              },
+              {
+                "text": "refresh all the documentation (pdf report and readmes)",
+                "timestamp": "2026-10-16T05:45:48+00:00"
+              },
+              {
+                "text": "by looking at the timestamps on the coq files and the verification log, is the verification log to date? ",
+                "timestamp": "2026-10-16T07:29:35+00:00"
+              },
+              {
+                "text": "push to github without rerunning the proof verification script",
+                "timestamp": "2026-10-16T07:36:26+00:00"
+              }
+            ],
+            "subject": "Add integer multiplication and improve hashmap hashing"
+          }
+        ],
+        "issues": [
+          "Earlier attribution is ambiguous because a replacement crosses declaration boundaries."
+        ],
+        "complete": false
+      },
+      "cjr.examples.hash_map.hash_multiplier": {
+        "entries": [
+          {
+            "commit": "833ab1c62aa7a9932f38aa5c298128e362bc2d8e",
+            "date": "2026-10-16T08:36:57+01:00",
+            "prompts": [
+              {
+                "text": "the extracted code to rocq ration is strangely low. why? ",
+                "timestamp": "2026-10-15T08:01:51+00:00"
+              },
+              {
+                "text": "what definitions are relvant for s-box functions? ",
+                "timestamp": "2026-10-15T08:04:01+00:00"
+              },
+              {
+                "text": "what rocq file contains the code extracted into the s-box cangjie function? ",
+                "timestamp": "2026-10-15T08:04:50+00:00"
+              },
+              {
+                "text": "what is the cangjie flie? ",
+                "timestamp": "2026-10-15T08:06:42+00:00"
+              },
+              {
+                "text": "is aesSbox extracted by the standard Galina script or is it a one-off?",
+                "timestamp": "2026-10-15T08:07:58+00:00"
+              },
+              {
+                "text": "what is a sbox_table? ",
+                "timestamp": "2026-10-15T08:08:52+00:00"
+              },
+              {
+                "text": "why is it hardcoded? ",
+                "timestamp": "2026-10-15T08:09:36+00:00"
+              },
+              {
+                "text": "'same fixed substitution' for all implementations ? ",
+                "timestamp": "2026-10-15T08:10:04+00:00"
+              },
+              {
+                "text": "what other popular languages other than cangjie can cjr be extracted as? ",
+                "timestamp": "2026-10-15T08:13:42+00:00"
+              },
+              {
+                "text": "when was the four color theorem and feith-0thomson proved in coq?",
+                "timestamp": "2026-10-15T08:20:36+00:00"
+              },
+              {
+                "text": "when did compcert start? ",
+                "timestamp": "2026-10-15T08:21:24+00:00"
+              },
+              {
+                "text": "does the adequacy result prove no memory leaks?",
+                "timestamp": "2026-10-15T08:24:22+00:00"
+              },
+              {
+                "text": "can you find an implementation of aes  here [https://github.com/CJPLUK/Telegram_Cangjie/tree/main/Telegram_Cangjie/entry/src/main/cangjie/core/mtproto](https://github.com/CJPLUK/Telegram_Cangjie/tree/main/Telegram_Cangjie/entry/src/main/cangjie/core/mtproto)",
+                "timestamp": "2026-10-15T09:15:03+00:00"
+              },
+              {
+                "text": "how does it compare to cjr? ",
+                "timestamp": "2026-10-15T09:17:45+00:00"
+              },
+              {
+                "text": "do cjr arithmetic operations deal with overflow and underflow? ",
+                "timestamp": "2026-10-16T02:21:30+00:00"
+              },
+              {
+                "text": "add integer multiplication to cjr and use it to improve performance of hashmaps. rerun the benchmarks. ",
+                "timestamp": "2026-10-16T02:36:18+00:00"
+              },
+              {
+                "text": "\n# Response annotations:\nEach item contains text selected from an earlier Codex response and may include a user comment. Treat items as Annotation 1, Annotation 2, and so on in array order. Use every selection as context and address every comment. For every annotation you address, include its inline directive `:codex-annotation{index=\"N\"}`, where N is its one-based array position (for example, `:codex-annotation{index=\"1\"}`). Do not use unstructured annotation labels.\n<response-annotations>\n[{\"text\":\"Ordinary hits/builds: 10–37% slower; larger-map misses roughly 2× slower.\",\"annotation\":\"explain this\",\"source\":{\"messageId\":\"msg_0fc3b472e4552312016ad1a6e3f9c48191b3ea920880bdf422\",\"startOffset\":170,\"endOffset\":243}}]\n</response-annotations>\n\n## My request:\nexplain this",
+                "timestamp": "2026-10-16T05:37:11+00:00"
+              },
+              {
+                "text": "\n# Response annotations:\nEach item contains text selected from an earlier Codex response and may include a user comment. Treat items as Annotation 1, Annotation 2, and so on in array order. Use every selection as context and address every comment. For every annotation you address, include its inline directive `:codex-annotation{index=\"N\"}`, where N is its one-based array position (for example, `:codex-annotation{index=\"1\"}`). Do not use unstructured annotation labels.\n<response-annotations>\n[{\"text\":\"Capacity-spaced lookups: 38–658× faster.\",\"source\":{\"messageId\":\"msg_0fc3b472e4552312016ad1a6e3f9c48191b3ea920880bdf422\",\"startOffset\":130,\"endOffset\":170}}]\n</response-annotations>\n\n## My request:\nexplain ",
+                "timestamp": "2026-10-16T05:39:35+00:00"
+              },
+              {
+                "text": "explain **Hashmap_Build_Scan data in the benchmark report**\\",
+                "timestamp": "2026-10-16T05:40:44+00:00"
+              },
+              {
+                "text": "it is suspicious that the data points for cjr and std are identical. justify",
+                "timestamp": "2026-10-16T05:43:41+00:00"
+              },
+              {
+                "text": "refresh all the documentation (pdf report and readmes)",
+                "timestamp": "2026-10-16T05:45:48+00:00"
+              },
+              {
+                "text": "by looking at the timestamps on the coq files and the verification log, is the verification log to date? ",
+                "timestamp": "2026-10-16T07:29:35+00:00"
+              },
+              {
+                "text": "push to github without rerunning the proof verification script",
+                "timestamp": "2026-10-16T07:36:26+00:00"
+              }
+            ],
+            "subject": "Add integer multiplication and improve hashmap hashing"
+          }
+        ],
+        "issues": [
+          "Earlier attribution is ambiguous because a replacement crosses declaration boundaries."
+        ],
+        "complete": false
+      },
+      "cjr.examples.hash_map.hash_key": {
+        "entries": [
+          {
+            "commit": "833ab1c62aa7a9932f38aa5c298128e362bc2d8e",
+            "date": "2026-10-16T08:36:57+01:00",
+            "prompts": [
+              {
+                "text": "the extracted code to rocq ration is strangely low. why? ",
+                "timestamp": "2026-10-15T08:01:51+00:00"
+              },
+              {
+                "text": "what definitions are relvant for s-box functions? ",
+                "timestamp": "2026-10-15T08:04:01+00:00"
+              },
+              {
+                "text": "what rocq file contains the code extracted into the s-box cangjie function? ",
+                "timestamp": "2026-10-15T08:04:50+00:00"
+              },
+              {
+                "text": "what is the cangjie flie? ",
+                "timestamp": "2026-10-15T08:06:42+00:00"
+              },
+              {
+                "text": "is aesSbox extracted by the standard Galina script or is it a one-off?",
+                "timestamp": "2026-10-15T08:07:58+00:00"
+              },
+              {
+                "text": "what is a sbox_table? ",
+                "timestamp": "2026-10-15T08:08:52+00:00"
+              },
+              {
+                "text": "why is it hardcoded? ",
+                "timestamp": "2026-10-15T08:09:36+00:00"
+              },
+              {
+                "text": "'same fixed substitution' for all implementations ? ",
+                "timestamp": "2026-10-15T08:10:04+00:00"
+              },
+              {
+                "text": "what other popular languages other than cangjie can cjr be extracted as? ",
+                "timestamp": "2026-10-15T08:13:42+00:00"
+              },
+              {
+                "text": "when was the four color theorem and feith-0thomson proved in coq?",
+                "timestamp": "2026-10-15T08:20:36+00:00"
+              },
+              {
+                "text": "when did compcert start? ",
+                "timestamp": "2026-10-15T08:21:24+00:00"
+              },
+              {
+                "text": "does the adequacy result prove no memory leaks?",
+                "timestamp": "2026-10-15T08:24:22+00:00"
+              },
+              {
+                "text": "can you find an implementation of aes  here [https://github.com/CJPLUK/Telegram_Cangjie/tree/main/Telegram_Cangjie/entry/src/main/cangjie/core/mtproto](https://github.com/CJPLUK/Telegram_Cangjie/tree/main/Telegram_Cangjie/entry/src/main/cangjie/core/mtproto)",
+                "timestamp": "2026-10-15T09:15:03+00:00"
+              },
+              {
+                "text": "how does it compare to cjr? ",
+                "timestamp": "2026-10-15T09:17:45+00:00"
+              },
+              {
+                "text": "do cjr arithmetic operations deal with overflow and underflow? ",
+                "timestamp": "2026-10-16T02:21:30+00:00"
+              },
+              {
+                "text": "add integer multiplication to cjr and use it to improve performance of hashmaps. rerun the benchmarks. ",
+                "timestamp": "2026-10-16T02:36:18+00:00"
+              },
+              {
+                "text": "\n# Response annotations:\nEach item contains text selected from an earlier Codex response and may include a user comment. Treat items as Annotation 1, Annotation 2, and so on in array order. Use every selection as context and address every comment. For every annotation you address, include its inline directive `:codex-annotation{index=\"N\"}`, where N is its one-based array position (for example, `:codex-annotation{index=\"1\"}`). Do not use unstructured annotation labels.\n<response-annotations>\n[{\"text\":\"Ordinary hits/builds: 10–37% slower; larger-map misses roughly 2× slower.\",\"annotation\":\"explain this\",\"source\":{\"messageId\":\"msg_0fc3b472e4552312016ad1a6e3f9c48191b3ea920880bdf422\",\"startOffset\":170,\"endOffset\":243}}]\n</response-annotations>\n\n## My request:\nexplain this",
+                "timestamp": "2026-10-16T05:37:11+00:00"
+              },
+              {
+                "text": "\n# Response annotations:\nEach item contains text selected from an earlier Codex response and may include a user comment. Treat items as Annotation 1, Annotation 2, and so on in array order. Use every selection as context and address every comment. For every annotation you address, include its inline directive `:codex-annotation{index=\"N\"}`, where N is its one-based array position (for example, `:codex-annotation{index=\"1\"}`). Do not use unstructured annotation labels.\n<response-annotations>\n[{\"text\":\"Capacity-spaced lookups: 38–658× faster.\",\"source\":{\"messageId\":\"msg_0fc3b472e4552312016ad1a6e3f9c48191b3ea920880bdf422\",\"startOffset\":130,\"endOffset\":170}}]\n</response-annotations>\n\n## My request:\nexplain ",
+                "timestamp": "2026-10-16T05:39:35+00:00"
+              },
+              {
+                "text": "explain **Hashmap_Build_Scan data in the benchmark report**\\",
+                "timestamp": "2026-10-16T05:40:44+00:00"
+              },
+              {
+                "text": "it is suspicious that the data points for cjr and std are identical. justify",
+                "timestamp": "2026-10-16T05:43:41+00:00"
+              },
+              {
+                "text": "refresh all the documentation (pdf report and readmes)",
+                "timestamp": "2026-10-16T05:45:48+00:00"
+              },
+              {
+                "text": "by looking at the timestamps on the coq files and the verification log, is the verification log to date? ",
+                "timestamp": "2026-10-16T07:29:35+00:00"
+              },
+              {
+                "text": "push to github without rerunning the proof verification script",
+                "timestamp": "2026-10-16T07:36:26+00:00"
+              }
+            ],
+            "subject": "Add integer multiplication and improve hashmap hashing"
+          }
+        ],
+        "issues": [
+          "Earlier attribution is ambiguous because a replacement crosses declaration boundaries."
+        ],
+        "complete": false
+      },
+      "cjr.examples.hash_map.hash_product_int64": {
+        "entries": [
+          {
+            "commit": "833ab1c62aa7a9932f38aa5c298128e362bc2d8e",
+            "date": "2026-10-16T08:36:57+01:00",
+            "prompts": [
+              {
+                "text": "the extracted code to rocq ration is strangely low. why? ",
+                "timestamp": "2026-10-15T08:01:51+00:00"
+              },
+              {
+                "text": "what definitions are relvant for s-box functions? ",
+                "timestamp": "2026-10-15T08:04:01+00:00"
+              },
+              {
+                "text": "what rocq file contains the code extracted into the s-box cangjie function? ",
+                "timestamp": "2026-10-15T08:04:50+00:00"
+              },
+              {
+                "text": "what is the cangjie flie? ",
+                "timestamp": "2026-10-15T08:06:42+00:00"
+              },
+              {
+                "text": "is aesSbox extracted by the standard Galina script or is it a one-off?",
+                "timestamp": "2026-10-15T08:07:58+00:00"
+              },
+              {
+                "text": "what is a sbox_table? ",
+                "timestamp": "2026-10-15T08:08:52+00:00"
+              },
+              {
+                "text": "why is it hardcoded? ",
+                "timestamp": "2026-10-15T08:09:36+00:00"
+              },
+              {
+                "text": "'same fixed substitution' for all implementations ? ",
+                "timestamp": "2026-10-15T08:10:04+00:00"
+              },
+              {
+                "text": "what other popular languages other than cangjie can cjr be extracted as? ",
+                "timestamp": "2026-10-15T08:13:42+00:00"
+              },
+              {
+                "text": "when was the four color theorem and feith-0thomson proved in coq?",
+                "timestamp": "2026-10-15T08:20:36+00:00"
+              },
+              {
+                "text": "when did compcert start? ",
+                "timestamp": "2026-10-15T08:21:24+00:00"
+              },
+              {
+                "text": "does the adequacy result prove no memory leaks?",
+                "timestamp": "2026-10-15T08:24:22+00:00"
+              },
+              {
+                "text": "can you find an implementation of aes  here [https://github.com/CJPLUK/Telegram_Cangjie/tree/main/Telegram_Cangjie/entry/src/main/cangjie/core/mtproto](https://github.com/CJPLUK/Telegram_Cangjie/tree/main/Telegram_Cangjie/entry/src/main/cangjie/core/mtproto)",
+                "timestamp": "2026-10-15T09:15:03+00:00"
+              },
+              {
+                "text": "how does it compare to cjr? ",
+                "timestamp": "2026-10-15T09:17:45+00:00"
+              },
+              {
+                "text": "do cjr arithmetic operations deal with overflow and underflow? ",
+                "timestamp": "2026-10-16T02:21:30+00:00"
+              },
+              {
+                "text": "add integer multiplication to cjr and use it to improve performance of hashmaps. rerun the benchmarks. ",
+                "timestamp": "2026-10-16T02:36:18+00:00"
+              },
+              {
+                "text": "\n# Response annotations:\nEach item contains text selected from an earlier Codex response and may include a user comment. Treat items as Annotation 1, Annotation 2, and so on in array order. Use every selection as context and address every comment. For every annotation you address, include its inline directive `:codex-annotation{index=\"N\"}`, where N is its one-based array position (for example, `:codex-annotation{index=\"1\"}`). Do not use unstructured annotation labels.\n<response-annotations>\n[{\"text\":\"Ordinary hits/builds: 10–37% slower; larger-map misses roughly 2× slower.\",\"annotation\":\"explain this\",\"source\":{\"messageId\":\"msg_0fc3b472e4552312016ad1a6e3f9c48191b3ea920880bdf422\",\"startOffset\":170,\"endOffset\":243}}]\n</response-annotations>\n\n## My request:\nexplain this",
+                "timestamp": "2026-10-16T05:37:11+00:00"
+              },
+              {
+                "text": "\n# Response annotations:\nEach item contains text selected from an earlier Codex response and may include a user comment. Treat items as Annotation 1, Annotation 2, and so on in array order. Use every selection as context and address every comment. For every annotation you address, include its inline directive `:codex-annotation{index=\"N\"}`, where N is its one-based array position (for example, `:codex-annotation{index=\"1\"}`). Do not use unstructured annotation labels.\n<response-annotations>\n[{\"text\":\"Capacity-spaced lookups: 38–658× faster.\",\"source\":{\"messageId\":\"msg_0fc3b472e4552312016ad1a6e3f9c48191b3ea920880bdf422\",\"startOffset\":130,\"endOffset\":170}}]\n</response-annotations>\n\n## My request:\nexplain ",
+                "timestamp": "2026-10-16T05:39:35+00:00"
+              },
+              {
+                "text": "explain **Hashmap_Build_Scan data in the benchmark report**\\",
+                "timestamp": "2026-10-16T05:40:44+00:00"
+              },
+              {
+                "text": "it is suspicious that the data points for cjr and std are identical. justify",
+                "timestamp": "2026-10-16T05:43:41+00:00"
+              },
+              {
+                "text": "refresh all the documentation (pdf report and readmes)",
+                "timestamp": "2026-10-16T05:45:48+00:00"
+              },
+              {
+                "text": "by looking at the timestamps on the coq files and the verification log, is the verification log to date? ",
+                "timestamp": "2026-10-16T07:29:35+00:00"
+              },
+              {
+                "text": "push to github without rerunning the proof verification script",
+                "timestamp": "2026-10-16T07:36:26+00:00"
+              }
+            ],
+            "subject": "Add integer multiplication and improve hashmap hashing"
+          }
+        ],
+        "issues": [
+          "Earlier attribution is ambiguous because a replacement crosses declaration boundaries."
+        ],
+        "complete": false
+      },
+      "cjr.examples.hash_map.bucket": {
+        "entries": [
+          {
+            "commit": "833ab1c62aa7a9932f38aa5c298128e362bc2d8e",
+            "date": "2026-10-16T08:36:57+01:00",
+            "prompts": [
+              {
+                "text": "the extracted code to rocq ration is strangely low. why? ",
+                "timestamp": "2026-10-15T08:01:51+00:00"
+              },
+              {
+                "text": "what definitions are relvant for s-box functions? ",
+                "timestamp": "2026-10-15T08:04:01+00:00"
+              },
+              {
+                "text": "what rocq file contains the code extracted into the s-box cangjie function? ",
+                "timestamp": "2026-10-15T08:04:50+00:00"
+              },
+              {
+                "text": "what is the cangjie flie? ",
+                "timestamp": "2026-10-15T08:06:42+00:00"
+              },
+              {
+                "text": "is aesSbox extracted by the standard Galina script or is it a one-off?",
+                "timestamp": "2026-10-15T08:07:58+00:00"
+              },
+              {
+                "text": "what is a sbox_table? ",
+                "timestamp": "2026-10-15T08:08:52+00:00"
+              },
+              {
+                "text": "why is it hardcoded? ",
+                "timestamp": "2026-10-15T08:09:36+00:00"
+              },
+              {
+                "text": "'same fixed substitution' for all implementations ? ",
+                "timestamp": "2026-10-15T08:10:04+00:00"
+              },
+              {
+                "text": "what other popular languages other than cangjie can cjr be extracted as? ",
+                "timestamp": "2026-10-15T08:13:42+00:00"
+              },
+              {
+                "text": "when was the four color theorem and feith-0thomson proved in coq?",
+                "timestamp": "2026-10-15T08:20:36+00:00"
+              },
+              {
+                "text": "when did compcert start? ",
+                "timestamp": "2026-10-15T08:21:24+00:00"
+              },
+              {
+                "text": "does the adequacy result prove no memory leaks?",
+                "timestamp": "2026-10-15T08:24:22+00:00"
+              },
+              {
+                "text": "can you find an implementation of aes  here [https://github.com/CJPLUK/Telegram_Cangjie/tree/main/Telegram_Cangjie/entry/src/main/cangjie/core/mtproto](https://github.com/CJPLUK/Telegram_Cangjie/tree/main/Telegram_Cangjie/entry/src/main/cangjie/core/mtproto)",
+                "timestamp": "2026-10-15T09:15:03+00:00"
+              },
+              {
+                "text": "how does it compare to cjr? ",
+                "timestamp": "2026-10-15T09:17:45+00:00"
+              },
+              {
+                "text": "do cjr arithmetic operations deal with overflow and underflow? ",
+                "timestamp": "2026-10-16T02:21:30+00:00"
+              },
+              {
+                "text": "add integer multiplication to cjr and use it to improve performance of hashmaps. rerun the benchmarks. ",
+                "timestamp": "2026-10-16T02:36:18+00:00"
+              },
+              {
+                "text": "\n# Response annotations:\nEach item contains text selected from an earlier Codex response and may include a user comment. Treat items as Annotation 1, Annotation 2, and so on in array order. Use every selection as context and address every comment. For every annotation you address, include its inline directive `:codex-annotation{index=\"N\"}`, where N is its one-based array position (for example, `:codex-annotation{index=\"1\"}`). Do not use unstructured annotation labels.\n<response-annotations>\n[{\"text\":\"Ordinary hits/builds: 10–37% slower; larger-map misses roughly 2× slower.\",\"annotation\":\"explain this\",\"source\":{\"messageId\":\"msg_0fc3b472e4552312016ad1a6e3f9c48191b3ea920880bdf422\",\"startOffset\":170,\"endOffset\":243}}]\n</response-annotations>\n\n## My request:\nexplain this",
+                "timestamp": "2026-10-16T05:37:11+00:00"
+              },
+              {
+                "text": "\n# Response annotations:\nEach item contains text selected from an earlier Codex response and may include a user comment. Treat items as Annotation 1, Annotation 2, and so on in array order. Use every selection as context and address every comment. For every annotation you address, include its inline directive `:codex-annotation{index=\"N\"}`, where N is its one-based array position (for example, `:codex-annotation{index=\"1\"}`). Do not use unstructured annotation labels.\n<response-annotations>\n[{\"text\":\"Capacity-spaced lookups: 38–658× faster.\",\"source\":{\"messageId\":\"msg_0fc3b472e4552312016ad1a6e3f9c48191b3ea920880bdf422\",\"startOffset\":130,\"endOffset\":170}}]\n</response-annotations>\n\n## My request:\nexplain ",
+                "timestamp": "2026-10-16T05:39:35+00:00"
+              },
+              {
+                "text": "explain **Hashmap_Build_Scan data in the benchmark report**\\",
+                "timestamp": "2026-10-16T05:40:44+00:00"
+              },
+              {
+                "text": "it is suspicious that the data points for cjr and std are identical. justify",
+                "timestamp": "2026-10-16T05:43:41+00:00"
+              },
+              {
+                "text": "refresh all the documentation (pdf report and readmes)",
+                "timestamp": "2026-10-16T05:45:48+00:00"
+              },
+              {
+                "text": "by looking at the timestamps on the coq files and the verification log, is the verification log to date? ",
+                "timestamp": "2026-10-16T07:29:35+00:00"
+              },
+              {
+                "text": "push to github without rerunning the proof verification script",
+                "timestamp": "2026-10-16T07:36:26+00:00"
+              }
+            ],
+            "subject": "Add integer multiplication and improve hashmap hashing"
+          }
+        ],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.bucket_lt": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.probe_slot": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.probe_slot_lt": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.probe_slot_sub": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.steps_between": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.steps_between_lt": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.probe_slot_steps": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.probe_slot_inj": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.steps_of_slot": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.contents_of": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.occ_keys": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.count_occ": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.occ_in": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.occ_unique": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.contents_none_iff": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.contents_at": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.count_occ_len": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.count_insert_fresh": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.count_bury": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.tags_ok_insert": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.insert_length_eq": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.no_empty_before": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.placed": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.segment_clear": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.first_tomb": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.probe_prefix": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.segment_short": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.segment_no_empty": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.prefix_zero": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.prefix_pred": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.first_tomb_S": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.first_tomb_none_clear": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.first_tomb_some": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.count_lt_exists": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.probe_out": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.hole_or": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.probe_from": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.probe": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.cell_clear": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.seen_here": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.scan_skip": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.probe_hit_now": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.placed_clear": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.probe_found": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.full_scan_hole": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.probe_from_inv": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.occ_index": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.probe_shape": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.tag_occ_ne_empty": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.tag_tomb_ne_empty": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.tag_tomb_ne_occ": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.twice_add": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.even_pow": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.room_for_one": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.double_pow": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.occ_place_iff": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.nodup_place": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.contents_place": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.contents_overwrite": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.contents_bury": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.path_ne": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.no_empty_before_fill": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.placed_place": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.placed_bury": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.occ_bury_sub": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.nodup_bury": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.load_bury": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.size_contents": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.wf_table": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.contents_zeros": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.count_zeros": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.occ_zeros": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.tags_ok_zeros": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.placed_zeros": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.zeros_wf": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.cap_pos": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.place_slot": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.write_fresh": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.write_fresh_new": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.rehash_acc": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.rehash_acc_lookup": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.doubled_cap": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.grow_table": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.write_remove": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.write_fresh_found": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.write_remove_spec": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.doubled_cap_pow": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.rehash_acc_sound": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.grow_table_spec": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.sld": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.sas": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.residue_body": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.call_residue": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.residue_wp": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.bucket_body": {
+        "entries": [
+          {
+            "commit": "833ab1c62aa7a9932f38aa5c298128e362bc2d8e",
+            "date": "2026-10-16T08:36:57+01:00",
+            "prompts": [
+              {
+                "text": "the extracted code to rocq ration is strangely low. why? ",
+                "timestamp": "2026-10-15T08:01:51+00:00"
+              },
+              {
+                "text": "what definitions are relvant for s-box functions? ",
+                "timestamp": "2026-10-15T08:04:01+00:00"
+              },
+              {
+                "text": "what rocq file contains the code extracted into the s-box cangjie function? ",
+                "timestamp": "2026-10-15T08:04:50+00:00"
+              },
+              {
+                "text": "what is the cangjie flie? ",
+                "timestamp": "2026-10-15T08:06:42+00:00"
+              },
+              {
+                "text": "is aesSbox extracted by the standard Galina script or is it a one-off?",
+                "timestamp": "2026-10-15T08:07:58+00:00"
+              },
+              {
+                "text": "what is a sbox_table? ",
+                "timestamp": "2026-10-15T08:08:52+00:00"
+              },
+              {
+                "text": "why is it hardcoded? ",
+                "timestamp": "2026-10-15T08:09:36+00:00"
+              },
+              {
+                "text": "'same fixed substitution' for all implementations ? ",
+                "timestamp": "2026-10-15T08:10:04+00:00"
+              },
+              {
+                "text": "what other popular languages other than cangjie can cjr be extracted as? ",
+                "timestamp": "2026-10-15T08:13:42+00:00"
+              },
+              {
+                "text": "when was the four color theorem and feith-0thomson proved in coq?",
+                "timestamp": "2026-10-15T08:20:36+00:00"
+              },
+              {
+                "text": "when did compcert start? ",
+                "timestamp": "2026-10-15T08:21:24+00:00"
+              },
+              {
+                "text": "does the adequacy result prove no memory leaks?",
+                "timestamp": "2026-10-15T08:24:22+00:00"
+              },
+              {
+                "text": "can you find an implementation of aes  here [https://github.com/CJPLUK/Telegram_Cangjie/tree/main/Telegram_Cangjie/entry/src/main/cangjie/core/mtproto](https://github.com/CJPLUK/Telegram_Cangjie/tree/main/Telegram_Cangjie/entry/src/main/cangjie/core/mtproto)",
+                "timestamp": "2026-10-15T09:15:03+00:00"
+              },
+              {
+                "text": "how does it compare to cjr? ",
+                "timestamp": "2026-10-15T09:17:45+00:00"
+              },
+              {
+                "text": "do cjr arithmetic operations deal with overflow and underflow? ",
+                "timestamp": "2026-10-16T02:21:30+00:00"
+              },
+              {
+                "text": "add integer multiplication to cjr and use it to improve performance of hashmaps. rerun the benchmarks. ",
+                "timestamp": "2026-10-16T02:36:18+00:00"
+              },
+              {
+                "text": "\n# Response annotations:\nEach item contains text selected from an earlier Codex response and may include a user comment. Treat items as Annotation 1, Annotation 2, and so on in array order. Use every selection as context and address every comment. For every annotation you address, include its inline directive `:codex-annotation{index=\"N\"}`, where N is its one-based array position (for example, `:codex-annotation{index=\"1\"}`). Do not use unstructured annotation labels.\n<response-annotations>\n[{\"text\":\"Ordinary hits/builds: 10–37% slower; larger-map misses roughly 2× slower.\",\"annotation\":\"explain this\",\"source\":{\"messageId\":\"msg_0fc3b472e4552312016ad1a6e3f9c48191b3ea920880bdf422\",\"startOffset\":170,\"endOffset\":243}}]\n</response-annotations>\n\n## My request:\nexplain this",
+                "timestamp": "2026-10-16T05:37:11+00:00"
+              },
+              {
+                "text": "\n# Response annotations:\nEach item contains text selected from an earlier Codex response and may include a user comment. Treat items as Annotation 1, Annotation 2, and so on in array order. Use every selection as context and address every comment. For every annotation you address, include its inline directive `:codex-annotation{index=\"N\"}`, where N is its one-based array position (for example, `:codex-annotation{index=\"1\"}`). Do not use unstructured annotation labels.\n<response-annotations>\n[{\"text\":\"Capacity-spaced lookups: 38–658× faster.\",\"source\":{\"messageId\":\"msg_0fc3b472e4552312016ad1a6e3f9c48191b3ea920880bdf422\",\"startOffset\":130,\"endOffset\":170}}]\n</response-annotations>\n\n## My request:\nexplain ",
+                "timestamp": "2026-10-16T05:39:35+00:00"
+              },
+              {
+                "text": "explain **Hashmap_Build_Scan data in the benchmark report**\\",
+                "timestamp": "2026-10-16T05:40:44+00:00"
+              },
+              {
+                "text": "it is suspicious that the data points for cjr and std are identical. justify",
+                "timestamp": "2026-10-16T05:43:41+00:00"
+              },
+              {
+                "text": "refresh all the documentation (pdf report and readmes)",
+                "timestamp": "2026-10-16T05:45:48+00:00"
+              },
+              {
+                "text": "by looking at the timestamps on the coq files and the verification log, is the verification log to date? ",
+                "timestamp": "2026-10-16T07:29:35+00:00"
+              },
+              {
+                "text": "push to github without rerunning the proof verification script",
+                "timestamp": "2026-10-16T07:36:26+00:00"
+              }
+            ],
+            "subject": "Add integer multiplication and improve hashmap hashing"
+          }
+        ],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.call_bucket": {
+        "entries": [
+          {
+            "commit": "833ab1c62aa7a9932f38aa5c298128e362bc2d8e",
+            "date": "2026-10-16T08:36:57+01:00",
+            "prompts": [
+              {
+                "text": "the extracted code to rocq ration is strangely low. why? ",
+                "timestamp": "2026-10-15T08:01:51+00:00"
+              },
+              {
+                "text": "what definitions are relvant for s-box functions? ",
+                "timestamp": "2026-10-15T08:04:01+00:00"
+              },
+              {
+                "text": "what rocq file contains the code extracted into the s-box cangjie function? ",
+                "timestamp": "2026-10-15T08:04:50+00:00"
+              },
+              {
+                "text": "what is the cangjie flie? ",
+                "timestamp": "2026-10-15T08:06:42+00:00"
+              },
+              {
+                "text": "is aesSbox extracted by the standard Galina script or is it a one-off?",
+                "timestamp": "2026-10-15T08:07:58+00:00"
+              },
+              {
+                "text": "what is a sbox_table? ",
+                "timestamp": "2026-10-15T08:08:52+00:00"
+              },
+              {
+                "text": "why is it hardcoded? ",
+                "timestamp": "2026-10-15T08:09:36+00:00"
+              },
+              {
+                "text": "'same fixed substitution' for all implementations ? ",
+                "timestamp": "2026-10-15T08:10:04+00:00"
+              },
+              {
+                "text": "what other popular languages other than cangjie can cjr be extracted as? ",
+                "timestamp": "2026-10-15T08:13:42+00:00"
+              },
+              {
+                "text": "when was the four color theorem and feith-0thomson proved in coq?",
+                "timestamp": "2026-10-15T08:20:36+00:00"
+              },
+              {
+                "text": "when did compcert start? ",
+                "timestamp": "2026-10-15T08:21:24+00:00"
+              },
+              {
+                "text": "does the adequacy result prove no memory leaks?",
+                "timestamp": "2026-10-15T08:24:22+00:00"
+              },
+              {
+                "text": "can you find an implementation of aes  here [https://github.com/CJPLUK/Telegram_Cangjie/tree/main/Telegram_Cangjie/entry/src/main/cangjie/core/mtproto](https://github.com/CJPLUK/Telegram_Cangjie/tree/main/Telegram_Cangjie/entry/src/main/cangjie/core/mtproto)",
+                "timestamp": "2026-10-15T09:15:03+00:00"
+              },
+              {
+                "text": "how does it compare to cjr? ",
+                "timestamp": "2026-10-15T09:17:45+00:00"
+              },
+              {
+                "text": "do cjr arithmetic operations deal with overflow and underflow? ",
+                "timestamp": "2026-10-16T02:21:30+00:00"
+              },
+              {
+                "text": "add integer multiplication to cjr and use it to improve performance of hashmaps. rerun the benchmarks. ",
+                "timestamp": "2026-10-16T02:36:18+00:00"
+              },
+              {
+                "text": "\n# Response annotations:\nEach item contains text selected from an earlier Codex response and may include a user comment. Treat items as Annotation 1, Annotation 2, and so on in array order. Use every selection as context and address every comment. For every annotation you address, include its inline directive `:codex-annotation{index=\"N\"}`, where N is its one-based array position (for example, `:codex-annotation{index=\"1\"}`). Do not use unstructured annotation labels.\n<response-annotations>\n[{\"text\":\"Ordinary hits/builds: 10–37% slower; larger-map misses roughly 2× slower.\",\"annotation\":\"explain this\",\"source\":{\"messageId\":\"msg_0fc3b472e4552312016ad1a6e3f9c48191b3ea920880bdf422\",\"startOffset\":170,\"endOffset\":243}}]\n</response-annotations>\n\n## My request:\nexplain this",
+                "timestamp": "2026-10-16T05:37:11+00:00"
+              },
+              {
+                "text": "\n# Response annotations:\nEach item contains text selected from an earlier Codex response and may include a user comment. Treat items as Annotation 1, Annotation 2, and so on in array order. Use every selection as context and address every comment. For every annotation you address, include its inline directive `:codex-annotation{index=\"N\"}`, where N is its one-based array position (for example, `:codex-annotation{index=\"1\"}`). Do not use unstructured annotation labels.\n<response-annotations>\n[{\"text\":\"Capacity-spaced lookups: 38–658× faster.\",\"source\":{\"messageId\":\"msg_0fc3b472e4552312016ad1a6e3f9c48191b3ea920880bdf422\",\"startOffset\":130,\"endOffset\":170}}]\n</response-annotations>\n\n## My request:\nexplain ",
+                "timestamp": "2026-10-16T05:39:35+00:00"
+              },
+              {
+                "text": "explain **Hashmap_Build_Scan data in the benchmark report**\\",
+                "timestamp": "2026-10-16T05:40:44+00:00"
+              },
+              {
+                "text": "it is suspicious that the data points for cjr and std are identical. justify",
+                "timestamp": "2026-10-16T05:43:41+00:00"
+              },
+              {
+                "text": "refresh all the documentation (pdf report and readmes)",
+                "timestamp": "2026-10-16T05:45:48+00:00"
+              },
+              {
+                "text": "by looking at the timestamps on the coq files and the verification log, is the verification log to date? ",
+                "timestamp": "2026-10-16T07:29:35+00:00"
+              },
+              {
+                "text": "push to github without rerunning the proof verification script",
+                "timestamp": "2026-10-16T07:36:26+00:00"
+              }
+            ],
+            "subject": "Add integer multiplication and improve hashmap hashing"
+          }
+        ],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.bucket_wp": {
+        "entries": [
+          {
+            "commit": "833ab1c62aa7a9932f38aa5c298128e362bc2d8e",
+            "date": "2026-10-16T08:36:57+01:00",
+            "prompts": [
+              {
+                "text": "the extracted code to rocq ration is strangely low. why? ",
+                "timestamp": "2026-10-15T08:01:51+00:00"
+              },
+              {
+                "text": "what definitions are relvant for s-box functions? ",
+                "timestamp": "2026-10-15T08:04:01+00:00"
+              },
+              {
+                "text": "what rocq file contains the code extracted into the s-box cangjie function? ",
+                "timestamp": "2026-10-15T08:04:50+00:00"
+              },
+              {
+                "text": "what is the cangjie flie? ",
+                "timestamp": "2026-10-15T08:06:42+00:00"
+              },
+              {
+                "text": "is aesSbox extracted by the standard Galina script or is it a one-off?",
+                "timestamp": "2026-10-15T08:07:58+00:00"
+              },
+              {
+                "text": "what is a sbox_table? ",
+                "timestamp": "2026-10-15T08:08:52+00:00"
+              },
+              {
+                "text": "why is it hardcoded? ",
+                "timestamp": "2026-10-15T08:09:36+00:00"
+              },
+              {
+                "text": "'same fixed substitution' for all implementations ? ",
+                "timestamp": "2026-10-15T08:10:04+00:00"
+              },
+              {
+                "text": "what other popular languages other than cangjie can cjr be extracted as? ",
+                "timestamp": "2026-10-15T08:13:42+00:00"
+              },
+              {
+                "text": "when was the four color theorem and feith-0thomson proved in coq?",
+                "timestamp": "2026-10-15T08:20:36+00:00"
+              },
+              {
+                "text": "when did compcert start? ",
+                "timestamp": "2026-10-15T08:21:24+00:00"
+              },
+              {
+                "text": "does the adequacy result prove no memory leaks?",
+                "timestamp": "2026-10-15T08:24:22+00:00"
+              },
+              {
+                "text": "can you find an implementation of aes  here [https://github.com/CJPLUK/Telegram_Cangjie/tree/main/Telegram_Cangjie/entry/src/main/cangjie/core/mtproto](https://github.com/CJPLUK/Telegram_Cangjie/tree/main/Telegram_Cangjie/entry/src/main/cangjie/core/mtproto)",
+                "timestamp": "2026-10-15T09:15:03+00:00"
+              },
+              {
+                "text": "how does it compare to cjr? ",
+                "timestamp": "2026-10-15T09:17:45+00:00"
+              },
+              {
+                "text": "do cjr arithmetic operations deal with overflow and underflow? ",
+                "timestamp": "2026-10-16T02:21:30+00:00"
+              },
+              {
+                "text": "add integer multiplication to cjr and use it to improve performance of hashmaps. rerun the benchmarks. ",
+                "timestamp": "2026-10-16T02:36:18+00:00"
+              },
+              {
+                "text": "\n# Response annotations:\nEach item contains text selected from an earlier Codex response and may include a user comment. Treat items as Annotation 1, Annotation 2, and so on in array order. Use every selection as context and address every comment. For every annotation you address, include its inline directive `:codex-annotation{index=\"N\"}`, where N is its one-based array position (for example, `:codex-annotation{index=\"1\"}`). Do not use unstructured annotation labels.\n<response-annotations>\n[{\"text\":\"Ordinary hits/builds: 10–37% slower; larger-map misses roughly 2× slower.\",\"annotation\":\"explain this\",\"source\":{\"messageId\":\"msg_0fc3b472e4552312016ad1a6e3f9c48191b3ea920880bdf422\",\"startOffset\":170,\"endOffset\":243}}]\n</response-annotations>\n\n## My request:\nexplain this",
+                "timestamp": "2026-10-16T05:37:11+00:00"
+              },
+              {
+                "text": "\n# Response annotations:\nEach item contains text selected from an earlier Codex response and may include a user comment. Treat items as Annotation 1, Annotation 2, and so on in array order. Use every selection as context and address every comment. For every annotation you address, include its inline directive `:codex-annotation{index=\"N\"}`, where N is its one-based array position (for example, `:codex-annotation{index=\"1\"}`). Do not use unstructured annotation labels.\n<response-annotations>\n[{\"text\":\"Capacity-spaced lookups: 38–658× faster.\",\"source\":{\"messageId\":\"msg_0fc3b472e4552312016ad1a6e3f9c48191b3ea920880bdf422\",\"startOffset\":130,\"endOffset\":170}}]\n</response-annotations>\n\n## My request:\nexplain ",
+                "timestamp": "2026-10-16T05:39:35+00:00"
+              },
+              {
+                "text": "explain **Hashmap_Build_Scan data in the benchmark report**\\",
+                "timestamp": "2026-10-16T05:40:44+00:00"
+              },
+              {
+                "text": "it is suspicious that the data points for cjr and std are identical. justify",
+                "timestamp": "2026-10-16T05:43:41+00:00"
+              },
+              {
+                "text": "refresh all the documentation (pdf report and readmes)",
+                "timestamp": "2026-10-16T05:45:48+00:00"
+              },
+              {
+                "text": "by looking at the timestamps on the coq files and the verification log, is the verification log to date? ",
+                "timestamp": "2026-10-16T07:29:35+00:00"
+              },
+              {
+                "text": "push to github without rerunning the proof verification script",
+                "timestamp": "2026-10-16T07:36:26+00:00"
+              }
+            ],
+            "subject": "Add integer multiplication and improve hashmap hashing"
+          }
+        ],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.lit_tag_empty": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.lit_tag_occ": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.lit_tag_tomb": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.lit_m1": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.arr_len": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.arr_get": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.arr_set": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.make_zero_array": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.is_hm_slots": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.is_hashmap": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.is_array_obj_hm": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.wp_new_step": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.init_body": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.call_init": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.size_body": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.call_size": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.capacity_body": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.call_capacity": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.is_empty_body": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.call_is_empty": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.probe_slot_e": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.probe_done": {
+        "entries": [],
+        "issues": [
+          "Earlier attribution is ambiguous because a replacement crosses declaration boundaries."
+        ],
+        "complete": false
+      },
+      "cjr.examples.hash_map.hole_or_e": {
+        "entries": [],
+        "issues": [
+          "Earlier attribution is ambiguous because a replacement crosses declaration boundaries."
+        ],
+        "complete": false
+      },
+      "cjr.examples.hash_map.scan_call_e": {
+        "entries": [],
+        "issues": [
+          "Earlier attribution is ambiguous because a replacement crosses declaration boundaries."
+        ],
+        "complete": false
+      },
+      "cjr.examples.hash_map.scan_loop": {
+        "entries": [],
+        "issues": [
+          "Earlier attribution is ambiguous because a replacement crosses declaration boundaries."
+        ],
+        "complete": false
+      },
+      "cjr.examples.hash_map.scan_body": {
+        "entries": [],
+        "issues": [
+          "Earlier attribution is ambiguous because a replacement crosses declaration boundaries."
+        ],
+        "complete": false
+      },
+      "cjr.examples.hash_map.scan_v": {
+        "entries": [],
+        "issues": [
+          "Earlier attribution is ambiguous because a replacement crosses declaration boundaries."
+        ],
+        "complete": false
+      },
+      "cjr.examples.hash_map.zlit": {
+        "entries": [],
+        "issues": [
+          "Earlier attribution is ambiguous because a replacement crosses declaration boundaries."
+        ],
+        "complete": false
+      },
+      "cjr.examples.hash_map.nlit": {
+        "entries": [],
+        "issues": [
+          "Earlier attribution is ambiguous because a replacement crosses declaration boundaries."
+        ],
+        "complete": false
+      },
+      "cjr.examples.hash_map.hole_z": {
+        "entries": [],
+        "issues": [
+          "Earlier attribution is ambiguous because a replacement crosses declaration boundaries."
+        ],
+        "complete": false
+      },
+      "cjr.examples.hash_map.probe_val": {
+        "entries": [],
+        "issues": [
+          "Earlier attribution is ambiguous because a replacement crosses declaration boundaries."
+        ],
+        "complete": false
+      },
+      "cjr.examples.hash_map.call_scan": {
+        "entries": [],
+        "issues": [
+          "Earlier attribution is ambiguous because a replacement crosses declaration boundaries."
+        ],
+        "complete": false
+      },
+      "cjr.examples.hash_map.buffer_probe_body": {
+        "entries": [
+          {
+            "commit": "833ab1c62aa7a9932f38aa5c298128e362bc2d8e",
+            "date": "2026-10-16T08:36:57+01:00",
+            "prompts": [
+              {
+                "text": "the extracted code to rocq ration is strangely low. why? ",
+                "timestamp": "2026-10-15T08:01:51+00:00"
+              },
+              {
+                "text": "what definitions are relvant for s-box functions? ",
+                "timestamp": "2026-10-15T08:04:01+00:00"
+              },
+              {
+                "text": "what rocq file contains the code extracted into the s-box cangjie function? ",
+                "timestamp": "2026-10-15T08:04:50+00:00"
+              },
+              {
+                "text": "what is the cangjie flie? ",
+                "timestamp": "2026-10-15T08:06:42+00:00"
+              },
+              {
+                "text": "is aesSbox extracted by the standard Galina script or is it a one-off?",
+                "timestamp": "2026-10-15T08:07:58+00:00"
+              },
+              {
+                "text": "what is a sbox_table? ",
+                "timestamp": "2026-10-15T08:08:52+00:00"
+              },
+              {
+                "text": "why is it hardcoded? ",
+                "timestamp": "2026-10-15T08:09:36+00:00"
+              },
+              {
+                "text": "'same fixed substitution' for all implementations ? ",
+                "timestamp": "2026-10-15T08:10:04+00:00"
+              },
+              {
+                "text": "what other popular languages other than cangjie can cjr be extracted as? ",
+                "timestamp": "2026-10-15T08:13:42+00:00"
+              },
+              {
+                "text": "when was the four color theorem and feith-0thomson proved in coq?",
+                "timestamp": "2026-10-15T08:20:36+00:00"
+              },
+              {
+                "text": "when did compcert start? ",
+                "timestamp": "2026-10-15T08:21:24+00:00"
+              },
+              {
+                "text": "does the adequacy result prove no memory leaks?",
+                "timestamp": "2026-10-15T08:24:22+00:00"
+              },
+              {
+                "text": "can you find an implementation of aes  here [https://github.com/CJPLUK/Telegram_Cangjie/tree/main/Telegram_Cangjie/entry/src/main/cangjie/core/mtproto](https://github.com/CJPLUK/Telegram_Cangjie/tree/main/Telegram_Cangjie/entry/src/main/cangjie/core/mtproto)",
+                "timestamp": "2026-10-15T09:15:03+00:00"
+              },
+              {
+                "text": "how does it compare to cjr? ",
+                "timestamp": "2026-10-15T09:17:45+00:00"
+              },
+              {
+                "text": "do cjr arithmetic operations deal with overflow and underflow? ",
+                "timestamp": "2026-10-16T02:21:30+00:00"
+              },
+              {
+                "text": "add integer multiplication to cjr and use it to improve performance of hashmaps. rerun the benchmarks. ",
+                "timestamp": "2026-10-16T02:36:18+00:00"
+              },
+              {
+                "text": "\n# Response annotations:\nEach item contains text selected from an earlier Codex response and may include a user comment. Treat items as Annotation 1, Annotation 2, and so on in array order. Use every selection as context and address every comment. For every annotation you address, include its inline directive `:codex-annotation{index=\"N\"}`, where N is its one-based array position (for example, `:codex-annotation{index=\"1\"}`). Do not use unstructured annotation labels.\n<response-annotations>\n[{\"text\":\"Ordinary hits/builds: 10–37% slower; larger-map misses roughly 2× slower.\",\"annotation\":\"explain this\",\"source\":{\"messageId\":\"msg_0fc3b472e4552312016ad1a6e3f9c48191b3ea920880bdf422\",\"startOffset\":170,\"endOffset\":243}}]\n</response-annotations>\n\n## My request:\nexplain this",
+                "timestamp": "2026-10-16T05:37:11+00:00"
+              },
+              {
+                "text": "\n# Response annotations:\nEach item contains text selected from an earlier Codex response and may include a user comment. Treat items as Annotation 1, Annotation 2, and so on in array order. Use every selection as context and address every comment. For every annotation you address, include its inline directive `:codex-annotation{index=\"N\"}`, where N is its one-based array position (for example, `:codex-annotation{index=\"1\"}`). Do not use unstructured annotation labels.\n<response-annotations>\n[{\"text\":\"Capacity-spaced lookups: 38–658× faster.\",\"source\":{\"messageId\":\"msg_0fc3b472e4552312016ad1a6e3f9c48191b3ea920880bdf422\",\"startOffset\":130,\"endOffset\":170}}]\n</response-annotations>\n\n## My request:\nexplain ",
+                "timestamp": "2026-10-16T05:39:35+00:00"
+              },
+              {
+                "text": "explain **Hashmap_Build_Scan data in the benchmark report**\\",
+                "timestamp": "2026-10-16T05:40:44+00:00"
+              },
+              {
+                "text": "it is suspicious that the data points for cjr and std are identical. justify",
+                "timestamp": "2026-10-16T05:43:41+00:00"
+              },
+              {
+                "text": "refresh all the documentation (pdf report and readmes)",
+                "timestamp": "2026-10-16T05:45:48+00:00"
+              },
+              {
+                "text": "by looking at the timestamps on the coq files and the verification log, is the verification log to date? ",
+                "timestamp": "2026-10-16T07:29:35+00:00"
+              },
+              {
+                "text": "push to github without rerunning the proof verification script",
+                "timestamp": "2026-10-16T07:36:26+00:00"
+              }
+            ],
+            "subject": "Add integer multiplication and improve hashmap hashing"
+          }
+        ],
+        "issues": [
+          "Earlier attribution is ambiguous because a replacement crosses declaration boundaries."
+        ],
+        "complete": false
+      },
+      "cjr.examples.hash_map.buffer_probe_e": {
+        "entries": [],
+        "issues": [
+          "Earlier attribution is ambiguous because a replacement crosses declaration boundaries."
+        ],
+        "complete": false
+      },
+      "cjr.examples.hash_map.call_buffer_probe": {
+        "entries": [],
+        "issues": [
+          "Earlier attribution is ambiguous because a replacement crosses declaration boundaries."
+        ],
+        "complete": false
+      },
+      "cjr.examples.hash_map.put_body": {
+        "entries": [],
+        "issues": [
+          "Earlier attribution is ambiguous because a replacement crosses declaration boundaries."
+        ],
+        "complete": false
+      },
+      "cjr.examples.hash_map.put_e": {
+        "entries": [],
+        "issues": [
+          "Earlier attribution is ambiguous because a replacement crosses declaration boundaries."
+        ],
+        "complete": false
+      },
+      "cjr.examples.hash_map.call_put": {
+        "entries": [],
+        "issues": [
+          "Earlier attribution is ambiguous because a replacement crosses declaration boundaries."
+        ],
+        "complete": false
+      },
+      "cjr.examples.hash_map.probe_open": {
+        "entries": [
+          {
+            "commit": "833ab1c62aa7a9932f38aa5c298128e362bc2d8e",
+            "date": "2026-10-16T08:36:57+01:00",
+            "prompts": [
+              {
+                "text": "the extracted code to rocq ration is strangely low. why? ",
+                "timestamp": "2026-10-15T08:01:51+00:00"
+              },
+              {
+                "text": "what definitions are relvant for s-box functions? ",
+                "timestamp": "2026-10-15T08:04:01+00:00"
+              },
+              {
+                "text": "what rocq file contains the code extracted into the s-box cangjie function? ",
+                "timestamp": "2026-10-15T08:04:50+00:00"
+              },
+              {
+                "text": "what is the cangjie flie? ",
+                "timestamp": "2026-10-15T08:06:42+00:00"
+              },
+              {
+                "text": "is aesSbox extracted by the standard Galina script or is it a one-off?",
+                "timestamp": "2026-10-15T08:07:58+00:00"
+              },
+              {
+                "text": "what is a sbox_table? ",
+                "timestamp": "2026-10-15T08:08:52+00:00"
+              },
+              {
+                "text": "why is it hardcoded? ",
+                "timestamp": "2026-10-15T08:09:36+00:00"
+              },
+              {
+                "text": "'same fixed substitution' for all implementations ? ",
+                "timestamp": "2026-10-15T08:10:04+00:00"
+              },
+              {
+                "text": "what other popular languages other than cangjie can cjr be extracted as? ",
+                "timestamp": "2026-10-15T08:13:42+00:00"
+              },
+              {
+                "text": "when was the four color theorem and feith-0thomson proved in coq?",
+                "timestamp": "2026-10-15T08:20:36+00:00"
+              },
+              {
+                "text": "when did compcert start? ",
+                "timestamp": "2026-10-15T08:21:24+00:00"
+              },
+              {
+                "text": "does the adequacy result prove no memory leaks?",
+                "timestamp": "2026-10-15T08:24:22+00:00"
+              },
+              {
+                "text": "can you find an implementation of aes  here [https://github.com/CJPLUK/Telegram_Cangjie/tree/main/Telegram_Cangjie/entry/src/main/cangjie/core/mtproto](https://github.com/CJPLUK/Telegram_Cangjie/tree/main/Telegram_Cangjie/entry/src/main/cangjie/core/mtproto)",
+                "timestamp": "2026-10-15T09:15:03+00:00"
+              },
+              {
+                "text": "how does it compare to cjr? ",
+                "timestamp": "2026-10-15T09:17:45+00:00"
+              },
+              {
+                "text": "do cjr arithmetic operations deal with overflow and underflow? ",
+                "timestamp": "2026-10-16T02:21:30+00:00"
+              },
+              {
+                "text": "add integer multiplication to cjr and use it to improve performance of hashmaps. rerun the benchmarks. ",
+                "timestamp": "2026-10-16T02:36:18+00:00"
+              },
+              {
+                "text": "\n# Response annotations:\nEach item contains text selected from an earlier Codex response and may include a user comment. Treat items as Annotation 1, Annotation 2, and so on in array order. Use every selection as context and address every comment. For every annotation you address, include its inline directive `:codex-annotation{index=\"N\"}`, where N is its one-based array position (for example, `:codex-annotation{index=\"1\"}`). Do not use unstructured annotation labels.\n<response-annotations>\n[{\"text\":\"Ordinary hits/builds: 10–37% slower; larger-map misses roughly 2× slower.\",\"annotation\":\"explain this\",\"source\":{\"messageId\":\"msg_0fc3b472e4552312016ad1a6e3f9c48191b3ea920880bdf422\",\"startOffset\":170,\"endOffset\":243}}]\n</response-annotations>\n\n## My request:\nexplain this",
+                "timestamp": "2026-10-16T05:37:11+00:00"
+              },
+              {
+                "text": "\n# Response annotations:\nEach item contains text selected from an earlier Codex response and may include a user comment. Treat items as Annotation 1, Annotation 2, and so on in array order. Use every selection as context and address every comment. For every annotation you address, include its inline directive `:codex-annotation{index=\"N\"}`, where N is its one-based array position (for example, `:codex-annotation{index=\"1\"}`). Do not use unstructured annotation labels.\n<response-annotations>\n[{\"text\":\"Capacity-spaced lookups: 38–658× faster.\",\"source\":{\"messageId\":\"msg_0fc3b472e4552312016ad1a6e3f9c48191b3ea920880bdf422\",\"startOffset\":130,\"endOffset\":170}}]\n</response-annotations>\n\n## My request:\nexplain ",
+                "timestamp": "2026-10-16T05:39:35+00:00"
+              },
+              {
+                "text": "explain **Hashmap_Build_Scan data in the benchmark report**\\",
+                "timestamp": "2026-10-16T05:40:44+00:00"
+              },
+              {
+                "text": "it is suspicious that the data points for cjr and std are identical. justify",
+                "timestamp": "2026-10-16T05:43:41+00:00"
+              },
+              {
+                "text": "refresh all the documentation (pdf report and readmes)",
+                "timestamp": "2026-10-16T05:45:48+00:00"
+              },
+              {
+                "text": "by looking at the timestamps on the coq files and the verification log, is the verification log to date? ",
+                "timestamp": "2026-10-16T07:29:35+00:00"
+              },
+              {
+                "text": "push to github without rerunning the proof verification script",
+                "timestamp": "2026-10-16T07:36:26+00:00"
+              }
+            ],
+            "subject": "Add integer multiplication and improve hashmap hashing"
+          }
+        ],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.probe_for_body": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.call_probe": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.call_probe_e": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.lookup_val": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.lookup_loop_e": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.lookup_inner": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.lookup_buffer_body": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.call_lookup_buffer": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.lookup_open": {
+        "entries": [
+          {
+            "commit": "833ab1c62aa7a9932f38aa5c298128e362bc2d8e",
+            "date": "2026-10-16T08:36:57+01:00",
+            "prompts": [
+              {
+                "text": "the extracted code to rocq ration is strangely low. why? ",
+                "timestamp": "2026-10-15T08:01:51+00:00"
+              },
+              {
+                "text": "what definitions are relvant for s-box functions? ",
+                "timestamp": "2026-10-15T08:04:01+00:00"
+              },
+              {
+                "text": "what rocq file contains the code extracted into the s-box cangjie function? ",
+                "timestamp": "2026-10-15T08:04:50+00:00"
+              },
+              {
+                "text": "what is the cangjie flie? ",
+                "timestamp": "2026-10-15T08:06:42+00:00"
+              },
+              {
+                "text": "is aesSbox extracted by the standard Galina script or is it a one-off?",
+                "timestamp": "2026-10-15T08:07:58+00:00"
+              },
+              {
+                "text": "what is a sbox_table? ",
+                "timestamp": "2026-10-15T08:08:52+00:00"
+              },
+              {
+                "text": "why is it hardcoded? ",
+                "timestamp": "2026-10-15T08:09:36+00:00"
+              },
+              {
+                "text": "'same fixed substitution' for all implementations ? ",
+                "timestamp": "2026-10-15T08:10:04+00:00"
+              },
+              {
+                "text": "what other popular languages other than cangjie can cjr be extracted as? ",
+                "timestamp": "2026-10-15T08:13:42+00:00"
+              },
+              {
+                "text": "when was the four color theorem and feith-0thomson proved in coq?",
+                "timestamp": "2026-10-15T08:20:36+00:00"
+              },
+              {
+                "text": "when did compcert start? ",
+                "timestamp": "2026-10-15T08:21:24+00:00"
+              },
+              {
+                "text": "does the adequacy result prove no memory leaks?",
+                "timestamp": "2026-10-15T08:24:22+00:00"
+              },
+              {
+                "text": "can you find an implementation of aes  here [https://github.com/CJPLUK/Telegram_Cangjie/tree/main/Telegram_Cangjie/entry/src/main/cangjie/core/mtproto](https://github.com/CJPLUK/Telegram_Cangjie/tree/main/Telegram_Cangjie/entry/src/main/cangjie/core/mtproto)",
+                "timestamp": "2026-10-15T09:15:03+00:00"
+              },
+              {
+                "text": "how does it compare to cjr? ",
+                "timestamp": "2026-10-15T09:17:45+00:00"
+              },
+              {
+                "text": "do cjr arithmetic operations deal with overflow and underflow? ",
+                "timestamp": "2026-10-16T02:21:30+00:00"
+              },
+              {
+                "text": "add integer multiplication to cjr and use it to improve performance of hashmaps. rerun the benchmarks. ",
+                "timestamp": "2026-10-16T02:36:18+00:00"
+              },
+              {
+                "text": "\n# Response annotations:\nEach item contains text selected from an earlier Codex response and may include a user comment. Treat items as Annotation 1, Annotation 2, and so on in array order. Use every selection as context and address every comment. For every annotation you address, include its inline directive `:codex-annotation{index=\"N\"}`, where N is its one-based array position (for example, `:codex-annotation{index=\"1\"}`). Do not use unstructured annotation labels.\n<response-annotations>\n[{\"text\":\"Ordinary hits/builds: 10–37% slower; larger-map misses roughly 2× slower.\",\"annotation\":\"explain this\",\"source\":{\"messageId\":\"msg_0fc3b472e4552312016ad1a6e3f9c48191b3ea920880bdf422\",\"startOffset\":170,\"endOffset\":243}}]\n</response-annotations>\n\n## My request:\nexplain this",
+                "timestamp": "2026-10-16T05:37:11+00:00"
+              },
+              {
+                "text": "\n# Response annotations:\nEach item contains text selected from an earlier Codex response and may include a user comment. Treat items as Annotation 1, Annotation 2, and so on in array order. Use every selection as context and address every comment. For every annotation you address, include its inline directive `:codex-annotation{index=\"N\"}`, where N is its one-based array position (for example, `:codex-annotation{index=\"1\"}`). Do not use unstructured annotation labels.\n<response-annotations>\n[{\"text\":\"Capacity-spaced lookups: 38–658× faster.\",\"source\":{\"messageId\":\"msg_0fc3b472e4552312016ad1a6e3f9c48191b3ea920880bdf422\",\"startOffset\":130,\"endOffset\":170}}]\n</response-annotations>\n\n## My request:\nexplain ",
+                "timestamp": "2026-10-16T05:39:35+00:00"
+              },
+              {
+                "text": "explain **Hashmap_Build_Scan data in the benchmark report**\\",
+                "timestamp": "2026-10-16T05:40:44+00:00"
+              },
+              {
+                "text": "it is suspicious that the data points for cjr and std are identical. justify",
+                "timestamp": "2026-10-16T05:43:41+00:00"
+              },
+              {
+                "text": "refresh all the documentation (pdf report and readmes)",
+                "timestamp": "2026-10-16T05:45:48+00:00"
+              },
+              {
+                "text": "by looking at the timestamps on the coq files and the verification log, is the verification log to date? ",
+                "timestamp": "2026-10-16T07:29:35+00:00"
+              },
+              {
+                "text": "push to github without rerunning the proof verification script",
+                "timestamp": "2026-10-16T07:36:26+00:00"
+              }
+            ],
+            "subject": "Add integer multiplication and improve hashmap hashing"
+          }
+        ],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.lookup_for_body": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.call_lookup": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.call_lookup_e": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.contains_body": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.call_contains": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.get_body": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.call_get": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.default_cap_pow": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.make_zero_spec": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.init_spec": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.size_spec": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.capacity_spec": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.is_empty_spec": {
+        "entries": [],
+        "issues": [
+          "Earlier attribution is ambiguous because a replacement crosses declaration boundaries."
+        ],
+        "complete": false
+      },
+      "cjr.examples.hash_map.arr_get_spec": {
+        "entries": [],
+        "issues": [
+          "Earlier attribution is ambiguous because a replacement crosses declaration boundaries."
+        ],
+        "complete": false
+      },
+      "cjr.examples.hash_map.arr_set_spec": {
+        "entries": [],
+        "issues": [
+          "Earlier attribution is ambiguous because a replacement crosses declaration boundaries."
+        ],
+        "complete": false
+      },
+      "cjr.examples.hash_map.probe_slot_e_spec": {
+        "entries": [],
+        "issues": [
+          "Earlier attribution is ambiguous because a replacement crosses declaration boundaries."
+        ],
+        "complete": false
+      },
+      "cjr.examples.hash_map.hole_or_e_spec": {
+        "entries": [],
+        "issues": [
+          "Earlier attribution is ambiguous because a replacement crosses declaration boundaries."
+        ],
+        "complete": false
+      },
+      "cjr.examples.hash_map.scan_spec": {
+        "entries": [],
+        "issues": [
+          "Earlier attribution is ambiguous because a replacement crosses declaration boundaries."
+        ],
+        "complete": false
+      },
+      "cjr.examples.hash_map.lookup_stopped": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.lookup_loop_spec": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.lookup_buffer_spec": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.buffer_probe_spec": {
+        "entries": [
+          {
+            "commit": "833ab1c62aa7a9932f38aa5c298128e362bc2d8e",
+            "date": "2026-10-16T08:36:57+01:00",
+            "prompts": [
+              {
+                "text": "the extracted code to rocq ration is strangely low. why? ",
+                "timestamp": "2026-10-15T08:01:51+00:00"
+              },
+              {
+                "text": "what definitions are relvant for s-box functions? ",
+                "timestamp": "2026-10-15T08:04:01+00:00"
+              },
+              {
+                "text": "what rocq file contains the code extracted into the s-box cangjie function? ",
+                "timestamp": "2026-10-15T08:04:50+00:00"
+              },
+              {
+                "text": "what is the cangjie flie? ",
+                "timestamp": "2026-10-15T08:06:42+00:00"
+              },
+              {
+                "text": "is aesSbox extracted by the standard Galina script or is it a one-off?",
+                "timestamp": "2026-10-15T08:07:58+00:00"
+              },
+              {
+                "text": "what is a sbox_table? ",
+                "timestamp": "2026-10-15T08:08:52+00:00"
+              },
+              {
+                "text": "why is it hardcoded? ",
+                "timestamp": "2026-10-15T08:09:36+00:00"
+              },
+              {
+                "text": "'same fixed substitution' for all implementations ? ",
+                "timestamp": "2026-10-15T08:10:04+00:00"
+              },
+              {
+                "text": "what other popular languages other than cangjie can cjr be extracted as? ",
+                "timestamp": "2026-10-15T08:13:42+00:00"
+              },
+              {
+                "text": "when was the four color theorem and feith-0thomson proved in coq?",
+                "timestamp": "2026-10-15T08:20:36+00:00"
+              },
+              {
+                "text": "when did compcert start? ",
+                "timestamp": "2026-10-15T08:21:24+00:00"
+              },
+              {
+                "text": "does the adequacy result prove no memory leaks?",
+                "timestamp": "2026-10-15T08:24:22+00:00"
+              },
+              {
+                "text": "can you find an implementation of aes  here [https://github.com/CJPLUK/Telegram_Cangjie/tree/main/Telegram_Cangjie/entry/src/main/cangjie/core/mtproto](https://github.com/CJPLUK/Telegram_Cangjie/tree/main/Telegram_Cangjie/entry/src/main/cangjie/core/mtproto)",
+                "timestamp": "2026-10-15T09:15:03+00:00"
+              },
+              {
+                "text": "how does it compare to cjr? ",
+                "timestamp": "2026-10-15T09:17:45+00:00"
+              },
+              {
+                "text": "do cjr arithmetic operations deal with overflow and underflow? ",
+                "timestamp": "2026-10-16T02:21:30+00:00"
+              },
+              {
+                "text": "add integer multiplication to cjr and use it to improve performance of hashmaps. rerun the benchmarks. ",
+                "timestamp": "2026-10-16T02:36:18+00:00"
+              },
+              {
+                "text": "\n# Response annotations:\nEach item contains text selected from an earlier Codex response and may include a user comment. Treat items as Annotation 1, Annotation 2, and so on in array order. Use every selection as context and address every comment. For every annotation you address, include its inline directive `:codex-annotation{index=\"N\"}`, where N is its one-based array position (for example, `:codex-annotation{index=\"1\"}`). Do not use unstructured annotation labels.\n<response-annotations>\n[{\"text\":\"Ordinary hits/builds: 10–37% slower; larger-map misses roughly 2× slower.\",\"annotation\":\"explain this\",\"source\":{\"messageId\":\"msg_0fc3b472e4552312016ad1a6e3f9c48191b3ea920880bdf422\",\"startOffset\":170,\"endOffset\":243}}]\n</response-annotations>\n\n## My request:\nexplain this",
+                "timestamp": "2026-10-16T05:37:11+00:00"
+              },
+              {
+                "text": "\n# Response annotations:\nEach item contains text selected from an earlier Codex response and may include a user comment. Treat items as Annotation 1, Annotation 2, and so on in array order. Use every selection as context and address every comment. For every annotation you address, include its inline directive `:codex-annotation{index=\"N\"}`, where N is its one-based array position (for example, `:codex-annotation{index=\"1\"}`). Do not use unstructured annotation labels.\n<response-annotations>\n[{\"text\":\"Capacity-spaced lookups: 38–658× faster.\",\"source\":{\"messageId\":\"msg_0fc3b472e4552312016ad1a6e3f9c48191b3ea920880bdf422\",\"startOffset\":130,\"endOffset\":170}}]\n</response-annotations>\n\n## My request:\nexplain ",
+                "timestamp": "2026-10-16T05:39:35+00:00"
+              },
+              {
+                "text": "explain **Hashmap_Build_Scan data in the benchmark report**\\",
+                "timestamp": "2026-10-16T05:40:44+00:00"
+              },
+              {
+                "text": "it is suspicious that the data points for cjr and std are identical. justify",
+                "timestamp": "2026-10-16T05:43:41+00:00"
+              },
+              {
+                "text": "refresh all the documentation (pdf report and readmes)",
+                "timestamp": "2026-10-16T05:45:48+00:00"
+              },
+              {
+                "text": "by looking at the timestamps on the coq files and the verification log, is the verification log to date? ",
+                "timestamp": "2026-10-16T07:29:35+00:00"
+              },
+              {
+                "text": "push to github without rerunning the proof verification script",
+                "timestamp": "2026-10-16T07:36:26+00:00"
+              }
+            ],
+            "subject": "Add integer multiplication and improve hashmap hashing"
+          }
+        ],
+        "issues": [
+          "Earlier attribution is ambiguous because a replacement crosses declaration boundaries."
+        ],
+        "complete": false
+      },
+      "cjr.examples.hash_map.probe_slots": {
+        "entries": [],
+        "issues": [
+          "Earlier attribution is ambiguous because a replacement crosses declaration boundaries."
+        ],
+        "complete": false
+      },
+      "cjr.examples.hash_map.put_spec": {
+        "entries": [],
+        "issues": [
+          "Earlier attribution is ambiguous because a replacement crosses declaration boundaries."
+        ],
+        "complete": false
+      },
+      "cjr.examples.hash_map.rehash_body": {
+        "entries": [],
+        "issues": [
+          "Earlier attribution is ambiguous because a replacement crosses declaration boundaries."
+        ],
+        "complete": false
+      },
+      "cjr.examples.hash_map.rehash_v": {
+        "entries": [],
+        "issues": [
+          "Earlier attribution is ambiguous because a replacement crosses declaration boundaries."
+        ],
+        "complete": false
+      },
+      "cjr.examples.hash_map.call_rehash": {
+        "entries": [],
+        "issues": [
+          "Earlier attribution is ambiguous because a replacement crosses declaration boundaries."
+        ],
+        "complete": false
+      },
+      "cjr.examples.hash_map.grow_body": {
+        "entries": [],
+        "issues": [
+          "Earlier attribution is ambiguous because a replacement crosses declaration boundaries."
+        ],
+        "complete": false
+      },
+      "cjr.examples.hash_map.call_grow": {
+        "entries": [],
+        "issues": [
+          "Earlier attribution is ambiguous because a replacement crosses declaration boundaries."
+        ],
+        "complete": false
+      },
+      "cjr.examples.hash_map.grow_e": {
+        "entries": [],
+        "issues": [
+          "Earlier attribution is ambiguous because a replacement crosses declaration boundaries."
+        ],
+        "complete": false
+      },
+      "cjr.examples.hash_map.add_room_body": {
+        "entries": [],
+        "issues": [
+          "Earlier attribution is ambiguous because a replacement crosses declaration boundaries."
+        ],
+        "complete": false
+      },
+      "cjr.examples.hash_map.call_add_room": {
+        "entries": [],
+        "issues": [
+          "Earlier attribution is ambiguous because a replacement crosses declaration boundaries."
+        ],
+        "complete": false
+      },
+      "cjr.examples.hash_map.add_room_e": {
+        "entries": [],
+        "issues": [
+          "Earlier attribution is ambiguous because a replacement crosses declaration boundaries."
+        ],
+        "complete": false
+      },
+      "cjr.examples.hash_map.add_body": {
+        "entries": [],
+        "issues": [
+          "Earlier attribution is ambiguous because a replacement crosses declaration boundaries."
+        ],
+        "complete": false
+      },
+      "cjr.examples.hash_map.call_add": {
+        "entries": [],
+        "issues": [
+          "Earlier attribution is ambiguous because a replacement crosses declaration boundaries."
+        ],
+        "complete": false
+      },
+      "cjr.examples.hash_map.remove_body": {
+        "entries": [],
+        "issues": [
+          "Earlier attribution is ambiguous because a replacement crosses declaration boundaries."
+        ],
+        "complete": false
+      },
+      "cjr.examples.hash_map.call_remove": {
+        "entries": [],
+        "issues": [
+          "Earlier attribution is ambiguous because a replacement crosses declaration boundaries."
+        ],
+        "complete": false
+      },
+      "cjr.examples.hash_map.head_drop_hm": {
+        "entries": [],
+        "issues": [
+          "Earlier attribution is ambiguous because a replacement crosses declaration boundaries."
+        ],
+        "complete": false
+      },
+      "cjr.examples.hash_map.rehash_spec": {
+        "entries": [],
+        "issues": [
+          "Earlier attribution is ambiguous because a replacement crosses declaration boundaries."
+        ],
+        "complete": false
+      },
+      "cjr.examples.hash_map.write_fresh_effect": {
+        "entries": [],
+        "issues": [
+          "Earlier attribution is ambiguous because a replacement crosses declaration boundaries."
+        ],
+        "complete": false
+      },
+      "cjr.examples.hash_map.add_room_spec": {
+        "entries": [],
+        "issues": [
+          "Earlier attribution is ambiguous because a replacement crosses declaration boundaries."
+        ],
+        "complete": false
+      },
+      "cjr.examples.hash_map.probe_spec": {
+        "entries": [
+          {
+            "commit": "833ab1c62aa7a9932f38aa5c298128e362bc2d8e",
+            "date": "2026-10-16T08:36:57+01:00",
+            "prompts": [
+              {
+                "text": "the extracted code to rocq ration is strangely low. why? ",
+                "timestamp": "2026-10-15T08:01:51+00:00"
+              },
+              {
+                "text": "what definitions are relvant for s-box functions? ",
+                "timestamp": "2026-10-15T08:04:01+00:00"
+              },
+              {
+                "text": "what rocq file contains the code extracted into the s-box cangjie function? ",
+                "timestamp": "2026-10-15T08:04:50+00:00"
+              },
+              {
+                "text": "what is the cangjie flie? ",
+                "timestamp": "2026-10-15T08:06:42+00:00"
+              },
+              {
+                "text": "is aesSbox extracted by the standard Galina script or is it a one-off?",
+                "timestamp": "2026-10-15T08:07:58+00:00"
+              },
+              {
+                "text": "what is a sbox_table? ",
+                "timestamp": "2026-10-15T08:08:52+00:00"
+              },
+              {
+                "text": "why is it hardcoded? ",
+                "timestamp": "2026-10-15T08:09:36+00:00"
+              },
+              {
+                "text": "'same fixed substitution' for all implementations ? ",
+                "timestamp": "2026-10-15T08:10:04+00:00"
+              },
+              {
+                "text": "what other popular languages other than cangjie can cjr be extracted as? ",
+                "timestamp": "2026-10-15T08:13:42+00:00"
+              },
+              {
+                "text": "when was the four color theorem and feith-0thomson proved in coq?",
+                "timestamp": "2026-10-15T08:20:36+00:00"
+              },
+              {
+                "text": "when did compcert start? ",
+                "timestamp": "2026-10-15T08:21:24+00:00"
+              },
+              {
+                "text": "does the adequacy result prove no memory leaks?",
+                "timestamp": "2026-10-15T08:24:22+00:00"
+              },
+              {
+                "text": "can you find an implementation of aes  here [https://github.com/CJPLUK/Telegram_Cangjie/tree/main/Telegram_Cangjie/entry/src/main/cangjie/core/mtproto](https://github.com/CJPLUK/Telegram_Cangjie/tree/main/Telegram_Cangjie/entry/src/main/cangjie/core/mtproto)",
+                "timestamp": "2026-10-15T09:15:03+00:00"
+              },
+              {
+                "text": "how does it compare to cjr? ",
+                "timestamp": "2026-10-15T09:17:45+00:00"
+              },
+              {
+                "text": "do cjr arithmetic operations deal with overflow and underflow? ",
+                "timestamp": "2026-10-16T02:21:30+00:00"
+              },
+              {
+                "text": "add integer multiplication to cjr and use it to improve performance of hashmaps. rerun the benchmarks. ",
+                "timestamp": "2026-10-16T02:36:18+00:00"
+              },
+              {
+                "text": "\n# Response annotations:\nEach item contains text selected from an earlier Codex response and may include a user comment. Treat items as Annotation 1, Annotation 2, and so on in array order. Use every selection as context and address every comment. For every annotation you address, include its inline directive `:codex-annotation{index=\"N\"}`, where N is its one-based array position (for example, `:codex-annotation{index=\"1\"}`). Do not use unstructured annotation labels.\n<response-annotations>\n[{\"text\":\"Ordinary hits/builds: 10–37% slower; larger-map misses roughly 2× slower.\",\"annotation\":\"explain this\",\"source\":{\"messageId\":\"msg_0fc3b472e4552312016ad1a6e3f9c48191b3ea920880bdf422\",\"startOffset\":170,\"endOffset\":243}}]\n</response-annotations>\n\n## My request:\nexplain this",
+                "timestamp": "2026-10-16T05:37:11+00:00"
+              },
+              {
+                "text": "\n# Response annotations:\nEach item contains text selected from an earlier Codex response and may include a user comment. Treat items as Annotation 1, Annotation 2, and so on in array order. Use every selection as context and address every comment. For every annotation you address, include its inline directive `:codex-annotation{index=\"N\"}`, where N is its one-based array position (for example, `:codex-annotation{index=\"1\"}`). Do not use unstructured annotation labels.\n<response-annotations>\n[{\"text\":\"Capacity-spaced lookups: 38–658× faster.\",\"source\":{\"messageId\":\"msg_0fc3b472e4552312016ad1a6e3f9c48191b3ea920880bdf422\",\"startOffset\":130,\"endOffset\":170}}]\n</response-annotations>\n\n## My request:\nexplain ",
+                "timestamp": "2026-10-16T05:39:35+00:00"
+              },
+              {
+                "text": "explain **Hashmap_Build_Scan data in the benchmark report**\\",
+                "timestamp": "2026-10-16T05:40:44+00:00"
+              },
+              {
+                "text": "it is suspicious that the data points for cjr and std are identical. justify",
+                "timestamp": "2026-10-16T05:43:41+00:00"
+              },
+              {
+                "text": "refresh all the documentation (pdf report and readmes)",
+                "timestamp": "2026-10-16T05:45:48+00:00"
+              },
+              {
+                "text": "by looking at the timestamps on the coq files and the verification log, is the verification log to date? ",
+                "timestamp": "2026-10-16T07:29:35+00:00"
+              },
+              {
+                "text": "push to github without rerunning the proof verification script",
+                "timestamp": "2026-10-16T07:36:26+00:00"
+              }
+            ],
+            "subject": "Add integer multiplication and improve hashmap hashing"
+          }
+        ],
+        "issues": [
+          "Earlier attribution is ambiguous because a replacement crosses declaration boundaries."
+        ],
+        "complete": false
+      },
+      "cjr.examples.hash_map.lookup_spec": {
+        "entries": [
+          {
+            "commit": "833ab1c62aa7a9932f38aa5c298128e362bc2d8e",
+            "date": "2026-10-16T08:36:57+01:00",
+            "prompts": [
+              {
+                "text": "the extracted code to rocq ration is strangely low. why? ",
+                "timestamp": "2026-10-15T08:01:51+00:00"
+              },
+              {
+                "text": "what definitions are relvant for s-box functions? ",
+                "timestamp": "2026-10-15T08:04:01+00:00"
+              },
+              {
+                "text": "what rocq file contains the code extracted into the s-box cangjie function? ",
+                "timestamp": "2026-10-15T08:04:50+00:00"
+              },
+              {
+                "text": "what is the cangjie flie? ",
+                "timestamp": "2026-10-15T08:06:42+00:00"
+              },
+              {
+                "text": "is aesSbox extracted by the standard Galina script or is it a one-off?",
+                "timestamp": "2026-10-15T08:07:58+00:00"
+              },
+              {
+                "text": "what is a sbox_table? ",
+                "timestamp": "2026-10-15T08:08:52+00:00"
+              },
+              {
+                "text": "why is it hardcoded? ",
+                "timestamp": "2026-10-15T08:09:36+00:00"
+              },
+              {
+                "text": "'same fixed substitution' for all implementations ? ",
+                "timestamp": "2026-10-15T08:10:04+00:00"
+              },
+              {
+                "text": "what other popular languages other than cangjie can cjr be extracted as? ",
+                "timestamp": "2026-10-15T08:13:42+00:00"
+              },
+              {
+                "text": "when was the four color theorem and feith-0thomson proved in coq?",
+                "timestamp": "2026-10-15T08:20:36+00:00"
+              },
+              {
+                "text": "when did compcert start? ",
+                "timestamp": "2026-10-15T08:21:24+00:00"
+              },
+              {
+                "text": "does the adequacy result prove no memory leaks?",
+                "timestamp": "2026-10-15T08:24:22+00:00"
+              },
+              {
+                "text": "can you find an implementation of aes  here [https://github.com/CJPLUK/Telegram_Cangjie/tree/main/Telegram_Cangjie/entry/src/main/cangjie/core/mtproto](https://github.com/CJPLUK/Telegram_Cangjie/tree/main/Telegram_Cangjie/entry/src/main/cangjie/core/mtproto)",
+                "timestamp": "2026-10-15T09:15:03+00:00"
+              },
+              {
+                "text": "how does it compare to cjr? ",
+                "timestamp": "2026-10-15T09:17:45+00:00"
+              },
+              {
+                "text": "do cjr arithmetic operations deal with overflow and underflow? ",
+                "timestamp": "2026-10-16T02:21:30+00:00"
+              },
+              {
+                "text": "add integer multiplication to cjr and use it to improve performance of hashmaps. rerun the benchmarks. ",
+                "timestamp": "2026-10-16T02:36:18+00:00"
+              },
+              {
+                "text": "\n# Response annotations:\nEach item contains text selected from an earlier Codex response and may include a user comment. Treat items as Annotation 1, Annotation 2, and so on in array order. Use every selection as context and address every comment. For every annotation you address, include its inline directive `:codex-annotation{index=\"N\"}`, where N is its one-based array position (for example, `:codex-annotation{index=\"1\"}`). Do not use unstructured annotation labels.\n<response-annotations>\n[{\"text\":\"Ordinary hits/builds: 10–37% slower; larger-map misses roughly 2× slower.\",\"annotation\":\"explain this\",\"source\":{\"messageId\":\"msg_0fc3b472e4552312016ad1a6e3f9c48191b3ea920880bdf422\",\"startOffset\":170,\"endOffset\":243}}]\n</response-annotations>\n\n## My request:\nexplain this",
+                "timestamp": "2026-10-16T05:37:11+00:00"
+              },
+              {
+                "text": "\n# Response annotations:\nEach item contains text selected from an earlier Codex response and may include a user comment. Treat items as Annotation 1, Annotation 2, and so on in array order. Use every selection as context and address every comment. For every annotation you address, include its inline directive `:codex-annotation{index=\"N\"}`, where N is its one-based array position (for example, `:codex-annotation{index=\"1\"}`). Do not use unstructured annotation labels.\n<response-annotations>\n[{\"text\":\"Capacity-spaced lookups: 38–658× faster.\",\"source\":{\"messageId\":\"msg_0fc3b472e4552312016ad1a6e3f9c48191b3ea920880bdf422\",\"startOffset\":130,\"endOffset\":170}}]\n</response-annotations>\n\n## My request:\nexplain ",
+                "timestamp": "2026-10-16T05:39:35+00:00"
+              },
+              {
+                "text": "explain **Hashmap_Build_Scan data in the benchmark report**\\",
+                "timestamp": "2026-10-16T05:40:44+00:00"
+              },
+              {
+                "text": "it is suspicious that the data points for cjr and std are identical. justify",
+                "timestamp": "2026-10-16T05:43:41+00:00"
+              },
+              {
+                "text": "refresh all the documentation (pdf report and readmes)",
+                "timestamp": "2026-10-16T05:45:48+00:00"
+              },
+              {
+                "text": "by looking at the timestamps on the coq files and the verification log, is the verification log to date? ",
+                "timestamp": "2026-10-16T07:29:35+00:00"
+              },
+              {
+                "text": "push to github without rerunning the proof verification script",
+                "timestamp": "2026-10-16T07:36:26+00:00"
+              }
+            ],
+            "subject": "Add integer multiplication and improve hashmap hashing"
+          }
+        ],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.is_hashmap_obj": {
+        "entries": [],
+        "issues": [
+          "Earlier attribution is ambiguous because a replacement crosses declaration boundaries."
+        ],
+        "complete": false
+      },
+      "cjr.examples.hash_map.contains_spec": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.get_spec": {
+        "entries": [],
+        "issues": [
+          "Earlier attribution is ambiguous because a replacement crosses declaration boundaries."
+        ],
+        "complete": false
+      },
+      "cjr.examples.hash_map.grow_spec": {
+        "entries": [],
+        "issues": [
+          "Earlier attribution is ambiguous because a replacement crosses declaration boundaries."
+        ],
+        "complete": false
+      },
+      "cjr.examples.hash_map.hashmap_bounds": {
+        "entries": [],
+        "issues": [
+          "Earlier attribution is ambiguous because a replacement crosses declaration boundaries."
+        ],
+        "complete": false
+      },
+      "cjr.examples.hash_map.add_spec": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.remove_spec": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.size_at": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.capacity_at": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.is_empty_at": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.init_then_size": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.init_then_capacity": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.init_then_empty": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.init_then_size_spec": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.init_then_capacity_spec": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.init_then_empty_spec": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.add_then_get": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.add_then_contains": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.add_then_get_spec": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      },
+      "cjr.examples.hash_map.add_then_contains_spec": {
+        "entries": [],
+        "issues": [],
+        "complete": true
+      }
+    }
   }
 }
