@@ -4,139 +4,13 @@
     {
       "file": "rocq/mf_memory.v",
       "errors": [],
-      "unsupported": [
-        "Cangjie unavailable: CJR LitPtr [requires runtime or layout metadata]",
-        "unclassified arrow at byte 306",
-        "unclassified arrow at byte 745",
-        "unclassified arrow at byte 785",
-        "unmapped notation _ ==∗ _",
-        "unmapped notation _ ⊆ _",
-        "unmapped notation £ _"
-      ],
+      "unsupported": [],
       "declarations": 5
     },
     {
       "file": "rocq/most_frequent.v",
       "errors": [],
-      "unsupported": [
-        "Cangjie unavailable: CJR FieldLoad [requires runtime or layout metadata]",
-        "Cangjie unavailable: CJR LitObj [requires runtime or layout metadata]",
-        "Cangjie unavailable: CJR Struct [requires runtime or layout metadata]",
-        "Cangjie unavailable: CJR StructLoad [requires runtime or layout metadata]",
-        "Cangjie unavailable: CJR StructV [requires runtime or layout metadata]",
-        "Cangjie unavailable: recursive or symbolic closure",
-        "unclassified arrow at byte 101114",
-        "unclassified arrow at byte 101138",
-        "unclassified arrow at byte 104417",
-        "unclassified arrow at byte 104442",
-        "unclassified arrow at byte 104469",
-        "unclassified arrow at byte 108461",
-        "unclassified arrow at byte 1372",
-        "unclassified arrow at byte 14387",
-        "unclassified arrow at byte 18094",
-        "unclassified arrow at byte 18268",
-        "unclassified arrow at byte 18284",
-        "unclassified arrow at byte 18467",
-        "unclassified arrow at byte 18490",
-        "unclassified arrow at byte 1907",
-        "unclassified arrow at byte 19176",
-        "unclassified arrow at byte 19199",
-        "unclassified arrow at byte 19736",
-        "unclassified arrow at byte 19759",
-        "unclassified arrow at byte 20557",
-        "unclassified arrow at byte 21261",
-        "unclassified arrow at byte 22001",
-        "unclassified arrow at byte 22042",
-        "unclassified arrow at byte 22057",
-        "unclassified arrow at byte 22084",
-        "unclassified arrow at byte 22113",
-        "unclassified arrow at byte 25555",
-        "unclassified arrow at byte 25570",
-        "unclassified arrow at byte 25595",
-        "unclassified arrow at byte 25631",
-        "unclassified arrow at byte 26501",
-        "unclassified arrow at byte 27987",
-        "unclassified arrow at byte 28003",
-        "unclassified arrow at byte 29087",
-        "unclassified arrow at byte 30054",
-        "unclassified arrow at byte 30106",
-        "unclassified arrow at byte 30356",
-        "unclassified arrow at byte 3308",
-        "unclassified arrow at byte 33085",
-        "unclassified arrow at byte 33182",
-        "unclassified arrow at byte 33364",
-        "unclassified arrow at byte 33382",
-        "unclassified arrow at byte 3391",
-        "unclassified arrow at byte 34019",
-        "unclassified arrow at byte 34036",
-        "unclassified arrow at byte 3410",
-        "unclassified arrow at byte 35689",
-        "unclassified arrow at byte 35724",
-        "unclassified arrow at byte 36299",
-        "unclassified arrow at byte 36390",
-        "unclassified arrow at byte 36966",
-        "unclassified arrow at byte 40872",
-        "unclassified arrow at byte 40889",
-        "unclassified arrow at byte 40904",
-        "unclassified arrow at byte 40934",
-        "unclassified arrow at byte 40957",
-        "unclassified arrow at byte 42114",
-        "unclassified arrow at byte 42519",
-        "unclassified arrow at byte 42970",
-        "unclassified arrow at byte 45325",
-        "unclassified arrow at byte 45352",
-        "unclassified arrow at byte 4664",
-        "unclassified arrow at byte 47759",
-        "unclassified arrow at byte 4847",
-        "unclassified arrow at byte 48560",
-        "unclassified arrow at byte 49676",
-        "unclassified arrow at byte 49696",
-        "unclassified arrow at byte 49718",
-        "unclassified arrow at byte 49744",
-        "unclassified arrow at byte 52157",
-        "unclassified arrow at byte 52180",
-        "unclassified arrow at byte 55788",
-        "unclassified arrow at byte 55811",
-        "unclassified arrow at byte 58731",
-        "unclassified arrow at byte 58747",
-        "unclassified arrow at byte 58775",
-        "unclassified arrow at byte 58791",
-        "unclassified arrow at byte 58812",
-        "unclassified arrow at byte 62113",
-        "unclassified arrow at byte 62129",
-        "unclassified arrow at byte 62622",
-        "unclassified arrow at byte 62639",
-        "unclassified arrow at byte 63358",
-        "unclassified arrow at byte 63375",
-        "unclassified arrow at byte 66498",
-        "unclassified arrow at byte 66516",
-        "unclassified arrow at byte 66544",
-        "unclassified arrow at byte 69497",
-        "unclassified arrow at byte 69719",
-        "unclassified arrow at byte 69916",
-        "unclassified arrow at byte 70171",
-        "unclassified arrow at byte 70427",
-        "unclassified arrow at byte 70854",
-        "unclassified arrow at byte 72387",
-        "unclassified arrow at byte 74083",
-        "unclassified arrow at byte 74107",
-        "unclassified arrow at byte 77638",
-        "unclassified arrow at byte 77663",
-        "unclassified arrow at byte 83648",
-        "unclassified arrow at byte 86374",
-        "unclassified arrow at byte 86596",
-        "unclassified arrow at byte 87196",
-        "unclassified arrow at byte 88253",
-        "unclassified arrow at byte 88813",
-        "unclassified arrow at byte 88825",
-        "unmapped notation - _",
-        "unmapped notation <[ _ := _ ]>",
-        "unmapped notation _ + _",
-        "unmapped notation _ <$> _",
-        "unmapped notation _ ∘ _",
-        "unmapped notation _ ≡ₚ _",
-        "unmapped notation { _ }"
-      ],
+      "unsupported": [],
       "declarations": 185
     }
   ],
@@ -3328,6 +3202,959 @@
       }
     }
   },
+  "term_view": "elaborated",
+  "elaboration": {
+    "cjr.examples.mf_memory.mf_free_lookup_outside": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.mf_memory.mf_free_dom_subset": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.mf_memory.mf_wf_free_block": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.mf_memory.mf_ghost_free_cells": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.mf_memory.mf_wp_free_block": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_pair": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.pair_before": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_pairs": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_frequency": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_first_index": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_first_index_or_len": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.most_frequent_spec": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.most_frequent_empty": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_first_index_head": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_first_index_or_len_head": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_first_index_or_len_skip": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_frequency_head": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_choose": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_choose_none": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_choose_sound": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_frequency_pos_mem": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_frequency_not_mem": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_choose_correct": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_swap_body": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_partition_body": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_qsort_body": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_body": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_pair_leb": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_pair_leb_spec": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_pair_swap": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_pair_eq_dec": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_count_insert": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_pair_swap_perm": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_lomuto": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_lomuto_perm": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_partition": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_partition_perm": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_qsort_slice": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_qsort": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_qsort_slice_perm": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_qsort_perm": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_bounded": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_rank": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_bounded_perm": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_rank_order": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_rank_compare": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_swap_map": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_lomuto_map": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_partition_map": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_qsort_slice_map": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_qsort_sorted": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_empty_wp": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_pairs_values": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_pairs_lookup": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_pairs_bounded": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_sorted_pairs": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_sorted_pairs_ordered": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_sorted_pairs_frequency": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_sorted_pairs_origin": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_summary": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_summary_count": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_summary_first": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_score": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_score_leb": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_score_leb_spec": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_score_refl": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_score_trans": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_score_total": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_best_summary": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_best_summary_none": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_best_summary_sound": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_summary_valid": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_summaries_complete": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_summary_selection_correct": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_single_summary": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_extend_summary": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_run_summaries": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_pair_summary_valid": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_frequency_cons_other": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_pair_summary_skip": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_pair_summary_extend": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_run_summaries_nil": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_run_summaries_head": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_values_sorted": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_sorted_head_absent": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_run_result": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_single_summary_valid": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_run_summaries_sound": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_values_sorted_from_lookup": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_sorted_pairs_length": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_sorted_pairs_values_sorted": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_first_index_attained": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_first_index_minimum": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_sorted_pairs_contains": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_run_summaries_complete": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_sort_scan": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_sort_scan_correct": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_sort_scan_empty": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_sort_scan_interleaved_tie": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_sort_scan_three_way_tie": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.most_frequent_spec_unique": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_release_array_wp": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_cleanup": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_cleanup_wp": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_get_value_wp": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_set_value_wp": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_call_swap": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_swap_arrays_wp": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_pair_arrays": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_swap_pairs_wp": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_lex_compare": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_le_bool": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_nat_le_bool": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_lex_compare_wp": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_increment_wp": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_partition_step": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_partition_step_wp": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_partition_loop_body": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_partition_step_is_code": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_partition_scan": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_partition_scan_wp": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_partition_loop": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_partition_scan_is_code": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_lomuto_bounds": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_partition_bounds": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_call_partition": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_partition_wp": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_call_qsort": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_qsort_slice_wp": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_qsort_wp": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_copy_values": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_copy_indices": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_copy_values_length": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_copy_indices_length": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_copy_values_lookup": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_copy_indices_lookup": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_copy_values_insert": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_copy_indices_insert": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_pairs_indices": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_copy_complete": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_copy_step": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_copy_step_wp": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_copy_loop": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_copy_loop_wp": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_copy_code": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_copy_loop_is_code": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_scan_run": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_scan_run_bound": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_group_inner": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_group_inner_wp": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_find_group_loop": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_group_inner_code": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_group_inner_is_code": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_merge_summary": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_join_summary": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_run_summaries_cons": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_join_summary_same": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_scan_run_summaries": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_group_summary_decomposition": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_strict_better": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_update_best": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_fold_best": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_strict_better_yes": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_strict_better_no": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_update_best_scores": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_fold_best_sound": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_forward_scan": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_forward_scan_groups": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_forward_scan_correct": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_best_cells": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_strict_better_case": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_best_decision": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_best_decision_wp": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_best_update": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_best_update_wp": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_best_decision_slot": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_best_decision_slot_wp": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_best_update_slot": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_best_update_slot_wp": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_group_step": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_group_step_wp": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_group_outer": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_group_outer_wp": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_group_outer_is_code": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_array_object": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_nonempty_wp": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_option_value": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_input": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_wp": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.most_frequent.mf_spec_wp": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    }
+  },
   "cangjie": {
     "cjr.examples.most_frequent.mf_swap_body": {
       "status": "available",
@@ -4388,16 +5215,6 @@
         "issues": [],
         "complete": true
       }
-    }
-  },
-  "rendering": {
-    "proof_validation": "not_run",
-    "proof_bodies_evaluated": false,
-    "preserved_available_explanations": 0,
-    "explanations_mode": "offline",
-    "sources": {
-      "rocq/mf_memory.v": "d4f0d44a70f43815e0e367b348c683baff9d1b9d2fdc7c3c620e0d5f5a253065",
-      "rocq/most_frequent.v": "eeb72954a091be8f2dfffae5ab57ae5f4119aadb38f44262faca7a04a56570cb"
     }
   }
 }

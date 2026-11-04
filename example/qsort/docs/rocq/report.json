@@ -5,129 +5,7 @@
       "file": "rocq/qsort.v",
       "errors": [],
       "unsupported": [
-        "Cangjie unavailable: CJR LitStack [requires runtime or layout metadata]",
-        "Cangjie unavailable: CJR StackAssign [requires runtime or layout metadata]",
-        "Cangjie unavailable: CJR StackLoad [requires runtime or layout metadata]",
-        "Cangjie unavailable: CJR Struct [requires runtime or layout metadata]",
-        "Cangjie unavailable: CJR StructLoad [requires runtime or layout metadata]",
-        "Cangjie unavailable: CJR StructV [requires runtime or layout metadata]",
-        "Cangjie unavailable: recursive or symbolic closure",
-        "Cangjie unavailable: symbolic identifier or binder",
-        "unclassified arrow at byte 10644",
-        "unclassified arrow at byte 10718",
-        "unclassified arrow at byte 10741",
-        "unclassified arrow at byte 10801",
-        "unclassified arrow at byte 10823",
-        "unclassified arrow at byte 10912",
-        "unclassified arrow at byte 10955",
-        "unclassified arrow at byte 10977",
-        "unclassified arrow at byte 13641",
-        "unclassified arrow at byte 13666",
-        "unclassified arrow at byte 13696",
-        "unclassified arrow at byte 14044",
-        "unclassified arrow at byte 14087",
-        "unclassified arrow at byte 14113",
-        "unclassified arrow at byte 15198",
-        "unclassified arrow at byte 15327",
-        "unclassified arrow at byte 15346",
-        "unclassified arrow at byte 15365",
-        "unclassified arrow at byte 15392",
-        "unclassified arrow at byte 15402",
-        "unclassified arrow at byte 15425",
-        "unclassified arrow at byte 15469",
-        "unclassified arrow at byte 15479",
-        "unclassified arrow at byte 15500",
-        "unclassified arrow at byte 15542",
-        "unclassified arrow at byte 15569",
-        "unclassified arrow at byte 16568",
-        "unclassified arrow at byte 16633",
-        "unclassified arrow at byte 16656",
-        "unclassified arrow at byte 16710",
-        "unclassified arrow at byte 16731",
-        "unclassified arrow at byte 16811",
-        "unclassified arrow at byte 16829",
-        "unclassified arrow at byte 16858",
-        "unclassified arrow at byte 19065",
-        "unclassified arrow at byte 19073",
-        "unclassified arrow at byte 19122",
-        "unclassified arrow at byte 19413",
-        "unclassified arrow at byte 19442",
-        "unclassified arrow at byte 19559",
-        "unclassified arrow at byte 2188",
-        "unclassified arrow at byte 2207",
-        "unclassified arrow at byte 2223",
-        "unclassified arrow at byte 2244",
-        "unclassified arrow at byte 2265",
-        "unclassified arrow at byte 23533",
-        "unclassified arrow at byte 23555",
-        "unclassified arrow at byte 24208",
-        "unclassified arrow at byte 24214",
-        "unclassified arrow at byte 24225",
-        "unclassified arrow at byte 24322",
-        "unclassified arrow at byte 24410",
-        "unclassified arrow at byte 24491",
-        "unclassified arrow at byte 24582",
-        "unclassified arrow at byte 24666",
-        "unclassified arrow at byte 24757",
-        "unclassified arrow at byte 25060",
-        "unclassified arrow at byte 25320",
-        "unclassified arrow at byte 2600",
-        "unclassified arrow at byte 2781",
-        "unclassified arrow at byte 2803",
-        "unclassified arrow at byte 35869",
-        "unclassified arrow at byte 35885",
-        "unclassified arrow at byte 35907",
-        "unclassified arrow at byte 3941",
-        "unclassified arrow at byte 42553",
-        "unclassified arrow at byte 42578",
-        "unclassified arrow at byte 4405",
-        "unclassified arrow at byte 4427",
-        "unclassified arrow at byte 46393",
-        "unclassified arrow at byte 46409",
-        "unclassified arrow at byte 46435",
-        "unclassified arrow at byte 48581",
-        "unclassified arrow at byte 48597",
-        "unclassified arrow at byte 48618",
-        "unclassified arrow at byte 48649",
-        "unclassified arrow at byte 48676",
-        "unclassified arrow at byte 48698",
-        "unclassified arrow at byte 4978",
-        "unclassified arrow at byte 5004",
-        "unclassified arrow at byte 5032",
-        "unclassified arrow at byte 5040",
-        "unclassified arrow at byte 53359",
-        "unclassified arrow at byte 53375",
-        "unclassified arrow at byte 53397",
-        "unclassified arrow at byte 53428",
-        "unclassified arrow at byte 5703",
-        "unclassified arrow at byte 5731",
-        "unclassified arrow at byte 5739",
-        "unclassified arrow at byte 58125",
-        "unclassified arrow at byte 58141",
-        "unclassified arrow at byte 58172",
-        "unclassified arrow at byte 64584",
-        "unclassified arrow at byte 6729",
-        "unclassified arrow at byte 7013",
-        "unclassified arrow at byte 7033",
-        "unclassified arrow at byte 7465",
-        "unclassified arrow at byte 7501",
-        "unclassified arrow at byte 7511",
-        "unclassified arrow at byte 7535",
-        "unclassified arrow at byte 8144",
-        "unclassified arrow at byte 8180",
-        "unclassified arrow at byte 8235",
-        "unclassified arrow at byte 8259",
-        "unclassified arrow at byte 9060",
-        "unclassified arrow at byte 9144",
-        "unclassified arrow at byte 9168",
-        "unclassified arrow at byte 9216",
-        "unclassified arrow at byte 9240",
-        "unmapped notation <[ _ := _ ]>",
-        "unmapped notation _ < _ < _",
-        "unmapped notation _ ≡ₚ _",
-        "unmapped notation _ ≤ _ < _",
-        "unmapped notation _ ≤ _ ≤ _",
-        "unmapped notation £ _"
+        "CJR Let: symbolic binding name"
       ],
       "declarations": 99
     }
@@ -1806,6 +1684,506 @@
       }
     }
   },
+  "term_view": "elaborated",
+  "elaboration": {
+    "cjr.examples.qsort.swap_list": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.lomuto": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.partition_list": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.qsort_slice": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.qsort": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.slice_sorted": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.swap_list_length": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.swap_list_id": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.swap_lookup": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.move_cons": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.exchange": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.count_insert": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.swap_list_perm": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.take_lookup_eq": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.drop_lookup_eq": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.count_if": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.count_if_app": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.count_if_perm": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.count_if_take_drop": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.region_count": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.take_region_zero": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.count_zero_lookup": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.region_preserved": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.lomuto_inv": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.lomuto_step": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.lomuto_inv_start": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.lomuto_go": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.slice_sorted_short": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.slice_sorted_join": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.part_ok": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.partition_list_ok": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.slice_sorted_same": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.qsort_slice_spec": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.qsort_perm": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.qsort_sorted": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.qsort_example": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.swap_list_code": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.wp_struct_step": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.wp_pack2": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.wp_pack3": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.one": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.zero": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.unitv": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.plus1": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.minus1": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.zval": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.nval": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.call2": {
+      "status": "available",
+      "reason": "",
+      "unsupported": [
+        "CJR Let: symbolic binding name"
+      ]
+    },
+    "cjr.examples.qsort.call3": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.call3_seq": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.swap_body": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.call_swap": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.scan": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.partition_body": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.call_partition": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.qsort_body": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.qsort_v": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.call_qsort": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.sort_body": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.call_sort": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.rigid": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.swap_var_i": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.swap_var_j": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.swap_closed_v": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.swap_closed_pack": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.swap_closed_a": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.swap_closed_lo": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.swap_closed_hi": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.swap_closed_pivot": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.swap_closed_p": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.swap_closed_n": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.part_closed_n": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.part_closed_pack": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.swap_closed_qsort": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.swap_closed_i": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.swap_closed_j": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.slot": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.sload": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.sset": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.scan_open": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.scan_open_eq": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.swap_spec": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.wp_scan_stop": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.wp_inc": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.wp_cons2": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.wp_cons3": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.scan_body": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.scan_body_eq": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.wp_scan_body": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.wp_scan": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.part_tail": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.part_tail_eq": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.partition_spec": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.wp_qslice": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.sort_spec": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.lit_rigid": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.array_qsort_spec": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.arraylist_qsort_at": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.qsort.arraylist_qsort_spec": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    }
+  },
   "cangjie": {
     "cjr.examples.qsort.one": {
       "status": "available",
@@ -2411,15 +2789,6 @@
         "issues": [],
         "complete": true
       }
-    }
-  },
-  "rendering": {
-    "proof_validation": "not_run",
-    "proof_bodies_evaluated": false,
-    "preserved_available_explanations": 0,
-    "explanations_mode": "offline",
-    "sources": {
-      "rocq/qsort.v": "7db0c4f205e7ea3c5528440a7f02f4e15672b4fd45b2d6546de3ad35f1336728"
     }
   }
 }

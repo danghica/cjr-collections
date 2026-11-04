@@ -4,15 +4,7 @@
     {
       "file": "rocq/list_rev.v",
       "errors": [],
-      "unsupported": [
-        "Cangjie unavailable: CJR FieldLoad [requires runtime or layout metadata]",
-        "Cangjie unavailable: CJR FieldStore [requires runtime or layout metadata]",
-        "Cangjie unavailable: CJR LitObj [requires runtime or layout metadata]",
-        "Cangjie unavailable: CJR LitStack [requires runtime or layout metadata]",
-        "Cangjie unavailable: CJR StackAssign [requires runtime or layout metadata]",
-        "Cangjie unavailable: CJR StackLoad [requires runtime or layout metadata]",
-        "unclassified arrow at byte 6770"
-      ],
+      "unsupported": [],
       "declarations": 28
     }
   ],
@@ -419,6 +411,149 @@
       }
     }
   },
+  "term_view": "elaborated",
+  "elaboration": {
+    "cjr.examples.list_rev.app_nil_r'": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.list_rev.app_assoc'": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.list_rev.rev_app": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.list_rev.rev_cons": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.list_rev.rev_prefix_step": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.list_rev.rev_prefix_nil": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.list_rev.rev_rev": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.list_rev.rev_eq_rev": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.list_rev.sld": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.list_rev.sas": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.list_rev.rev_step": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.list_rev.rev_loop": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.list_rev.rev_body": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.list_rev.call_reverse": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.list_rev.rev_step_at": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.list_rev.rev_loop_at": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.list_rev.rev_step_at_subst": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.list_rev.rev_loop_at_subst": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.list_rev.rev_inv": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.list_rev.is_list_cons_destruct": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.list_rev.is_list_snoc_acc": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.list_rev.wp_rev_step_at": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.list_rev.rev_done": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.list_rev.wp_rev_loop_run": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.list_rev.wp_rev_loop": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.list_rev.reverse_spec": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.list_rev.reverse_twice": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.list_rev.reverse_twice_spec": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    }
+  },
   "cangjie": {
     "cjr.examples.list_rev.sld": {
       "status": "unavailable",
@@ -615,15 +750,6 @@
         ],
         "complete": false
       }
-    }
-  },
-  "rendering": {
-    "proof_validation": "not_run",
-    "proof_bodies_evaluated": false,
-    "preserved_available_explanations": 28,
-    "explanations_mode": "offline",
-    "sources": {
-      "rocq/list_rev.v": "882c0e5991f2e651c03fc2822a4a8e1682ec55cd6100ac13dce70cd5a43add54"
     }
   }
 }

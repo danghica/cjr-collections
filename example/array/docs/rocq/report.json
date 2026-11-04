@@ -4,23 +4,7 @@
     {
       "file": "rocq/array.v",
       "errors": [],
-      "unsupported": [
-        "Cangjie unavailable: CJR FieldLoad [requires runtime or layout metadata]",
-        "Cangjie unavailable: CJR LitObj [requires runtime or layout metadata]",
-        "Cangjie unavailable: CJR LitPtr [requires runtime or layout metadata]",
-        "Cangjie unavailable: CJR New [requires runtime or layout metadata]",
-        "Cangjie unavailable: CJR Struct [requires runtime or layout metadata]",
-        "Cangjie unavailable: CJR StructLoad [requires runtime or layout metadata]",
-        "Cangjie unavailable: CJR StructV [requires runtime or layout metadata]",
-        "unclassified arrow at byte 10099",
-        "unclassified arrow at byte 10111",
-        "unclassified arrow at byte 10132",
-        "unclassified arrow at byte 10686",
-        "unclassified arrow at byte 5543",
-        "unclassified arrow at byte 7231",
-        "unclassified arrow at byte 9532",
-        "unmapped notation <[ _ := _ ]>"
-      ],
+      "unsupported": [],
       "declarations": 27
     }
   ],
@@ -439,6 +423,144 @@
       }
     }
   },
+  "term_view": "elaborated",
+  "elaboration": {
+    "cjr.examples.array.array_cells": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.array.is_array": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.array.seq_zero_cells": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.array.make_body": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.array.length_body": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.array.get_body": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.array.set_body": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.array.call_make": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.array.call_length": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.array.call_get": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.array.call_set": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.array.set_then_get": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.array.set_then_length": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.array.length_at": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.array.make_then_get": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.array.make_then_length": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.array.wp_new_step": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.array.wp_struct_step": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.array.make_spec": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.array.length_spec": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.array.get_spec": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.array.set_spec": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.array.set_then_get_same": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.array.set_then_get_other": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.array.set_then_length_spec": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.array.make_then_get_spec": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.array.make_then_length_spec": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    }
+  },
   "cangjie": {
     "cjr.examples.array.make_body": {
       "status": "unavailable",
@@ -632,15 +754,6 @@
         "issues": [],
         "complete": true
       }
-    }
-  },
-  "rendering": {
-    "proof_validation": "not_run",
-    "proof_bodies_evaluated": false,
-    "preserved_available_explanations": 0,
-    "explanations_mode": "offline",
-    "sources": {
-      "rocq/array.v": "4af0dfbd46f06bd44f12a74bf3b07d9b7814fe7bbcdc4ebb3ff7fbb94ed28ae6"
     }
   }
 }

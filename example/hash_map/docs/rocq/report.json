@@ -4,285 +4,14 @@
     {
       "file": "rocq/hash_map.v",
       "errors": [],
-      "unsupported": [
-        "Cangjie unavailable: CJR FieldLoad [requires runtime or layout metadata]",
-        "Cangjie unavailable: CJR FieldStore [requires runtime or layout metadata]",
-        "Cangjie unavailable: CJR LitObj [requires runtime or layout metadata]",
-        "Cangjie unavailable: CJR LitStack [requires runtime or layout metadata]",
-        "Cangjie unavailable: CJR New [requires runtime or layout metadata]",
-        "Cangjie unavailable: CJR StackAssign [requires runtime or layout metadata]",
-        "Cangjie unavailable: CJR StackLoad [requires runtime or layout metadata]",
-        "Cangjie unavailable: CJR Struct [requires runtime or layout metadata]",
-        "Cangjie unavailable: CJR StructLoad [requires runtime or layout metadata]",
-        "Cangjie unavailable: CJR StructV [requires runtime or layout metadata]",
-        "Cangjie unavailable: recursive or symbolic closure",
-        "unclassified arrow at byte 100931",
-        "unclassified arrow at byte 100949",
-        "unclassified arrow at byte 100971",
-        "unclassified arrow at byte 100993",
-        "unclassified arrow at byte 102148",
-        "unclassified arrow at byte 103135",
-        "unclassified arrow at byte 10366",
-        "unclassified arrow at byte 10396",
-        "unclassified arrow at byte 10428",
-        "unclassified arrow at byte 10461",
-        "unclassified arrow at byte 10490",
-        "unclassified arrow at byte 10513",
-        "unclassified arrow at byte 111117",
-        "unclassified arrow at byte 111433",
-        "unclassified arrow at byte 111454",
-        "unclassified arrow at byte 111475",
-        "unclassified arrow at byte 111500",
-        "unclassified arrow at byte 111530",
-        "unclassified arrow at byte 111564",
-        "unclassified arrow at byte 111581",
-        "unclassified arrow at byte 111616",
-        "unclassified arrow at byte 111652",
-        "unclassified arrow at byte 111660",
-        "unclassified arrow at byte 111737",
-        "unclassified arrow at byte 115753",
-        "unclassified arrow at byte 115789",
-        "unclassified arrow at byte 115790",
-        "unclassified arrow at byte 116600",
-        "unclassified arrow at byte 116647",
-        "unclassified arrow at byte 116648",
-        "unclassified arrow at byte 11825",
-        "unclassified arrow at byte 119218",
-        "unclassified arrow at byte 12678",
-        "unclassified arrow at byte 13266",
-        "unclassified arrow at byte 13283",
-        "unclassified arrow at byte 13296",
-        "unclassified arrow at byte 13663",
-        "unclassified arrow at byte 14123",
-        "unclassified arrow at byte 14283",
-        "unclassified arrow at byte 14312",
-        "unclassified arrow at byte 14479",
-        "unclassified arrow at byte 14642",
-        "unclassified arrow at byte 15404",
-        "unclassified arrow at byte 15427",
-        "unclassified arrow at byte 15618",
-        "unclassified arrow at byte 15636",
-        "unclassified arrow at byte 15658",
-        "unclassified arrow at byte 15678",
-        "unclassified arrow at byte 16038",
-        "unclassified arrow at byte 16234",
-        "unclassified arrow at byte 16924",
-        "unclassified arrow at byte 16942",
-        "unclassified arrow at byte 16964",
-        "unclassified arrow at byte 16989",
-        "unclassified arrow at byte 17040",
-        "unclassified arrow at byte 17582",
-        "unclassified arrow at byte 17600",
-        "unclassified arrow at byte 17622",
-        "unclassified arrow at byte 1764",
-        "unclassified arrow at byte 17647",
-        "unclassified arrow at byte 1781",
-        "unclassified arrow at byte 18503",
-        "unclassified arrow at byte 20265",
-        "unclassified arrow at byte 20341",
-        "unclassified arrow at byte 20517",
-        "unclassified arrow at byte 20535",
-        "unclassified arrow at byte 20557",
-        "unclassified arrow at byte 20579",
-        "unclassified arrow at byte 20601",
-        "unclassified arrow at byte 20623",
-        "unclassified arrow at byte 20647",
-        "unclassified arrow at byte 20666",
-        "unclassified arrow at byte 2086",
-        "unclassified arrow at byte 22951",
-        "unclassified arrow at byte 22969",
-        "unclassified arrow at byte 22991",
-        "unclassified arrow at byte 23011",
-        "unclassified arrow at byte 23063",
-        "unclassified arrow at byte 23109",
-        "unclassified arrow at byte 23721",
-        "unclassified arrow at byte 23739",
-        "unclassified arrow at byte 23759",
-        "unclassified arrow at byte 23781",
-        "unclassified arrow at byte 23805",
-        "unclassified arrow at byte 23838",
-        "unclassified arrow at byte 23865",
-        "unclassified arrow at byte 23894",
-        "unclassified arrow at byte 25269",
-        "unclassified arrow at byte 25287",
-        "unclassified arrow at byte 25307",
-        "unclassified arrow at byte 25329",
-        "unclassified arrow at byte 25351",
-        "unclassified arrow at byte 25375",
-        "unclassified arrow at byte 25392",
-        "unclassified arrow at byte 25423",
-        "unclassified arrow at byte 25450",
-        "unclassified arrow at byte 25479",
-        "unclassified arrow at byte 25502",
-        "unclassified arrow at byte 26484",
-        "unclassified arrow at byte 26502",
-        "unclassified arrow at byte 26526",
-        "unclassified arrow at byte 26548",
-        "unclassified arrow at byte 26567",
-        "unclassified arrow at byte 26600",
-        "unclassified arrow at byte 28354",
-        "unclassified arrow at byte 28372",
-        "unclassified arrow at byte 28396",
-        "unclassified arrow at byte 28423",
-        "unclassified arrow at byte 28445",
-        "unclassified arrow at byte 28467",
-        "unclassified arrow at byte 28491",
-        "unclassified arrow at byte 28508",
-        "unclassified arrow at byte 28541",
-        "unclassified arrow at byte 2945",
-        "unclassified arrow at byte 33426",
-        "unclassified arrow at byte 34127",
-        "unclassified arrow at byte 34147",
-        "unclassified arrow at byte 34169",
-        "unclassified arrow at byte 34191",
-        "unclassified arrow at byte 34215",
-        "unclassified arrow at byte 34232",
-        "unclassified arrow at byte 34263",
-        "unclassified arrow at byte 34290",
-        "unclassified arrow at byte 36757",
-        "unclassified arrow at byte 36792",
-        "unclassified arrow at byte 37205",
-        "unclassified arrow at byte 37237",
-        "unclassified arrow at byte 37265",
-        "unclassified arrow at byte 38670",
-        "unclassified arrow at byte 38702",
-        "unclassified arrow at byte 38730",
-        "unclassified arrow at byte 38763",
-        "unclassified arrow at byte 38794",
-        "unclassified arrow at byte 40096",
-        "unclassified arrow at byte 40126",
-        "unclassified arrow at byte 40158",
-        "unclassified arrow at byte 40186",
-        "unclassified arrow at byte 40219",
-        "unclassified arrow at byte 41373",
-        "unclassified arrow at byte 41403",
-        "unclassified arrow at byte 41435",
-        "unclassified arrow at byte 41468",
-        "unclassified arrow at byte 41497",
-        "unclassified arrow at byte 4150",
-        "unclassified arrow at byte 41522",
-        "unclassified arrow at byte 42727",
-        "unclassified arrow at byte 42757",
-        "unclassified arrow at byte 42789",
-        "unclassified arrow at byte 42822",
-        "unclassified arrow at byte 42851",
-        "unclassified arrow at byte 42874",
-        "unclassified arrow at byte 4357",
-        "unclassified arrow at byte 44303",
-        "unclassified arrow at byte 44321",
-        "unclassified arrow at byte 44339",
-        "unclassified arrow at byte 44359",
-        "unclassified arrow at byte 44883",
-        "unclassified arrow at byte 44905",
-        "unclassified arrow at byte 4507",
-        "unclassified arrow at byte 4525",
-        "unclassified arrow at byte 45425",
-        "unclassified arrow at byte 45445",
-        "unclassified arrow at byte 45467",
-        "unclassified arrow at byte 4547",
-        "unclassified arrow at byte 45491",
-        "unclassified arrow at byte 45511",
-        "unclassified arrow at byte 45538",
-        "unclassified arrow at byte 46354",
-        "unclassified arrow at byte 46378",
-        "unclassified arrow at byte 46398",
-        "unclassified arrow at byte 46839",
-        "unclassified arrow at byte 46871",
-        "unclassified arrow at byte 46899",
-        "unclassified arrow at byte 46930",
-        "unclassified arrow at byte 48159",
-        "unclassified arrow at byte 48191",
-        "unclassified arrow at byte 48219",
-        "unclassified arrow at byte 48250",
-        "unclassified arrow at byte 49539",
-        "unclassified arrow at byte 49570",
-        "unclassified arrow at byte 49776",
-        "unclassified arrow at byte 49806",
-        "unclassified arrow at byte 49838",
-        "unclassified arrow at byte 52099",
-        "unclassified arrow at byte 52600",
-        "unclassified arrow at byte 5306",
-        "unclassified arrow at byte 53137",
-        "unclassified arrow at byte 53171",
-        "unclassified arrow at byte 53216",
-        "unclassified arrow at byte 5324",
-        "unclassified arrow at byte 5342",
-        "unclassified arrow at byte 5513",
-        "unclassified arrow at byte 5531",
-        "unclassified arrow at byte 5549",
-        "unclassified arrow at byte 55884",
-        "unclassified arrow at byte 55918",
-        "unclassified arrow at byte 55948",
-        "unclassified arrow at byte 55980",
-        "unclassified arrow at byte 55997",
-        "unclassified arrow at byte 56030",
-        "unclassified arrow at byte 56038",
-        "unclassified arrow at byte 56113",
-        "unclassified arrow at byte 5966",
-        "unclassified arrow at byte 5984",
-        "unclassified arrow at byte 60023",
-        "unclassified arrow at byte 60057",
-        "unclassified arrow at byte 6006",
-        "unclassified arrow at byte 6025",
-        "unclassified arrow at byte 6046",
-        "unclassified arrow at byte 61831",
-        "unclassified arrow at byte 6391",
-        "unclassified arrow at byte 64087",
-        "unclassified arrow at byte 6409",
-        "unclassified arrow at byte 64282",
-        "unclassified arrow at byte 6431",
-        "unclassified arrow at byte 64350",
-        "unclassified arrow at byte 64384",
-        "unclassified arrow at byte 64414",
-        "unclassified arrow at byte 64446",
-        "unclassified arrow at byte 64463",
-        "unclassified arrow at byte 64496",
-        "unclassified arrow at byte 64504",
-        "unclassified arrow at byte 64579",
-        "unclassified arrow at byte 65108",
-        "unclassified arrow at byte 65134",
-        "unclassified arrow at byte 7556",
-        "unclassified arrow at byte 7585",
-        "unclassified arrow at byte 8206",
-        "unclassified arrow at byte 8239",
-        "unclassified arrow at byte 8268",
-        "unclassified arrow at byte 8293",
-        "unclassified arrow at byte 8322",
-        "unclassified arrow at byte 86791",
-        "unclassified arrow at byte 87392",
-        "unclassified arrow at byte 88160",
-        "unclassified arrow at byte 88178",
-        "unclassified arrow at byte 88200",
-        "unclassified arrow at byte 89315",
-        "unclassified arrow at byte 89333",
-        "unclassified arrow at byte 89355",
-        "unclassified arrow at byte 89389",
-        "unclassified arrow at byte 89411",
-        "unclassified arrow at byte 89433",
-        "unclassified arrow at byte 9210",
-        "unclassified arrow at byte 9240",
-        "unclassified arrow at byte 95184",
-        "unclassified arrow at byte 95202",
-        "unclassified arrow at byte 95224",
-        "unclassified arrow at byte 95254",
-        "unclassified arrow at byte 95276",
-        "unclassified arrow at byte 95298",
-        "unclassified arrow at byte 99598",
-        "unclassified arrow at byte 99616",
-        "unclassified arrow at byte 99640",
-        "unclassified arrow at byte 99662",
-        "unclassified arrow at byte 99684",
-        "unmapped notation - _",
-        "unmapped notation <[ _ := _ ]>",
-        "unmapped notation _ ^ _",
-        "unmapped notation _ `mod` _",
-        "unmapped notation _ ∈ _",
-        "unmapped notation _ ∉ _",
-        "unmapped notation _ ≤ _ < _",
-        "unmapped notation _ ≤ _ ≤ _",
-        "unmapped notation ∅"
-      ],
+      "unsupported": [],
       "declarations": 224
+    },
+    {
+      "file": "rocq/hm_tactics.v",
+      "errors": [],
+      "unsupported": [],
+      "declarations": 0
     }
   ],
   "dependencies": {
@@ -299,7 +28,8 @@
       "cjr.examples.hash_map.remove_spec"
     ],
     "source_issues": {
-      "rocq/hash_map.v": []
+      "rocq/hash_map.v": [],
+      "rocq/hm_tactics.v": []
     },
     "declarations": {
       "cjr.examples.hash_map.add_body": {
@@ -4197,6 +3927,1129 @@
       }
     }
   },
+  "term_view": "elaborated",
+  "elaboration": {
+    "cjr.examples.hash_map.default_capacity": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.tag_empty": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.tag_occ": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.tag_tomb": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.tag_ok": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.tags_ok": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.tags_ok_lookup": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.residue": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.residue_spec": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.pow_positive": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.residue_nat_lt": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.hash_prime": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.hash_multiplier": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.hash_key": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.hash_product_int64": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.bucket": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.bucket_lt": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.probe_slot": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.probe_slot_lt": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.probe_slot_sub": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.steps_between": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.steps_between_lt": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.probe_slot_steps": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.probe_slot_inj": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.steps_of_slot": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.contents_of": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.occ_keys": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.count_occ": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.occ_in": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.occ_unique": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.contents_none_iff": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.contents_at": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.count_occ_len": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.count_insert_fresh": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.count_bury": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.tags_ok_insert": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.insert_length_eq": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.no_empty_before": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.placed": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.segment_clear": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.first_tomb": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.probe_prefix": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.segment_short": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.segment_no_empty": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.prefix_zero": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.prefix_pred": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.first_tomb_S": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.first_tomb_none_clear": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.first_tomb_some": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.count_lt_exists": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.probe_out": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.hole_or": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.probe_from": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.probe": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.cell_clear": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.seen_here": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.scan_skip": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.probe_hit_now": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.placed_clear": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.probe_found": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.full_scan_hole": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.probe_from_inv": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.occ_index": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.probe_shape": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.tag_occ_ne_empty": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.tag_tomb_ne_empty": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.tag_tomb_ne_occ": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.twice_add": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.even_pow": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.room_for_one": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.double_pow": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.occ_place_iff": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.nodup_place": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.contents_place": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.contents_overwrite": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.contents_bury": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.path_ne": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.no_empty_before_fill": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.placed_place": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.placed_bury": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.occ_bury_sub": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.nodup_bury": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.load_bury": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.size_contents": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.wf_table": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.contents_zeros": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.count_zeros": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.occ_zeros": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.tags_ok_zeros": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.placed_zeros": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.zeros_wf": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.cap_pos": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.place_slot": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.write_fresh": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.write_fresh_new": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.rehash_acc": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.rehash_acc_lookup": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.doubled_cap": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.grow_table": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.write_remove": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.write_fresh_found": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.write_remove_spec": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.doubled_cap_pow": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.rehash_acc_sound": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.grow_table_spec": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.sld": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.sas": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.residue_body": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.call_residue": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.residue_wp": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.bucket_body": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.call_bucket": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.bucket_wp": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.lit_tag_empty": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.lit_tag_occ": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.lit_tag_tomb": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.lit_m1": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.arr_len": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.arr_get": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.arr_set": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.make_zero_array": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.is_hm_slots": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.is_hashmap": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.is_array_obj_hm": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.wp_new_step": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.init_body": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.call_init": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.size_body": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.call_size": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.capacity_body": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.call_capacity": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.is_empty_body": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.call_is_empty": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.probe_slot_e": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.probe_done": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.hole_or_e": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.scan_call_e": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.scan_loop": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.scan_body": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.scan_v": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.zlit": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.nlit": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.hole_z": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.probe_val": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.call_scan": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.buffer_probe_body": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.buffer_probe_e": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.call_buffer_probe": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.put_body": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.put_e": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.call_put": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.probe_open": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.probe_for_body": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.call_probe": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.call_probe_e": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.lookup_val": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.lookup_loop_e": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.lookup_inner": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.lookup_buffer_body": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.call_lookup_buffer": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.lookup_open": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.lookup_for_body": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.call_lookup": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.call_lookup_e": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.contains_body": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.call_contains": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.get_body": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.call_get": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.default_cap_pow": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.make_zero_spec": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.init_spec": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.size_spec": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.capacity_spec": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.is_empty_spec": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.arr_get_spec": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.arr_set_spec": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.probe_slot_e_spec": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.hole_or_e_spec": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.scan_spec": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.lookup_stopped": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.lookup_loop_spec": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.lookup_buffer_spec": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.buffer_probe_spec": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.probe_slots": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.put_spec": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.rehash_body": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.rehash_v": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.call_rehash": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.grow_body": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.call_grow": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.grow_e": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.add_room_body": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.call_add_room": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.add_room_e": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.add_body": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.call_add": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.remove_body": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.call_remove": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.head_drop_hm": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.rehash_spec": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.write_fresh_effect": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.add_room_spec": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.probe_spec": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.lookup_spec": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.is_hashmap_obj": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.contains_spec": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.get_spec": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.grow_spec": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.hashmap_bounds": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.add_spec": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.remove_spec": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.size_at": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.capacity_at": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.is_empty_at": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.init_then_size": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.init_then_capacity": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.init_then_empty": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.init_then_size_spec": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.init_then_capacity_spec": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.init_then_empty_spec": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.add_then_get": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.add_then_contains": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.add_then_get_spec": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.examples.hash_map.add_then_contains_spec": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    }
+  },
   "cangjie": {
     "cjr.examples.hash_map.sld": {
       "status": "unavailable",
@@ -7136,17 +7989,5 @@
         "complete": true
       }
     }
-  },
-  "rendering": {
-    "proof_validation": "not_run",
-    "proof_bodies_evaluated": false,
-    "preserved_available_explanations": 0,
-    "explanations_mode": "offline",
-    "sources": {
-      "rocq/hash_map.v": "c570b07ee10a68102f3d20df9f639badbedf17c37f964d535de8616fd9210bff"
-    },
-    "auxiliary_pages": [
-      "rocq/hm_tactics.html"
-    ]
   }
 }

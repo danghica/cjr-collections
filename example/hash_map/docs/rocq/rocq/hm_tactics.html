@@ -4,7 +4,7 @@
 <body><main><header><div class="eyebrow">Rocq Readable · specification reference</div>
 <nav aria-label="Project"><a href="../index.html">Home</a> · <a href="../declarations.html">Index</a></nav>
 <h1>rocq/hm_tactics.v</h1><p class="meta">0 declarations · proofs omitted</p>
-<p class="notice">Indentation determines multiline scope. Brackets delimit scope only within a line.
+<p class="notice">Each │ followed by a space marks one indentation level and determines multiline scope. Brackets delimit scope only within a line.
 WP contracts express partial correctness, without a termination guarantee. Unlinked names may belong to external libraries or remain unresolved.
 Rendering rules are presentation choices reviewed by their authors.</p></header><section class="panel dependency-diagram" data-scope="file" aria-labelledby="graph-heading">
 <h2 id="graph-heading">Dependency graph</h2>
@@ -587,4 +587,12 @@ Rendering rules are presentation choices reviewed by their authors.</p></header>
   }).observe(svg);
   render();
 })();
+</script><script>
+document.addEventListener('toggle', event => {
+  if (!event.target.matches('details.resolved-data') || !event.target.open) return;
+  const pre = event.target.querySelector('pre');
+  if (pre.dataset.formatted) return;
+  pre.textContent = JSON.stringify(JSON.parse(pre.textContent), null, 2);
+  pre.dataset.formatted = 'true';
+}, true);
 </script></main></body></html>

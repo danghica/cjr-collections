@@ -1,23 +1,22 @@
-python3 scripts/project.py readable 
 Parsing rocq/array.v
-Generated /Users/danghica/cjr/cjr-collections/example/array/docs/rocq/index.html (1 files, 0 with errors, 29 unmapped/unsupported constructs, 0 failed explanations)
+Generated /Users/danghica/cjr/cjr-collections/example/array/docs/rocq/index.html (1 files, 0 with errors, 0 unmapped/unsupported constructs, 0 failed explanations)
 Parsing rocq/array_list.v
-Generated /Users/danghica/cjr/cjr-collections/example/array_list/docs/rocq/index.html (1 files, 0 with errors, 186 unmapped/unsupported constructs, 0 failed explanations)
+Generated /Users/danghica/cjr/cjr-collections/example/array_list/docs/rocq/index.html (1 files, 0 with errors, 0 unmapped/unsupported constructs, 0 failed explanations)
 Parsing rocq/poly_array.v
 Parsing rocq/poly_array_tests.v
-Generated /Users/danghica/cjr/cjr-collections/example/poly_array/docs/rocq/index.html (2 files, 0 with errors, 34 unmapped/unsupported constructs, 0 failed explanations)
+Generated /Users/danghica/cjr/cjr-collections/example/poly_array/docs/rocq/index.html (2 files, 0 with errors, 0 unmapped/unsupported constructs, 0 failed explanations)
 Parsing rocq/list.v
-Generated /Users/danghica/cjr/cjr-collections/example/list/docs/rocq/index.html (1 files, 0 with errors, 17 unmapped/unsupported constructs, 0 failed explanations)
+Generated /Users/danghica/cjr/cjr-collections/example/list/docs/rocq/index.html (1 files, 0 with errors, 0 unmapped/unsupported constructs, 0 failed explanations)
 Parsing rocq/list_rev.v
-Generated /Users/danghica/cjr/cjr-collections/example/list_rev/docs/rocq/index.html (1 files, 0 with errors, 13 unmapped/unsupported constructs, 0 failed explanations)
+Generated /Users/danghica/cjr/cjr-collections/example/list_rev/docs/rocq/index.html (1 files, 0 with errors, 0 unmapped/unsupported constructs, 0 failed explanations)
 Parsing rocq/qsort.v
-Generated /Users/danghica/cjr/cjr-collections/example/qsort/docs/rocq/index.html (1 files, 0 with errors, 978 unmapped/unsupported constructs, 0 failed explanations)
+Generated /Users/danghica/cjr/cjr-collections/example/qsort/docs/rocq/index.html (1 files, 0 with errors, 1 unmapped/unsupported constructs, 0 failed explanations)
 Parsing rocq/hash_map.v
 Parsing rocq/hm_tactics.v
-Generated /Users/danghica/cjr/cjr-collections/example/hash_map/docs/rocq/index.html (2 files, 0 with errors, 493 unmapped/unsupported constructs, 0 failed explanations)
+Generated /Users/danghica/cjr/cjr-collections/example/hash_map/docs/rocq/index.html (2 files, 0 with errors, 0 unmapped/unsupported constructs, 0 failed explanations)
 Parsing rocq/mf_memory.v
 Parsing rocq/most_frequent.v
-Generated /Users/danghica/cjr/cjr-collections/example/most_frequent/docs/rocq/index.html (2 files, 0 with errors, 281 unmapped/unsupported constructs, 0 failed explanations)
+Generated /Users/danghica/cjr/cjr-collections/example/most_frequent/docs/rocq/index.html (2 files, 0 with errors, 0 unmapped/unsupported constructs, 0 failed explanations)
 Parsing algorithm/extract.v
 Parsing algorithm/program.v
 Parsing proof/algebra.v
@@ -30,4 +29,4 @@ Parsing proof/ownership.v
 Parsing proof/routing.v
 Parsing spec/bounds.v
 Parsing spec/model.v
-Generated /Users/danghica/cjr/cjr-collections/example/quadtree/docs/rocq/index.html (12 files, 0 with errors, 230 unmapped/unsupported constructs, 0 failed explanations)
+Generated /Users/danghica/cjr/cjr-collections/example/quadtree/docs/rocq/index.html (12 files, 0 with errors, 6 unmapped/unsupported constructs, 0 failed explanations)

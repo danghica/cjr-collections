@@ -11,236 +11,70 @@
       "file": "algorithm/program.v",
       "errors": [],
       "unsupported": [
-        "Cangjie unavailable: CJR FieldLoad [requires runtime or layout metadata]",
-        "Cangjie unavailable: CJR FieldStore [requires runtime or layout metadata]",
-        "Cangjie unavailable: CJR New [requires runtime or layout metadata]",
-        "Cangjie unavailable: CJR Struct [requires runtime or layout metadata]",
-        "Cangjie unavailable: CJR StructLoad [requires runtime or layout metadata]",
-        "Cangjie unavailable: recursive or symbolic closure",
-        "Cangjie unavailable: symbolic identifier or binder"
+        "CJR Let: symbolic binding name",
+        "CJR Rec: symbolic function binder",
+        "CJR Var: symbolic variable name"
       ],
       "declarations": 44
     },
     {
       "file": "proof/algebra.v",
       "errors": [],
-      "unsupported": [
-        "Cangjie unavailable: CJR Struct [requires runtime or layout metadata]",
-        "Cangjie unavailable: CJR StructV [requires runtime or layout metadata]",
-        "unclassified arrow at byte 5526",
-        "unmapped notation _ ∉ _"
-      ],
+      "unsupported": [],
       "declarations": 6
     },
     {
       "file": "proof/correctness.v",
       "errors": [],
-      "unsupported": [
-        "Cangjie unavailable: CJR StructV [requires runtime or layout metadata]",
-        "Cangjie unavailable: recursive or symbolic closure",
-        "unclassified arrow at byte 1471",
-        "unclassified arrow at byte 1485",
-        "unclassified arrow at byte 6237",
-        "unclassified arrow at byte 6251",
-        "unmapped notation _ ∈ _"
-      ],
+      "unsupported": [],
       "declarations": 5
     },
     {
       "file": "proof/helpers.v",
       "errors": [],
-      "unsupported": [
-        "Cangjie unavailable: CJR FieldLoad [requires runtime or layout metadata]",
-        "Cangjie unavailable: CJR FieldStore [requires runtime or layout metadata]",
-        "Cangjie unavailable: CJR StructV [requires runtime or layout metadata]",
-        "Cangjie unavailable: recursive or symbolic closure",
-        "unclassified arrow at byte 1178",
-        "unclassified arrow at byte 5275",
-        "unclassified arrow at byte 844",
-        "unmapped notation <[ _ := _ ]>"
-      ],
+      "unsupported": [],
       "declarations": 14
     },
     {
       "file": "proof/insertion.v",
       "errors": [],
-      "unsupported": [
-        "Cangjie unavailable: CJR StructV [requires runtime or layout metadata]",
-        "unclassified arrow at byte 11047",
-        "unclassified arrow at byte 12074",
-        "unclassified arrow at byte 1419",
-        "unclassified arrow at byte 2173",
-        "unclassified arrow at byte 2187",
-        "unclassified arrow at byte 2202",
-        "unclassified arrow at byte 3158",
-        "unclassified arrow at byte 3176",
-        "unclassified arrow at byte 3191",
-        "unclassified arrow at byte 3208",
-        "unclassified arrow at byte 3223",
-        "unclassified arrow at byte 3254",
-        "unclassified arrow at byte 4490",
-        "unclassified arrow at byte 4504",
-        "unclassified arrow at byte 4519",
-        "unclassified arrow at byte 7252",
-        "unclassified arrow at byte 7266",
-        "unclassified arrow at byte 7281",
-        "unclassified arrow at byte 9951",
-        "unmapped notation _ ∈ _",
-        "unmapped notation _ ∉ _"
-      ],
+      "unsupported": [],
       "declarations": 9
     },
     {
       "file": "proof/insertion_helpers.v",
       "errors": [],
-      "unsupported": [
-        "Cangjie unavailable: CJR FieldStore [requires runtime or layout metadata]",
-        "Cangjie unavailable: CJR StructV [requires runtime or layout metadata]",
-        "Cangjie unavailable: recursive or symbolic closure",
-        "unclassified arrow at byte 2306",
-        "unclassified arrow at byte 2326",
-        "unclassified arrow at byte 2364",
-        "unclassified arrow at byte 2381",
-        "unclassified arrow at byte 2396",
-        "unclassified arrow at byte 2427",
-        "unclassified arrow at byte 5341",
-        "unclassified arrow at byte 5361",
-        "unclassified arrow at byte 5399",
-        "unclassified arrow at byte 5416",
-        "unclassified arrow at byte 5431",
-        "unclassified arrow at byte 5462",
-        "unclassified arrow at byte 6983",
-        "unclassified arrow at byte 7001",
-        "unclassified arrow at byte 7016",
-        "unclassified arrow at byte 7033",
-        "unclassified arrow at byte 7048",
-        "unclassified arrow at byte 7079",
-        "unmapped notation _ ∉ _",
-        "unmapped notation _ ∪ _",
-        "unmapped notation {[ _ ]}"
-      ],
+      "unsupported": [],
       "declarations": 8
     },
     {
       "file": "proof/insertion_model.v",
       "errors": [],
-      "unsupported": [
-        "unclassified arrow at byte 446",
-        "unmapped notation {[ _ ]}"
-      ],
+      "unsupported": [],
       "declarations": 3
     },
     {
       "file": "proof/ownership.v",
       "errors": [],
-      "unsupported": [
-        "Cangjie unavailable: CJR LitObj [requires runtime or layout metadata]",
-        "unclassified arrow at byte 2192",
-        "unclassified arrow at byte 2411",
-        "unmapped notation <[ _ := _ ]>"
-      ],
+      "unsupported": [],
       "declarations": 15
     },
     {
       "file": "proof/routing.v",
       "errors": [],
-      "unsupported": [
-        "unclassified arrow at byte 1349",
-        "unclassified arrow at byte 1363",
-        "unclassified arrow at byte 1378",
-        "unclassified arrow at byte 298",
-        "unclassified arrow at byte 318",
-        "unmapped notation _ ∈ _"
-      ],
+      "unsupported": [],
       "declarations": 5
     },
     {
       "file": "spec/bounds.v",
       "errors": [],
-      "unsupported": [
-        "unclassified arrow at byte 1016",
-        "unclassified arrow at byte 1034",
-        "unclassified arrow at byte 1261",
-        "unclassified arrow at byte 1279",
-        "unclassified arrow at byte 1489",
-        "unclassified arrow at byte 1706",
-        "unclassified arrow at byte 1870",
-        "unclassified arrow at byte 2057",
-        "unclassified arrow at byte 2073",
-        "unclassified arrow at byte 2518",
-        "unclassified arrow at byte 2532",
-        "unclassified arrow at byte 2548",
-        "unclassified arrow at byte 3119",
-        "unclassified arrow at byte 3136",
-        "unclassified arrow at byte 407",
-        "unclassified arrow at byte 601",
-        "unclassified arrow at byte 770",
-        "unclassified arrow at byte 788",
-        "unmapped notation - _",
-        "unmapped notation _ <= _ <= _"
-      ],
+      "unsupported": [],
       "declarations": 14
     },
     {
       "file": "spec/model.v",
       "errors": [],
-      "unsupported": [
-        "CGenarg",
-        "unclassified arrow at byte 11880",
-        "unclassified arrow at byte 11898",
-        "unclassified arrow at byte 11910",
-        "unclassified arrow at byte 11941",
-        "unclassified arrow at byte 11974",
-        "unclassified arrow at byte 11995",
-        "unclassified arrow at byte 12315",
-        "unclassified arrow at byte 12329",
-        "unclassified arrow at byte 14182",
-        "unclassified arrow at byte 14196",
-        "unclassified arrow at byte 14896",
-        "unclassified arrow at byte 14920",
-        "unclassified arrow at byte 15687",
-        "unclassified arrow at byte 15711",
-        "unclassified arrow at byte 16211",
-        "unclassified arrow at byte 1693",
-        "unclassified arrow at byte 16963",
-        "unclassified arrow at byte 17425",
-        "unclassified arrow at byte 1857",
-        "unclassified arrow at byte 2371",
-        "unclassified arrow at byte 2862",
-        "unclassified arrow at byte 3115",
-        "unclassified arrow at byte 3132",
-        "unclassified arrow at byte 4150",
-        "unclassified arrow at byte 4337",
-        "unclassified arrow at byte 4355",
-        "unclassified arrow at byte 4573",
-        "unclassified arrow at byte 4591",
-        "unclassified arrow at byte 4942",
-        "unclassified arrow at byte 5247",
-        "unclassified arrow at byte 5259",
-        "unclassified arrow at byte 5481",
-        "unclassified arrow at byte 5706",
-        "unclassified arrow at byte 5720",
-        "unclassified arrow at byte 5735",
-        "unclassified arrow at byte 6746",
-        "unclassified arrow at byte 7046",
-        "unclassified arrow at byte 7060",
-        "unclassified arrow at byte 7085",
-        "unclassified arrow at byte 9113",
-        "unclassified arrow at byte 9133",
-        "unclassified arrow at byte 9144",
-        "unclassified arrow at byte 964",
-        "unclassified arrow at byte 9734",
-        "unclassified arrow at byte 9750",
-        "unclassified arrow at byte 9761",
-        "unmapped notation - _",
-        "unmapped notation _ <= _ < _",
-        "unmapped notation _ <= _ <= _",
-        "unmapped notation _ ^ _",
-        "unmapped notation _ ∈ _",
-        "unmapped notation _ ∪ _",
-        "unmapped notation {[ _ ]}",
-        "unmapped notation ∅"
-      ],
+      "unsupported": [],
       "declarations": 71
     }
   ],
@@ -4242,6 +4076,1010 @@
         "reason": "",
         "description": "The lemma states that width at depth zero is 1. Since width is defined as the integer 2 raised to the natural-number depth converted to an integer, this says that 2 to the power 0 equals 1. It has no additional premises."
       }
+    }
+  },
+  "term_view": "elaborated",
+  "elaboration": {
+    "cjr.quadtree.algorithm.extract.node_class": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.algorithm.extract.list_class": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.algorithm.extract.tree_class": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.algorithm.extract.quadtree_program": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.algorithm.program.qi": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.algorithm.program.qb": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.algorithm.program.qu": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.algorithm.program.qeq": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.algorithm.program.qle": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.algorithm.program.qand": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.algorithm.program.qlt": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.algorithm.program.qargs_from": {
+      "status": "available",
+      "reason": "",
+      "unsupported": [
+        "CJR Let: symbolic binding name"
+      ]
+    },
+    "cjr.quadtree.algorithm.program.qargs": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.algorithm.program.qinvoke": {
+      "status": "available",
+      "reason": "",
+      "unsupported": [
+        "CJR Rec: symbolic function binder"
+      ]
+    },
+    "cjr.quadtree.algorithm.program.qrecur": {
+      "status": "available",
+      "reason": "",
+      "unsupported": [
+        "CJR Var: symbolic variable name"
+      ]
+    },
+    "cjr.quadtree.algorithm.program.qpoint_eq": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.algorithm.program.qinside": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.algorithm.program.qoverlap": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.algorithm.program.qchoose": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.algorithm.program.qloads": {
+      "status": "available",
+      "reason": "",
+      "unsupported": [
+        "CJR Let: symbolic binding name",
+        "CJR Var: symbolic variable name"
+      ]
+    },
+    "cjr.quadtree.algorithm.program.qstores": {
+      "status": "available",
+      "reason": "",
+      "unsupported": [
+        "CJR Var: symbolic variable name"
+      ]
+    },
+    "cjr.quadtree.algorithm.program.qt_power_body": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.algorithm.program.qt_power": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.algorithm.program.qt_empty_body": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.algorithm.program.qt_empty": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.algorithm.program.qt_seed_body": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.algorithm.program.qt_seed": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.algorithm.program.qt_insert_branch": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.algorithm.program.qt_split": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.algorithm.program.qt_insert_node_body": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.algorithm.program.qt_insert_node": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.algorithm.program.qt_contains_node_body": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.algorithm.program.qt_contains_node": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.algorithm.program.qt_nil_body": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.algorithm.program.qt_nil": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.algorithm.program.qt_cons_body": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.algorithm.program.qt_cons": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.algorithm.program.qt_range_branch": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.algorithm.program.qt_range_node_body": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.algorithm.program.qt_range_node": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.algorithm.program.qt_make_body": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.algorithm.program.qt_make": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.algorithm.program.qt_insert_body": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.algorithm.program.qt_insert": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.algorithm.program.qt_contains_body": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.algorithm.program.qt_contains": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.algorithm.program.qt_range_body": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.algorithm.program.qt_range": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.algebra.wp_insert_set": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.algebra.wp_insertion_commutative": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.algebra.wp_insertion_idempotent": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.algebra.wp_membership_repeated": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.algebra.wp_range_repeated": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.algebra.wp_range_distributes_union": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.correctness.wp_qt_contains_node_val": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.correctness.wp_qt_contains": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.correctness.wp_qt_cons_val": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.correctness.wp_qt_range_node_val": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.correctness.wp_qt_range": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.helpers.wp_fields_load": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.helpers.wp_fields_store": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.helpers.wp_qlt": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.helpers.wp_qpoint_eq": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.helpers.wp_qinside": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.helpers.wp_qt_empty_val": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.helpers.wp_qt_nil": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.helpers.wp_qt_cons": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.helpers.wp_qt_seed": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.helpers.wp_qt_power_val": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.helpers.wp_qt_power": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.helpers.wp_qt_make": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.helpers.wp_qoverlap": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.helpers.wp_qchoose": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.insertion.wp_insert_empty": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.insertion.wp_insert_leaf_zero": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.insertion.wp_insert_leaf_succ": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.insertion.wp_qt_insert_node_val": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.insertion.wp_qt_insert_set_refinement": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.insertion.wp_insert_existing_node": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.insertion.wp_insert_duplicate": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.insertion.wp_insert_rejected": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.insertion.wp_qt_insert": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.insertion_helpers.insert_self": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.insertion_helpers.branch_call": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.insertion_helpers.install_call": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.insertion_helpers.insert_post": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.insertion_helpers.wp_branch_call": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.insertion_helpers.wp_install_call": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.insertion_helpers.wp_seed_val": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.insertion_helpers.wp_split_call": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.insertion_model.seeded": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.insertion_model.seeded_valid": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.insertion_model.seeded_contents": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.ownership.iv": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.ownership.bv": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.ownership.ov": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.ownership.uv": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.ownership.node_values": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.ownership.fields": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.ownership.node_rep": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.ownership.point_list": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.ownership.tree_rep": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.ownership.is_quadtree": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.ownership.fields_lookup": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.ownership.fields_update": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.ownership.tree_domain": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.ownership.point_list_object": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.ownership.node_rep_object": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.routing.child_tree": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.routing.routed_member": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.routing.overlap": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.routing.overlap_dec": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.proof.routing.query_pruned": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.bounds.int64": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.bounds.box_bounds": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.bounds.domain_bounds": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.bounds.stored_bounds_int64": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.bounds.midpoint_bounds": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.bounds.midpoint_int64": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.bounds.child_bounds": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.bounds.doubling_int64": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.bounds.power_result_int64": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.bounds.decrement_int64": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.bounds.leaf_coordinates_int64": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.bounds.all_bounds": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.bounds.valid_all_bounds": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.bounds.root_all_bounds": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.point": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.rectangle": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.in_rect": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.in_rect_dec": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.width": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.domain": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.square": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.points": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.admissible": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.insert_set": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.contains_set": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.range_set": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.union_set": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.insertion_commutative": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.insertion_idempotent": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.insertion_rejected": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.insertion_preserves_domain": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.membership_repeated": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.range_repeated": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.range_distributes_union": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.range_empty_rectangle": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.width_zero": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.width_succ": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.width_positive": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.width_bound": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.root_square": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.coordinate_int64": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.quadrant": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.quadrant_eq_dec": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.midx": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.midy": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.child_box": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.route": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.child_square": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.child_subset": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.child_route": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.child_route_unique": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.subdivision_disjoint": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.subdivision_coverage": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.unit_unique": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.qtree": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.contents": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.valid": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.height": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.valid_height": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.valid_contents": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.select_points": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.select_points_member": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.select_points_set": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.build_tree": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.partition_points": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.build_tree_correct": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.enumerate": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.enumerate_contents": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.enumerate_member": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.children_enumerate_disjoint": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.enumerate_unique": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.query_model": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.query_model_contents": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.query_model_unique": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.query_state": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.query_state_repeated": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.contains_state": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.contains_state_repeated": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.union_reference": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.union_reference_correct": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.range_tree_union": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.insert_reference": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.insert_reference_correct": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.reference_insert_commutative": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
+    },
+    "cjr.quadtree.spec.model.reference_insert_idempotent": {
+      "status": "available",
+      "reason": "",
+      "unsupported": []
     }
   },
   "cangjie": {
@@ -10052,26 +10890,6 @@
         "issues": [],
         "complete": true
       }
-    }
-  },
-  "rendering": {
-    "proof_validation": "not_run",
-    "proof_bodies_evaluated": false,
-    "preserved_available_explanations": 198,
-    "explanations_mode": "offline",
-    "sources": {
-      "algorithm/extract.v": "2b870edfbc19bb879aa4d262bc889312311f1181589dc269e2d27ba5d9316704",
-      "algorithm/program.v": "d53eda34eec012e37e864aa738a98f4a3a3ac83a72811bc845b4e584a817f6b8",
-      "proof/algebra.v": "e245cd23134c597ae15c4db4f1d7add952e5eea4bb32a3e6f03f45003359501e",
-      "proof/correctness.v": "37f1363f3c8e8007d1b729fec2bb6d6aa3369969a0d2e2002f6fb28f6b3d1315",
-      "proof/helpers.v": "07d5da1724c6f82b1c7837b86504351eb7daf24901e2828210117557c5054fcf",
-      "proof/insertion.v": "dfe6f987f788c7303b093641d8b54853d3183fdb33482bc66a6f95bdda6b5143",
-      "proof/insertion_helpers.v": "b2bf8afe2a4e1c8a22a0bccb75993907e45fbbef73fca92d0d064a18223f4010",
-      "proof/insertion_model.v": "cd6247d7d00c09be7bfeab951792806ba86e38d5dee4456f5b480bee44264788",
-      "proof/ownership.v": "7f8473ab6de622e7c85078302d71c689e422fb2eef65f43983b48b9f393f7a87",
-      "proof/routing.v": "cdd3034865dc74b58955a4999936896e1f09427a44592d327d4f001a66c59173",
-      "spec/bounds.v": "fa22af79f61f5b292bf73f9896bf6861e7597dfa35f1a2784a327ccf7eb64aec",
-      "spec/model.v": "a4aabdb0a1b4c46a20f4202f8e97c17523d1e666be3692478e1decf956d5e629"
     }
   }
 }

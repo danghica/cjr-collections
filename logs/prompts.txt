@@ -987,3 +987,12 @@ validate all the proofs and push the proof record and update the readmes
 [2026-11-03T17:03:42+00:00]
 don't re-run proof validation, push everything to the repo
 
+[2026-11-04T11:44:16+00:00]
+refresh the collections documentation. don't invalidate ai explanation cache.
+
+[2026-11-04T14:02:28+00:00]
+for indenting the first character should be │ and the second a space
+
+[2026-11-04T14:05:38+00:00]
+do not rerun proof validation. push everything to github.
+
